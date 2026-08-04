@@ -4,10 +4,10 @@
    Light theme. Mobile-first. Ultra responsive.
    ═══════════════════════════════════════════════════════════════ */
 
-@import url('../_design-system/tokens.css');
-@import url('../_design-system/base.css');
-@import url('../_design-system/components.css');
-@import url('../_design-system/animations.css');
+@import url('./_design-system/tokens.css');
+@import url('./_design-system/base.css');
+@import url('./_design-system/components.css');
+@import url('./_design-system/animations.css');
 
 /* ─── AÇIK TEMA OVERRIDE ─── */
 :root {
