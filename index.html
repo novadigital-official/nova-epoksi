@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#050B14">
+
+    <title>Nova Digital | Web Tasarım, E-Ticaret, Reklam Yönetimi — Antalya</title>
+    <meta name="description" content="Nova Digital — Antalya merkezli dijital ajans. Modern web sitesi, profesyonel e-ticaret, Google & Meta reklam yönetimi ve mobil uygulama geliştirme. İşletmenizi dijitalde büyütüyoruz.">
+    <meta name="keywords" content="web tasarım, antalya web tasarım, e-ticaret, reklam yönetimi, google ads, meta ads, mobil uygulama, dijital ajans, nova digital">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Nova Digital">
+    <link rel="canonical" href="https://novadigital.com.tr/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://novadigital.com.tr/">
+    <meta property="og:title" content="Nova Digital | Dijital Çözümler — Antalya">
+    <meta property="og:description" content="Modern web sitesi, e-ticaret, reklam yönetimi ve mobil uygulama. İşletmenizi dijitalde büyütüyoruz.">
+    <meta property="og:image" content="https://novadigital.com.tr/images/logo-nova-digital.png">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="Nova Digital">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Nova Digital",
+        "alternateName": "Nova Digital Yazılım & Dijital Pazarlama",
+        "url": "https://novadigital.com.tr",
+        "logo": "https://novadigital.com.tr/images/logo-nova-digital.png",
+        "description": "Antalya merkezli dijital ajans. Web tasarım, e-ticaret, reklam yönetimi, mobil uygulama ve özel yazılım geliştirme hizmetleri.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Antalya",
+            "addressCountry": "TR"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "Türkiye"
+        },
+        "sameAs": [],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "availableLanguage": ["Turkish"]
+        }
+    }
+    </script>
+
+    <!-- Structured Data: LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Nova Digital",
+        "url": "https://novadigital.com.tr",
+        "image": "https://novadigital.com.tr/images/logo-nova-digital.png",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Antalya",
+            "addressCountry": "TR"
+        },
+        "priceRange": "₺₺",
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Dijital Hizmetler",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": { "@type": "Service", "name": "Standart Web Sitesi", "description": "Küçük işletmeler için modern ve mobil uyumlu web sitesi." },
+                    "price": "4999",
+                    "priceCurrency": "TRY"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": { "@type": "Service", "name": "Kurumsal Web Sitesi", "description": "Yönetim panelli kurumsal web sitesi." },
+                    "price": "9999",
+                    "priceCurrency": "TRY"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": { "@type": "Service", "name": "Profesyonel E-Ticaret", "description": "Ödeme, stok ve sipariş yönetimli profesyonel e-ticaret sitesi." },
+                    "price": "35000",
+                    "priceCurrency": "TRY"
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PRELOADER (Modern Bekleme Ekranı)
+     ═══════════════════════════════════════════════════════════ -->
+<div class="preloader" id="preloader">
+    <div class="preloader-content">
+        <img src="images/logo-nova-digital.png" alt="Nova Digital" width="56" height="56" class="preloader-logo">
+        <span class="preloader-title">Nova<span>Digital</span></span>
+        <div class="preloader-bar"><div class="preloader-progress"></div></div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════════════════ -->
+<nav class="site-nav" id="siteNav" aria-label="Ana navigasyon">
+    <div class="container nav-container">
+        <a href="#" class="nav-logo" aria-label="Nova Digital Ana Sayfa">
+            <img src="images/logo-nova-digital.png" alt="Nova Digital Logo" width="44" height="44" loading="eager">
+            <span class="nav-logo-text">Nova<span>Digital</span></span>
+        </a>
+
+        <div class="nav-menu" role="navigation">
+            <a href="#hizmetler">Hizmetler</a>
+            <a href="#paketler">Paketler</a>
+            <a href="#portfoy">Portföy</a>
+            <a href="#sss">SSS</a>
+            <a href="#iletisim">İletişim</a>
+        </div>
+
+        <a href="#iletisim" class="btn btn-primary btn-sm nav-cta">Teklif Al</a>
+
+        <button class="hamburger" id="hamburger" aria-label="Menüyü aç/kapat" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ─── Mobile Menu Drawer (Apple/Stripe Seviyesi Modern Menü) ─── -->
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobil menü">
+    <div class="mobile-menu-header">
+        <a href="#" class="nav-logo">
+            <img src="images/logo-nova-digital.png" alt="Nova Digital Logo" width="40" height="40">
+            <span class="nav-logo-text">Nova<span>Digital</span></span>
+        </a>
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Menüyü kapat">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+    </div>
+    <div class="mobile-menu-body">
+        <div class="mobile-menu-links">
+            <a href="#hizmetler"><span class="menu-link-text"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Hizmetlerimiz</span> <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+            <a href="#paketler"><span class="menu-link-text"><i class="fa-solid fa-tags" aria-hidden="true"></i> Paketler & Fiyatlar</span> <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+            <a href="#portfoy"><span class="menu-link-text"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Seçili Portföy</span> <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+            <a href="#sss"><span class="menu-link-text"><i class="fa-solid fa-circle-question" aria-hidden="true"></i> Sıkça Sorulan Sorular</span> <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+            <a href="#iletisim"><span class="menu-link-text"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> İletişim & Teklif</span> <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="mobile-menu-footer">
+            <a href="#iletisim" class="btn btn-primary btn-lg mobile-menu-cta">
+                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Hızlı Teklif Al
+            </a>
+            <div class="mobile-menu-quick-info">
+                <a href="tel:+905070871789"><i class="fa-solid fa-phone" aria-hidden="true"></i> 0507 087 17 89</a>
+                <a href="https://instagram.com/novadigitalllll" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i> @novadigitalllll</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════════════ -->
+<section class="hero" id="hero">
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge badge-primary">
+                    <i class="fa-solid fa-rocket" aria-hidden="true"></i>
+                    Dijital Büyüme Ortağınız
+                </span>
+            </div>
+
+            <h1>
+                İşletmenizi <span class="text-gradient">Dijitalde Görünür</span> Kılıyoruz.
+            </h1>
+
+            <p class="hero-subtitle">
+                Web sitesinden e-ticarete, reklamdan mobil uygulamaya kadar — işletmenizin internetteki kurumsal kimliğini ve müşteri kazanım altyapısını kuruyoruz.
+            </p>
+
+            <div class="hero-cta-group">
+                <a href="#iletisim" class="btn btn-primary btn-lg pulse" id="heroCta">
+                    <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                    Projeni Konuşalım
+                </a>
+                <a href="#paketler" class="btn btn-outline btn-lg">
+                    <i class="fa-solid fa-tags" aria-hidden="true"></i>
+                    Paketler & Fiyatlar
+                </a>
+            </div>
+
+            <!-- Hızlı Erişim (Okumadan Fiyatlara Ulaşmak İsteyen Müşteri İçin) -->
+            <div class="hero-quick-jump">
+                <span class="quick-jump-label">Hızlı Erişim:</span>
+                <a href="#paketler" class="quick-jump-chip"><i class="fa-solid fa-bolt" aria-hidden="true"></i> 4.999 TL'den Başlayan Web Paketleri</a>
+                <a href="#reklam" class="quick-jump-chip"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Reklam Yönetimi</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     GÜVEN ŞERİDİ
+     ═══════════════════════════════════════════════════════════ -->
+<section class="trust-strip" aria-label="Güven unsurları">
+    <div class="container">
+        <div class="trust-items">
+            <div class="trust-item reveal">
+                <div class="trust-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
+                <span class="trust-label">Hızlı Teslim</span>
+                <span class="trust-sub">2-10 iş günü</span>
+            </div>
+            <div class="trust-item reveal">
+                <div class="trust-icon"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i></div>
+                <span class="trust-label">Mobil Öncelikli</span>
+                <span class="trust-sub">Her cihazda kusursuz</span>
+            </div>
+            <div class="trust-item reveal">
+                <div class="trust-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
+                <span class="trust-label">Güvenli Altyapı</span>
+                <span class="trust-sub">SSL + Modern teknoloji</span>
+            </div>
+            <div class="trust-item reveal">
+                <div class="trust-icon"><i class="fa-solid fa-headset" aria-hidden="true"></i></div>
+                <span class="trust-label">Proje Sonrası Destek</span>
+                <span class="trust-sub">15-30 gün teknik destek</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     HİZMETLER
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section" id="hizmetler">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="badge badge-primary" style="margin-bottom: 16px; display: inline-flex;">Hizmetlerimiz</span>
+            <h2>İşletmeniz İçin <span class="text-gradient">Komple Dijital Çözümler</span></h2>
+            <p>Web sitesinden reklam yönetimine, e-ticaretten mobil uygulamaya kadar tüm dijital ihtiyaçlarınız tek çatı altında.</p>
+        </div>
+
+        <div class="grid grid-3 reveal-stagger" id="hizmetGrid">
+            <div class="card service-card reveal" data-service="web-tasarim">
+                <div class="service-icon"><i class="fa-solid fa-display" aria-hidden="true"></i></div>
+                <h3>Web Tasarım</h3>
+                <p>Modern, hızlı ve mobil uyumlu web siteleri ile markanızı dijitalde en iyi şekilde temsil edin.</p>
+            </div>
+            <div class="card service-card reveal" data-service="e-ticaret">
+                <div class="service-icon"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i></div>
+                <h3>E-Ticaret</h3>
+                <p>Güvenli altyapı, kolay yönetim ve yüksek performanslı e-ticaret siteleri kuruyoruz.</p>
+            </div>
+            <div class="card service-card reveal" data-service="reklam-yonetimi">
+                <div class="service-icon"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i></div>
+                <h3>Reklam Yönetimi</h3>
+                <p>Doğru hedefleme, etkili reklam stratejileri ve sürekli optimizasyon ile daha fazla müşteri kazanın.</p>
+            </div>
+            <div class="card service-card reveal" data-service="mobil-uygulama">
+                <div class="service-icon"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i></div>
+                <h3>Mobil Uygulama</h3>
+                <p>iOS ve Android uyumlu mobil uygulamalar ile işletmenizi bir adım öne taşıyoruz.</p>
+            </div>
+            <div class="card service-card reveal" data-service="ozel-yazilim">
+                <div class="service-icon"><i class="fa-solid fa-code" aria-hidden="true"></i></div>
+                <h3>Özel Yazılım</h3>
+                <p>İşletmenize özel yazılım çözümleri ile süreçlerinizi dijitalleştiriyoruz.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     WEB SİTESİ PAKETLERİ
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section" id="paketler">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="badge badge-primary" style="margin-bottom: 16px; display: inline-flex;">Web Paketleri</span>
+            <h2>İhtiyacınıza Uygun <span class="text-gradient">Web Paketi</span></h2>
+            <p>Her bütçeye ve ihtiyaca uygun paketler. Şeffaf fiyatlandırma, sürpriz maliyet yok.</p>
+        </div>
+
+        <div class="grid grid-3 reveal-stagger">
+            <!-- Standart -->
+            <div class="card pricing-card reveal">
+                <span class="pricing-name">Standart Web Sitesi</span>
+                <p class="pricing-desc">Küçük işletmeler için hızlı ve profesyonel dijital başlangıç.</p>
+                <div class="pricing-amount">
+                    <strong>4.999</strong>
+                    <span>TL</span>
+                </div>
+                <span class="pricing-teslim"><i class="fa-solid fa-clock" aria-hidden="true"></i> 2 Günde Teslim</span>
+                <ul class="pricing-features">
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Modern ve Profesyonel Tasarım</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Mobil Uyumlu (Responsive)</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Alan Adı + Hosting (1 Yıllık)</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> SSL Sertifikası</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> WhatsApp / Arama Butonu</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Google Maps Entegrasyonu</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> İletişim Formu</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Temel SEO Altyapısı</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> 15 Gün Teknik Destek</li>
+                </ul>
+                <a href="#iletisim" class="btn btn-outline">Teklif Al</a>
+            </div>
+
+            <!-- Kurumsal -->
+            <div class="card pricing-card featured reveal">
+                <span class="pricing-name">Kurumsal Web Sitesi</span>
+                <p class="pricing-desc">Dijital kurumsal kimliğinizi güçlü şekilde temsil edin.</p>
+                <div class="pricing-amount">
+                    <strong>9.999</strong>
+                    <span>TL</span>
+                </div>
+                <span class="pricing-teslim"><i class="fa-solid fa-clock" aria-hidden="true"></i> 3-5 Günde Teslim</span>
+                <ul class="pricing-features">
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Sınırsız İç Sayfa</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Yönetim Paneli</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> İçerik Yönetimi</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Kurumsal E-Posta (1 Yıllık)</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Google Analytics Kurulumu</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Google Search Console</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Google İşletme Hesabı</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Gelişmiş SEO Altyapısı</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Alan Adı + Hosting + SSL (1 Yıl)</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> 30 Gün Teknik Destek</li>
+                </ul>
+                <a href="#iletisim" class="btn btn-primary">Teklif Al</a>
+            </div>
+
+            <!-- E-Ticaret -->
+            <div class="card pricing-card reveal">
+                <span class="pricing-name">Profesyonel E-Ticaret</span>
+                <p class="pricing-desc">Ürünlerinizi online satın, siparişlerinizi yönetin.</p>
+                <div class="pricing-amount">
+                    <strong>35.000</strong>
+                    <span>TL</span>
+                </div>
+                <span class="pricing-teslim"><i class="fa-solid fa-clock" aria-hidden="true"></i> 5-10 Günde Teslim</span>
+                <ul class="pricing-features">
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> E-Ticaret Altyapısı</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Ürün & Kategori Yönetimi</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Stok & Sipariş Yönetimi</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Müşteri Hesapları</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Ödeme Entegrasyonu</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Kargo Entegrasyonu</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Kupon & İndirim Sistemi</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Yönetim Paneli</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Gelişmiş SEO Altyapısı</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> 30 Gün Teknik Destek</li>
+                </ul>
+                <a href="#iletisim" class="btn btn-outline">Teklif Al</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     NEDEN NOVA DIGITAL
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section" id="neden-nova">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="badge badge-primary" style="margin-bottom: 16px; display: inline-flex;">Neden Biz?</span>
+            <h2>Neden <span class="text-gradient">Nova Digital?</span></h2>
+            <p>Profesyonelliği, şeffaflığı ve sonuç odaklı çalışmayı ön planda tutuyoruz.</p>
+        </div>
+
+        <div class="grid grid-3 reveal-stagger">
+            <div class="card reason-card reveal">
+                <div class="reason-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
+                <h3>Modern Tasarım</h3>
+                <p>2026 trendlerine uygun, estetik ve kullanıcı dostu tasarımlar.</p>
+            </div>
+            <div class="card reason-card reveal">
+                <div class="reason-icon"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div>
+                <h3>Güncel Teknoloji</h3>
+                <p>En güncel ve performanslı yazılım teknolojileri ile geliştirme.</p>
+            </div>
+            <div class="card reason-card reveal">
+                <div class="reason-icon"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i></div>
+                <h3>Hızlı Teslim</h3>
+                <p>Modüler altyapımız sayesinde projelerinizi hızlıca hayata geçiriyoruz.</p>
+            </div>
+            <div class="card reason-card reveal">
+                <div class="reason-icon"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
+                <h3>Müşteri Odaklı</h3>
+                <p>Her adımda sizinle iletişimde kalıyor, süreçleri şeffaf yönetiyoruz.</p>
+            </div>
+            <div class="card reason-card reveal">
+                <div class="reason-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
+                <h3>Sonuç Odaklı</h3>
+                <p>Sadece güzel değil, dönüşüm sağlayan ve müşteri kazandıran siteler.</p>
+            </div>
+            <div class="card reason-card reveal">
+                <div class="reason-icon"><i class="fa-solid fa-life-ring" aria-hidden="true"></i></div>
+                <h3>Destek & Güven</h3>
+                <p>Proje sonrası teknik destek ve sürekli bakım hizmeti.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     NASIL ÇALIŞIYORUZ
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section" id="nasil-calisiyoruz">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="badge badge-primary" style="margin-bottom: 16px; display: inline-flex;">Sürecimiz</span>
+            <h2>Nasıl <span class="text-gradient">Çalışıyoruz?</span></h2>
+            <p>Basit, şeffaf ve sonuç odaklı 4 adımlık sürecimiz.</p>
+        </div>
+
+        <div class="process-steps reveal-stagger">
+            <div class="process-step reveal">
+                <div class="process-num">01</div>
+                <div>
+                    <h3>Keşif & Analiz</h3>
+                    <p>İşletmenizi, sektörünüzü ve hedeflerinizi anlıyoruz. Rakip analizi yapıyoruz.</p>
+                </div>
+            </div>
+            <div class="process-step reveal">
+                <div class="process-num">02</div>
+                <div>
+                    <h3>Tasarım</h3>
+                    <p>Markanıza özel modern, mobil uyumlu ve dönüşüm odaklı tasarım oluşturuyoruz.</p>
+                </div>
+            </div>
+            <div class="process-step reveal">
+                <div class="process-num">03</div>
+                <div>
+                    <h3>Geliştirme</h3>
+                    <p>Hızlı, güvenli ve SEO uyumlu altyapı ile projenizi hayata geçiriyoruz.</p>
+                </div>
+            </div>
+            <div class="process-step reveal">
+                <div class="process-num">04</div>
+                <div>
+                    <h3>Lansman & Destek</h3>
+                    <p>Sitenizi yayına alıyoruz. Proje sonrası teknik destek ile yanınızdayız.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PORTFÖY
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section" id="portfoy">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="badge badge-primary" style="margin-bottom: 16px; display: inline-flex;">Çalışmalarımız</span>
+            <h2>Seçili <span class="text-gradient">Projeler</span></h2>
+            <p>Demo ve konsept çalışmalarımızdan örnekler.</p>
+        </div>
+
+        <div class="portfolio-filters reveal">
+            <button class="filter-btn active" data-filter="all">Tümü</button>
+            <button class="filter-btn" data-filter="web">Web Sitesi</button>
+            <button class="filter-btn" data-filter="eticaret">E-Ticaret</button>
+            <button class="filter-btn" data-filter="reklam">Reklam</button>
+        </div>
+
+        <div class="grid grid-3 reveal-stagger" id="portfolioGrid">
+            <!-- Kocaeli Kelebek — Gerçek Proje (Canlı Link) -->
+            <a href="../kocaeli-kelebek/index.html" target="_blank" rel="noopener noreferrer" class="card portfolio-card reveal" data-category="web">
+                <div class="portfolio-thumb-wrap">
+                    <img src="images/paket-standart-web.png" alt="Kocaeli Kelebek — Standart Web Sitesi Projesi" class="portfolio-thumb" width="400" height="250" loading="lazy">
+                    <span class="portfolio-overlay"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Canlı Önizleme</span>
+                </div>
+                <div class="portfolio-info">
+                    <span class="badge badge-success" style="margin-bottom: 8px;">Canlı Proje</span>
+                    <h3>Kocaeli Kelebek</h3>
+                    <p>Standart Web Sitesi — E-Ticaret Lansmanı</p>
+                </div>
+            </a>
+
+            <!-- Kurumsal Demo — Yakında -->
+            <div class="card portfolio-card portfolio-soon reveal" data-category="web">
+                <div class="portfolio-thumb-wrap">
+                    <img src="images/paket-kurumsal-web.png" alt="Kurumsal Web Sitesi Demo Projesi" class="portfolio-thumb" width="400" height="250" loading="lazy">
+                    <span class="portfolio-overlay portfolio-overlay-soon"><i class="fa-solid fa-clock" aria-hidden="true"></i> Yakında</span>
+                </div>
+                <div class="portfolio-info">
+                    <span class="badge badge-primary" style="margin-bottom: 8px;">Konsept</span>
+                    <h3>Kurumsal Demo</h3>
+                    <p>Kurumsal Web Sitesi — Çok Yakında</p>
+                </div>
+            </div>
+
+            <!-- E-Ticaret Demo — Yakında -->
+            <div class="card portfolio-card portfolio-soon reveal" data-category="eticaret">
+                <div class="portfolio-thumb-wrap">
+                    <img src="images/paket-eticaret.png" alt="E-Ticaret Demo Projesi" class="portfolio-thumb" width="400" height="250" loading="lazy">
+                    <span class="portfolio-overlay portfolio-overlay-soon"><i class="fa-solid fa-clock" aria-hidden="true"></i> Yakında</span>
+                </div>
+                <div class="portfolio-info">
+                    <span class="badge badge-primary" style="margin-bottom: 8px;">Konsept</span>
+                    <h3>E-Ticaret Demo</h3>
+                    <p>Profesyonel E-Ticaret — Çok Yakında</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     REKLAM YÖNETİMİ
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section ads-section" id="reklam">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="badge badge-primary" style="margin-bottom: 16px; display: inline-flex;">Dijital Reklam</span>
+            <h2><span class="text-gradient">Reklam Yönetimi</span> ile Müşteri Kazanın</h2>
+            <p>Google ve Meta reklamlarını profesyonelce yönetiyoruz. Doğru hedefleme, sürekli optimizasyon ve ölçülebilir sonuçlar.</p>
+        </div>
+
+        <!-- Ads Flow -->
+        <div class="ads-flow reveal">
+            <div class="ads-flow-item"><i class="fa-solid fa-bullseye" aria-hidden="true"></i> Hedefleme</div>
+            <span class="ads-flow-arrow">→</span>
+            <div class="ads-flow-item"><i class="fa-solid fa-rectangle-ad" aria-hidden="true"></i> Reklam</div>
+            <span class="ads-flow-arrow">→</span>
+            <div class="ads-flow-item"><i class="fa-solid fa-sliders" aria-hidden="true"></i> Optimizasyon</div>
+            <span class="ads-flow-arrow">→</span>
+            <div class="ads-flow-item"><i class="fa-solid fa-user-plus" aria-hidden="true"></i> Müşteri</div>
+            <span class="ads-flow-arrow">→</span>
+            <div class="ads-flow-item"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> Büyüme</div>
+        </div>
+
+        <!-- Reklam Paketleri -->
+        <div class="grid grid-3 reveal-stagger">
+            <div class="card pricing-card reveal">
+                <span class="pricing-name">Başlangıç</span>
+                <p class="pricing-desc">Dijital reklamcılığa ilk adım.</p>
+                <div class="pricing-amount">
+                    <strong>5.000</strong>
+                    <span>TL / Ay</span>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Meta Ads (Instagram/Facebook)</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Hedef Kitle Analizi</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Reklam Görsel Önerileri</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Haftalık Kontrol</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Aylık Raporlama</li>
+                </ul>
+                <a href="#iletisim" class="btn btn-outline">Başlayalım</a>
+            </div>
+            <div class="card pricing-card featured reveal">
+                <span class="pricing-name">Profesyonel</span>
+                <p class="pricing-desc">Tam kapsamlı dijital reklam yönetimi.</p>
+                <div class="pricing-amount">
+                    <strong>10.000</strong>
+                    <span>TL / Ay</span>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Meta Ads + Google Ads</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Kampanya Stratejisi</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Rakip Analizi</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Dönüşüm Takibi</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> A/B Testleri</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Aylık Rapor + Optimizasyon</li>
+                </ul>
+                <a href="#iletisim" class="btn btn-primary">Başlayalım</a>
+            </div>
+            <div class="card pricing-card reveal">
+                <span class="pricing-name">Growth</span>
+                <p class="pricing-desc">Maksimum büyüme ve dönüşüm odaklı.</p>
+                <div class="pricing-amount">
+                    <strong>15.000</strong>
+                    <span>TL+ / Ay</span>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Meta Ads + Google Ads</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Landing Page Optimizasyonu</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> SEO Önerileri</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> İçerik Stratejisi</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Satış Hunisi Kurulumu</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Haftalık Optimizasyon</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Detaylı Raporlama</li>
+                </ul>
+                <a href="#iletisim" class="btn btn-outline">Başlayalım</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     MOBİL UYGULAMA & ÖZEL YAZILIM
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section premium-section" id="mobil-yazilim">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="badge badge-success" style="margin-bottom: 16px; display: inline-flex;">Premium Hizmetler</span>
+            <h2>Fikriniz Varsa, Onu <span class="text-gradient">Ürüne Dönüştürelim.</span></h2>
+            <p>Mobil uygulama geliştirme ve özel yazılım çözümleri ile işletmenizi bir adım öteye taşıyoruz.</p>
+        </div>
+
+        <div class="premium-features reveal">
+            <div class="premium-feature"><i class="fa-brands fa-apple" aria-hidden="true"></i> iOS Uygulama Geliştirme</div>
+            <div class="premium-feature"><i class="fa-brands fa-android" aria-hidden="true"></i> Android Uygulama Geliştirme</div>
+            <div class="premium-feature"><i class="fa-solid fa-server" aria-hidden="true"></i> API & Backend Geliştirme</div>
+            <div class="premium-feature"><i class="fa-solid fa-bell" aria-hidden="true"></i> Push Notification Sistemi</div>
+            <div class="premium-feature"><i class="fa-solid fa-credit-card" aria-hidden="true"></i> Ödeme Entegrasyonu</div>
+            <div class="premium-feature"><i class="fa-solid fa-user-lock" aria-hidden="true"></i> Kullanıcı & Yetkilendirme</div>
+        </div>
+
+        <a href="#iletisim" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            Projenizi Konuşalım
+        </a>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     SSS (FAQ)
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section" id="sss">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="badge badge-primary" style="margin-bottom: 16px; display: inline-flex;">SSS</span>
+            <h2>Sıkça Sorulan <span class="text-gradient">Sorular</span></h2>
+        </div>
+
+        <div class="faq-list">
+            <details class="faq-item reveal">
+                <summary>Web sitesi yaptırmak ne kadar sürer?</summary>
+                <div class="faq-answer">
+                    Standart web sitesi 2 iş günü, kurumsal web sitesi 3-5 iş günü, profesyonel e-ticaret sitesi ise 5-10 iş günü içinde teslim edilir. Projenin kapsamına göre süre değişiklik gösterebilir.
+                </div>
+            </details>
+            <details class="faq-item reveal">
+                <summary>Web sitesi fiyatları ne kadar?</summary>
+                <div class="faq-answer">
+                    Standart Web Sitesi 4.999 TL, Kurumsal Web Sitesi 9.999 TL ve Profesyonel E-Ticaret 35.000 TL'den başlamaktadır. Her paket alan adı, hosting ve SSL sertifikası içerir. Detaylı bilgi için iletişime geçebilirsiniz.
+                </div>
+            </details>
+            <details class="faq-item reveal">
+                <summary>Ödeme nasıl yapılır?</summary>
+                <div class="faq-answer">
+                    Projelerimizde %50 ön ödeme, %50 teslim sırasında ödeme sistemi uygulanır. Banka havalesi ve EFT ile ödeme yapabilirsiniz.
+                </div>
+            </details>
+            <details class="faq-item reveal">
+                <summary>Reklam yönetimi nasıl çalışır?</summary>
+                <div class="faq-answer">
+                    Reklam yönetim hizmetimiz aylık abonelik şeklinde çalışır. Reklam bütçesi size ait olup, yönetim ücretimiz ayrıdır. Meta (Instagram/Facebook) ve Google Ads platformlarında kampanyalarınızı profesyonelce yönetir, düzenli raporlama ile sonuçları paylaşırız.
+                </div>
+            </details>
+            <details class="faq-item reveal">
+                <summary>Proje sonrası destek var mı?</summary>
+                <div class="faq-answer">
+                    Evet. Standart pakette 15 gün, Kurumsal ve E-Ticaret paketlerinde 30 gün ücretsiz teknik destek sağlıyoruz. Destek süresinin ardından aylık bakım ve destek paketlerimiz mevcuttur.
+                </div>
+            </details>
+            <details class="faq-item reveal">
+                <summary>Mobil uygulama geliştiriyor musunuz?</summary>
+                <div class="faq-answer">
+                    Evet. iOS ve Android platformları için mobil uygulama geliştirme hizmeti sunuyoruz. Projenizin kapsamına göre özel fiyatlandırma yapılır. Detaylı bilgi için bizimle iletişime geçin.
+                </div>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- Structured Data: FAQ -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Web sitesi yaptırmak ne kadar sürer?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Standart web sitesi 2 iş günü, kurumsal web sitesi 3-5 iş günü, profesyonel e-ticaret sitesi ise 5-10 iş günü içinde teslim edilir."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Web sitesi fiyatları ne kadar?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Standart Web Sitesi 4.999 TL, Kurumsal Web Sitesi 9.999 TL ve Profesyonel E-Ticaret 35.000 TL'den başlamaktadır."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Reklam yönetimi nasıl çalışır?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Reklam yönetim hizmetimiz aylık abonelik şeklinde çalışır. Reklam bütçesi size ait olup, yönetim ücretimiz ayrıdır. Meta ve Google Ads platformlarında kampanyalarınızı profesyonelce yönetiriz."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Proje sonrası destek var mı?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Evet. Standart pakette 15 gün, Kurumsal ve E-Ticaret paketlerinde 30 gün ücretsiz teknik destek sağlıyoruz."
+            }
+        }
+    ]
+}
+</script>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     CTA BANNER
+     ═══════════════════════════════════════════════════════════ -->
+<section class="cta-banner">
+    <div class="container reveal">
+        <h2>Projeniz İçin <span class="text-gradient">İlk Adımı</span> Atın</h2>
+        <p>İşletmenizi dijitale taşıyalım. Ücretsiz ön görüşme için hemen iletişime geçin.</p>
+        <div class="hero-cta-group">
+            <a href="#iletisim" class="btn btn-primary btn-lg">
+                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                Teklif Al
+            </a>
+            <a href="#" class="btn btn-outline btn-lg" id="whatsappCta">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                WhatsApp ile Yazın
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     İLETİŞİM
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section" id="iletisim">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="badge badge-primary" style="margin-bottom: 16px; display: inline-flex;">İletişim</span>
+            <h2>Bizimle <span class="text-gradient">İletişime Geçin</span></h2>
+            <p>Projeniz hakkında konuşmak için formu doldurun veya doğrudan ulaşın.</p>
+        </div>
+
+        <div class="contact-grid">
+            <!-- İletişim Bilgileri -->
+            <div class="contact-info-list reveal">
+                <div class="contact-info-item">
+                    <div class="contact-info-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+                    <div class="contact-info-text">
+                        <h4>E-Posta</h4>
+                        <a href="mailto:info@novadigital.com.tr" id="contactEmail">info@novadigital.com.tr</a>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-info-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+                    <div class="contact-info-text">
+                        <h4>Telefon</h4>
+                        <a href="tel:+905070871789" id="contactPhone">0507 087 17 89</a>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-info-icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></div>
+                    <div class="contact-info-text">
+                        <h4>WhatsApp</h4>
+                        <a href="#" id="contactWhatsapp">0507 087 17 89</a>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-info-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+                    <div class="contact-info-text">
+                        <h4>Konum</h4>
+                        <p>Antalya, Türkiye</p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-info-icon"><i class="fa-brands fa-instagram" aria-hidden="true"></i></div>
+                    <div class="contact-info-text">
+                        <h4>Instagram</h4>
+                        <a href="https://instagram.com/novadigitalllll" target="_blank" rel="noopener noreferrer">@novadigitalllll</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <form class="contact-form reveal" id="contactForm" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="formName" class="form-label">Adınız *</label>
+                        <input type="text" id="formName" class="form-input" placeholder="Adınız Soyadınız" required autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="formBusiness" class="form-label">İşletme Adı</label>
+                        <input type="text" id="formBusiness" class="form-input" placeholder="İşletme / Firma Adı" autocomplete="organization">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="formPhone" class="form-label">Telefon / WhatsApp *</label>
+                        <input type="tel" id="formPhone" class="form-input" placeholder="05XX XXX XX XX" required autocomplete="tel">
+                    </div>
+                    <div class="form-group">
+                        <label for="formService" class="form-label">İlgilendiğiniz Hizmet</label>
+                        <select id="formService" class="form-input">
+                            <option value="" disabled selected>Hizmet Seçin</option>
+                            <option value="standart-web">Standart Web Sitesi</option>
+                            <option value="kurumsal-web">Kurumsal Web Sitesi</option>
+                            <option value="eticaret">Profesyonel E-Ticaret</option>
+                            <option value="reklam">Reklam Yönetimi</option>
+                            <option value="mobil-uygulama">Mobil Uygulama</option>
+                            <option value="ozel-yazilim">Özel Yazılım</option>
+                            <option value="diger">Diğer</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="formMessage" class="form-label">Projenizi Kısaca Anlatın</label>
+                    <textarea id="formMessage" class="form-input" rows="4" placeholder="Projeniz hakkında kısa bilgi verin..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">
+                    <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                    Gönder
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════════ -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="nav-logo">
+                    <img src="images/logo-nova-digital.png" alt="Nova Digital Logo" width="44" height="44" loading="lazy">
+                    <span class="nav-logo-text">Nova<span>Digital</span></span>
+                </a>
+                <p>İşletmenizi dijital dünyada görünür kılıyor, müşteri kazandıran altyapılar kuruyoruz.</p>
+                <div class="footer-socials">
+                    <a href="https://instagram.com/novadigitalllll" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://threads.net/@novadigitalllll" target="_blank" rel="noopener noreferrer" aria-label="Threads">
+                        <i class="fa-brands fa-threads" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Hizmetler</h4>
+                <a href="#hizmetler">Web Tasarım</a>
+                <a href="#hizmetler">E-Ticaret</a>
+                <a href="#reklam">Reklam Yönetimi</a>
+                <a href="#mobil-yazilim">Mobil Uygulama</a>
+                <a href="#mobil-yazilim">Özel Yazılım</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Şirket</h4>
+                <a href="#neden-nova">Hakkımızda</a>
+                <a href="#portfoy">Portföy</a>
+                <a href="#paketler">Paketler</a>
+                <a href="#sss">SSS</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>İletişim</h4>
+                <a href="mailto:info@novadigital.com.tr">info@novadigital.com.tr</a>
+                <a href="#" id="footerWhatsapp">WhatsApp</a>
+                <a href="#">Antalya, Türkiye</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>&copy; 2026 Nova Digital. Tüm hakları saklıdır.</span>
+            <span>Nova Digital Yazılım & Dijital Pazarlama</span>
+        </div>
+    </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     WHATSAPP FAB
+     ═══════════════════════════════════════════════════════════ -->
+<a href="#" class="whatsapp-fab" id="whatsappFab" aria-label="WhatsApp ile iletişime geçin" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+</a>
+
+
+<!-- Scripts -->
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
