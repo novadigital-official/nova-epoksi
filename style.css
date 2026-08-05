@@ -2357,3 +2357,80 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
         font-size: 0.8rem !important;
     }
 }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   CONVERSION PSYCHOLOGY LAYER & PROCESS STYLING
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Capacity Psychology Badge */
+.badge-capacity {
+    background: #FEF3C7 !important;
+    color: #92400E !important;
+    border: 1px solid #FDE68A !important;
+    font-weight: 700 !important;
+}
+
+/* 3-Step Process Section */
+.process-section {
+    background: #F8FAFC;
+    border-top: 1px solid var(--border-default);
+    border-bottom: 1px solid var(--border-default);
+}
+
+.process-card {
+    padding: 32px 28px;
+    background: #FFFFFF;
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-lg);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.process-step-num {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: #E2E8F0;
+    letter-spacing: -0.05em;
+}
+
+.process-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: #EFF6FF;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    margin-bottom: 20px;
+}
+
+.process-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.process-card p {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.process-tag {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
