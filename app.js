@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // ─── Horizontal Portfolio Carousel ───────────────────────
+        // ─── Horizontal Portfolio Carousel ───────────────────────
     const track = document.getElementById('portfolioTrack');
     const prevBtn = document.getElementById('portfolioPrev');
     const nextBtn = document.getElementById('portfolioNext');
@@ -267,14 +267,20 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update indicators on scroll
         track.addEventListener('scroll', () => {
             const index = Math.round(track.scrollLeft / getSlideWidth());
-            
-        // Mouse Drag to Scroll (Fare ile Tutup Sağa/Sola Sürükleme)
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        });
+
+        // Mouse Drag & Click Handling
         let isDown = false;
-        let startX;
-        let scrollLeftPos;
+        let startX = 0;
+        let scrollLeftPos = 0;
+        let hasDragged = false;
 
         track.addEventListener('mousedown', (e) => {
             isDown = true;
+            hasDragged = false;
             track.classList.add('dragging');
             startX = e.pageX - track.offsetLeft;
             scrollLeftPos = track.scrollLeft;
@@ -292,14 +298,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         track.addEventListener('mousemove', (e) => {
             if (!isDown) return;
-            e.preventDefault();
             const x = e.pageX - track.offsetLeft;
             const walk = (x - startX) * 1.8;
-            track.scrollLeft = scrollLeftPos - walk;
+            if (Math.abs(walk) > 5) {
+                hasDragged = true;
+                e.preventDefault();
+                track.scrollLeft = scrollLeftPos - walk;
+            }
         });
 
-        dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
+        // Prevent link click if user was dragging, allow click if just tapping/clicking
+        track.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (hasDragged) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
             });
         });
 
