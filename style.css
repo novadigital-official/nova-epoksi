@@ -2226,3 +2226,41 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
     border-color: #3B82F6 !important;
     box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1) !important;
 }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   REVİZYON: MAVİ KAPLAMA VE SAYFA AŞAĞI SIÇRAMA TEMİZLİĞİ
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Mavi kaplama katmanını tamamen kaldır */
+.portfolio-overlay {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* Görsel zemin temizliği ve yumuşak resim zoom efekti */
+.portfolio-thumb-wrap {
+    background: #F8FAFC !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.portfolio-card:hover .portfolio-thumb {
+    transform: scale(1.03) !important;
+}
+
+/* Kart hover durumunda sadece çok hafif border ve gölge yükselmesi (sıfır mavi kaplama) */
+.portfolio-card {
+    border: 1px solid #E2E8F0 !important;
+    background: #FFFFFF !important;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03) !important;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+    transform: none !important;
+}
+
+.portfolio-card:hover {
+    border-color: #3B82F6 !important;
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08) !important;
+    transform: none !important;
+}
