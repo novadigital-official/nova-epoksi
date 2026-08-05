@@ -12,7 +12,7 @@ const SITE_CONFIG = {
         ad:       "Nova Digital",
         slogan:   "Dijital Çözümler",
         unvan:    "Nova Digital Yazılım & Dijital Pazarlama",
-        adres:    "Antalya, Türkiye",
+        adres:    "Türkiye",
         eposta:   "info@novadigital.com.tr",
         telefon:  "+90 507 087 17 89",
     },

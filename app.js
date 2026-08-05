@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-            // ─── Horizontal Portfolio Carousel (Zero-Jitter, Pure Touch & Drag) ───
+                // ─── Horizontal Portfolio Carousel (Strict Hold & Drag, Immediate Release Lock) ───
     const track = document.getElementById('portfolioTrack');
     const prevBtn = document.getElementById('portfolioPrev');
     const nextBtn = document.getElementById('portfolioNext');
@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
             track.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
         });
 
-        // Update indicators strictly on scroll
+        // Indicators update
         track.addEventListener('scroll', () => {
             const index = Math.round(track.scrollLeft / getSlideWidth());
             dots.forEach((dot, i) => {
@@ -278,45 +278,74 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, { passive: true });
 
-        // Mouse Drag & Touch Swipe (Yalnızca kullanıcı müdahale ettiğinde çalışır)
-        let isDown = false;
+        // Strict Hold-and-Drag Logic
+        let isDragging = false;
         let startX = 0;
-        let scrollLeftPos = 0;
-        let hasDragged = false;
+        let startScrollLeft = 0;
+        let hasMoved = false;
 
-        track.addEventListener('mousedown', (e) => {
-            isDown = true;
-            hasDragged = false;
+        const stopDrag = () => {
+            if (!isDragging) return;
+            isDragging = false;
+            track.classList.remove('dragging');
+            // Bırakıldığı anda sofort kilitlenir ve en yakın slida yumuşakça oturur
+            track.style.scrollSnapType = 'x mandatory';
+            track.style.scrollBehavior = 'smooth';
+
+            const nearestIndex = Math.round(track.scrollLeft / getSlideWidth());
+            track.scrollTo({ left: nearestIndex * getSlideWidth(), behavior: 'smooth' });
+        };
+
+        const startDrag = (pageX) => {
+            isDragging = true;
+            hasMoved = false;
             track.classList.add('dragging');
-            startX = e.pageX - track.offsetLeft;
-            scrollLeftPos = track.scrollLeft;
-        });
+            track.style.scrollSnapType = 'none';
+            track.style.scrollBehavior = 'auto';
+            startX = pageX - track.offsetLeft;
+            startScrollLeft = track.scrollLeft;
+        };
 
-        track.addEventListener('mouseleave', () => {
-            isDown = false;
-            track.classList.remove('dragging');
-        });
+        const moveDrag = (pageX) => {
+            if (!isDragging) return;
+            const x = pageX - track.offsetLeft;
+            const distance = (x - startX);
+            if (Math.abs(distance) > 4) {
+                hasMoved = true;
+                track.scrollLeft = startScrollLeft - distance;
+            }
+        };
 
-        track.addEventListener('mouseup', () => {
-            isDown = false;
-            track.classList.remove('dragging');
-        });
-
+        // Mouse Events
+        track.addEventListener('mousedown', (e) => startDrag(e.pageX));
+        track.addEventListener('mouseleave', stopDrag);
+        track.addEventListener('mouseup', stopDrag);
         track.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            const x = e.pageX - track.offsetLeft;
-            const walk = (x - startX) * 1.5;
-            if (Math.abs(walk) > 6) {
-                hasDragged = true;
+            if (isDragging) {
                 e.preventDefault();
-                track.scrollLeft = scrollLeftPos - walk;
+                moveDrag(e.pageX);
             }
         });
 
-        // Tıklama esnasında sürükleme yoksa linki aç, sürükleme varsa engelle
+        // Touch Events (Mobil)
+        track.addEventListener('touchstart', (e) => {
+            if (e.touches.length === 1) {
+                startDrag(e.touches[0].pageX);
+            }
+        }, { passive: true });
+
+        track.addEventListener('touchend', stopDrag, { passive: true });
+        track.addEventListener('touchcancel', stopDrag, { passive: true });
+        track.addEventListener('touchmove', (e) => {
+            if (isDragging && e.touches.length === 1) {
+                moveDrag(e.touches[0].pageX);
+            }
+        }, { passive: true });
+
+        // Link Tıklama Koruması: Sadece sürükleme yoksa link açılır
         track.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', (e) => {
-                if (hasDragged) {
+                if (hasMoved) {
                     e.preventDefault();
                     e.stopPropagation();
                 }
