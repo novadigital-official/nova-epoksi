@@ -463,3 +463,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+// ─── HERO INTERACTIVE SECTOR SWITCHER ─────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+    const sectorPills = document.querySelectorAll('.sector-pill');
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+
+    const sectorTexts = {
+        'restoran': 'Restoranınız için sipariş ve online masa rezervasyonunu anında başlatan dijital vitrin.',
+        'guzellik': 'Danışanlarınızın 7/24 randevu alabildiği ve hizmet paketi incelediği şık salon altyapısı.',
+        'emlak': 'Gayrimenkul ilanlarınızı doğrudan WhatsApp teklifine dönüştüren hızlı portföy altyapısı.',
+        'klinik': 'Hastalarınızın güvenle danışmanlık ve online randevu talep ettiği sağlık altyapısı.',
+        'otel': 'Acentelere komisyon ödemeden doğrudan misafir çeken konaklama ve oda altyapısı.',
+        'eticaret': '7/24 kesintisiz ödeme alan ve stok takibi yapan online satış mağazası.'
+    };
+
+    sectorPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            sectorPills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+
+            const sector = pill.getAttribute('data-sector');
+            if (heroSubtitle && sectorTexts[sector]) {
+                heroSubtitle.textContent = sectorTexts[sector];
+            }
+        });
+    });
+});

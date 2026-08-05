@@ -2882,3 +2882,27 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
 .reveal {
     transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   INTERACTIVE EXPERIENCE & SECTOR PILLS CSS
+   ═══════════════════════════════════════════════════════════════ */
+
+.sector-pill {
+    background: #F1F5F9;
+    border: 1px solid #CBD5E1;
+    color: #475569;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sector-pill.active, .sector-pill:hover {
+    background: #2563EB;
+    color: #FFFFFF;
+    border-color: #2563EB;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
