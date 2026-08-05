@@ -2037,3 +2037,52 @@ textarea.form-input {
     align-items: center;
     gap: 6px;
 }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   REVİZYON: FARE İLE SÜRÜKLEME & MASAÜSTÜNDE YAN YANA PAKET KARTLARI
+   ═══════════════════════════════════════════════════════════════ */
+
+/* 1. FARE İLE SÜRÜKLEME (MOUSE DRAG CURSOR) */
+.portfolio-carousel-track {
+    cursor: grab !important;
+    user-select: none !important;
+}
+
+.portfolio-carousel-track.dragging {
+    cursor: grabbing !important;
+    scroll-snap-type: none !important; /* Drag anında snap yumuşatılır */
+}
+
+/* 2. MASAÜSTÜNDE YAN YANA MİNİMAL PAKET KARTLARI (DESKTOP SIDE-BY-SIDE) */
+@media (min-width: 992px) {
+    #paketler .grid-3 {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 24px !important;
+        align-items: stretch !important;
+    }
+
+    #paketler .pricing-card {
+        padding: 28px 24px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        height: 100% !important;
+    }
+
+    #paketler .pricing-amount strong {
+        font-size: 2.25rem !important;
+    }
+
+    #paketler .pricing-features {
+        margin-bottom: 24px !important;
+    }
+}
+
+@media (max-width: 991px) {
+    #paketler .grid-3 {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+}

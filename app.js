@@ -267,7 +267,38 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update indicators on scroll
         track.addEventListener('scroll', () => {
             const index = Math.round(track.scrollLeft / getSlideWidth());
-            dots.forEach((dot, i) => {
+            
+        // Mouse Drag to Scroll (Fare ile Tutup Sağa/Sola Sürükleme)
+        let isDown = false;
+        let startX;
+        let scrollLeftPos;
+
+        track.addEventListener('mousedown', (e) => {
+            isDown = true;
+            track.classList.add('dragging');
+            startX = e.pageX - track.offsetLeft;
+            scrollLeftPos = track.scrollLeft;
+        });
+
+        track.addEventListener('mouseleave', () => {
+            isDown = false;
+            track.classList.remove('dragging');
+        });
+
+        track.addEventListener('mouseup', () => {
+            isDown = false;
+            track.classList.remove('dragging');
+        });
+
+        track.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - track.offsetLeft;
+            const walk = (x - startX) * 1.8;
+            track.scrollLeft = scrollLeftPos - walk;
+        });
+
+        dots.forEach((dot, i) => {
                 dot.classList.toggle('active', i === index);
             });
         });
