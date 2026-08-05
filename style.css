@@ -2690,3 +2690,59 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
     z-index: 10 !important;
     white-space: nowrap !important;
 }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO & HEADER OPTIMIZATION REVISION CSS
+   ═══════════════════════════════════════════════════════════════ */
+
+.site-nav {
+    height: 76px !important;
+    backdrop-filter: blur(16px) !important;
+    background: rgba(5, 11, 20, 0.88) !important;
+}
+
+.hero {
+    min-height: calc(100vh - 76px) !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 40px 0 !important;
+}
+
+.hero-grid {
+    display: grid !important;
+    grid-template-columns: 55% 45% !important;
+    align-items: center !important;
+    gap: 40px !important;
+    width: 100% !important;
+}
+
+.hero-visual {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+.hero-visual-card {
+    max-width: 560px !important;
+    transform: none !important;
+    margin: 0 auto !important;
+}
+
+@media (max-width: 991px) {
+    .hero-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+    }
+    .hero-content {
+        order: 1 !important;
+    }
+    .hero-visual {
+        order: 2 !important;
+        margin-top: 30px !important;
+    }
+    .hero-cta-group {
+        justify-content: center !important;
+    }
+}
