@@ -284,16 +284,21 @@ document.addEventListener('DOMContentLoaded', () => {
         let startScrollLeft = 0;
         let hasMoved = false;
 
-        const stopDrag = () => {
+                const stopDrag = () => {
             if (!isDragging) return;
             isDragging = false;
             track.classList.remove('dragging');
-            // Bırakıldığı anda sofort kilitlenir ve en yakın slida yumuşakça oturur
-            track.style.scrollSnapType = 'x mandatory';
-            track.style.scrollBehavior = 'smooth';
 
-            const nearestIndex = Math.round(track.scrollLeft / getSlideWidth());
-            track.scrollTo({ left: nearestIndex * getSlideWidth(), behavior: 'smooth' });
+            // Eğer kullanıcı gerçekten sürüklemediyse (sadece tıkladıysa) karuseli hareket ettirme!
+            if (hasMoved) {
+                track.style.scrollSnapType = 'x mandatory';
+                track.style.scrollBehavior = 'smooth';
+                const nearestIndex = Math.round(track.scrollLeft / getSlideWidth());
+                track.scrollTo({ left: nearestIndex * getSlideWidth(), behavior: 'smooth' });
+            } else {
+                track.style.scrollSnapType = 'x mandatory';
+                track.style.scrollBehavior = 'smooth';
+            }
         };
 
         const startDrag = (pageX) => {

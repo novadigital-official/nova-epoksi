@@ -2178,3 +2178,51 @@ textarea:focus-visible {
     box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12) !important;
     transform: none !important; /* Dikey kayma kaldırıldı, layout titremesi çözüldü */
 }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   PREVENT BLUE SELECTION HIGHLIGHT & ZERO TEXT OVERFLOW
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Mavi Ekran Seçim Vurgusunu Engelle (Prevent Blue Highlight) */
+.portfolio-carousel-track,
+.portfolio-card,
+.portfolio-card *,
+.portfolio-thumb-wrap,
+.portfolio-thumb,
+.browser-window-bar {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    -webkit-user-drag: none !important;
+}
+
+/* Sıfır Taşma ve Kusursuz Tipografi Güvenliği (Zero Text Overflow) */
+h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    hyphens: manual !important;
+    max-width: 100% !important;
+}
+
+/* Yaratıcılık Harikası Mikro İnce Detaylar */
+.portfolio-card {
+    border: 1px solid #E2E8F0 !important;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%) !important;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04) !important;
+}
+
+.portfolio-thumb-wrap {
+    border-bottom: 1px solid #F1F5F9 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Mavi parlamayan modern hafif border efekti */
+.portfolio-card:hover {
+    border-color: #3B82F6 !important;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1) !important;
+}
