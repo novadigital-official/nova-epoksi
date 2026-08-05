@@ -2637,3 +2637,41 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
         font-size: 0.82rem !important;
     }
 }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   FINAL BUSINESS GROWTH & PRICING PSYCHOLOGY CSS
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Pricing Badge Popular & Sales Emphasis */
+.pricing-badge-popular {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 5px 16px;
+    border-radius: 20px;
+    letter-spacing: 0.04em;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    white-space: nowrap;
+}
+
+/* Solution-Framed Sector Cards */
+.sector-card h3 {
+    font-size: 1.15rem !important;
+    font-weight: 800 !important;
+    color: #0F172A !important;
+    margin-bottom: 8px !important;
+    line-height: 1.35 !important;
+}
+
+.sector-card p {
+    font-size: 0.88rem !important;
+    color: #475569 !important;
+    line-height: 1.55 !important;
+    margin-bottom: 16px !important;
+}
