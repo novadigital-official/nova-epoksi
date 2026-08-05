@@ -2086,3 +2086,26 @@ textarea.form-input {
         gap: 20px !important;
     }
 }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   ACCESSIBILITY & TACTILE FEEDBACK (WCAG 2.1 AA COMPLIANCE)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Focus-Visible Outline for Keyboard Navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--color-primary) !important;
+    outline-offset: 3px !important;
+}
+
+/* Tactile Active Tap/Click Feedback */
+.btn:active,
+.carousel-nav-btn:active,
+.filter-btn:active,
+.card:active {
+    transform: scale(0.98) !important;
+}

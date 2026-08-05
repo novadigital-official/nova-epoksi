@@ -209,12 +209,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let isValid = true;
 
-            if (!name.value.trim()) {
+            if (!name.value.trim() || name.value.trim().length < 2) {
                 name.classList.add('invalid');
                 name.focus();
                 isValid = false;
             }
-            if (!phone.value.trim()) {
+
+            const cleanPhone = phone.value.replace(/\D/g, '');
+            if (!phone.value.trim() || cleanPhone.length < 10) {
                 phone.classList.add('invalid');
                 if (isValid) phone.focus();
                 isValid = false;
@@ -229,10 +231,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let wpMessage = `Merhaba, Nova Digital üzerinden iletişime geçiyorum.\n\n`;
             wpMessage += `Ad: ${name.value.trim()}\n`;
-            if (business.value.trim()) wpMessage += `İşletme: ${business.value.trim()}\n`;
+            if (business && business.value.trim()) wpMessage += `İşletme: ${business.value.trim()}\n`;
             wpMessage += `Telefon: ${phone.value.trim()}\n`;
-            if (service.value) wpMessage += `Hizmet: ${service.options[service.selectedIndex].text}\n`;
-            if (message.value.trim()) wpMessage += `\nMesaj: ${message.value.trim()}`;
+            if (service && service.value && service.options?.[service.selectedIndex]) {
+                wpMessage += `Hizmet: ${service.options[service.selectedIndex].text}\n`;
+            }
+            if (message && message.value.trim()) wpMessage += `\nMesaj: ${message.value.trim()}`;
 
             const formWpUrl = `https://wa.me/${SITE_CONFIG.whatsapp.numara}?text=${encodeURIComponent(wpMessage)}`;
             window.open(formWpUrl, '_blank', 'noopener,noreferrer');

@@ -27,8 +27,6 @@ const SITE_CONFIG = {
     sosyal: {
         instagram: "https://instagram.com/novadigitalllll",
         threads:   "https://threads.net/@novadigitalllll",
-        linkedin:  "",
-        youtube:   "",
     },
 
     // ─── Web Sitesi Paketleri (Stratejik Konumlandırma) ──────
