@@ -2559,3 +2559,81 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
     gap: 16px;
     flex-wrap: wrap;
 }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   REVİZYON: PORTFÖY KART METİN ÜST ÜSTE BİNME & KOMPAKT YAZI DÜZELTMESİ
+   ═══════════════════════════════════════════════════════════════ */
+
+.portfolio-info {
+    padding: 18px 20px !important;
+}
+
+.portfolio-meta {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 8px 12px !important;
+    justify-content: flex-start !important;
+    margin-bottom: 10px !important;
+    width: 100% !important;
+}
+
+.portfolio-meta .badge {
+    margin: 0 !important;
+    font-size: 0.72rem !important;
+    padding: 3px 10px !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.portfolio-type-tag {
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    color: #64748B !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+}
+
+.portfolio-info h3 {
+    font-size: 1.125rem !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    margin-bottom: 6px !important;
+    color: #0F172A !important;
+}
+
+.portfolio-info p {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+    color: #475569 !important;
+}
+
+/* Section Header Kompakt Başlık Düzeni */
+.section-header h2 {
+    font-size: clamp(1.4rem, 5vw, 2.25rem) !important;
+    line-height: 1.3 !important;
+    max-width: 600px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+@media (max-width: 640px) {
+    .portfolio-info {
+        padding: 14px 16px !important;
+    }
+    .portfolio-meta {
+        gap: 6px 10px !important;
+        margin-bottom: 8px !important;
+    }
+    .portfolio-type-tag {
+        font-size: 0.7rem !important;
+    }
+    .portfolio-info h3 {
+        font-size: 1.05rem !important;
+    }
+    .portfolio-info p {
+        font-size: 0.82rem !important;
+    }
+}
