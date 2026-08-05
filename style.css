@@ -2791,3 +2791,94 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
     display: flex !important;
     align-items: center !important;
 }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   STRIPE / VERCEL / APPLE 2026 PREMIUM DESIGN SYSTEM REFACTOR
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+    --space-section: 130px; /* Apple-level breathable section spacing */
+    --radius-premium: 24px;
+    --shadow-premium: 0 20px 60px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 30px 80px rgba(37, 99, 235, 0.12);
+    --color-accent: #2563EB;
+}
+
+/* SECTION SPACING & BREATHABILITY */
+.section {
+    padding: var(--space-section) 0 !important;
+}
+
+/* CARD PREMIUM ELEVATION */
+.card {
+    border-radius: var(--radius-premium) !important;
+    background: #FFFFFF !important;
+    border: 1px solid rgba(226, 232, 240, 0.8) !important;
+    box-shadow: var(--shadow-premium) !important;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: var(--shadow-hover) !important;
+    border-color: rgba(37, 99, 235, 0.3) !important;
+}
+
+/* GLASS NAVBAR */
+.site-nav {
+    height: 76px !important;
+    background: rgba(255, 255, 255, 0.78) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.7) !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* PREMIUM BUTTON WITH ACCENT GLOW */
+.btn-primary {
+    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
+    color: #FFFFFF !important;
+    border-radius: 14px !important;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.28) !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 16px 40px rgba(37, 99, 235, 0.4) !important;
+}
+
+/* HERO GRID 1fr 0.9fr ALIGNMENT */
+.hero {
+    min-height: calc(100vh - 76px) !important;
+    display: flex !important;
+    align-items: center !important;
+    padding-top: 100px !important;
+    padding-bottom: 60px !important;
+}
+
+.hero-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 0.9fr !important;
+    align-items: center !important;
+    gap: 48px !important;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 5.5vw, 3.8rem) !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.03em !important;
+    line-height: 1.15 !important;
+}
+
+/* CAROUSEL CARDS 340px WIDTH */
+.portfolio-slide {
+    flex: 0 0 360px !important;
+    max-width: 360px !important;
+}
+
+/* MICRO INTERACTION ANIMATION */
+.reveal {
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
