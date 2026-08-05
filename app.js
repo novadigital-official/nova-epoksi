@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-        // ─── Horizontal Portfolio Carousel ───────────────────────
+            // ─── Horizontal Portfolio Carousel (Zero-Jitter, Pure Touch & Drag) ───
     const track = document.getElementById('portfolioTrack');
     const prevBtn = document.getElementById('portfolioPrev');
     const nextBtn = document.getElementById('portfolioNext');
@@ -260,23 +260,25 @@ document.addEventListener('DOMContentLoaded', () => {
             return slide ? slide.offsetWidth + 24 : 340;
         };
 
-        prevBtn.addEventListener('click', () => {
+        prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
             track.scrollBy({ left: -getSlideWidth(), behavior: 'smooth' });
         });
 
-        nextBtn.addEventListener('click', () => {
+        nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
             track.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
         });
 
-        // Update indicators on scroll
+        // Update indicators strictly on scroll
         track.addEventListener('scroll', () => {
             const index = Math.round(track.scrollLeft / getSlideWidth());
             dots.forEach((dot, i) => {
                 dot.classList.toggle('active', i === index);
             });
-        });
+        }, { passive: true });
 
-        // Mouse Drag & Click Handling
+        // Mouse Drag & Touch Swipe (Yalnızca kullanıcı müdahale ettiğinde çalışır)
         let isDown = false;
         let startX = 0;
         let scrollLeftPos = 0;
@@ -303,15 +305,15 @@ document.addEventListener('DOMContentLoaded', () => {
         track.addEventListener('mousemove', (e) => {
             if (!isDown) return;
             const x = e.pageX - track.offsetLeft;
-            const walk = (x - startX) * 1.8;
-            if (Math.abs(walk) > 5) {
+            const walk = (x - startX) * 1.5;
+            if (Math.abs(walk) > 6) {
                 hasDragged = true;
                 e.preventDefault();
                 track.scrollLeft = scrollLeftPos - walk;
             }
         });
 
-        // Prevent link click if user was dragging, allow click if just tapping/clicking
+        // Tıklama esnasında sürükleme yoksa linki aç, sürükleme varsa engelle
         track.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', (e) => {
                 if (hasDragged) {
@@ -322,7 +324,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         dots.forEach((dot, i) => {
-            dot.addEventListener('click', () => {
+            dot.addEventListener('click', (e) => {
+                e.preventDefault();
                 track.scrollTo({ left: i * getSlideWidth(), behavior: 'smooth' });
             });
         });

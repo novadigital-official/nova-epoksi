@@ -2109,3 +2109,72 @@ textarea:focus-visible {
 .card:active {
     transform: scale(0.98) !important;
 }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   REVİZYON: PORTFÖY KART SALLANMA / OYNAMA DÜZELTMESİ (ZERO JITTER)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Track sabit kalır, dokunmadan veya sürüklemeden asla oynamaz */
+.portfolio-carousel-track {
+    display: flex !important;
+    gap: 24px !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 12px 4px 20px !important;
+    scrollbar-width: none !important;
+    cursor: grab !important;
+    user-select: none !important;
+}
+
+.portfolio-carousel-track::-webkit-scrollbar {
+    display: none !important;
+}
+
+.portfolio-slide {
+    flex: 0 0 100% !important;
+    scroll-snap-align: start !important;
+    scroll-snap-stop: always !important;
+}
+
+@media (min-width: 640px) {
+    .portfolio-slide {
+        flex: 0 0 calc(50% - 12px) !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .portfolio-slide {
+        flex: 0 0 calc(45% - 12px) !important;
+    }
+}
+
+/* Sürükleme anında snap iptal edilerek akıcılık sağlanır */
+.portfolio-carousel-track.dragging {
+    cursor: grabbing !important;
+    scroll-snap-type: none !important;
+    scroll-behavior: auto !important;
+}
+
+/* Kart hover esnasında transform kaldırıldı -> Titreme ve kendi kendine oynama riski %100 engellendi */
+.portfolio-slide .portfolio-card {
+    transform: none !important;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+    border: 1px solid var(--border-default) !important;
+    background: #FFFFFF !important;
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+.portfolio-slide .portfolio-card:hover {
+    border-color: #3B82F6 !important;
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12) !important;
+    transform: none !important; /* Dikey kayma kaldırıldı, layout titremesi çözüldü */
+}
