@@ -2675,3 +2675,18 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
     line-height: 1.55 !important;
     margin-bottom: 16px !important;
 }
+
+/* Fix Pricing Card Badge Overflow Alignment */
+.pricing-card.featured {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+.pricing-badge-popular {
+    position: absolute !important;
+    top: -14px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 10 !important;
+    white-space: nowrap !important;
+}
