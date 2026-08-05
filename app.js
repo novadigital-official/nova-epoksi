@@ -242,4 +242,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+
+    // ─── Horizontal Portfolio Carousel ───────────────────────
+    const track = document.getElementById('portfolioTrack');
+    const prevBtn = document.getElementById('portfolioPrev');
+    const nextBtn = document.getElementById('portfolioNext');
+    const dots = document.querySelectorAll('.carousel-dot');
+
+    if (track && prevBtn && nextBtn) {
+        const getSlideWidth = () => {
+            const slide = track.querySelector('.portfolio-slide');
+            return slide ? slide.offsetWidth + 24 : 340;
+        };
+
+        prevBtn.addEventListener('click', () => {
+            track.scrollBy({ left: -getSlideWidth(), behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            track.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
+        });
+
+        // Update indicators on scroll
+        track.addEventListener('scroll', () => {
+            const index = Math.round(track.scrollLeft / getSlideWidth());
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        });
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                track.scrollTo({ left: i * getSlideWidth(), behavior: 'smooth' });
+            });
+        });
+    }
 });
