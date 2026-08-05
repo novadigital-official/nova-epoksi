@@ -662,15 +662,33 @@ body {
 
 
 /* ═══════════════════════════════════════════════════════════════
-   HİZMETLER
+   HİZMETLER (Ürünleşmiş Modern Tasarım)
    ═══════════════════════════════════════════════════════════════ */
 
 .service-card {
-    padding: var(--space-6);
+    padding: var(--space-7);
     text-align: left;
+    position: relative;
+    overflow: hidden;
 }
 @media (min-width: 768px) {
     .service-card { padding: var(--space-8); }
+}
+
+.service-num {
+    position: absolute;
+    top: var(--space-5);
+    right: var(--space-6);
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-extrabold);
+    color: #E2E8F0;
+    line-height: 1;
+    transition: color var(--speed-normal) var(--ease-default);
+}
+
+.service-card:hover .service-num {
+    color: var(--color-primary-light);
 }
 
 .service-icon {
@@ -964,6 +982,57 @@ body {
     flex-direction: column;
     text-decoration: none;
     color: inherit;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-default);
+    background: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* ─── Browser Window UI Mockup Header (macOS/Chrome Style) ─── */
+.browser-window-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-2.5) var(--space-4);
+    background: #F1F5F9;
+    border-bottom: 1px solid #E2E8F0;
+    font-size: var(--text-xs);
+}
+
+.browser-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.dot-red { background: #FF5F56; }
+.dot-yellow { background: #FFBD2E; }
+.dot-green { background: #27C93F; }
+
+.browser-url {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    background: #FFFFFF;
+    padding: 2px 12px;
+    border-radius: var(--radius-full);
+    border: 1px solid #E2E8F0;
+    font-weight: var(--weight-medium);
+}
+
+.browser-ext-icon {
+    color: var(--color-primary);
+    font-size: 0.75rem;
+}
+
+.portfolio-type-tag {
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semibold);
+    color: var(--text-muted);
 }
 
 .portfolio-thumb-wrap {
