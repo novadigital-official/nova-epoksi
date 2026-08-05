@@ -321,23 +321,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        // Mouse Events
-        track.addEventListener('mousedown', (e) => startDrag(e.pageX));
-        track.addEventListener('mouseleave', stopDrag);
-        track.addEventListener('mouseup', stopDrag);
-        track.addEventListener('mousemove', (e) => {
-            if (isDragging) {
-                e.preventDefault();
-                moveDrag(e.pageX);
-            }
-        });
+                // Touch Events: Mobilde tamamen yerel CSS 60fps swipe bırakan temiz mantık
+        const isMobileDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
-        // Touch Events (Mobil)
-        track.addEventListener('touchstart', (e) => {
-            if (e.touches.length === 1) {
-                startDrag(e.touches[0].pageX);
-            }
-        }, { passive: true });
+        if (!isMobileDevice) {
+            track.addEventListener('mousedown', (e) => {
+                if (e.button !== 0) return;
+                startDrag(e.pageX);
+            });
+            track.addEventListener('mouseleave', stopDrag);
+            track.addEventListener('mouseup', stopDrag);
+            track.addEventListener('mousemove', (e) => {
+                if (isDragging) {
+                    e.preventDefault();
+                    moveDrag(e.pageX);
+                }
+            });
+        }
 
         track.addEventListener('touchend', stopDrag, { passive: true });
         track.addEventListener('touchcancel', stopDrag, { passive: true });
