@@ -364,4 +364,102 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // ─── Blog Article Reader Modal ───────────────────────────
+    const blogModal = document.getElementById('blogModal');
+    const blogModalClose = document.getElementById('blogModalClose');
+    const blogModalBody = document.getElementById('blogModalBody');
+    const blogBtns = document.querySelectorAll('.open-blog-btn');
+
+    const articlesData = {
+        fiyatlar: {
+            badge: "2026 Web Rehberi",
+            title: "2026 Web Sitesi Fiyatları Rehberi",
+            html: `
+                <p>İşletmeniz için bir web sitesi yaptırırken karşılaştığınız fiyat farkları kafa karıştırıcı olabilir. 4.000 TL'den başlayıp 100.000 TL'ye kadar çıkan bu skalada doğru kararı nasıl vermelisiniz?</p>
+                <p><strong>Bütçenizi Belirlerken Dikkat Etmeniz Gereken 3 Temel Kriter:</strong></p>
+                <ul>
+                    <li><strong>Altyapı ve Lisans Maliyeti:</strong> SSL sertifikası, alan adı ve yüksek hızlı sunucu dahiliyeti.</li>
+                    <li><strong>Mobil & SEO Uyumluluğu:</strong> Web sitenizin Google arama sonuçlarında üst sıralara çıkması için gerekli kodlama kalitesi.</li>
+                    <li><strong>Yönetim Paneli Kolaylığı:</strong> İçeriklerinizi ve ürünlerinizi kendinizin kolayca güncelleyebilmesi.</li>
+                </ul>
+                <p>Nova Digital olarak <strong>Standart Web Paketini 4.999 TL</strong>, <strong>Kurumsal Yönetim Panelli Paketini ise 9.999 TL</strong> olarak şeffaf fiyatlandırma politikasıyla sunuyoruz.</p>
+                <div class="blog-article-cta">
+                    <span>Siteniz için hemen teklif almak ister misiniz?</span>
+                    <a href="#iletisim" onclick="document.getElementById('blogModal').classList.remove('active');" class="btn btn-primary btn-sm">Teklif Al</a>
+                </div>
+            `
+        },
+        turizm: {
+            badge: "Turizm & Otel SEO",
+            title: "Turizm & Otel Web Sitesi Nasıl Yapılmalı?",
+            html: `
+                <p>Otel ve konaklama tesisleri için web sitesi sadece bir tanıtım aracı değil, komisyonsuz doğrudan rezervasyon getiren bir satış kanalıdır.</p>
+                <p><strong>Başarılı Bir Otel Web Sitesinin 4 Olmazsa Olmazı:</strong></p>
+                <ul>
+                    <li><strong>Çok Dilli Altyapı:</strong> Türkçe, İngilizce, Almanca ve Rusça dil seçenekleri.</li>
+                    <li><strong>Yüksek Çözünürlüklü Oda Galerileri:</strong> Misafirlerin odaları ve tesis imkanlarını saniyeler içinde keşfetmesi.</li>
+                    <li><strong>Hızlı WhatsApp / Rezervasyon Yönlendirmesi:</strong> Acentelere komisyon ödemeden doğrudan müşteriyle iletişim kurma.</li>
+                    <li><strong>Google Harita ve Konum Entegrasyonu:</strong> Tesisin ulaşım kolaylığını net şekilde gösterme.</li>
+                </ul>
+                <p>Nova Digital kurumsal otel web altyapıları ile tesisinizin doluluk oranını doğrudan dijitalden artırıyoruz.</p>
+                <div class="blog-article-cta">
+                    <span>Oteliniz için profesyonel web altyapısını konuşalım:</span>
+                    <a href="#iletisim" onclick="document.getElementById('blogModal').classList.remove('active');" class="btn btn-primary btn-sm">Projenizi Konuşalım</a>
+                </div>
+            `
+        },
+        reklam: {
+            badge: "Google Ads & Meta Rehberi",
+            title: "Google Ads ile Müşteri Kazanma Yolları",
+            html: `
+                <p>Dijital reklamcılıkta en büyük hata, bütçeyi doğru hedef kitleye ulaştırmadan harcamaktır. Google Ads reklamları ile doğrudan ürün ve hizmetinizi arayan müşterilere ulaşırsınız.</p>
+                <p><strong>Reklam Bütçenizi Katlayan 3 Önemli Strateji:</strong></p>
+                <ul>
+                    <li><strong>Negatif Anahtar Kelime Kullanımı:</strong> Gereksiz aramalarda reklamınızın çıkmasını engelleyerek bütçenizi korur.</li>
+                    <li><strong>Açılış Sayfası (Landing Page) Uyumu:</strong> Reklama tıklayan müşterinin aradığı cevabı saniyeler içinde bulması dönüşümü %300 artırır.</li>
+                    <li><strong>WhatsApp ve Arama Dönüşüm Takibi:</strong> Hangi kelimeden kaç telefon geldiğini ölçerek bütçeyi kazandıran kelimelere aktarma.</li>
+                </ul>
+                <p>Nova Digital reklam yönetimi hizmetimizle bütçenizi boşa harcamadan dönüşüm odaklı kampanyalar kurguluyoruz.</p>
+                <div class="blog-article-cta">
+                    <span>Reklam bütçenizi büyütmek için ücretsiz analiz isteyin:</span>
+                    <a href="#iletisim" onclick="document.getElementById('blogModal').classList.remove('active');" class="btn btn-primary btn-sm">Ücretsiz Analiz Al</a>
+                </div>
+            `
+        }
+    };
+
+    if (blogModal && blogModalClose) {
+        blogBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const key = btn.getAttribute('data-article');
+                const article = articlesData[key];
+                if (article) {
+                    blogModalBody.innerHTML = `
+                        <span class="article-badge">${article.badge}</span>
+                        <h2>${article.title}</h2>
+                        ${article.html}
+                    `;
+                    blogModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        const closeBlogModal = () => {
+            blogModal.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        blogModalClose.addEventListener('click', closeBlogModal);
+        blogModal.addEventListener('click', (e) => {
+            if (e.target === blogModal) closeBlogModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && blogModal.classList.contains('active')) {
+                closeBlogModal();
+            }
+        });
+    }
 });

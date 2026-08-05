@@ -839,29 +839,41 @@
         </div>
 
         <div class="grid grid-3 reveal-stagger">
-            <article class="card blog-card reveal">
+            <article class="card blog-card reveal" data-article="fiyatlar">
                 <div class="blog-date"><i class="fa-regular fa-calendar"></i> 2026 Rehberi</div>
                 <h3>2026 Web Sitesi Fiyatları Rehberi</h3>
                 <p>İşletmeniz için web sitesi yaptırırken bütçenizi nasıl doğru yönetmelisiniz?</p>
-                <a href="#iletisim" class="blog-link">Devamını Oku <i class="fa-solid fa-arrow-right"></i></a>
+                <button class="blog-link open-blog-btn" data-article="fiyatlar">Devamını Oku <i class="fa-solid fa-arrow-right"></i></button>
             </article>
 
-            <article class="card blog-card reveal">
+            <article class="card blog-card reveal" data-article="turizm">
                 <div class="blog-date"><i class="fa-regular fa-calendar"></i> Turizm SEO</div>
                 <h3>Turizm & Otel Web Sitesi Nasıl Yapılmalı?</h3>
                 <p>Turizm sektöründe doğrudan rezervasyon çekmek için olmazsa olmaz 5 web kriteri.</p>
-                <a href="#iletisim" class="blog-link">Devamını Oku <i class="fa-solid fa-arrow-right"></i></a>
+                <button class="blog-link open-blog-btn" data-article="turizm">Devamını Oku <i class="fa-solid fa-arrow-right"></i></button>
             </article>
 
-            <article class="card blog-card reveal">
+            <article class="card blog-card reveal" data-article="reklam">
                 <div class="blog-date"><i class="fa-regular fa-calendar"></i> Reklam Rehberi</div>
                 <h3>Google Ads ile Müşteri Kazanma Yolları</h3>
                 <p>Reklam bütçenizi boşa harcamadan doğru hedef kitleye ulaşmanın püf noktaları.</p>
-                <a href="#iletisim" class="blog-link">Devamını Oku <i class="fa-solid fa-arrow-right"></i></a>
+                <button class="blog-link open-blog-btn" data-article="reklam">Devamını Oku <i class="fa-solid fa-arrow-right"></i></button>
             </article>
         </div>
     </div>
 </section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     BLOG OKUMA MODALI (INTERACTIVE ARTICLE READER)
+     ═══════════════════════════════════════════════════════════ -->
+<div class="blog-modal-backdrop" id="blogModal">
+    <div class="blog-modal-card">
+        <button class="blog-modal-close" id="blogModalClose" aria-label="Kapat">&times;</button>
+        <div class="blog-modal-body" id="blogModalBody">
+            <!-- Dinamik İletişim Metni Buraya Yüklenir -->
+        </div>
+    </div>
+</div>
 
 
 <!-- ═══════════════════════════════════════════════════════════
