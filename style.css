@@ -2746,3 +2746,48 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
         justify-content: center !important;
     }
 }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   NAVBAR COLOR & HERO TOP OVERLAP FIX
+   ═══════════════════════════════════════════════════════════════ */
+
+.site-nav {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 76px !important;
+    z-index: 1000 !important;
+    background: rgba(255, 255, 255, 0.94) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-bottom: 1px solid #E2E8F0 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+.nav-menu a {
+    color: #334155 !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+}
+
+.nav-menu a:hover {
+    color: #2563EB !important;
+}
+
+.nav-logo-text {
+    color: #0F172A !important;
+    font-weight: 800 !important;
+}
+
+.nav-logo-text span {
+    color: #2563EB !important;
+}
+
+.hero {
+    padding-top: 120px !important; /* Eliminates any text sticking under navbar */
+    min-height: calc(100vh - 76px) !important;
+    display: flex !important;
+    align-items: center !important;
+}
