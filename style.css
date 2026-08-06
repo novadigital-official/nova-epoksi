@@ -3135,3 +3135,19 @@ body {
     }
 }
 
+
+/* ═══════════════════════════════════════════════════════════
+   EQUAL SECTION SPACING & SUBTLE ALTERNATING LUXURY GRADIENT BACKGROUNDS
+   ═══════════════════════════════════════════════════════════ */
+.section {
+    padding: 96px 0 !important;
+    position: relative;
+}
+
+#hizmetler { background: #FFFFFF !important; }
+#paketler { background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%) !important; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0; }
+#portfoy { background: #FFFFFF !important; }
+#surec { background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%) !important; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0; }
+#sss { background: #FFFFFF !important; }
+#blog { background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%) !important; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0; }
+#iletisim { background: #FFFFFF !important; }
