@@ -3891,3 +3891,27 @@ h1, h2 {
     display: inline-block !important;
   }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   MOBİL BAŞLIK ÇAKIŞMASI & FLEX SPACING TAM DÜZELTME — 2026-08-06
+   ═══════════════════════════════════════════════════════════ */
+@media only screen and (max-width: 768px) {
+  .section-header {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important; /* Etiket, başlık ve paragrafı birbirinden ayırır */
+  }
+  
+  h1, h2, h3, .hero-title, .section-title, .section-header h2, .hero-content h1 {
+    line-height: 1.4 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    letter-spacing: normal !important;
+  }
+
+  .badge, .badge-text, .sub-title, .hero-badge, .section-header .badge {
+    display: inline-flex !important;
+    margin-bottom: 0 !important;
+  }
+}
