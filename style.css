@@ -3465,3 +3465,60 @@ h1, h2 {
 
 @media (prefers-reduced-motion: reduce) {
     }
+
+
+/* ═══════════════════════════════════════════════════════════
+   AURORA MESH & TRUST COUNTER LAYER — 2026-08-06
+   ═══════════════════════════════════════════════════════════ */
+
+/* 1. Nefes Alan 25-Saniye CSS Aurora Mesh Glow Animation */
+@keyframes auroraPulse {
+    0% {
+        transform: translate3d(-10%, -10%, 0) scale(1);
+        opacity: 0.05;
+    }
+    50% {
+        transform: translate3d(10%, 15%, 0) scale(1.15);
+        opacity: 0.08;
+    }
+    100% {
+        transform: translate3d(-10%, -10%, 0) scale(1);
+        opacity: 0.05;
+    }
+}
+
+.aurora-mesh-glow {
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(circle at 30% 30%, var(--color-primary-glow, rgba(37, 99, 235, 0.18)), transparent 60%),
+                radial-gradient(circle at 70% 70%, rgba(8, 145, 178, 0.12), transparent 60%);
+    filter: blur(120px);
+    animation: auroraPulse 25s ease-in-out infinite;
+    will-change: transform, opacity;
+}
+
+/* 2. Stat Number Live Counter Styling */
+.stat-number {
+    font-weight: 800;
+    color: var(--color-primary, #2563EB);
+}
+
+/* 3. Accessibility & Mobile Optimization Overrides */
+@media (max-width: 768px) {
+    .aurora-mesh-glow {
+        animation: none;
+        opacity: 0.04;
+        filter: blur(80px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .aurora-mesh-glow {
+        animation: none;
+    }
+}

@@ -628,4 +628,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+    // ─── AURORA & TRUST LOGIC — 2026-08-06 ─────────────────────
+
+    // Animated Live Counter for Trust Strip
+    const liveCounters = document.querySelectorAll('.stat-number');
+    if (liveCounters.length > 0) {
+        const runCounter = (el) => {
+            const targetVal = parseFloat(el.getAttribute('data-count'));
+            if (isNaN(targetVal)) return;
+            const duration = 1600;
+            const startTime = performance.now();
+
+            const updateCount = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeOutQuad = progress * (2 - progress);
+                const current = Math.floor(targetVal * easeOutQuad);
+                el.textContent = current;
+                if (progress < 1) {
+                    requestAnimationFrame(updateCount);
+                } else {
+                    el.textContent = targetVal;
+                }
+            };
+            requestAnimationFrame(updateCount);
+        };
+
+        const trustObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    runCounter(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.4 });
+
+        liveCounters.forEach(c => trustObserver.observe(c));
+    }
+
 });
