@@ -3206,3 +3206,96 @@ body {
     .text-gradient { animation: none !important; }
     .section .card { transition: none !important; transform: none !important; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   SIGNATURE INTERACTIONS — 2026-08-06
+   ═══════════════════════════════════════════════════════════ */
+
+/* 1. Hero Blur-To-Focus Title Entrance Animation */
+@keyframes heroBlurFocus {
+    0% {
+        opacity: 0;
+        filter: blur(12px);
+        transform: translateY(16px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0px);
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hero-title-blur-focus {
+    animation: heroBlurFocus 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 2. Magnetic Button Smooth Hardware Acceleration */
+.btn-primary, .btn-lg {
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 3. Portfolio Card Hover Zoom & Expand Detail Polish */
+.portfolio-card {
+    overflow: hidden;
+}
+
+.portfolio-card .portfolio-thumb {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-card:hover .portfolio-thumb {
+    transform: scale(1.05);
+}
+
+.portfolio-card .portfolio-info h3 {
+    transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-card:hover .portfolio-info h3 {
+    color: var(--color-primary, #2563EB);
+}
+
+/* 4. Scroll Reveal Variations (Left Slide & Scale Entrance) */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.93);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.active,
+.reveal-scale.active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+/* 5. Mobile & Reduced Motion Safety Overrides */
+@media (max-width: 768px) {
+    .btn-primary, .btn-lg {
+        transform: none !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-title-blur-focus {
+        animation: none;
+        opacity: 1;
+        filter: none;
+        transform: none;
+    }
+    .reveal-left, .reveal-scale {
+        transition: none;
+        opacity: 1;
+        transform: none;
+    }
+    .portfolio-card .portfolio-thumb {
+        transition: none;
+        transform: none;
+    }
+}

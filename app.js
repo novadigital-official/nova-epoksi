@@ -501,5 +501,73 @@ document.addEventListener('DOMContentLoaded', () => {
                 heroSubtitle.textContent = sectorTexts[sector];
             }
         });
-    });
+    
+    // ─── SIGNATURE INTERACTION LOGIC — 2026-08-06 ─────────────
+
+    // 1. Hero Blur-To-Focus Title Activation
+    const heroH1 = document.querySelector('.hero-content h1');
+    if (heroH1) {
+        heroH1.classList.add('hero-title-blur-focus');
+    }
+
+    // 2. Magnetic Button Effect (Desktop Only)
+    const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!isTouchDevice && !prefersReducedMotion) {
+        const magneticBtns = document.querySelectorAll('.btn-primary, .hero-cta-group .btn');
+        magneticBtns.forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const btnCenterX = rect.left + rect.width / 2;
+                const btnCenterY = rect.top + rect.height / 2;
+                const deltaX = (e.clientX - btnCenterX) * 0.25;
+                const deltaY = (e.clientY - btnCenterY) * 0.25;
+                const maxMove = 7;
+                const moveX = Math.max(-maxMove, Math.min(maxMove, deltaX));
+                const moveY = Math.max(-maxMove, Math.min(maxMove, deltaY));
+                btn.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate3d(0, 0, 0)';
+            });
+        });
+    }
+
+    // 3. Animated Number Counter
+    const statNumbers = document.querySelectorAll('.stat-number, .trust-number, [data-count]');
+    if (statNumbers.length > 0) {
+        const animateCount = (el) => {
+            const target = parseFloat(el.getAttribute('data-count') || el.textContent.replace(/[^0-9.]/g, ''));
+            if (isNaN(target)) return;
+            const duration = 1500;
+            const start = 0;
+            const startTime = performance.now();
+            const suffix = el.textContent.replace(/[0-9.]/g, '');
+
+            const updateNumber = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeOutQuad = progress * (2 - progress);
+                const currentVal = Math.floor(start + (target - start) * easeOutQuad);
+                el.textContent = currentVal + suffix;
+                if (progress < 1) {
+                    requestAnimationFrame(updateNumber);
+                }
+            };
+            requestAnimationFrame(updateNumber);
+        };
+
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCount(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statNumbers.forEach(num => counterObserver.observe(num));
+    }
 });
