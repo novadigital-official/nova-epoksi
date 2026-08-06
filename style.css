@@ -3915,3 +3915,104 @@ h1, h2 {
     margin-bottom: 0 !important;
   }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   NAVBAR HERO OVERLAP FIX & CENTERED PRICING CARDS — 2026-08-06
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+    /* 1. Navbar & Hero Title Overlap Fix (Sufficient Top Padding for Fixed Nav) */
+    .hero {
+        padding-top: 104px !important;
+        padding-bottom: 24px !important;
+        margin-top: 0 !important;
+    }
+
+    .hero-content {
+        margin-top: 0 !important;
+    }
+
+    .hero-badge {
+        margin-bottom: 14px !important;
+        display: inline-block !important;
+    }
+
+    .hero-content h1 {
+        line-height: 1.35 !important;
+        margin-top: 6px !important;
+        margin-bottom: 14px !important;
+    }
+
+    /* 2. Sleek & Effective Mobile Pricing Cards with Centered Numbers */
+    .pricing-card {
+        padding: 24px 20px !important;
+        text-align: center !important;
+        border-radius: 20px !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+        margin-bottom: 16px !important;
+    }
+
+    .pricing-name {
+        text-align: center !important;
+        font-size: 1.25rem !important;
+        margin-bottom: 4px !important;
+    }
+
+    .pricing-desc {
+        text-align: center !important;
+        font-size: 0.88rem !important;
+        margin-bottom: 12px !important;
+    }
+
+    .pricing-amount {
+        display: flex !important;
+        align-items: baseline !important;
+        justify-content: center !important;
+        gap: 4px !important;
+        margin: 12px 0 !important;
+        text-align: center !important;
+    }
+
+    .pricing-amount strong {
+        font-size: 2.35rem !important;
+        font-weight: 800 !important;
+        color: var(--color-primary, #2563EB) !important;
+        line-height: 1 !important;
+    }
+
+    .pricing-amount span {
+        font-size: 1.1rem !important;
+        font-weight: 700 !important;
+        color: var(--text-secondary, #475569) !important;
+    }
+
+    .pricing-teslim {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        margin-bottom: 16px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .pricing-features {
+        text-align: left !important;
+        margin: 16px 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .pricing-features li {
+        font-size: 0.88rem !important;
+        line-height: 1.45 !important;
+        margin-bottom: 8px !important;
+    }
+
+    .pricing-card .btn {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+        margin-top: 12px !important;
+    }
+}
