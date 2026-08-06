@@ -3810,3 +3810,46 @@ h1, h2 {
         margin-bottom: 10px !important;
     }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   EXACT MOBILE TYPOGRAPHY & CONTAINER OVERFLOW FIX — 2026-08-06
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+    /* 1. Metin Çakışmaları İçin Kesin Satır Yüksekliği */
+    h1, h2, h3,
+    .hero-title,
+    .section-title,
+    .section-header h2,
+    .hero-content h1 {
+        line-height: 1.25 !important;
+        margin-bottom: 12px !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+
+    /* 2. Kategori Etiketleri (Badge/Subtitle) Dikey Boşluk */
+    .badge,
+    .hero-badge,
+    .section-header .badge,
+    .section-header span.badge,
+    .portfolio-meta .badge {
+        display: inline-block !important;
+        margin-top: 0 !important;
+        margin-bottom: 8px !important;
+    }
+
+    /* 3. Container Genişliği & Kenar Taşıması Önleme */
+    .container,
+    .wrapper,
+    .hero-container,
+    .pricing-grid,
+    .card,
+    .section {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+    }
+}
