@@ -1,11 +1,25 @@
 /* ═══════════════════════════════════════════════════════════════
-   NOVA DIGITAL — APP.JS
-   ───────────────────────────────────────────────────────────────
-   Mobil nav, scroll reveal, smooth scroll, WhatsApp linkleri,
-   form UX, portfolio filter ve nav scroll efekti.
+   NOVA DIGITAL — APP.JS (SAFE PRODUCTION ENGINE)
    ═══════════════════════════════════════════════════════════════ */
 
+// ─── SAFE CONFIG FALLBACK GUARD ──────────────────────────────
+if (typeof SITE_CONFIG === 'undefined') {
+    window.SITE_CONFIG = {
+        firma: {
+            ad: "Nova Digital",
+            eposta: "info@novadigital.com.tr",
+            telefon: "+90 507 087 17 89"
+        },
+        whatsapp: {
+            numara: "905070871789",
+            mesaj: "Merhaba, Nova Digital hizmetleriniz hakkında bilgi almak istiyorum."
+        }
+    };
+    console.warn('config.js loading fallback activated.');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+
 
     // ─── Preloader (Bekleme Ekranı) ──────────────────────────
     const preloader = document.getElementById('preloader');
