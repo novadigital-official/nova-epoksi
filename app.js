@@ -571,4 +571,36 @@ document.addEventListener('DOMContentLoaded', () => {
         statNumbers.forEach(num => counterObserver.observe(num));
     }
 });
+
+    // ─── CREATIVE LAYER LOGIC — 2026-08-06 ─────────────────────
+
+    // 1. Top Scroll Progress Bar Update
+    const progressBar = document.getElementById('scrollProgressBar');
+    if (progressBar) {
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + '%';
+        }, { passive: true });
+    }
+
+    // 2. Hero Interactive Parallax Mesh Movement
+    const heroMesh = document.getElementById('heroMeshBg');
+    const heroSectionEl = document.querySelector('.hero-section');
+    const isTouchDev = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
+    if (heroMesh && heroSectionEl && !isTouchDev) {
+        heroSectionEl.addEventListener('mousemove', (e) => {
+            const rect = heroSectionEl.getBoundingClientRect();
+            const moveX = ((e.clientX - rect.left) / rect.width - 0.5) * 30;
+            const moveY = ((e.clientY - rect.top) / rect.height - 0.5) * 30;
+            heroMesh.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+        });
+
+        heroSectionEl.addEventListener('mouseleave', () => {
+            heroMesh.style.transform = 'translate3d(0, 0, 0)';
+        });
+    }
+
 });
