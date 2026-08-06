@@ -3853,3 +3853,26 @@ h1, h2 {
         max-width: 100% !important;
     }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   FINAL MOBILE TYPOGRAPHY & SECTION PADDING DIRECTIVES — 2026-08-06
+   ═══════════════════════════════════════════════════════════ */
+
+@media only screen and (max-width: 768px) {
+  h1, h2, h3, .hero-title, .section-title, .section-header h2 {
+    line-height: 1.3 !important;
+    letter-spacing: -0.02em !important;
+    word-break: break-word !important;
+  }
+
+  .sub-title, .badge-text, .badge, .hero-badge, .section-header .badge {
+    margin-bottom: 8px !important;
+    display: inline-block !important;
+  }
+
+  section, .section {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+}
