@@ -3151,3 +3151,75 @@ body {
 #sss { background: #FFFFFF !important; }
 #blog { background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%) !important; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0; }
 #iletisim { background: #FFFFFF !important; }
+
+/* ═══════════════════════════════════════════════════════════
+   ULTRA-MODERN ALTERNATING DEEP NAVY & CRISP WHITE SECTIONS
+   ═══════════════════════════════════════════════════════════ */
+.section {
+    padding: 100px 0 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* WHITE SECTIONS */
+#hizmetler, #portfoy, #sss, #iletisim {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+}
+
+/* DEEP NAVY GRADIENT SECTIONS (FLUID, ELEGANT & SHIMMERING) */
+#paketler, #surec, #blog {
+    background: linear-gradient(135deg, #0B132B 0%, #1C2541 50%, #0F172A 100%) !important;
+    color: #F8FAFC !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Dark Section Typography Overrides */
+#paketler h2, #surec h2, #blog h2,
+#paketler h3, #surec h3, #blog h3,
+#paketler p, #surec p, #blog p {
+    color: #F8FAFC !important;
+}
+
+#paketler .section-header p, #surec .section-header p, #blog .section-header p {
+    color: #94A3B8 !important;
+}
+
+/* Glassmorphism & Card Glows inside Dark Navy Sections */
+#paketler .card, #surec .card, #blog .card {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#paketler .card:hover, #surec .card:hover, #blog .card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    border-color: rgba(56, 189, 248, 0.4) !important;
+    box-shadow: 0 25px 50px rgba(14, 165, 233, 0.25) !important;
+}
+
+/* HIGH-END MICRO-ANIMATIONS */
+@keyframes ambientPulse {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+@keyframes shimmerGlow {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #38BDF8 0%, #818CF8 50%, #C084FC 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-size: 200% auto !important;
+    animation: shimmerGlow 6s ease infinite !important;
+}
+
+.card {
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
