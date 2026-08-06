@@ -3223,3 +3223,102 @@ body {
 .card {
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
+
+/* ═══════════════════════════════════════════════════════════
+   NOVA DIGITAL — MASTERPIECE DESIGN SYSTEM & RHYTHMIC GRADIENTS
+   ═══════════════════════════════════════════════════════════ */
+.section {
+    padding: 100px 0 !important;
+    position: relative;
+}
+
+/* SECTION 1: HİZMETLER (CRISP PURE WHITE) */
+#hizmetler {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+}
+
+/* SECTION 2: PAKETLER (MIDNIGHT NAVY MASTERPIECE GRADIENT) */
+#paketler {
+    background: linear-gradient(135deg, #090D16 0%, #0F172A 50%, #1E293B 100%) !important;
+    color: #FFFFFF !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+#paketler .section-header h2, 
+#paketler .pricing-name, 
+#paketler .pricing-price,
+#paketler .pricing-price span,
+#paketler .pricing-features li {
+    color: #FFFFFF !important;
+}
+#paketler .section-header p, 
+#paketler .pricing-subtitle,
+#paketler .pricing-teslim {
+    color: #CBD5E1 !important;
+}
+#paketler .pricing-card {
+    background: rgba(15, 23, 42, 0.85) !important;
+    border: 1px solid rgba(56, 189, 248, 0.3) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+}
+#paketler .pricing-features li i {
+    color: #38BDF8 !important;
+}
+
+/* SECTION 3: PORTFÖY (CRISP PURE WHITE) */
+#portfoy {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+}
+
+/* SECTION 4: SÜREÇ (SOFT AMBIENT SLATE TINT) */
+#surec {
+    background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%) !important;
+    color: #0F172A !important;
+    border-top: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+/* SECTION 5: SSS (CRISP PURE WHITE) */
+#sss {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+}
+
+/* SECTION 6: BLOG (MIDNIGHT NAVY MASTERPIECE GRADIENT) */
+#blog {
+    background: linear-gradient(135deg, #090D16 0%, #0F172A 50%, #1E293B 100%) !important;
+    color: #FFFFFF !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+#blog .section-header h2, #blog h3, #blog p {
+    color: #FFFFFF !important;
+}
+#blog .section-header p {
+    color: #CBD5E1 !important;
+}
+#blog .blog-card {
+    background: rgba(15, 23, 42, 0.85) !important;
+    border: 1px solid rgba(56, 189, 248, 0.3) !important;
+}
+
+/* SECTION 7: İLETİŞİM (CRISP PURE WHITE) */
+#iletisim {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+}
+
+/* CRYSTAL CLEAR TEXT GRADIENT SHIMMER */
+.text-gradient {
+    background: linear-gradient(135deg, #0284C7 0%, #2563EB 50%, #7C3AED 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+#paketler .text-gradient, #blog .text-gradient {
+    background: linear-gradient(135deg, #38BDF8 0%, #818CF8 50%, #C084FC 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
