@@ -3876,3 +3876,18 @@ h1, h2 {
     padding-bottom: 32px !important;
   }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   MOBİL BAŞLIK ÇAKIŞMA DÜZELTMESİ — 2026-08-06
+   ═══════════════════════════════════════════════════════════ */
+@media only screen and (max-width: 768px) {
+  h1, h2, h3, .hero-title, .section-title, .hero-content h1, .section-header h2 {
+    line-height: 1.35 !important;
+    letter-spacing: normal !important;
+  }
+  .badge-text, .sub-title, .badge, .hero-badge, .section-header .badge {
+    margin-bottom: 10px !important;
+    display: inline-block !important;
+  }
+}
