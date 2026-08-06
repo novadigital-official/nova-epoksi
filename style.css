@@ -3137,397 +3137,72 @@ body {
 
 
 /* ═══════════════════════════════════════════════════════════
-   EQUAL SECTION SPACING & SUBTLE ALTERNATING LUXURY GRADIENT BACKGROUNDS
+   NOVA DIGITAL — FINAL PRODUCTION DESIGN & CONTRAST ENGINE
    ═══════════════════════════════════════════════════════════ */
+
+/* Section Spacing & Standard Layout Boundaries */
 .section {
     padding: 96px 0 !important;
     position: relative;
 }
 
-#hizmetler { background: #FFFFFF !important; }
-#paketler { background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%) !important; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0; }
-#portfoy { background: #FFFFFF !important; }
-#surec { background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%) !important; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0; }
-#sss { background: #FFFFFF !important; }
-#blog { background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%) !important; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0; }
-#iletisim { background: #FFFFFF !important; }
+/* 1-BY-1 STRICT ALTERNATING SECTION BACKGROUNDS (A-B-A-B-A-B-A-B) */
+#hizmetler { background-color: #FFFFFF !important; color: #0F172A !important; }
+#paketler  { background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%) !important; color: #0F172A !important; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0; }
+#portfoy   { background-color: #FFFFFF !important; color: #0F172A !important; }
+#neden-nova{ background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%) !important; color: #0F172A !important; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0; }
+#surec     { background-color: #FFFFFF !important; color: #0F172A !important; }
+#sss       { background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%) !important; color: #0F172A !important; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0; }
+#blog      { background-color: #FFFFFF !important; color: #0F172A !important; }
+#iletisim  { background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%) !important; color: #0F172A !important; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0; }
 
-/* ═══════════════════════════════════════════════════════════
-   ULTRA-MODERN ALTERNATING DEEP NAVY & CRISP WHITE SECTIONS
-   ═══════════════════════════════════════════════════════════ */
-.section {
-    padding: 100px 0 !important;
-    position: relative;
-    overflow: hidden;
-}
-
-/* WHITE SECTIONS */
-#hizmetler, #portfoy, #sss, #iletisim {
-    background: #FFFFFF !important;
-    color: #0F172A !important;
-}
-
-/* DEEP NAVY GRADIENT SECTIONS (FLUID, ELEGANT & SHIMMERING) */
-#paketler, #surec, #blog {
-    background: linear-gradient(135deg, #0B132B 0%, #1C2541 50%, #0F172A 100%) !important;
-    color: #F8FAFC !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* Dark Section Typography Overrides */
-#paketler h2, #surec h2, #blog h2,
-#paketler h3, #surec h3, #blog h3,
-#paketler p, #surec p, #blog p {
-    color: #F8FAFC !important;
-}
-
-#paketler .section-header p, #surec .section-header p, #blog .section-header p {
-    color: #94A3B8 !important;
-}
-
-/* Glassmorphism & Card Glows inside Dark Navy Sections */
-#paketler .card, #surec .card, #blog .card {
-    background: rgba(255, 255, 255, 0.04) !important;
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
-    backdrop-filter: blur(16px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-#paketler .card:hover, #surec .card:hover, #blog .card:hover {
-    transform: translateY(-8px) scale(1.02) !important;
-    border-color: rgba(56, 189, 248, 0.4) !important;
-    box-shadow: 0 25px 50px rgba(14, 165, 233, 0.25) !important;
-}
-
-/* HIGH-END MICRO-ANIMATIONS */
-@keyframes ambientPulse {
-    0%, 100% { opacity: 0.4; transform: scale(1); }
-    50% { opacity: 0.8; transform: scale(1.05); }
-}
-
-@keyframes shimmerGlow {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
-}
-
-.text-gradient {
-    background: linear-gradient(135deg, #38BDF8 0%, #818CF8 50%, #C084FC 100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
+/* 100% CRYSTAL-CLEAR HIGH-CONTRAST GRADIENT TEXT */
+.text-gradient,
+#paketler .text-gradient,
+#blog .text-gradient,
+#hizmetler .text-gradient,
+#surec .text-gradient {
+    background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 50%, #6D28D9 100%) !important;
     background-size: 200% auto !important;
-    animation: shimmerGlow 6s ease infinite !important;
-}
-
-.card {
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-/* ═══════════════════════════════════════════════════════════
-   NOVA DIGITAL — MASTERPIECE DESIGN SYSTEM & RHYTHMIC GRADIENTS
-   ═══════════════════════════════════════════════════════════ */
-.section {
-    padding: 100px 0 !important;
-    position: relative;
-}
-
-/* SECTION 1: HİZMETLER (CRISP PURE WHITE) */
-#hizmetler {
-    background: #FFFFFF !important;
-    color: #0F172A !important;
-}
-
-/* SECTION 2: PAKETLER (MIDNIGHT NAVY MASTERPIECE GRADIENT) */
-#paketler {
-    background: linear-gradient(135deg, #090D16 0%, #0F172A 50%, #1E293B 100%) !important;
-    color: #FFFFFF !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-#paketler .section-header h2, 
-#paketler .pricing-name, 
-#paketler .pricing-price,
-#paketler .pricing-price span,
-#paketler .pricing-features li {
-    color: #FFFFFF !important;
-}
-#paketler .section-header p, 
-#paketler .pricing-subtitle,
-#paketler .pricing-teslim {
-    color: #CBD5E1 !important;
-}
-#paketler .pricing-card {
-    background: rgba(15, 23, 42, 0.85) !important;
-    border: 1px solid rgba(56, 189, 248, 0.3) !important;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
-}
-#paketler .pricing-features li i {
-    color: #38BDF8 !important;
-}
-
-/* SECTION 3: PORTFÖY (CRISP PURE WHITE) */
-#portfoy {
-    background: #FFFFFF !important;
-    color: #0F172A !important;
-}
-
-/* SECTION 4: SÜREÇ (SOFT AMBIENT SLATE TINT) */
-#surec {
-    background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%) !important;
-    color: #0F172A !important;
-    border-top: 1px solid #E2E8F0;
-    border-bottom: 1px solid #E2E8F0;
-}
-
-/* SECTION 5: SSS (CRISP PURE WHITE) */
-#sss {
-    background: #FFFFFF !important;
-    color: #0F172A !important;
-}
-
-/* SECTION 6: BLOG (MIDNIGHT NAVY MASTERPIECE GRADIENT) */
-#blog {
-    background: linear-gradient(135deg, #090D16 0%, #0F172A 50%, #1E293B 100%) !important;
-    color: #FFFFFF !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-#blog .section-header h2, #blog h3, #blog p {
-    color: #FFFFFF !important;
-}
-#blog .section-header p {
-    color: #CBD5E1 !important;
-}
-#blog .blog-card {
-    background: rgba(15, 23, 42, 0.85) !important;
-    border: 1px solid rgba(56, 189, 248, 0.3) !important;
-}
-
-/* SECTION 7: İLETİŞİM (CRISP PURE WHITE) */
-#iletisim {
-    background: #FFFFFF !important;
-    color: #0F172A !important;
-}
-
-/* CRYSTAL CLEAR TEXT GRADIENT SHIMMER */
-.text-gradient {
-    background: linear-gradient(135deg, #0284C7 0%, #2563EB 50%, #7C3AED 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
 }
 
-#paketler .text-gradient, #blog .text-gradient {
-    background: linear-gradient(135deg, #38BDF8 0%, #818CF8 50%, #C084FC 100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-}
-
-
-/* ═══════════════════════════════════════════════════════════
-   PREMIUM LIGHT THEME — APPLE / STRIPE SAAS DESIGN ENGINE OVERRIDE
-   ═══════════════════════════════════════════════════════════ */
-
-/* Section Spacing & Light Background Harmony */
-.section {
-    padding: 96px 0 !important;
-    position: relative;
-}
-
-#hizmetler, #portfoy, #sss, #iletisim {
-    background-color: var(--bg-body, #FFFFFF) !important;
-    color: var(--text-primary, #0F172A) !important;
-}
-
-#paketler, #surec, #blog {
-    background: linear-gradient(180deg, var(--bg-secondary, #F8FAFC) 0%, var(--bg-body, #FFFFFF) 100%) !important;
-    color: var(--text-primary, #0F172A) !important;
-    border-top: 1px solid var(--border-color, #E2E8F0) !important;
-    border-bottom: 1px solid var(--border-color, #E2E8F0) !important;
-}
-
-/* Section Header & Body Typography Harmony */
-#paketler .section-header h2,
-#surec .section-header h2,
-#blog .section-header h2,
-#paketler h3, #surec h3, #blog h3,
-#paketler .pricing-name,
-#paketler .pricing-price,
-#paketler .pricing-price span,
-#paketler .pricing-features li {
-    color: var(--text-primary, #0F172A) !important;
-}
-
-#paketler .section-header p,
-#surec .section-header p,
-#blog .section-header p,
-#paketler p, #surec p, #blog p,
-#paketler .pricing-subtitle,
-#paketler .pricing-teslim {
-    color: var(--text-secondary, #475569) !important;
-}
-
-/* Floating Light Cards (Soft Neumorphism / Premium SaaS Cards) */
-#paketler .card,
-#surec .card,
-#blog .card,
-.pricing-card,
-.process-card,
-.blog-card {
-    background: var(--bg-card, #FFFFFF) !important;
-    border: 1px solid var(--border-color, #E2E8F0) !important;
-    border-radius: var(--radius-xl, 16px) !important;
-    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03) !important;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-/* Card Hover Elevation & Subtle Brand Border Shimmer */
-#paketler .card:hover,
-#surec .card:hover,
-#blog .card:hover,
-.pricing-card:hover,
-.process-card:hover,
-.blog-card:hover {
-    transform: translateY(-6px) !important;
-    border-color: var(--color-primary-light, #3B82F6) !important;
-    box-shadow: 0 20px 35px -5px rgba(37, 99, 235, 0.12), 0 8px 15px -3px rgba(15, 23, 42, 0.04) !important;
-}
-
-/* Icon & Badge Micro-Interactions on Hover */
-#paketler .card:hover .pricing-icon,
-#surec .card:hover .process-icon,
-#blog .card:hover .blog-date {
-    transform: scale(1.08) !important;
-    color: var(--color-primary, #2563EB) !important;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-/* Soft Kayan Brand Gradient Animation for Titles */
-@keyframes lightGradientFlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.text-gradient {
-    background: linear-gradient(135deg, var(--color-primary, #2563EB) 0%, var(--color-accent, #0891B2) 50%, var(--color-primary-dark, #1D4ED8) 100%) !important;
-    background-size: 200% 200% !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    animation: lightGradientFlow 8s ease infinite !important;
-}
-
-/* Button Elevation & Micro-Interactions */
-.btn {
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-.btn:hover {
-    transform: translateY(-2px) !important;
-    box-shadow: 0 10px 25px -3px rgba(37, 99, 235, 0.25) !important;
-}
-
-.btn:active {
-    transform: translateY(0) !important;
-}
-
-/* Accessibility & Reduced Motion Support */
-@media (prefers-reduced-motion: reduce) {
-    .text-gradient {
-        animation: none !important;
-    }
-    #paketler .card,
-    #surec .card,
-    #blog .card,
-    .pricing-card,
-    .process-card,
-    .blog-card,
-    .btn {
-        transition: none !important;
-        transform: none !important;
-    }
-}
-
-
-/* ═══════════════════════════════════════════════════════════
-   STRICT 1-BY-1 ALTERNATING SECTION COLOR RHYTHM OVERRIDE (A-B-A-B-A-B-A-B)
-   ═══════════════════════════════════════════════════════════ */
-
-.section {
-    padding: 96px 0 !important;
-    position: relative;
-}
-
-/* SECTION 1: HİZMETLER (BEYAZ) */
-#hizmetler {
-    background: #FFFFFF !important;
-    color: var(--text-primary, #0F172A) !important;
-}
-
-/* SECTION 2: PAKETLER (HAFİF LÜKS GRADYAN) */
-#paketler {
-    background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%) !important;
-    color: var(--text-primary, #0F172A) !important;
-    border-top: 1px solid #E2E8F0 !important;
-    border-bottom: 1px solid #E2E8F0 !important;
-}
-
-/* SECTION 3: PORTFÖY (BEYAZ) */
-#portfoy {
-    background: #FFFFFF !important;
-    color: var(--text-primary, #0F172A) !important;
-}
-
-/* SECTION 4: NEDEN NOVA (HAFİF LÜKS GRADYAN) */
-#neden-nova {
-    background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%) !important;
-    color: var(--text-primary, #0F172A) !important;
-    border-top: 1px solid #E2E8F0 !important;
-    border-bottom: 1px solid #E2E8F0 !important;
-}
-
-/* SECTION 5: SÜREÇ (BEYAZ) */
-#surec {
-    background: #FFFFFF !important;
-    color: var(--text-primary, #0F172A) !important;
-}
-
-/* SECTION 6: SSS (HAFİF LÜKS GRADYAN) */
-#sss {
-    background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%) !important;
-    color: var(--text-primary, #0F172A) !important;
-    border-top: 1px solid #E2E8F0 !important;
-    border-bottom: 1px solid #E2E8F0 !important;
-}
-
-/* SECTION 7: BLOG (BEYAZ) */
-#blog {
-    background: #FFFFFF !important;
-    color: var(--text-primary, #0F172A) !important;
-}
-
-/* SECTION 8: İLETİŞİM (HAFİF LÜKS GRADYAN) */
-#iletisim {
-    background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%) !important;
-    color: var(--text-primary, #0F172A) !important;
-    border-top: 1px solid #E2E8F0 !important;
-    border-bottom: 1px solid #E2E8F0 !important;
-}
-
-/* Card Elevation & Border Hover */
+/* Floating Card Elevation & Border Micro-Interactions */
 .section .card {
     background: #FFFFFF !important;
     border: 1px solid #E2E8F0 !important;
-    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05) !important;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03) !important;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .section .card:hover {
     transform: translateY(-6px) !important;
     border-color: #3B82F6 !important;
-    box-shadow: 0 20px 35px -5px rgba(37, 99, 235, 0.12) !important;
+    box-shadow: 0 20px 35px -5px rgba(37, 99, 235, 0.12), 0 8px 15px -3px rgba(15, 23, 42, 0.04) !important;
+}
+
+/* Typography Color Lock for Pure Light Theme Contrast */
+.section-header h2,
+.section h3,
+.pricing-name,
+.pricing-price,
+.pricing-features li {
+    color: #0F172A !important;
+}
+
+.section-header p,
+.section p,
+.pricing-subtitle,
+.pricing-teslim {
+    color: #475569 !important;
+}
+
+/* Accessibility & Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .text-gradient { animation: none !important; }
+    .section .card { transition: none !important; transform: none !important; }
 }
