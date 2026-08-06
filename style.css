@@ -3134,3 +3134,12 @@ body {
         border-radius: 20px !important;
     }
 }
+
+/* SAFE PRELOADER DISABLE */
+#preloader, .preloader {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    z-index: -9999 !important;
+}
