@@ -606,38 +606,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ─── CREATIVE IDENTITY LOGIC — 2026-08-06 ──────────────────
 
-    // 1. Custom Desktop Cursor Logic
-    const cursorEl = document.getElementById('customCursor');
-    const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-
-    if (cursorEl && !isTouch) {
-        let mouseX = 0, mouseY = 0;
-        let cursorX = 0, cursorY = 0;
-
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            if (!cursorEl.classList.contains('active')) {
-                cursorEl.classList.add('active');
-            }
-        });
-
-        const renderCursor = () => {
-            cursorX += (mouseX - cursorX) * 0.2;
-            cursorY += (mouseY - cursorY) * 0.2;
-            cursorEl.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
-            requestAnimationFrame(renderCursor);
-        };
-        requestAnimationFrame(renderCursor);
-
-        // Hover effect over interactive elements
-        const interactiveElements = document.querySelectorAll('a, button, .card, input, select, textarea');
-        interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => cursorEl.classList.add('hovered'));
-            el.addEventListener('mouseleave', () => cursorEl.classList.remove('hovered'));
-        });
-    }
-
     // 2. Contact Form Micro-Success Animation State Intercept
     const contactFormEl = document.getElementById('contactForm');
     if (contactFormEl) {

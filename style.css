@@ -3370,33 +3370,6 @@ h1, h2 {
    CREATIVE IDENTITY LAYER — 2026-08-06
    ═══════════════════════════════════════════════════════════ */
 
-/* 1. Custom Luxury Desktop Cursor */
-.custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    border: 1.5px solid var(--color-primary, #2563EB);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 99999;
-    transform: translate(-50%, -50%);
-    transition: width 0.25s ease, height 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
-    opacity: 0;
-}
-
-.custom-cursor.active {
-    opacity: 1;
-}
-
-.custom-cursor.hovered {
-    width: 44px;
-    height: 44px;
-    background-color: var(--color-primary-glow, rgba(37, 99, 235, 0.12));
-    border-color: var(--color-primary-light, #3B82F6);
-}
-
 /* 2. Tipografik Güven Şeridi (Hero Trust Metric Strip) */
 .hero-trust-strip {
     display: inline-flex;
@@ -3480,9 +3453,6 @@ h1, h2 {
 
 /* 5. Mobile & Accessibility Overrides */
 @media (max-width: 768px) {
-    .custom-cursor {
-        display: none !important;
-    }
     .hero-trust-strip {
         flex-direction: column;
         gap: 12px;
@@ -3494,7 +3464,4 @@ h1, h2 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .custom-cursor {
-        display: none !important;
     }
-}
