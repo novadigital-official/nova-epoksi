@@ -571,3 +571,4 @@ document.addEventListener('DOMContentLoaded', () => {
         statNumbers.forEach(num => counterObserver.observe(num));
     }
 });
+});
