@@ -5049,3 +5049,54 @@ h1, h2 {
         font-size: 0.72rem !important;
     }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   FINAL AUTHORITATIVE MOBILE CARD FULL-WIDTH LOCK (320px-430px)
+   ═══════════════════════════════════════════════════════════ */
+@media only screen and (max-width: 768px) {
+    /* 1. Eliminate any narrow container side padding */
+    .container,
+    #paketler .container,
+    #hero .container {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 2. Lock ALL pricing cards and video cards to 100% full container width */
+    #paketler .pricing-grid,
+    .pricing-grid {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    #paketler .pricing-card,
+    #paketler .pricing-card--starter,
+    #paketler .pricing-card--popular,
+    #paketler .pricing-card--premium,
+    #paketler .section .card.pricing-card,
+    #paketler .card.pricing-card--starter,
+    #paketler .card.pricing-card--popular,
+    #paketler .card.pricing-card--premium,
+    .pricing-card,
+    .hero-embedded-video-card,
+    .premium-video-wrap .hero-embedded-video-card,
+    .card,
+    .reason-card,
+    .service-card,
+    .process-card,
+    .portfolio-card,
+    .contact-form {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+        border-radius: 20px !important;
+    }
+}
