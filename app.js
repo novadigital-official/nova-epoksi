@@ -52,6 +52,80 @@ document.addEventListener('DOMContentLoaded', () => {
         emailEl.textContent = SITE_CONFIG.firma.eposta;
     }
 
+    // ─── Paket CTA → iletişim formunda hizmet + mesaj ön seçimi ──────
+    const packagePrefillMessages = {
+        baslangic: 'Başlangıç Web Sitesi (4.999 TL) hakkında bilgi almak istiyorum.',
+        kurumsal:  'Kurumsal Web Sistemi (14.999 TL) detaylarını incelemek istiyorum.',
+        premium:   'Premium Dijital Sistem için projemizi konuşmak istiyorum.',
+    };
+
+    document.querySelectorAll('[data-package]').forEach(cta => {
+        cta.addEventListener('click', () => {
+            const packageKey = cta.getAttribute('data-package');
+            const serviceSelect = document.getElementById('formService');
+            const messageField = document.getElementById('formMessage');
+            if (serviceSelect && packageKey) {
+                const option = serviceSelect.querySelector(`option[value="${packageKey}"]`);
+                if (option) serviceSelect.value = packageKey;
+            }
+            if (messageField && packagePrefillMessages[packageKey]) {
+                const current = (messageField.value || '').trim();
+                const isEmptyOrPrefill = !current || Object.values(packagePrefillMessages).includes(current);
+                if (isEmptyOrPrefill) {
+                    messageField.value = packagePrefillMessages[packageKey];
+                }
+            }
+        });
+    });
+
+    // ─── Kimler için? metin tetikleyici → panel ───────────────
+    const audienceRoots = document.querySelectorAll('.pricing-audience');
+
+    const closeAudiencePanel = (root) => {
+        const btn = root.querySelector('.pricing-audience-btn');
+        const panel = root.querySelector('.pricing-audience-panel');
+        if (!btn || !panel) return;
+        btn.setAttribute('aria-expanded', 'false');
+        panel.hidden = true;
+        root.classList.remove('is-open');
+    };
+
+    const closeAllAudiencePanels = (exceptRoot = null) => {
+        audienceRoots.forEach((root) => {
+            if (root !== exceptRoot) closeAudiencePanel(root);
+        });
+    };
+
+    audienceRoots.forEach((root) => {
+        const btn = root.querySelector('.pricing-audience-btn');
+        const panel = root.querySelector('.pricing-audience-panel');
+        if (!btn || !panel) return;
+
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const willOpen = btn.getAttribute('aria-expanded') !== 'true';
+            closeAllAudiencePanels(willOpen ? root : null);
+            if (willOpen) {
+                btn.setAttribute('aria-expanded', 'true');
+                panel.hidden = false;
+                root.classList.add('is-open');
+            } else {
+                closeAudiencePanel(root);
+            }
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.pricing-audience')) {
+            closeAllAudiencePanels();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeAllAudiencePanels();
+    });
+
 
     // ─── Mobil Menü Drawer ───────────────────────────────────
     const hamburger = document.getElementById('hamburger');
@@ -262,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                // ─── Horizontal Portfolio Carousel (Strict Hold & Drag, Immediate Release Lock) ───
+    // ─── Horizontal Portfolio Carousel (axis-locked drag; demo vertical scroll) ───
     const track = document.getElementById('portfolioTrack');
     const prevBtn = document.getElementById('portfolioPrev');
     const nextBtn = document.getElementById('portfolioNext');
@@ -284,7 +358,6 @@ document.addEventListener('DOMContentLoaded', () => {
             track.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
         });
 
-        // Indicators update
         track.addEventListener('scroll', () => {
             const index = Math.round(track.scrollLeft / getSlideWidth());
             dots.forEach((dot, i) => {
@@ -292,64 +365,110 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, { passive: true });
 
-        // Strict Hold-and-Drag Logic
         let isDragging = false;
         let startX = 0;
+        let startY = 0;
         let startScrollLeft = 0;
         let hasMoved = false;
+        let dragAxis = null; // 'x' | 'y' | null
+        let thumbScrolled = false;
 
-                const stopDrag = () => {
+        const stopDrag = () => {
             if (!isDragging) return;
             isDragging = false;
+            dragAxis = null;
             track.classList.remove('dragging');
+            track.style.scrollSnapType = 'x mandatory';
+            track.style.scrollBehavior = 'smooth';
 
-            // Eğer kullanıcı gerçekten sürüklemediyse (sadece tıkladıysa) karuseli hareket ettirme!
             if (hasMoved) {
-                track.style.scrollSnapType = 'x mandatory';
-                track.style.scrollBehavior = 'smooth';
                 const nearestIndex = Math.round(track.scrollLeft / getSlideWidth());
                 track.scrollTo({ left: nearestIndex * getSlideWidth(), behavior: 'smooth' });
-            } else {
-                track.style.scrollSnapType = 'x mandatory';
-                track.style.scrollBehavior = 'smooth';
             }
         };
 
-        const startDrag = (pageX) => {
+        const startDrag = (pageX, pageY) => {
             isDragging = true;
             hasMoved = false;
-            track.classList.add('dragging');
-            track.style.scrollSnapType = 'none';
-            track.style.scrollBehavior = 'auto';
+            dragAxis = null;
             startX = pageX - track.offsetLeft;
+            startY = pageY;
             startScrollLeft = track.scrollLeft;
         };
 
-        const moveDrag = (pageX) => {
+        const moveDrag = (pageX, pageY, event) => {
             if (!isDragging) return;
-            const x = pageX - track.offsetLeft;
-            const distance = (x - startX);
-            if (Math.abs(distance) > 4) {
-                hasMoved = true;
-                track.scrollLeft = startScrollLeft - distance;
+
+            const dx = (pageX - track.offsetLeft) - startX;
+            const dy = pageY - startY;
+
+            if (!dragAxis) {
+                if (Math.abs(dx) < 6 && Math.abs(dy) < 6) return;
+                dragAxis = Math.abs(dx) >= Math.abs(dy) ? 'x' : 'y';
+                if (dragAxis === 'y') {
+                    // Vertical intent: release carousel so page/demo can scroll
+                    isDragging = false;
+                    dragAxis = null;
+                    track.classList.remove('dragging');
+                    track.style.scrollSnapType = 'x mandatory';
+                    track.style.scrollBehavior = 'smooth';
+                    return;
+                }
+                track.classList.add('dragging');
+                track.style.scrollSnapType = 'none';
+                track.style.scrollBehavior = 'auto';
             }
+
+            if (dragAxis !== 'x') return;
+
+            hasMoved = true;
+            if (event && event.cancelable) event.preventDefault();
+            track.scrollLeft = startScrollLeft - dx;
         };
 
-                // Touch Events: Mobilde tamamen yerel CSS 60fps swipe bırakan temiz mantık
+        // Demo preview frames: native vertical scroll; don't start carousel drag here
+        track.querySelectorAll('.portfolio-thumb-wrap').forEach((wrap) => {
+            wrap.addEventListener('scroll', () => {
+                thumbScrolled = true;
+            }, { passive: true });
+
+            wrap.addEventListener('wheel', (e) => {
+                const canScroll = wrap.scrollHeight > wrap.clientHeight + 1;
+                if (!canScroll) return; // let the page scroll
+
+                const atTop = wrap.scrollTop <= 0;
+                const atBottom = wrap.scrollTop + wrap.clientHeight >= wrap.scrollHeight - 1;
+                const scrollingUp = e.deltaY < 0;
+                const scrollingDown = e.deltaY > 0;
+
+                if ((scrollingUp && atTop) || (scrollingDown && atBottom)) return;
+
+                // Keep wheel inside the demo while it can still scroll
+                e.stopPropagation();
+            }, { passive: true });
+
+            wrap.addEventListener('mousedown', (e) => {
+                e.stopPropagation();
+            });
+
+            wrap.addEventListener('touchstart', (e) => {
+                e.stopPropagation();
+            }, { passive: true });
+        });
+
         const isMobileDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
         if (!isMobileDevice) {
             track.addEventListener('mousedown', (e) => {
                 if (e.button !== 0) return;
-                startDrag(e.pageX);
+                if (e.target.closest('.portfolio-thumb-wrap')) return;
+                if (e.target.closest('.carousel-nav-btn, .carousel-dot, button, input, textarea, label')) return;
+                startDrag(e.pageX, e.pageY);
             });
             track.addEventListener('mouseleave', stopDrag);
             track.addEventListener('mouseup', stopDrag);
             track.addEventListener('mousemove', (e) => {
-                if (isDragging) {
-                    e.preventDefault();
-                    moveDrag(e.pageX);
-                }
+                if (isDragging) moveDrag(e.pageX, e.pageY, e);
             });
         }
 
@@ -357,17 +476,17 @@ document.addEventListener('DOMContentLoaded', () => {
         track.addEventListener('touchcancel', stopDrag, { passive: true });
         track.addEventListener('touchmove', (e) => {
             if (isDragging && e.touches.length === 1) {
-                moveDrag(e.touches[0].pageX);
+                moveDrag(e.touches[0].pageX, e.touches[0].pageY, e);
             }
         }, { passive: true });
 
-        // Link Tıklama Koruması: Sadece sürükleme yoksa link açılır
-        track.querySelectorAll('a').forEach(link => {
+        track.querySelectorAll('a').forEach((link) => {
             link.addEventListener('click', (e) => {
-                if (hasMoved) {
+                if (hasMoved || thumbScrolled) {
                     e.preventDefault();
                     e.stopPropagation();
                 }
+                thumbScrolled = false;
             });
         });
 
@@ -397,7 +516,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li><strong>Mobil & SEO Uyumluluğu:</strong> Web sitenizin Google arama sonuçlarında üst sıralara çıkması için gerekli kodlama kalitesi.</li>
                     <li><strong>Yönetim Paneli Kolaylığı:</strong> İçeriklerinizi ve ürünlerinizi kendinizin kolayca güncelleyebilmesi.</li>
                 </ul>
-                <p>Nova Digital olarak <strong>Standart Web Paketini 4.999 TL</strong>, <strong>Kurumsal Yönetim Panelli Paketini ise 9.999 TL</strong> olarak şeffaf fiyatlandırma politikasıyla sunuyoruz.</p>
+                <p>Nova Digital olarak <strong>Başlangıç Web Sitesini 4.999 TL</strong>, <strong>Kurumsal Web Sistemini 14.999 TL</strong>, <strong>Premium Dijital Sistemi ise 39.999 TL</strong> olarak şeffaf fiyatlandırma politikasıyla sunuyoruz.</p>
                 <div class="blog-article-cta">
                     <span>Siteniz için hemen teklif almak ister misiniz?</span>
                     <a href="#iletisim" onclick="document.getElementById('blogModal').classList.remove('active');" class="btn btn-primary btn-sm">Teklif Al</a>
