@@ -4587,14 +4587,14 @@ h1, h2 {
 }
 
 @media (max-width: 768px) {
-    /* Mobilde videolar yanlardan %10 daraltılır */
+    /* Mobilde video kartı ve tüm kartlar 1:1 tam container genişliğine (%100) kilitlenir */
     .hero-embedded-video-card,
     .premium-video-wrap .hero-embedded-video-card {
-        width: 90% !important;
-        max-width: 90% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        height: 235px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        height: 250px !important;
     }
 }
 
@@ -4656,11 +4656,11 @@ h1, h2 {
 @media (max-width: 768px) {
     /* Maximum broad screen usage without clipping */
     .container {
-        padding-left: 8px !important;
-        padding-right: 8px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
     }
 
-    /* All cards match the exact 90% width of the video card */
+    /* All cards match 100% video card container width */
     .card,
     .pricing-card,
     .pricing-card--starter,
@@ -4671,12 +4671,12 @@ h1, h2 {
     .process-card,
     .portfolio-card,
     .contact-form {
-        padding: 14px 14px !important;
-        border-radius: 14px !important;
-        width: 90% !important;
-        max-width: 90% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+        padding: 16px 16px !important;
+        border-radius: 16px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
         box-sizing: border-box !important;
         margin-bottom: 12px !important;
     }
@@ -4685,10 +4685,10 @@ h1, h2 {
     #paketler .pricing-card--starter,
     #paketler .pricing-card--popular,
     #paketler .pricing-card--premium {
-        width: 90% !important;
-        max-width: 90% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
 
     .pricing-name {
