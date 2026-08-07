@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // ─── Horizontal Portfolio Carousel (axis-locked drag; demo vertical scroll) ───
+                // ─── Horizontal Portfolio Carousel (Strict Hold & Drag, Immediate Release Lock) ───
     const track = document.getElementById('portfolioTrack');
     const prevBtn = document.getElementById('portfolioPrev');
     const nextBtn = document.getElementById('portfolioNext');
@@ -358,6 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
             track.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
         });
 
+        // Indicators update
         track.addEventListener('scroll', () => {
             const index = Math.round(track.scrollLeft / getSlideWidth());
             dots.forEach((dot, i) => {
@@ -365,110 +366,64 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, { passive: true });
 
+        // Strict Hold-and-Drag Logic
         let isDragging = false;
         let startX = 0;
-        let startY = 0;
         let startScrollLeft = 0;
         let hasMoved = false;
-        let dragAxis = null; // 'x' | 'y' | null
-        let thumbScrolled = false;
 
-        const stopDrag = () => {
+                const stopDrag = () => {
             if (!isDragging) return;
             isDragging = false;
-            dragAxis = null;
             track.classList.remove('dragging');
-            track.style.scrollSnapType = 'x mandatory';
-            track.style.scrollBehavior = 'smooth';
 
+            // Eğer kullanıcı gerçekten sürüklemediyse (sadece tıkladıysa) karuseli hareket ettirme!
             if (hasMoved) {
+                track.style.scrollSnapType = 'x mandatory';
+                track.style.scrollBehavior = 'smooth';
                 const nearestIndex = Math.round(track.scrollLeft / getSlideWidth());
                 track.scrollTo({ left: nearestIndex * getSlideWidth(), behavior: 'smooth' });
+            } else {
+                track.style.scrollSnapType = 'x mandatory';
+                track.style.scrollBehavior = 'smooth';
             }
         };
 
-        const startDrag = (pageX, pageY) => {
+        const startDrag = (pageX) => {
             isDragging = true;
             hasMoved = false;
-            dragAxis = null;
+            track.classList.add('dragging');
+            track.style.scrollSnapType = 'none';
+            track.style.scrollBehavior = 'auto';
             startX = pageX - track.offsetLeft;
-            startY = pageY;
             startScrollLeft = track.scrollLeft;
         };
 
-        const moveDrag = (pageX, pageY, event) => {
+        const moveDrag = (pageX) => {
             if (!isDragging) return;
-
-            const dx = (pageX - track.offsetLeft) - startX;
-            const dy = pageY - startY;
-
-            if (!dragAxis) {
-                if (Math.abs(dx) < 6 && Math.abs(dy) < 6) return;
-                dragAxis = Math.abs(dx) >= Math.abs(dy) ? 'x' : 'y';
-                if (dragAxis === 'y') {
-                    // Vertical intent: release carousel so page/demo can scroll
-                    isDragging = false;
-                    dragAxis = null;
-                    track.classList.remove('dragging');
-                    track.style.scrollSnapType = 'x mandatory';
-                    track.style.scrollBehavior = 'smooth';
-                    return;
-                }
-                track.classList.add('dragging');
-                track.style.scrollSnapType = 'none';
-                track.style.scrollBehavior = 'auto';
+            const x = pageX - track.offsetLeft;
+            const distance = (x - startX);
+            if (Math.abs(distance) > 4) {
+                hasMoved = true;
+                track.scrollLeft = startScrollLeft - distance;
             }
-
-            if (dragAxis !== 'x') return;
-
-            hasMoved = true;
-            if (event && event.cancelable) event.preventDefault();
-            track.scrollLeft = startScrollLeft - dx;
         };
 
-        // Demo preview frames: native vertical scroll; don't start carousel drag here
-        track.querySelectorAll('.portfolio-thumb-wrap').forEach((wrap) => {
-            wrap.addEventListener('scroll', () => {
-                thumbScrolled = true;
-            }, { passive: true });
-
-            wrap.addEventListener('wheel', (e) => {
-                const canScroll = wrap.scrollHeight > wrap.clientHeight + 1;
-                if (!canScroll) return; // let the page scroll
-
-                const atTop = wrap.scrollTop <= 0;
-                const atBottom = wrap.scrollTop + wrap.clientHeight >= wrap.scrollHeight - 1;
-                const scrollingUp = e.deltaY < 0;
-                const scrollingDown = e.deltaY > 0;
-
-                if ((scrollingUp && atTop) || (scrollingDown && atBottom)) return;
-
-                // Keep wheel inside the demo while it can still scroll
-                e.stopPropagation();
-            }, { passive: true });
-
-            wrap.addEventListener('mousedown', (e) => {
-                e.stopPropagation();
-            });
-
-            wrap.addEventListener('touchstart', (e) => {
-                e.stopPropagation();
-            }, { passive: true });
-        });
-
+                // Touch Events: Mobilde tamamen yerel CSS 60fps swipe bırakan temiz mantık
         const isMobileDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
         if (!isMobileDevice) {
             track.addEventListener('mousedown', (e) => {
                 if (e.button !== 0) return;
-                if (e.target.closest('.portfolio-thumb-wrap')) return;
-                if (e.target.closest('.carousel-nav-btn, .carousel-dot, button, input, textarea, label')) return;
-                startDrag(e.pageX, e.pageY);
+                startDrag(e.pageX);
             });
             track.addEventListener('mouseleave', stopDrag);
             track.addEventListener('mouseup', stopDrag);
             track.addEventListener('mousemove', (e) => {
-                if (isDragging) moveDrag(e.pageX, e.pageY, e);
+                if (isDragging) {
+                    e.preventDefault();
+                    moveDrag(e.pageX);
+                }
             });
         }
 
@@ -476,17 +431,17 @@ document.addEventListener('DOMContentLoaded', () => {
         track.addEventListener('touchcancel', stopDrag, { passive: true });
         track.addEventListener('touchmove', (e) => {
             if (isDragging && e.touches.length === 1) {
-                moveDrag(e.touches[0].pageX, e.touches[0].pageY, e);
+                moveDrag(e.touches[0].pageX);
             }
         }, { passive: true });
 
-        track.querySelectorAll('a').forEach((link) => {
+        // Link Tıklama Koruması: Sadece sürükleme yoksa link açılır
+        track.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', (e) => {
-                if (hasMoved || thumbScrolled) {
+                if (hasMoved) {
                     e.preventDefault();
                     e.stopPropagation();
                 }
-                thumbScrolled = false;
             });
         });
 
@@ -784,22 +739,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { threshold: 0.4 });
 
         liveCounters.forEach(c => trustObserver.observe(c));
-    /* 2-Second Automatic Soft Transition Hero Slider */
-    const heroSlides = document.querySelectorAll('.hero-slide-item');
-    const heroUrlLabel = document.getElementById('heroSliderUrl');
-    if (heroSlides && heroSlides.length > 0) {
-        let currentHeroSlide = 0;
-        setInterval(() => {
-            heroSlides[currentHeroSlide].classList.remove('active');
-            currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
-            heroSlides[currentHeroSlide].classList.add('active');
-
-            if (heroUrlLabel) {
-                const newUrl = heroSlides[currentHeroSlide].getAttribute('data-url');
-                if (newUrl) heroUrlLabel.textContent = newUrl;
-            }
-        }, 2000);
     }
 
 });
-
