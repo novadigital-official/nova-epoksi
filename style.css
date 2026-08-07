@@ -4611,50 +4611,17 @@ h1, h2 {
     box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.05), 0 0 0 1px rgba(37, 99, 235, 0.04) !important;
 }
 
-/* 1. Başlangıç Paketi Vektör Arka Planı (Hızlı Dijital Başlangıç) */
-.pricing-card--starter {
-    background-image: 
-        radial-gradient(circle at 90% 10%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
-        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 30L0 0h60L30 30zm0 0l30 30H0l30-30z' fill='%233b82f6' fill-opacity='0.035'/%3E%3C/svg%3E") !important;
-}
-
-/* 2. Kurumsal Paket Vektör Arka Planı (CRM & Kurumsal Altyapı Motif) */
-.pricing-card--popular {
-    background-image: 
-        radial-gradient(circle at 95% 15%, rgba(37, 99, 235, 0.12) 0%, transparent 65%),
-        url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563eb' fill-opacity='0.055'%3E%3Cpath d='M50 50v-8h-4v8h-8v4h8v8h4v-8h8v-4h-8zm0-40V2h-4v8h-8v4h8v8h4v-8h8V10h-8zM10 50v-8H6v8H0v4h6v8h4v-8h8v-4h-8zM10 10V2H6v8H0v4h6v8h4v-8h8V10h-8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
-}
-
-/* 3. Premium Dijital Sistem Vektör Arka Planı (E-Ticaret, CRM & Büyüme Motif) */
+/* 1. Paket Kartı Arka Planları (Temiz, Flu/Bulanık Renk Katmanları Kaldırıldı) */
+.pricing-card--starter,
+.pricing-card--popular,
 .pricing-card--premium {
-    background-image: 
-        radial-gradient(circle at 95% 15%, rgba(16, 185, 129, 0.14) 0%, transparent 65%),
-        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2310b981' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
+    background-image: none !important;
+    background-color: #FFFFFF !important;
 }
 
-/* Sleek vector motifs for Popular & Premium badges */
-.pricing-card--popular::before {
-    content: "" !important;
-    position: absolute !important;
-    top: -25px !important;
-    right: -25px !important;
-    width: 140px !important;
-    height: 140px !important;
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.18) 0%, transparent 70%) !important;
-    border-radius: 50% !important;
-    pointer-events: none !important;
-}
-
+.pricing-card--popular::before,
 .pricing-card--premium::before {
-    content: "" !important;
-    position: absolute !important;
-    top: -30px !important;
-    right: -30px !important;
-    width: 160px !important;
-    height: 160px !important;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%) !important;
-    border-radius: 50% !important;
-    pointer-events: none !important;
+    display: none !important;
 }
 
 /* Feature list grid in pricing cards */
@@ -4664,7 +4631,7 @@ h1, h2 {
     gap: 5px 10px !important;
 }
 
-/* Hover elevation with subtle glow */
+/* Hover elevation with subtle border glow */
 .pricing-card:hover,
 .reason-card:hover,
 .service-card:hover,
@@ -4766,100 +4733,129 @@ h1, h2 {
 
 
 /* ═══════════════════════════════════════════════════════════
-   EMBEDDED VIBRANT PACKAGE VECTOR ILLUSTRATIONS (STATIC & COMPACT)
+   FULL CONTRAST & %30 LARGER PACKAGE VECTOR ILLUSTRATIONS
    ═══════════════════════════════════════════════════════════ */
-/* Paket Kartı Vektörleri (Kompakt: 75px x 75px, Canlı & Gömülü) */
+/* Paket Kartı Vektörleri (%30 Büyütülmüş: 98px x 98px, Tam Kontrast %100 Orijinal Canlılık) */
 .card-bg-vector {
     position: absolute !important;
     top: 10px !important;
     right: 10px !important;
-    width: 75px !important;
-    height: 75px !important;
+    width: 98px !important;
+    height: 98px !important;
     object-fit: contain !important;
-    opacity: 0.85 !important;
+    opacity: 1 !important;
     pointer-events: none !important;
     z-index: 1 !important;
     transform: none !important;
     transition: none !important;
-    filter: drop-shadow(0 4px 10px rgba(37, 99, 235, 0.2)) !important;
+    filter: none !important;
 }
 
-.pricing-card--popular .card-bg-vector {
-    opacity: 0.90 !important;
-    filter: drop-shadow(0 4px 12px rgba(37, 99, 235, 0.28)) !important;
-}
-
+.pricing-card--popular .card-bg-vector,
 .pricing-card--premium .card-bg-vector {
-    opacity: 0.90 !important;
-    filter: drop-shadow(0 4px 12px rgba(16, 185, 129, 0.32)) !important;
+    opacity: 1 !important;
+    filter: none !important;
 }
 
-/* Hover İletişimi: Gömülü & Sabit (Hareket Etmez) */
+/* Hover İletişimi: Sabit & Tam Kontrast */
 .pricing-card:hover .card-bg-vector {
     transform: none !important;
-    opacity: 0.90 !important;
+    opacity: 1 !important;
 }
 
-/* 2. Genel Sayfa Arka Plan Vektörleri (Sanatsal Ressam Yapısı & Görünür Filigran) */
+/* 2. Genel Sayfa Arka Plan Vektörleri (Yavaş Süzülen, Görünür Kenar Boşluğu Vektörleri) */
+@keyframes vectorFloat2D {
+    0%, 100% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    25% {
+        transform: translate(10px, -8px) rotate(3deg);
+    }
+    50% {
+        transform: translate(-8px, -14px) rotate(-3deg);
+    }
+    75% {
+        transform: translate(-10px, 6px) rotate(2deg);
+    }
+}
+
 .section-bg-vector {
     position: absolute !important;
-    width: 320px !important;
-    height: 320px !important;
+    width: 60px !important;
+    height: 60px !important;
     object-fit: contain !important;
-    opacity: 0.18 !important;
+    opacity: 0.50 !important;
     pointer-events: none !important;
     z-index: 0 !important;
-    transition: transform 0.6s ease !important;
-    filter: drop-shadow(0 12px 28px rgba(37, 99, 235, 0.16)) !important;
+    animation: vectorFloat2D 22s ease-in-out infinite !important;
+    filter: drop-shadow(0 4px 12px rgba(37, 99, 235, 0.15)) !important;
 }
 
 .section-bg-vector--left {
-    left: -20px !important;
-    top: 15% !important;
-    transform: rotate(-14deg) scale(1.1) !important;
+    left: 1.5% !important;
+    top: 6% !important;
 }
 
 .section-bg-vector--right {
-    right: -20px !important;
-    top: 15% !important;
-    transform: rotate(14deg) scale(1.1) !important;
+    right: 1.5% !important;
+    top: 6% !important;
+    animation-delay: -5s !important;
 }
 
 .section-bg-vector--center {
-    left: 50% !important;
-    top: 20% !important;
-    transform: translateX(-50%) rotate(8deg) scale(1.25) !important;
+    right: 3% !important;
+    bottom: 8% !important;
+    animation-delay: -9s !important;
 }
 
 .section-bg-vector--center-left {
-    left: 15% !important;
-    top: 20% !important;
-    transform: rotate(-16deg) scale(1.15) !important;
+    left: 2% !important;
+    top: 22% !important;
+    animation-delay: -4s !important;
 }
 
 .section-bg-vector--center-right {
-    right: 15% !important;
-    top: 20% !important;
-    transform: rotate(16deg) scale(1.15) !important;
+    right: 2% !important;
+    top: 22% !important;
+    animation-delay: -11s !important;
 }
 
-/* Mobil Uyumlu Ölçekleme & Paket Altı Şeffaf Fiyatlandırma Bandını Mobilde Gizleme */
+.section-bg-vector--inter-1 {
+    left: 1.5% !important;
+    bottom: 4% !important;
+    animation-delay: -7s !important;
+}
+
+.section-bg-vector--inter-2 {
+    right: 2% !important;
+    top: 2% !important;
+    animation-delay: -13s !important;
+}
+
+.section-bg-vector--inter-3 {
+    right: 1.5% !important;
+    bottom: 4% !important;
+    animation-delay: -3s !important;
+}
+
+/* Mobil Uyumlu Ölçekleme & Mobilde Sadece Paket Kartı Vektörlerini Tutma */
 @media (max-width: 768px) {
     #paketler .pricing-trust {
         display: none !important;
     }
 
+    /* Mobilde sayfa arka plan vektörleri gizlenir (sıfır dikkat dağınıklığı) */
+    .section-bg-vector {
+        display: none !important;
+    }
+
+    /* Sadece paket kartlarının sağ üst köşesindeki 3D vektörler kalır */
     .card-bg-vector {
+        display: block !important;
         width: 55px !important;
         height: 55px !important;
         top: 8px !important;
         right: 8px !important;
-        opacity: 0.85 !important;
-    }
-
-    .section-bg-vector {
-        width: 180px !important;
-        height: 180px !important;
-        opacity: 0.12 !important;
+        opacity: 1 !important;
     }
 }
