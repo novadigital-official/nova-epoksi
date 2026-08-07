@@ -4660,7 +4660,7 @@ h1, h2 {
         padding-right: 8px !important;
     }
 
-    /* Package cards & all cards extended to 98% width */
+    /* All cards match the exact 90% width of the video card */
     .card,
     .pricing-card,
     .pricing-card--starter,
@@ -4669,14 +4669,15 @@ h1, h2 {
     .reason-card,
     .service-card,
     .process-card,
-    .portfolio-card {
+    .portfolio-card,
+    .contact-form {
         padding: 14px 14px !important;
         border-radius: 14px !important;
-        max-width: 100% !important;
-        width: 100% !important;
+        width: 90% !important;
+        max-width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
         box-sizing: border-box !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
         margin-bottom: 12px !important;
     }
 
@@ -4684,8 +4685,10 @@ h1, h2 {
     #paketler .pricing-card--starter,
     #paketler .pricing-card--popular,
     #paketler .pricing-card--premium {
-        max-width: 100% !important;
-        width: 100% !important;
+        width: 90% !important;
+        max-width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 
     .pricing-name {
