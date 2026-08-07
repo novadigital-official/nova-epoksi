@@ -4531,13 +4531,14 @@ h1, h2 {
   #paketler .pricing-card--popular,
   #paketler .pricing-card--premium {
     order: 0 !important;
-    width: 100%;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     margin-top: 0 !important;
-    padding: 1rem !important;
+    padding: 1.25rem !important;
     text-align: left !important;
+    box-sizing: border-box !important;
   }
   #paketler .pricing-name,
   #paketler .pricing-desc,
@@ -4586,8 +4587,14 @@ h1, h2 {
 }
 
 @media (max-width: 768px) {
-    .hero-embedded-video-card {
-        height: 250px !important;
+    /* Mobilde videolar yanlardan %10 daraltılır */
+    .hero-embedded-video-card,
+    .premium-video-wrap .hero-embedded-video-card {
+        width: 90% !important;
+        max-width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        height: 235px !important;
     }
 }
 
@@ -4886,34 +4893,39 @@ h1, h2 {
         margin-bottom: 0 !important;
     }
 
-    /* 2. Compact 2-Column Contact Info Grid on Mobile */
+    /* 2. Spacious Mobile Contact Info List (Zero Text Squeezing) */
     .contact-info-list {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 8px !important;
-        margin-bottom: 16px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        margin-bottom: 18px !important;
     }
 
     .contact-info-item {
-        padding: 10px 10px !important;
-        border-radius: 12px !important;
-        gap: 8px !important;
+        padding: 12px 14px !important;
+        border-radius: 14px !important;
+        gap: 12px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 
     .contact-info-icon {
-        width: 32px !important;
-        height: 32px !important;
-        font-size: 0.85rem !important;
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 0.95rem !important;
+        flex-shrink: 0 !important;
     }
 
     .contact-info-text h4 {
-        font-size: 0.7rem !important;
-        margin-bottom: 1px !important;
+        font-size: 0.75rem !important;
+        margin-bottom: 2px !important;
     }
 
     .contact-info-text a,
     .contact-info-text p {
-        font-size: 0.75rem !important;
+        font-size: 0.84rem !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
     }
 
     .contact-form {
