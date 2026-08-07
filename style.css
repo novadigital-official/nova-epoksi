@@ -4590,3 +4590,68 @@ h1, h2 {
         height: 250px !important;
     }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   2026 LUXURY VECTOR BACKGROUNDS & SLEEK CARD PROPORTIONS
+   ═══════════════════════════════════════════════════════════ */
+
+/* Sleek wide card proportions & HSL borders */
+.pricing-card,
+.reason-card,
+.service-card,
+.process-card {
+    border-radius: 20px !important;
+    padding: 24px 22px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    background-color: #FFFFFF !important;
+    background-image: 
+        radial-gradient(circle at 90% 10%, rgba(37, 99, 235, 0.04) 0%, transparent 50%),
+        url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20L0 0h40L20 20zm0 0l20 20H0l20-20z' fill='%232563eb' fill-opacity='0.015'/%3E%3C/svg%3E") !important;
+    border: 1px solid rgba(226, 232, 240, 0.9) !important;
+    box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.05), 0 0 0 1px rgba(37, 99, 235, 0.04) !important;
+}
+
+/* Feature list grid in pricing cards */
+.pricing-features {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 6px 12px !important;
+}
+
+/* Vector motif for Popular & Premium cards */
+.pricing-card--popular::before {
+    content: "" !important;
+    position: absolute !important;
+    top: -30px !important;
+    right: -30px !important;
+    width: 120px !important;
+    height: 120px !important;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, transparent 70%) !important;
+    border-radius: 50% !important;
+    pointer-events: none !important;
+}
+
+.pricing-card--premium::before {
+    content: "" !important;
+    position: absolute !important;
+    top: -40px !important;
+    right: -40px !important;
+    width: 150px !important;
+    height: 150px !important;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%) !important;
+    border-radius: 50% !important;
+    pointer-events: none !important;
+}
+
+/* Hover elevation with subtle glow */
+.pricing-card:hover,
+.reason-card:hover,
+.service-card:hover,
+.process-card:hover {
+    transform: translateY(-4px) !important;
+    border-color: rgba(37, 99, 235, 0.3) !important;
+    box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.12), 0 0 0 1px rgba(37, 99, 235, 0.1) !important;
+}
