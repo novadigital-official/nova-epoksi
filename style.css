@@ -4800,43 +4800,66 @@ h1, h2 {
     opacity: 0.90 !important;
 }
 
-/* 2. Genel Sayfa Arka Plan Vektörleri (Flu, Yatık & Metne Çakışmayan Yapı) */
+/* 2. Genel Sayfa Arka Plan Vektörleri (Sanatsal Ressam Yapısı & Görünür Filigran) */
 .section-bg-vector {
     position: absolute !important;
-    width: 240px !important;
-    height: 240px !important;
+    width: 320px !important;
+    height: 320px !important;
     object-fit: contain !important;
-    opacity: 0.08 !important;
+    opacity: 0.18 !important;
     pointer-events: none !important;
     z-index: 0 !important;
-    filter: blur(1px) drop-shadow(0 10px 25px rgba(37, 99, 235, 0.12)) !important;
+    transition: transform 0.6s ease !important;
+    filter: drop-shadow(0 12px 28px rgba(37, 99, 235, 0.16)) !important;
 }
 
 .section-bg-vector--left {
-    left: -40px !important;
-    top: 10% !important;
-    transform: rotate(-14deg) !important;
+    left: -20px !important;
+    top: 15% !important;
+    transform: rotate(-14deg) scale(1.1) !important;
 }
 
 .section-bg-vector--right {
-    right: -40px !important;
-    top: 10% !important;
-    transform: rotate(14deg) !important;
+    right: -20px !important;
+    top: 15% !important;
+    transform: rotate(14deg) scale(1.1) !important;
 }
 
-/* Mobil Uyumlu Ölçekleme */
+.section-bg-vector--center {
+    left: 50% !important;
+    top: 20% !important;
+    transform: translateX(-50%) rotate(8deg) scale(1.25) !important;
+}
+
+.section-bg-vector--center-left {
+    left: 15% !important;
+    top: 20% !important;
+    transform: rotate(-16deg) scale(1.15) !important;
+}
+
+.section-bg-vector--center-right {
+    right: 15% !important;
+    top: 20% !important;
+    transform: rotate(16deg) scale(1.15) !important;
+}
+
+/* Mobil Uyumlu Ölçekleme & Paket Altı Şeffaf Fiyatlandırma Bandını Mobilde Gizleme */
 @media (max-width: 768px) {
+    #paketler .pricing-trust {
+        display: none !important;
+    }
+
     .card-bg-vector {
         width: 55px !important;
         height: 55px !important;
         top: 8px !important;
         right: 8px !important;
-        opacity: 0.80 !important;
+        opacity: 0.85 !important;
     }
 
     .section-bg-vector {
-        width: 140px !important;
-        height: 140px !important;
-        opacity: 0.05 !important;
+        width: 180px !important;
+        height: 180px !important;
+        opacity: 0.12 !important;
     }
 }
