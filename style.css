@@ -4763,3 +4763,80 @@ h1, h2 {
         margin-top: 8px !important;
     }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   EMBEDDED VIBRANT PACKAGE VECTOR ILLUSTRATIONS (STATIC & COMPACT)
+   ═══════════════════════════════════════════════════════════ */
+/* Paket Kartı Vektörleri (Kompakt: 75px x 75px, Canlı & Gömülü) */
+.card-bg-vector {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    width: 75px !important;
+    height: 75px !important;
+    object-fit: contain !important;
+    opacity: 0.85 !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    filter: drop-shadow(0 4px 10px rgba(37, 99, 235, 0.2)) !important;
+}
+
+.pricing-card--popular .card-bg-vector {
+    opacity: 0.90 !important;
+    filter: drop-shadow(0 4px 12px rgba(37, 99, 235, 0.28)) !important;
+}
+
+.pricing-card--premium .card-bg-vector {
+    opacity: 0.90 !important;
+    filter: drop-shadow(0 4px 12px rgba(16, 185, 129, 0.32)) !important;
+}
+
+/* Hover İletişimi: Gömülü & Sabit (Hareket Etmez) */
+.pricing-card:hover .card-bg-vector {
+    transform: none !important;
+    opacity: 0.90 !important;
+}
+
+/* 2. Genel Sayfa Arka Plan Vektörleri (Flu, Yatık & Metne Çakışmayan Yapı) */
+.section-bg-vector {
+    position: absolute !important;
+    width: 240px !important;
+    height: 240px !important;
+    object-fit: contain !important;
+    opacity: 0.08 !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+    filter: blur(1px) drop-shadow(0 10px 25px rgba(37, 99, 235, 0.12)) !important;
+}
+
+.section-bg-vector--left {
+    left: -40px !important;
+    top: 10% !important;
+    transform: rotate(-14deg) !important;
+}
+
+.section-bg-vector--right {
+    right: -40px !important;
+    top: 10% !important;
+    transform: rotate(14deg) !important;
+}
+
+/* Mobil Uyumlu Ölçekleme */
+@media (max-width: 768px) {
+    .card-bg-vector {
+        width: 55px !important;
+        height: 55px !important;
+        top: 8px !important;
+        right: 8px !important;
+        opacity: 0.80 !important;
+    }
+
+    .section-bg-vector {
+        width: 140px !important;
+        height: 140px !important;
+        opacity: 0.05 !important;
+    }
+}
