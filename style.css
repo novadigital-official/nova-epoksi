@@ -4859,3 +4859,116 @@ h1, h2 {
         opacity: 1 !important;
     }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   ULTRA-COMPACT MOBILE FOOTER & SECTION LENGTH OPTIMIZATION
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+    /* 1. Tighten Mobile Section Vertical Spacing */
+    section, .section {
+        padding-top: 22px !important;
+        padding-bottom: 22px !important;
+    }
+
+    .section-header {
+        margin-bottom: 14px !important;
+        gap: 6px !important;
+    }
+
+    .section-header h2 {
+        font-size: 1.4rem !important;
+        margin-bottom: 4px !important;
+    }
+
+    .section-header p {
+        font-size: 0.82rem !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* 2. Compact 2-Column Contact Info Grid on Mobile */
+    .contact-info-list {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+        margin-bottom: 16px !important;
+    }
+
+    .contact-info-item {
+        padding: 10px 10px !important;
+        border-radius: 12px !important;
+        gap: 8px !important;
+    }
+
+    .contact-info-icon {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .contact-info-text h4 {
+        font-size: 0.7rem !important;
+        margin-bottom: 1px !important;
+    }
+
+    .contact-info-text a,
+    .contact-info-text p {
+        font-size: 0.75rem !important;
+    }
+
+    .contact-form {
+        padding: 16px 14px !important;
+        border-radius: 16px !important;
+    }
+
+    .contact-form .form-group {
+        margin-bottom: 10px !important;
+    }
+
+    .contact-form .form-input {
+        padding: 8px 12px !important;
+        font-size: 0.82rem !important;
+    }
+
+    /* 3. Compact 2-Column Inline Mobile Footer Grid (Cuts Height by 50%) */
+    .site-footer {
+        padding-top: 28px !important;
+        padding-bottom: 20px !important;
+    }
+
+    .footer-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px 12px !important;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1 !important;
+        margin-bottom: 8px !important;
+        text-align: left !important;
+    }
+
+    .footer-brand p {
+        font-size: 0.8rem !important;
+        line-height: 1.35 !important;
+        margin-bottom: 10px !important;
+    }
+
+    .footer-col h4 {
+        font-size: 0.85rem !important;
+        margin-bottom: 8px !important;
+    }
+
+    .footer-col a {
+        font-size: 0.78rem !important;
+        margin-bottom: 4px !important;
+    }
+
+    .footer-bottom {
+        margin-top: 20px !important;
+        padding-top: 14px !important;
+        flex-direction: column !important;
+        gap: 4px !important;
+        font-size: 0.72rem !important;
+    }
+}
