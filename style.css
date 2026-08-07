@@ -4562,66 +4562,31 @@ h1, h2 {
   }
 }
 
-/* ─── HERO SINGLE IMAGE LOCK ─── */
-.hero-single-slider-frame {
-    background: #FFFFFF !important;
-    border-radius: 16px !important;
-    overflow: hidden !important;
-    border: 1px solid var(--border-default, #E2E8F0) !important;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12) !important;
+/* ─── HERO EMBEDDED SEAMLESS VIDEO CARD (ZERO MARGINS, SOFT SHADOW) ─── */
+.hero-embedded-video-card {
     width: 100% !important;
     max-width: 520px !important;
+    height: 340px !important;
     margin: 0 auto !important;
-    position: relative !important;
-}
-
-.hero-slider-slides {
-    position: relative !important;
-    width: 100% !important;
-    height: 310px !important;
-    background: #F8FAFC !important;
+    border-radius: 20px !important;
     overflow: hidden !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: 0 20px 48px rgba(15, 23, 42, 0.14) !important;
+    position: relative !important;
 }
 
-.hero-slide-item {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
+.hero-embedded-video {
     width: 100% !important;
     height: 100% !important;
-    display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-    flex-direction: column !important;
-    transition: opacity 0.8s ease-in-out !important;
-}
-
-.hero-slide-item.active {
-    display: flex !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-    position: absolute !important;
-    inset: 0 !important;
-    z-index: 2 !important;
-}
-
-.hero-slide-item img {
-    width: 100% !important;
-    height: 270px !important;
     object-fit: cover !important;
     display: block !important;
+    border-radius: 20px !important;
+    border: none !important;
 }
 
-.hero-slide-item .hero-showcase-tag {
-    height: 40px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    background: #EFF6FF !important;
-    color: #1D4ED8 !important;
-    font-weight: 800 !important;
-    font-size: 0.8rem !important;
-    border-top: 1px solid #E2E8F0 !important;
+@media (max-width: 768px) {
+    .hero-embedded-video-card {
+        height: 250px !important;
+    }
 }
