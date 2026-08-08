@@ -5291,3 +5291,28 @@ h1, h2 {
         box-shadow: 0 6px 16px rgba(37, 99, 235, 0.12) !important;
     }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   100% SYMMETRICAL PORTFOLIO META BADGES LAYOUT
+   ═══════════════════════════════════════════════════════════ */
+.portfolio-meta {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    margin-bottom: 12px !important;
+}
+
+.portfolio-meta .badge,
+.portfolio-meta .portfolio-type-tag {
+    font-size: 0.74rem !important;
+    padding: 4px 10px !important;
+    border-radius: 8px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
