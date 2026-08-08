@@ -33,9 +33,9 @@ const SITE_CONFIG = {
     tracking: {
         ga4Id:                 "G-8Q9GMZWFK6",                             // Google Analytics 4 ID
         gtmId:                 "GTM-W9MKQLGP",                           // Google Tag Manager ID
-        googleAdsId:           "AW-NOVADIGITAL",                            // Google Ads Global Site Tag
+        googleAdsId:           "AW-549184982",                            // Google Ads Global Site Tag
         googleAdsConversionId: "AW-NOVADIGITAL/form_submit_conv",          // Google Ads Conversion ID
-        metaPixelId:           "123456789012345",                           // Meta Pixel (FB/IG) ID
+        metaPixelId:           "2904049929937214",                           // Meta Pixel (FB/IG) ID
         clarityId:             "clarity-novadigital",                       // Microsoft Clarity ID
         searchConsoleMeta:     "google-site-verification=ksJLIBROnT_hba5bZMxV-sHA63Afc5RRF2J-gqphWuA", // GSC Doğrulama
     },
