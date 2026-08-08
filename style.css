@@ -442,6 +442,39 @@ body {
     max-width: 100%;
 }
 
+.hero-trust-bar {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 12px 18px;
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border-default);
+    align-items: center;
+}
+
+@media (max-width: 992px) {
+    .hero-trust-bar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-trust-bar {
+        grid-template-columns: 1fr;
+    }
+}
+
+.hero-trust-bar span {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
 .hero-visual {
     position: relative;
     width: 100%;
