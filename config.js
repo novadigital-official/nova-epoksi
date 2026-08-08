@@ -31,13 +31,13 @@ const SITE_CONFIG = {
 
     // ─── Dijital Pazarlama, Analiz & Takip Kodları (GTM, GA4, Ads, Meta, Clarity) ─
     tracking: {
-        ga4Id:                 "G-NOVADIGITAL",                             // Google Analytics 4 ID
-        gtmId:                 "GTM-NOVADIGITAL",                           // Google Tag Manager ID
+        ga4Id:                 "G-8Q9GMZWFK6",                             // Google Analytics 4 ID
+        gtmId:                 "GTM-W9MKQLGP",                           // Google Tag Manager ID
         googleAdsId:           "AW-NOVADIGITAL",                            // Google Ads Global Site Tag
         googleAdsConversionId: "AW-NOVADIGITAL/form_submit_conv",          // Google Ads Conversion ID
         metaPixelId:           "123456789012345",                           // Meta Pixel (FB/IG) ID
         clarityId:             "clarity-novadigital",                       // Microsoft Clarity ID
-        searchConsoleMeta:     "google-site-verification=placeholder-novadigital", // GSC Doğrulama
+        searchConsoleMeta:     "google-site-verification=ksJLIBROnT_hba5bZMxV-sHA63Afc5RRF2J-gqphWuA", // GSC Doğrulama
     },
 
     // ─── Web Sitesi Paketleri (Stratejik Konumlandırma) ──────
