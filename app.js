@@ -767,7 +767,86 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, { threshold: 0.4 });
 
-        liveCounters.forEach(c => trustObserver.observe(c));
+    // ─── HIGH CONVERSION EVENT TRACKING ENGINE (GA4, GTM, Ads, Meta) ─
+    window.trackEvent = function(eventName, eventParams = {}) {
+        console.log('[Analytics Engine] Event:', eventName, eventParams);
+
+        // 1. Google Analytics 4 (GA4) & Google Ads
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', eventName, eventParams);
+        }
+
+        // 2. Google Tag Manager (GTM DataLayer)
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: eventName,
+            ...eventParams
+        });
+
+        // 3. Meta Pixel (Facebook & Instagram Ads)
+        if (typeof window.fbq === 'function') {
+            window.fbq('trackCustom', eventName, eventParams);
+        }
+    };
+
+    // Track WhatsApp, Phone, Package & Demo Clicks
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        if (!link) return;
+
+        const href = link.getAttribute('href') || '';
+        const id = link.id || '';
+
+        // WhatsApp Clicks (click_whatsapp)
+        if (id.includes('whatsapp') || href.includes('wa.me') || href.includes('whatsapp.com')) {
+            window.trackEvent('click_whatsapp', {
+                location: id || 'body_whatsapp_link',
+                href: href
+            });
+        }
+
+        // Phone Call Clicks (phone_call)
+        if (href.startsWith('tel:')) {
+            window.trackEvent('phone_call', {
+                phone_number: href
+            });
+        }
+
+        // Package Clicks (click_package)
+        const packageAttr = link.getAttribute('data-package') || link.closest('[data-package]')?.getAttribute('data-package');
+        if (packageAttr) {
+            window.trackEvent('click_package', {
+                package_id: packageAttr
+            });
+        }
+
+        // Portfolio Demo Clicks (click_demo)
+        if (link.classList.contains('portfolio-card') || href.includes('vercel.app')) {
+            const demoTitle = link.querySelector('h3')?.innerText || 'Demo Link';
+            window.trackEvent('click_demo', {
+                demo_title: demoTitle,
+                demo_url: href
+            });
+        }
+    });
+
+    // Track Form Submissions (form_submit & Google Ads Conversion)
+    if (contactFormEl) {
+        contactFormEl.addEventListener('submit', () => {
+            const selectedService = document.getElementById('formService')?.value || 'Genel';
+            window.trackEvent('form_submit', {
+                form_id: 'contactForm',
+                service: selectedService
+            });
+
+            // Google Ads Conversion Specific Event
+            if (typeof window.gtag === 'function') {
+                window.gtag('event', 'conversion', {
+                    'send_to': SITE_CONFIG.tracking.googleAdsConversionId
+                });
+            }
+        });
     }
 
 });
+

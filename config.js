@@ -1,8 +1,8 @@
 /* ═══════════════════════════════════════════════════════════════
    NOVA DIGITAL — SİTE KONFİGÜRASYONU (config.js)
    ───────────────────────────────────────────────────────────────
-   Tüm iletişim bilgileri, paket fiyatları ve stratejik konumlandırma
-   bu dosyadan yönetilir.
+   Tüm iletişim bilgileri, paket fiyatları, analitik ve dijital pazarlama
+   takip sistemleri bu dosyadan yönetilir.
    ═══════════════════════════════════════════════════════════════ */
 
 const SITE_CONFIG = {
@@ -12,7 +12,7 @@ const SITE_CONFIG = {
         ad:       "Nova Digital",
         slogan:   "Dijital Çözümler",
         unvan:    "Nova Digital Yazılım & Dijital Pazarlama",
-        adres:    "Türkiye",
+        adres:    "Antalya & Kocaeli / Türkiye",
         eposta:   "info@novadigital.com.tr",
         telefon:  "+90 507 087 17 89",
     },
@@ -27,6 +27,17 @@ const SITE_CONFIG = {
     sosyal: {
         instagram: "https://instagram.com/novadigitalllll",
         threads:   "https://threads.net/@novadigitalllll",
+    },
+
+    // ─── Dijital Pazarlama, Analiz & Takip Kodları (GTM, GA4, Ads, Meta, Clarity) ─
+    tracking: {
+        ga4Id:                 "G-NOVADIGITAL",                             // Google Analytics 4 ID
+        gtmId:                 "GTM-NOVADIGITAL",                           // Google Tag Manager ID
+        googleAdsId:           "AW-NOVADIGITAL",                            // Google Ads Global Site Tag
+        googleAdsConversionId: "AW-NOVADIGITAL/form_submit_conv",          // Google Ads Conversion ID
+        metaPixelId:           "123456789012345",                           // Meta Pixel (FB/IG) ID
+        clarityId:             "clarity-novadigital",                       // Microsoft Clarity ID
+        searchConsoleMeta:     "google-site-verification=placeholder-novadigital", // GSC Doğrulama
     },
 
     // ─── Web Sitesi Paketleri (Stratejik Konumlandırma) ──────
