@@ -48,10 +48,25 @@
     --shadow-glow: 0 4px 20px rgba(37, 99, 235, 0.12);
 }
 
-/* Body a??k tema */
+/* Body açık tema */
 body {
     background: var(--bg-body);
     color: var(--text-primary);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   VEKTÖR ARKA PLANLARI DÜZENLEMESİ:
+   1. Mobilde TÜM vektör arka planlar gizlenir.
+   2. Masaüstünde sadece #paketler bölümündekiler görünür.
+   ═══════════════════════════════════════════════════════════ */
+.section-bg-vector {
+    display: none !important;
+}
+
+@media (min-width: 993px) {
+    #paketler .section-bg-vector {
+        display: block !important;
+    }
 }
 
 /* ??? UYUMU ?L?EKLEND?RME: T?M B?L?M BA?LIKLARI H?ZALAMASI ??? */
