@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════════
+   ANTALYA NOVA EPOKSI — KURUMSAL FERAH & GERÇEK SEKTÖREL DESIGN SYSTEM
+   ───────────────────────────────────────────────────────────
+   Sektör: Kurumsal Epoksi Zemin & Saha Betonu Uygulamaları
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+    --color-primary-dark: #0F172A;   /* Derin Kurumsal Lacivert */
+    --color-royal-blue: #1D4ED8;     /* Canlı Kurumsal Mavi */
+    --color-epoxy-amber: #F59E0B;    /* Epoksi Astar / Keşif Sarı */
+    --color-bg-light: #F8FAFC;       /* Ferah Açık Slate Arka Plan */
+    --color-surface-white: #FFFFFF;  /* Temiz Beyaz Kartlar */
+    --color-border-light: #E2E8F0;   /* Yumuşak Gri Kenarlık */
+    --color-text-main: #0F172A;      /* Koyu Okunaklı Metin */
+    --color-text-slate: #475569;     /* Yan Metin Rengi */
+    --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg-light);
+    color: var(--color-text-main);
+    line-height: 1.6;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Ferah Kurumsal Gölgeler */
+.card-shadow-fresh {
+    box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+}
+
+.card-shadow-hover:hover {
+    box-shadow: 0 20px 40px -10px rgba(29, 78, 216, 0.15), 0 8px 16px -4px rgba(15, 23, 42, 0.06);
+    transform: translateY(-2px);
+}
+
+/* Epoksi Uygulama Adımları Çizelgesi */
+.step-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 9999px;
+    background-color: #DBEAFE;
+    color: #1E40AF;
+    font-weight: 900;
+    font-size: 0.9rem;
+}
+
+/* ─── MOBILE RESPONSIVE PERFECTION BREAKPOINTS ─── */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden !important;
+    }
+
+    h1, h2, h3 {
+        line-height: 1.3 !important;
+        word-break: break-word !important;
+    }
+}

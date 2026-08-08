@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Epoksi — Endüstriyel Zemin Kaplama & Saha Betonu Çözümleri</title>
+    <meta name="description" content="Fabrika, otopark ve depo alanları için 10 yıl garantili epoksi zemin kaplama, self-leveling ve saha betonu çözümleri. Anında interaktif m² bütçe hesaplayın.">
+    <meta name="keywords" content="epoksi zemin kaplama, endüstriyel zemin, saha betonu, self leveling epoksi, multilayer epoksi, antistatik zemin">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Nova Epoksi — Endüstriyel Zemin & Saha Betonu Çözümleri">
+    <meta property="og:description" content="10 Yıl Garantili Endüstriyel Zemin Çözümleri. Anında Bütçe Hesaplama Sihirbazı ile 30 Saniyede Keşif Talebi Oluşturun.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom Style System -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Nova Epoksi & Endüstriyel Zemin Sistemleri",
+      "image": "https://nova-epoksi.vercel.app/images/hero-epoksi.jpg",
+      "telephone": "+905070871789",
+      "email": "info@novadigital.com.tr",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kocaeli / İstanbul",
+        "addressCountry": "TR"
+      },
+      "priceRange": "₺₺₺",
+      "description": "Endüstriyel tesisler, fabrikalar ve otoparklar için epoksi kaplama ve saha betonu çözümleri."
+    }
+    </script>
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         NAVBAR
+         ═══════════════════════════════════════════════════════════ -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="nav-logo">
+                <div class="logo-badge">E</div>
+                <div class="logo-text">Nova<span>Epoksi</span></div>
+            </a>
+
+            <div class="nav-links">
+                <a href="#hizmetler">Hizmetlerimiz</a>
+                <a href="#sihirbaz">Bütçe Sihirbazı</a>
+                <a href="#referanslar">Referans Projeler</a>
+                <a href="#iletisim">İletişim</a>
+            </div>
+
+            <a href="#sihirbaz" class="btn btn-primary">
+                <i class="fa-solid fa-calculator"></i> Anında Bütçe Hesapla
+            </a>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         HERO SECTION WITH INTERACTIVE BUDGET WIZARD
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="hero" id="sihirbaz">
+        <div class="container">
+            <div class="hero-grid">
+                <!-- Sol Kolon: Başlık & Değer Önerisi -->
+                <div>
+                    <div class="badge">
+                        <i class="fa-solid fa-shield-halved"></i> 10 Yıl Garantili Endüstriyel Altyapı
+                    </div>
+                    <h1>Fabrikalar ve Tesisler İçin <span style="color: var(--color-accent);">Yüksek Dayanımlı</span> Epoksi Zemin Çözümleri</h1>
+                    <p class="hero-lead">
+                        Ağır yüke, kimyasallara ve darbelere dayanıklı endüstriyel epoksi ve saha betonu uygulamaları. Anında m² bütçenizi hesaplayın, ücretsiz yerinde keşif randevusu alın.
+                    </p>
+                    
+                    <div style="display: flex; gap: 24px; margin-top: 32px;">
+                        <div>
+                            <div style="font-size: 1.8rem; font-weight: 900; color: var(--color-accent);">500.000+ m²</div>
+                            <div style="font-size: 0.85rem; color: #94A3B8;">Tamamlanan Alan</div>
+                        </div>
+                        <div style="width: 1px; background: rgba(255,255,255,0.15);"></div>
+                        <div>
+                            <div style="font-size: 1.8rem; font-weight: 900; color: #FFFFFF;">150+ Tesis</div>
+                            <div style="font-size: 0.85rem; color: #94A3B8;">Kurumsal Referans</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sağ Kolon: İNTERAKTİF BÜTÇE SİHİRBAZI WIDGET'I -->
+                <div class="wizard-card" id="wizardCard">
+                    <div class="wizard-header">
+                        <div>
+                            <h3 style="font-size: 1.25rem; margin-bottom: 2px;">Bütçe Hesaplama Sihirbazı</h3>
+                            <p style="font-size: 0.85rem; color: var(--color-text-muted);">Uygulama tipinizi ve m² alanınızı seçin</p>
+                        </div>
+                        <span class="wizard-step-badge">Canlı Fiyat Motoru</span>
+                    </div>
+
+                    <!-- Adım 1: Hizmet Seçimi -->
+                    <div style="margin-bottom: 12px; font-weight: 700; font-size: 0.9rem;">1. Uygulama Tipi Seçin:</div>
+                    <div class="service-options">
+                        <button class="service-opt-btn active" data-price="240" data-name="Multilayer Epoksi Kaplama">
+                            <span class="service-opt-title">Multilayer Epoksi</span>
+                            <span class="service-opt-price">240 TL / m²</span>
+                        </button>
+                        <button class="service-opt-btn" data-price="180" data-name="Self-Leveling Epoksi">
+                            <span class="service-opt-title">Self-Leveling</span>
+                            <span class="service-opt-price">180 TL / m²</span>
+                        </button>
+                        <button class="service-opt-btn" data-price="320" data-name="Saha Betonu & Helikopter">
+                            <span class="service-opt-title">Saha Betonu</span>
+                            <span class="service-opt-price">320 TL / m²</span>
+                        </button>
+                        <button class="service-opt-btn" data-price="410" data-name="Anti-Statik Epoksi Zemin">
+                            <span class="service-opt-title">Anti-Statik Zemin</span>
+                            <span class="service-opt-price">410 TL / m²</span>
+                        </button>
+                    </div>
+
+                    <!-- Adım 2: m² Slider -->
+                    <div class="slider-wrap">
+                        <div class="slider-label-row">
+                            <span>2. Toplam Alan (m²):</span>
+                            <span class="slider-val"><span id="areaValDisplay">500</span> m²</span>
+                        </div>
+                        <input type="range" class="wizard-range" id="areaRange" min="50" max="5000" step="50" value="500">
+                    </div>
+
+                    <!-- Adım 3: Tahmini Bütçe Sonucu -->
+                    <div class="calc-result-box">
+                        <div>
+                            <span class="result-label">Tahmini Toplam Bütçe</span>
+                            <span style="font-size: 0.75rem; color: #64748B;">*KDV & İşçilik Dahildir</span>
+                        </div>
+                        <div class="result-price" id="calculatedPriceDisplay">120.000 TL</div>
+                    </div>
+
+                    <!-- Adım 4: Lead Form Kilit Açma -->
+                    <form class="wizard-form" id="wizardLeadForm">
+                        <input type="hidden" id="selectedServiceInput" value="Multilayer Epoksi Kaplama">
+                        <input type="hidden" id="calculatedBudgetInput" value="120000">
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <input type="text" id="leadName" class="form-input" placeholder="Adınız Soyadınız *" required>
+                            <input type="tel" id="leadPhone" class="form-input" placeholder="Telefon (05XX) *" required>
+                        </div>
+                        <input type="text" id="leadCity" class="form-input" placeholder="Şirket Adı & Şehir">
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 4px;">
+                            <i class="fa-solid fa-paper-plane"></i> Ücretsiz Keşif & Teklif Talebi Gönder
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SERVICES CATALOG
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="section" id="hizmetler">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge"><i class="fa-solid fa-cubes"></i> Uzmanlık Alanlarımız</div>
+                <h2>Endüstriyel Zemin <span style="color: var(--color-accent);">Kaplama Sistemleri</span></h2>
+                <p style="color: var(--color-text-muted); max-width: 600px; margin: 8px auto 0;">Tesisinizin kullanım amacına ve mekanik yük gereksinimine özel mühendislik çözümleri.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Hizmet 1 -->
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Multilayer Epoksi Zemin" class="service-thumb">
+                    <div class="service-body">
+                        <span class="service-price-badge">240 TL / m² Başlayan</span>
+                        <h3>Multilayer Epoksi Kaplama</h3>
+                        <p style="font-size: 0.9rem; color: var(--color-text-muted); margin: 8px 0 16px;">Fabrika içi forklift yolları, ağır yük depolama alanları için çok katmanlı kaymaz yüzey sistemi.</p>
+                        <a href="#sihirbaz" class="btn btn-dark" style="width: 100%; font-size: 0.9rem; padding: 10px;">Keşif İste</a>
+                    </div>
+                </div>
+
+                <!-- Hizmet 2 -->
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="Self Leveling Epoksi" class="service-thumb">
+                    <div class="service-body">
+                        <span class="service-price-badge">180 TL / m² Başlayan</span>
+                        <h3>Self-Leveling Epoksi Zemin</h3>
+                        <p style="font-size: 0.9rem; color: var(--color-text-muted); margin: 8px 0 16px;">Cam gibi pürüzsüz, hijyenik, kolay temizlenebilir gıda ve ilaç tesisi kaplama altyapısı.</p>
+                        <a href="#sihirbaz" class="btn btn-dark" style="width: 100%; font-size: 0.9rem; padding: 10px;">Keşif İste</a>
+                    </div>
+                </div>
+
+                <!-- Hizmet 3 -->
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=600&q=80" alt="Saha Betonu ve Helikopter Perdahlama" class="service-thumb">
+                    <div class="service-body">
+                        <span class="service-price-badge">320 TL / m² Başlayan</span>
+                        <h3>Endüstriyel Saha Betonu</h3>
+                        <p style="font-size: 0.9rem; color: var(--color-text-muted); margin: 8px 0 16px;">Lojistik depolar, açık otoparklar ve ağır sanayi alanları için helikopter perdahlı sertleştiricili beton.</p>
+                        <a href="#sihirbaz" class="btn btn-dark" style="width: 100%; font-size: 0.9rem; padding: 10px;">Keşif İste</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         CASE STUDIES / REFERANSLAR
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="section" id="referanslar" style="background: #0F172A; color: #FFFFFF;">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge" style="background: rgba(255,255,255,0.1); color: var(--color-accent); border-color: rgba(255,255,255,0.2);">Saha Başarı Hikayeleri</div>
+                <h2 style="color: #FFFFFF;">Tamamlanan <span style="color: var(--color-accent);">Endüstriyel Projeler</span></h2>
+            </div>
+
+            <div class="case-studies-grid">
+                <div class="case-card">
+                    <div class="case-info">
+                        <h3>Organize Sanayi Lojistik Depo</h3>
+                        <p style="font-size: 0.9rem; color: #94A3B8;">12.000 m² Helikopter Perdahlı Saha Betonu & Ağır Yük Epoksi Kaplaması 6 Günde Teslim Edildi.</p>
+                        <div class="case-meta">
+                            <div class="case-meta-item">📍 Kocaeli OSB</div>
+                            <div class="case-meta-item">📐 12.000 m²</div>
+                        </div>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Lojistik Depo Projesi" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+
+                <div class="case-card">
+                    <div class="case-info">
+                        <h3>Otomotiv Yedek Parça Fabrikası</h3>
+                        <p style="font-size: 0.9rem; color: #94A3B8;">4.500 m² Anti-Statik (ESD) Epoksi Zemin Kaplama Uygulaması Nitelikli Test Onayı Almıştır.</p>
+                        <div class="case-meta">
+                            <div class="case-meta-item">📍 Bursa OSB</div>
+                            <div class="case-meta-item">📐 4.500 m²</div>
+                        </div>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Otomotiv Fabrikası Projesi" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            <div class="logo-text" style="color: #FFFFFF; margin-bottom: 12px;">Nova<span>Epoksi</span></div>
+            <p style="font-size: 0.9rem; margin-bottom: 24px;">Endüstriyel Zemin & Saha Betonu Sistemleri — Nova Digital Altyapısı</p>
+            <div style="font-size: 0.8rem; color: #64748B;">© 2026 Nova Epoksi. Tüm Hakları Saklıdır.</div>
+        </div>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+// ═══════════════════════════════════════════════════════════
+// ANTALYA NOVA EPOKSI — FULL-STACK SAAS & CRM PRISMA SCHEMA
+// Direct Customer Acquisition & CRM Pipeline Architecture
+// ═══════════════════════════════════════════════════════════
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// 1. CRM PIPELINE LEAD TABLOSU
+model Lead {
+  id               String       @id @default(cuid())
+  name             String       // Ad Soyad
+  phone            String       // Telefon (05XX)
+  location         String       // Örn: Antalya / Lara, Muratpaşa, Kepez
+  squareMeters     Int          // m² Ölçüsü (Örn: 450)
+  facilityType     String       // Fabrika, Otel, Otopark, Garaj, Metalik, 3D
+  floorCondition   String       @default("Orta") // İyi, Orta, Bozuk
+  estimatedBudget  Decimal      @db.Decimal(12, 2) // Tahmini Keşif Bütçesi
+  notes            String?      @db.Text
+  source           LeadSource   @default(GOOGLE_ADS) // Google Ads, Meta Ads, Instagram, Organik
+  status           LeadStatus   @default(NEW)        // CRM Pipeline Adımı
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+
+  @@map("leads")
+}
+
+enum LeadSource {
+  GOOGLE_ADS
+  META_ADS
+  INSTAGRAM
+  ORGANIC_SEO
+  DIRECT
+}
+
+enum LeadStatus {
+  NEW                  // Yeni Lead
+  CONTACTED            // Arandı
+  SITE_VISIT_SCHEDULED // Keşif Randevusu Alındı
+  QUOTED               // Teklif Verildi
+  WON                  // Kazanıldı
+  COMPLETED            // Tamamlandı
+  LOST                 // Kaybedildi
+}
+
+// 2. PROJE PORTFÖY CMS TABLOSU
+model Project {
+  id           String   @id @default(cuid())
+  title        String   // Örn: "Antalya Lara Otel Lobisi Metalik Epoksi"
+  slug         String   @unique
+  location     String   // Antalya / Lara
+  squareMeters Int      // 450 m²
+  systemUsed   String   // Metalik Epoksi, Multilayer, Self-Leveling
+  status       String   @default("Tamamlandı") // Tamamlandı, Devam Ediyor
+  beforeImages String[] // Önce fotoğrafları
+  afterImages  String[] // Sonra fotoğrafları (15 adede kadar)
+  description  String   @db.Text
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("projects")
+}
+
+// 3. HİZMET MANIFESTO CMS
+model Service {
+  id             String   @id @default(cuid())
+  title          String   // Örn: "Endüstriyel Fabrika Epoksisi"
+  slug           String   @unique
+  category       String   // Fabrika, Otel, Otopark, Garaj, Metalik, 3D
+  description    String   @db.Text
+  coverImage     String
+  seoTitle       String
+  seoDescription String
+  orderIndex     Int      @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@map("services")
+}
+
+// 4. BLOG & SEO İÇERİK CMS
+model BlogPost {
+  id             String   @id @default(cuid())
+  title          String   // Örn: "Antalya Epoksi Zemin Kaplama Fiyatları 2026"
+  slug           String   @unique
+  content        String   @db.Text
+  excerpt        String
+  coverImage     String
+  seoTitle       String
+  seoDescription String
+  publishedAt    DateTime @default(now())
+  createdAt      DateTime @default(now())
+
+  @@map("blog_posts")
+}
+
+// 5. ADMIN USER (NextAuth / JWT)
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  role         String   @default("ADMIN")
+  createdAt    DateTime @default(now())
+
+  @@map("users")
+}
