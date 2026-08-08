@@ -260,7 +260,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <a href="#iletisim">İletişim</a>
         </div>
 
-        <a href="#iletisim" class="btn btn-primary btn-sm nav-cta">Teklif Al</a>
+        <div class="nav-right-actions" style="display: flex; align-items: center; gap: 12px;">
+            <button class="theme-toggle-btn" id="themeToggle" aria-label="Karanlık/Aydınlık Mod Değiştir" title="Tema Değiştir">
+                <i class="fa-solid fa-moon moon-icon" aria-hidden="true"></i>
+                <i class="fa-solid fa-sun sun-icon" aria-hidden="true"></i>
+            </button>
+            <a href="#iletisim" class="btn btn-primary btn-sm nav-cta">Teklif Al</a>
+        </div>
 
         <button class="hamburger" id="hamburger" aria-label="Menüyü aç/kapat" aria-expanded="false">
             <span></span>
@@ -533,6 +539,80 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <img src="images/Shop giveaway-pana.png" alt="" class="section-bg-vector section-bg-vector--left" aria-hidden="true" loading="lazy">
     <img src="images/Catalogue-bro.png" alt="" class="section-bg-vector section-bg-vector--inter-3" aria-hidden="true" loading="lazy">
     <div class="container">
+        <!-- ⚡ INTERACTIVE BEFORE / AFTER REDESIGN SLIDER -->
+        <div class="before-after-wrapper reveal">
+            <div class="section-header text-center mb-6" style="margin-bottom: 2rem;">
+                <span class="badge badge-accent" style="background: #E0F2FE !important; color: #0284C7 !important; border: 1px solid #BAE6FD !important;">⚡ Somut Dönüşüm Kanıtı</span>
+                <h3 style="font-size: clamp(1.4rem, 3vw, 2.1rem); font-weight: 800; margin-top: 8px;">Rakiplerin Standart Sitesi VS <span class="text-gradient">Nova Digital Dokunuşu</span></h3>
+                <p style="font-size: 0.92rem; color: var(--text-secondary);">Çizgiyi sağa/sola sürükleyerek eski sıradan tasarım ile Nova Digital dönüşümünü canlı kıyaslayın.</p>
+            </div>
+            
+            <div class="before-after-container" id="beforeAfterSlider">
+                <div class="before-after-img ba-layer-after">
+                    <img src="images/Ekran görüntüsü 2026-08-07 190255.png" alt="Nova Digital Modern Dönüşüm Tasarımı" loading="lazy">
+                    <span class="ba-badge ba-badge-after">✨ Nova Digital Dönüşümü (+%340 Müşteri Dönüşümü)</span>
+                </div>
+                <div class="before-after-img ba-layer-before" id="beforeImage">
+                    <img src="images/Ekran görüntüsü 2026-08-07 190140.png" alt="Eski Yavaş Standart Web Sitesi" loading="lazy">
+                    <span class="ba-badge ba-badge-before">❌ Sıradan / Yavaş Yetersiz Tasarım</span>
+                </div>
+                <div class="ba-handle" id="sliderHandle">
+                    <div class="ba-handle-button">
+                        <i class="fa-solid fa-arrows-left-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🏆 CASE STUDY: GERÇEK BAŞARI HİKAYELERİ & RAKAMSAL SONUÇLAR -->
+        <div class="case-studies-grid reveal" style="margin-bottom: 4rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1.75rem;">
+            <!-- Case Study 1: Antalya DHI -->
+            <div class="card case-study-card" style="padding: 2rem; border-radius: var(--radius-xl); background: var(--bg-card); border: 1px solid var(--border-default); position: relative; overflow: hidden;">
+                <div class="cs-badge" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: rgba(37, 99, 235, 0.1); color: var(--color-primary); font-size: 0.78rem; font-weight: 800; border-radius: 50px; margin-bottom: 1rem; border: 1px solid rgba(37, 99, 235, 0.2);">
+                    <i class="fa-solid fa-chart-line"></i> CASE STUDY #1 — SAĞLIK TURİZMİ
+                </div>
+                <h4 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.75rem;">Antalya DHI Hair Transplant Portal</h4>
+                <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.25rem; line-height: 1.6;">
+                    <strong>Problem:</strong> Yabancı hastalar eski yavaş sitede güven duymayıp form doldurmadan çıkıyordu.<br>
+                    <strong>Nova Digital Dokunuşu:</strong> Norwood saç analiz sihirbazı, 3 dilli canlı VIP hesaplayıcı ve WhatsApp otomasyonu entegre edildi.<br>
+                    <strong>Sonuç:</strong> Yurt dışı hasta başvurularında <strong>+%340 artış</strong>, ilk 14 günde yatırımı amorti etme başarısı.
+                </p>
+                <div style="display: flex; gap: 1.5rem; border-top: 1px solid var(--border-default); margin-top: 1rem; padding-top: 1rem;">
+                    <div>
+                        <div style="font-size: 1.4rem; font-weight: 900; color: #10B981;">+%340</div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Hasta Lead Artışı</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 1.4rem; font-weight: 900; color: #2563EB;">14 Gün</div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Yatırım Amorti Süresi</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 2: Nova Epoksi -->
+            <div class="card case-study-card" style="padding: 2rem; border-radius: var(--radius-xl); background: var(--bg-card); border: 1px solid var(--border-default); position: relative; overflow: hidden;">
+                <div class="cs-badge" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: rgba(245, 158, 11, 0.1); color: #D97706; font-size: 0.78rem; font-weight: 800; border-radius: 50px; margin-bottom: 1rem; border: 1px solid rgba(245, 158, 11, 0.2);">
+                    <i class="fa-solid fa-building"></i> CASE STUDY #2 — ENDÜSTRİYEL B2B
+                </div>
+                <h4 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.75rem;">Nova Epoksi B2B Zemin Sistemi</h4>
+                <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.25rem; line-height: 1.6;">
+                    <strong>Problem:</strong> Fabrika ve otopark sahipleri zemini görmeden fiyat verilmesinden rahatsızdı.<br>
+                    <strong>Nova Digital Dokunuşu:</strong> İnteraktif m² bütçe sihirbazı ve fotoğraflı yerinde keşif sistemi kuruldu.<br>
+                    <strong>Sonuç:</strong> 15.000 m² zemin teklifi toplandı, formdan WhatsApp'a geçiş oranı <strong>%92'ye çıktı</strong>.
+                </p>
+                <div style="display: flex; gap: 1.5rem; border-top: 1px solid var(--border-default); margin-top: 1rem; padding-top: 1rem;">
+                    <div>
+                        <div style="font-size: 1.4rem; font-weight: 900; color: #F59E0B;">15.000 m²</div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Teklif Toplanan Alan</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 1.4rem; font-weight: 900; color: #10B981;">%92</div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">WhatsApp Dönüşüm Oranı</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="portfolio-header-wrap reveal">
             <div>
                 <h2>Sektörünüze Hazır <span class="text-gradient">Canlı Demolar</span></h2>
