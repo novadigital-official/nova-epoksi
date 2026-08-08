@@ -7,12 +7,11 @@ import EpoksiTeknikSurec from '../components/EpoksiTeknikSurec';
 import CorporateReferences from '../components/CorporateReferences';
 import WhatsAppBotWidget from '../components/WhatsAppBotWidget';
 import BitirdigimizIsler from '../components/BitirdigimizIsler';
-import MobileStickyBar from '../components/MobileStickyBar';
 import FiyatStratejisi2026 from '../components/FiyatStratejisi2026';
 
 export default function AntalyaEpoksiMasterSalesPage() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-blue-600 selection:text-white relative pb-16 md:pb-0">
+    <main className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-blue-600 selection:text-white relative">
       {/* 1. PROFESSIONAL CORPORATE NAVBAR */}
       <Navbar />
 
@@ -133,11 +132,8 @@ export default function AntalyaEpoksiMasterSalesPage() {
         <TrustBadges />
       </section>
 
-      {/* 11. FLOATING WHATSAPP SATIŞ BOTU */}
+      {/* 11. FLOATING WHATSAPP BUTTON */}
       <WhatsAppBotWidget />
-
-      {/* 12. MOBİL YAPIŞKAN AKSİYON BARI */}
-      <MobileStickyBar />
 
       {/* FOOTER */}
       <footer className="bg-slate-900 text-slate-400 py-12 text-xs text-center border-t border-slate-800">
