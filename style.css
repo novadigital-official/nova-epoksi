@@ -5221,3 +5221,73 @@ h1, h2 {
         line-height: 1.45 !important;
     }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   ACCESSIBILITY & THUMB-FRIENDLY MOBILE CAROUSEL CONTROLS
+   ═══════════════════════════════════════════════════════════ */
+.carousel-nav-controls {
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+}
+
+.carousel-nav-btn {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    min-height: 48px !important;
+    border-radius: 50% !important;
+    background: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    color: #1E293B !important;
+    font-size: 1.1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+.carousel-nav-btn:hover,
+.carousel-nav-btn:active {
+    background: #2563EB !important;
+    color: #FFFFFF !important;
+    border-color: #2563EB !important;
+    transform: scale(1.08) !important;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25) !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .portfolio-header-wrap {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+    }
+
+    /* Maximum thumb separation on mobile: Prev button on far-left, Next button on far-right */
+    .carousel-nav-controls {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        margin-top: 16px !important;
+        padding: 0 4px !important;
+        box-sizing: border-box !important;
+    }
+
+    .carousel-nav-btn {
+        width: 52px !important;
+        height: 52px !important;
+        min-width: 52px !important;
+        min-height: 52px !important;
+        border-radius: 16px !important;
+        font-size: 1.25rem !important;
+        background: #EFF6FF !important;
+        border: 1.5px solid #BFDBFE !important;
+        color: #2563EB !important;
+        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.12) !important;
+    }
+}
