@@ -766,6 +766,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }, { threshold: 0.4 });
+    }
 
     // ─── HIGH CONVERSION EVENT TRACKING ENGINE (GA4, GTM, Ads, Meta) ─
     window.trackEvent = function(eventName, eventParams = {}) {
