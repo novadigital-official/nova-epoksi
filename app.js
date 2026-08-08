@@ -28,17 +28,23 @@ window.showUpcomingToast = function(e, title) {
     if (!toast) {
         toast = document.createElement('div');
         toast.id = 'upcomingToast';
-        toast.style.cssText = 'position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(100px); background:#0F172A; color:#FFFFFF; padding:14px 28px; border-radius:14px; font-weight:700; font-size:0.92rem; z-index:99999; box-shadow:0 12px 36px rgba(0,0,0,0.3); transition:transform 0.35s cubic-bezier(0.16,1,0.3,1); display:flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,0.2); font-family:inherit; pointer-events:none;';
+        toast.style.cssText = 'position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px); opacity:0; visibility:hidden; background:#0F172A; color:#FFFFFF; padding:14px 28px; border-radius:14px; font-weight:700; font-size:0.92rem; z-index:99999; box-shadow:0 12px 36px rgba(0,0,0,0.3); transition:all 0.35s cubic-bezier(0.16,1,0.3,1); display:flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,0.2); font-family:inherit; pointer-events:none;';
         document.body.appendChild(toast);
     }
     toast.innerHTML = `<i class="fa-solid fa-rocket" style="color:#60A5FA; font-size:1.1rem;"></i> <span><strong>${title} Demomuz</strong> Çok Yakında Hizmetinizde!</span>`;
     requestAnimationFrame(() => {
+        toast.style.visibility = 'visible';
+        toast.style.opacity = '1';
         toast.style.transform = 'translateX(-50%) translateY(0)';
     });
     clearTimeout(window._upcomingToastTimer);
     window._upcomingToastTimer = setTimeout(() => {
-        toast.style.transform = 'translateX(-50%) translateY(100px)';
-    }, 2800);
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(-50%) translateY(20px)';
+        setTimeout(() => {
+            toast.style.visibility = 'hidden';
+        }, 350);
+    }, 2000);
 };
 
 document.addEventListener('DOMContentLoaded', () => {
