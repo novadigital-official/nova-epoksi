@@ -882,7 +882,7 @@ body::before {
 .pricing-amount span {
     font-size: 0.85rem;
     font-weight: var(--weight-bold);
-    color: var(--color-primary);
+    color: #0F172A !important;
 }
 
 .pricing-teslim {
