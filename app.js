@@ -867,6 +867,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         ticking = false;
                     });
                     ticking = true;
+                }
+            });
+        }
+    }
     // ─── ÇEREZ YÖNETİMİ & HUKUKİ MODAL ENTEGRASYONU ─────────────
     const cookieBanner = document.getElementById('cookieBanner');
     const acceptBtn = document.getElementById('acceptCookies');
