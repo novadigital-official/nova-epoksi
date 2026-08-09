@@ -5573,3 +5573,71 @@ h1, h2 {
     padding: 0 !important;
     border: none !important;
 }
+
+/* ═══════════════════════════════════════════════════════════
+   VARYASYON 4: BOLD VISIBLE EMERALD TECH (NEO-MINT ZÜMRÜT YEŞİLİ) OVERRIDE
+   ═══════════════════════════════════════════════════════════ */
+:root {
+    --color-primary: #10B981 !important;
+    --color-primary-light: #34D399 !important;
+    --color-primary-dark: #047857 !important;
+    --color-primary-glow: rgba(16, 185, 129, 0.25) !important;
+    --border-hover: rgba(16, 185, 129, 0.6) !important;
+}
+
+.btn-primary,
+.nav-cta,
+#heroCta,
+.btn-premium {
+    background: linear-gradient(135deg, #10B981, #059669) !important;
+    border-color: #10B981 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 18px rgba(16, 185, 129, 0.35) !important;
+}
+
+.btn-primary:hover,
+.nav-cta:hover,
+#heroCta:hover,
+.btn-premium:hover {
+    background: linear-gradient(135deg, #059669, #047857) !important;
+    box-shadow: 0 6px 24px rgba(16, 185, 129, 0.45) !important;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #10B981, #047857) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.nav-logo-text span {
+    color: #10B981 !important;
+}
+
+.filter-btn.active {
+    background: #ECFDF5 !important;
+    color: #047857 !important;
+    border: 1.5px solid #10B981 !important;
+    box-shadow: 0 3px 10px rgba(16, 185, 129, 0.22) !important;
+}
+
+.filter-btn:hover {
+    color: #059669 !important;
+    background: #F0FDF4 !important;
+    border-color: #A7F3D0 !important;
+}
+
+.pricing-card.featured,
+.pricing-card--popular {
+    border: 2px solid #10B981 !important;
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.15) !important;
+}
+
+.pricing-badge-popular {
+    background: #10B981 !important;
+    color: #FFFFFF !important;
+}
+
+.pricing-badge-premium {
+    background: #047857 !important;
+    color: #FFFFFF !important;
+}
