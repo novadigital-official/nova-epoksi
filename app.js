@@ -387,7 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
             track.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
         });
 
-        // ─── DYNAMIC PORTFOLIO CATEGORY FILTERING (ALL / STANDART / KURUMSAL / ULTRA) ───
+        // ─── DYNAMIC PORTFOLIO CATEGORY FILTERING (STANDART / KURUMSAL / ULTRA - TOGGLEABLE) ───
         const filterBtns = document.querySelectorAll('#portfolioFilterBar .filter-btn');
         const slides = track.querySelectorAll('.portfolio-slide');
 
@@ -395,10 +395,15 @@ document.addEventListener('DOMContentLoaded', () => {
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
+                    const isAlreadyActive = btn.classList.contains('active');
 
-                    const category = btn.getAttribute('data-filter') || 'all';
+                    filterBtns.forEach(b => b.classList.remove('active'));
+
+                    let category = 'all';
+                    if (!isAlreadyActive) {
+                        btn.classList.add('active');
+                        category = btn.getAttribute('data-filter') || 'all';
+                    }
 
                     slides.forEach(slide => {
                         const slideCat = slide.getAttribute('data-category');
