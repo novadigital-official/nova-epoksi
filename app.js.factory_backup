@@ -18,6 +18,35 @@ if (typeof SITE_CONFIG === 'undefined') {
     console.warn('config.js loading fallback activated.');
 }
 
+// ─── UPCOMING TOAST NOTIFICATION ────────────────────────────
+window.showUpcomingToast = function(e, title) {
+    if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+    let toast = document.getElementById('upcomingToast');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'upcomingToast';
+        toast.style.cssText = 'position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px); opacity:0; visibility:hidden; background:#0F172A; color:#FFFFFF; padding:14px 28px; border-radius:14px; font-weight:700; font-size:0.92rem; z-index:99999; box-shadow:0 12px 36px rgba(0,0,0,0.3); transition:all 0.35s cubic-bezier(0.16,1,0.3,1); display:flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,0.2); font-family:inherit; pointer-events:none;';
+        document.body.appendChild(toast);
+    }
+    toast.innerHTML = `<i class="fa-solid fa-rocket" style="color:#60A5FA; font-size:1.1rem;"></i> <span><strong>${title} Demomuz</strong> Çok Yakında Hizmetinizde!</span>`;
+    requestAnimationFrame(() => {
+        toast.style.visibility = 'visible';
+        toast.style.opacity = '1';
+        toast.style.transform = 'translateX(-50%) translateY(0)';
+    });
+    clearTimeout(window._upcomingToastTimer);
+    window._upcomingToastTimer = setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(-50%) translateY(20px)';
+        setTimeout(() => {
+            toast.style.visibility = 'hidden';
+        }, 350);
+    }, 2000);
+};
+
 document.addEventListener('DOMContentLoaded', () => {
 
 
@@ -51,6 +80,80 @@ document.addEventListener('DOMContentLoaded', () => {
         emailEl.href = `mailto:${SITE_CONFIG.firma.eposta}`;
         emailEl.textContent = SITE_CONFIG.firma.eposta;
     }
+
+    // ─── Paket CTA → iletişim formunda hizmet + mesaj ön seçimi ──────
+    const packagePrefillMessages = {
+        baslangic: 'Başlangıç Web Sitesi (4.999 TL) hakkında bilgi almak istiyorum.',
+        kurumsal:  'Kurumsal Web Sistemi (14.999 TL) detaylarını incelemek istiyorum.',
+        premium:   'Premium Dijital Sistem için projemizi konuşmak istiyorum.',
+    };
+
+    document.querySelectorAll('[data-package]').forEach(cta => {
+        cta.addEventListener('click', () => {
+            const packageKey = cta.getAttribute('data-package');
+            const serviceSelect = document.getElementById('formService');
+            const messageField = document.getElementById('formMessage');
+            if (serviceSelect && packageKey) {
+                const option = serviceSelect.querySelector(`option[value="${packageKey}"]`);
+                if (option) serviceSelect.value = packageKey;
+            }
+            if (messageField && packagePrefillMessages[packageKey]) {
+                const current = (messageField.value || '').trim();
+                const isEmptyOrPrefill = !current || Object.values(packagePrefillMessages).includes(current);
+                if (isEmptyOrPrefill) {
+                    messageField.value = packagePrefillMessages[packageKey];
+                }
+            }
+        });
+    });
+
+    // ─── Kimler için? metin tetikleyici → panel ───────────────
+    const audienceRoots = document.querySelectorAll('.pricing-audience');
+
+    const closeAudiencePanel = (root) => {
+        const btn = root.querySelector('.pricing-audience-btn');
+        const panel = root.querySelector('.pricing-audience-panel');
+        if (!btn || !panel) return;
+        btn.setAttribute('aria-expanded', 'false');
+        panel.hidden = true;
+        root.classList.remove('is-open');
+    };
+
+    const closeAllAudiencePanels = (exceptRoot = null) => {
+        audienceRoots.forEach((root) => {
+            if (root !== exceptRoot) closeAudiencePanel(root);
+        });
+    };
+
+    audienceRoots.forEach((root) => {
+        const btn = root.querySelector('.pricing-audience-btn');
+        const panel = root.querySelector('.pricing-audience-panel');
+        if (!btn || !panel) return;
+
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const willOpen = btn.getAttribute('aria-expanded') !== 'true';
+            closeAllAudiencePanels(willOpen ? root : null);
+            if (willOpen) {
+                btn.setAttribute('aria-expanded', 'true');
+                panel.hidden = false;
+                root.classList.add('is-open');
+            } else {
+                closeAudiencePanel(root);
+            }
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.pricing-audience')) {
+            closeAllAudiencePanels();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeAllAudiencePanels();
+    });
 
 
     // ─── Mobil Menü Drawer ───────────────────────────────────
@@ -397,7 +500,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li><strong>Mobil & SEO Uyumluluğu:</strong> Web sitenizin Google arama sonuçlarında üst sıralara çıkması için gerekli kodlama kalitesi.</li>
                     <li><strong>Yönetim Paneli Kolaylığı:</strong> İçeriklerinizi ve ürünlerinizi kendinizin kolayca güncelleyebilmesi.</li>
                 </ul>
-                <p>Nova Digital olarak <strong>Standart Web Paketini 4.999 TL</strong>, <strong>Kurumsal Yönetim Panelli Paketini ise 9.999 TL</strong> olarak şeffaf fiyatlandırma politikasıyla sunuyoruz.</p>
+                <p>Nova Digital olarak <strong>Başlangıç Web Sitesini 4.999 TL</strong>, <strong>Kurumsal Web Sistemini 14.999 TL</strong>, <strong>Premium Dijital Sistemi ise 39.999 TL</strong> olarak şeffaf fiyatlandırma politikasıyla sunuyoruz.</p>
                 <div class="blog-article-cta">
                     <span>Siteniz için hemen teklif almak ister misiniz?</span>
                     <a href="#iletisim" onclick="document.getElementById('blogModal').classList.remove('active');" class="btn btn-primary btn-sm">Teklif Al</a>
@@ -606,25 +709,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ─── CREATIVE IDENTITY LOGIC — 2026-08-06 ──────────────────
 
-    // 2. Contact Form Micro-Success Animation State Intercept
+    // 2. Contact Form Micro-Success Animation State Intercept with Strict Validation
     const contactFormEl = document.getElementById('contactForm');
     if (contactFormEl) {
         contactFormEl.addEventListener('submit', (e) => {
-            // Give original WP link redirect 300ms, then show success state inside card
-            setTimeout(() => {
-                const parentCard = contactFormEl.closest('.card') || contactFormEl.parentElement;
-                if (parentCard) {
-                    parentCard.innerHTML = `
-                        <div class="form-success-state">
-                            <div class="form-success-icon">
-                                <i class="fa-solid fa-check"></i>
-                            </div>
-                            <h3>Talebiniz Alındı!</h3>
-                            <p>WhatsApp üzerinden yönlendirildiniz. Ekibimiz 15 dakika içinde sizinle iletişime geçecektir.</p>
-                        </div>
-                    `;
-                }
-            }, 300);
+            // Check native HTML5 validity
+            if (!contactFormEl.checkValidity()) {
+                e.preventDefault();
+                contactFormEl.reportValidity();
+                return;
+            }
+
+            // Check KVKK consent checkbox
+            const kvkkConsent = document.getElementById('formKvkkConsent');
+            if (kvkkConsent && !kvkkConsent.checked) {
+                e.preventDefault();
+                alert('Lütfen devam etmek için KVKK Onay Kutusu\'nu işaretleyiniz.');
+                return;
+            }
+
+            e.preventDefault();
+
+            // Format WhatsApp Message
+            const name = document.getElementById('formName')?.value || '';
+            const business = document.getElementById('formBusiness')?.value || '';
+            const phone = document.getElementById('formPhone')?.value || '';
+            const service = document.getElementById('formService')?.value || 'Genel';
+            const message = document.getElementById('formMessage')?.value || '';
+
+            const waText = `Merhaba Nova Digital, sitemizden yeni bir teklif talebi geldi:%0A%0A👤 Ad Soyad: ${encodeURIComponent(name)}%0A🏢 Firma: ${encodeURIComponent(business)}%0A📞 Telefon: ${encodeURIComponent(phone)}%0A💼 Hizmet: ${encodeURIComponent(service)}%0A💬 Mesaj: ${encodeURIComponent(message)}`;
+            const waUrl = `https://wa.me/${SITE_CONFIG.company.whatsappRaw}?text=${waText}`;
+
+            // Open WhatsApp in new tab
+            window.open(waUrl, '_blank');
+
+            // Render clean success state inside form
+            contactFormEl.innerHTML = `
+                <div class="form-success-state" style="padding: 40px 20px; text-align: center; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 16px; box-shadow: 0 4px 14px rgba(0,0,0,0.04);">
+                    <div class="form-success-icon" style="width: 56px; height: 56px; background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; color: #10B981; font-size: 1.5rem;">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; color: #0F172A; margin-bottom: 8px;">Talebiniz Alındı!</h3>
+                    <p style="font-size: 0.9rem; color: #64748B; line-height: 1.5; margin: 0;">WhatsApp üzerinden yönlendirildiniz. Ekibimiz 15 dakika içinde sizinle iletişime geçecektir.</p>
+                </div>
+            `;
         });
     }
 
@@ -663,8 +791,243 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }, { threshold: 0.4 });
+    }
 
-        liveCounters.forEach(c => trustObserver.observe(c));
+    // ─── HIGH CONVERSION EVENT TRACKING ENGINE (GA4, GTM, Ads, Meta) ─
+    window.trackEvent = function(eventName, eventParams = {}) {
+        console.log('[Analytics Engine] Event:', eventName, eventParams);
+
+        // 1. Google Analytics 4 (GA4) & Google Ads
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', eventName, eventParams);
+        }
+
+        // 2. Google Tag Manager (GTM DataLayer)
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: eventName,
+            ...eventParams
+        });
+
+        // 3. Meta Pixel (Facebook & Instagram Ads)
+        if (typeof window.fbq === 'function') {
+            window.fbq('trackCustom', eventName, eventParams);
+        }
+    };
+
+    // Track WhatsApp, Phone, Package & Demo Clicks
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        if (!link) return;
+
+        const href = link.getAttribute('href') || '';
+        const id = link.id || '';
+
+        // WhatsApp Clicks (click_whatsapp)
+        if (id.includes('whatsapp') || href.includes('wa.me') || href.includes('whatsapp.com')) {
+            window.trackEvent('click_whatsapp', {
+                location: id || 'body_whatsapp_link',
+                href: href
+            });
+        }
+
+        // Phone Call Clicks (phone_call)
+        if (href.startsWith('tel:')) {
+            window.trackEvent('phone_call', {
+                phone_number: href
+            });
+        }
+
+        // Package Clicks (click_package)
+        const packageAttr = link.getAttribute('data-package') || link.closest('[data-package]')?.getAttribute('data-package');
+        if (packageAttr) {
+            window.trackEvent('click_package', {
+                package_id: packageAttr
+            });
+        }
+
+        // Portfolio Demo Clicks (click_demo)
+        if (link.classList.contains('portfolio-card') || href.includes('vercel.app')) {
+            const demoTitle = link.querySelector('h3')?.innerText || 'Demo Link';
+            window.trackEvent('click_demo', {
+                demo_title: demoTitle,
+                demo_url: href
+            });
+        }
+    });
+
+    // Track Form Submissions (form_submit & Google Ads Conversion)
+    if (contactFormEl) {
+        contactFormEl.addEventListener('submit', () => {
+            const selectedService = document.getElementById('formService')?.value || 'Genel';
+            window.trackEvent('form_submit', {
+                form_id: 'contactForm',
+                service: selectedService
+            });
+
+            // Google Ads Conversion Specific Event
+            if (typeof window.gtag === 'function') {
+                window.gtag('event', 'conversion', {
+                    'send_to': SITE_CONFIG.tracking.googleAdsConversionId
+                });
+            }
+        });
+    }
+
+    // ─── LIGHTWEIGHT DESKTOP HERO MOUSE SPOTLIGHT (ZERO LAG) ──────
+    if (window.innerWidth >= 993) {
+        const heroEl = document.getElementById('hero');
+        if (heroEl) {
+            const spotlight = document.createElement('div');
+            spotlight.className = 'hero-mouse-spotlight';
+            heroEl.appendChild(spotlight);
+
+            let ticking = false;
+            heroEl.addEventListener('mousemove', (e) => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        const rect = heroEl.getBoundingClientRect();
+                        spotlight.style.left = `${e.clientX - rect.left}px`;
+                        spotlight.style.top = `${e.clientY - rect.top}px`;
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        }
+    }
+    // ─── ÇEREZ YÖNETİMİ & HUKUKİ MODAL ENTEGRASYONU ─────────────
+    const cookieBanner = document.getElementById('cookieBanner');
+    const acceptBtn = document.getElementById('acceptCookies');
+    const declineBtn = document.getElementById('declineCookies');
+
+    if (cookieBanner && !localStorage.getItem('nova_cookie_consent')) {
+        setTimeout(() => {
+            cookieBanner.style.display = 'block';
+        }, 1200);
+    }
+
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('nova_cookie_consent', 'accepted');
+            cookieBanner.style.display = 'none';
+        });
+    }
+
+    if (declineBtn) {
+        declineBtn.addEventListener('click', () => {
+            localStorage.setItem('nova_cookie_consent', 'essential_only');
+            cookieBanner.style.display = 'none';
+        });
     }
 
 });
+
+// ─── HUKUKİ METİNLER DİNAMİK MODAL AÇMA FONKSİYONU ──────────────────
+window.openLegalModal = function(type) {
+    const modal = document.getElementById('blogModal');
+    const modalBody = document.getElementById('blogModalBody');
+    if (!modal || !modalBody) return;
+
+    let content = '';
+
+    if (type === 'kvkk') {
+        content = `
+            <h2>6698 Sayılı KVKK Aydınlatma Metni</h2>
+            <p><strong>Veri Sorumlusu:</strong> Nova Digital Yazılım & Dijital Pazarlama ("Nova Digital")</p>
+            <p>Nova Digital olarak kişisel verilerinizin güvenliğine ve gizliliğine azami önem veriyoruz. 6698 Sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") m. 10 uyarınca sizleri bilgilendiriyoruz.</p>
+            <h3>1. İşlenen Kişisel Verileriniz ve İşleme Amaçları</h3>
+            <p>İletişim formlarımız ve hizmet talepleriniz kapsamında toplanan Ad-Soyad, Telefon Numarası, E-posta Adresi ve Firma Bilgileri;</p>
+            <ul>
+                <li>Sizlerle iletişim kurulması ve hizmet tekliflerinin iletilmesi,</li>
+                <li>Müşteri ilişkileri süreçlerinin yürütülmesi,</li>
+                <li>Yasal yükümlülüklerin yerine getirilmesi amaçlarıyla işlenmektedir.</li>
+            </ul>
+            <h3>2. Kişisel Verilerin Aktarımı</h3>
+            <p>Verileriniz, yasal zorunluluklar saklı kalmak kaydıyla 3. şahıslarla paylaşılmamaktadır.</p>
+            <h3>3. KVKK m. 11 Kapsamındaki Haklarınız</h3>
+            <p>Veri sahibi olarak info@novadigital.com.tr adresine başvurarak verilerinizin işlenip işlenmediğini öğrenme, silinmesini veya düzeltilmesini talep etme hakkına sahipsiniz.</p>
+        `;
+    } else if (type === 'privacy') {
+        content = `
+            <h2>Gizlilik Politikası</h2>
+            <p>Nova Digital, kullanıcılarının gizlilik haklarını korumayı taahhüt eder. Bu politika, sitemizi ziyaret ettiğinizde toplanan bilgilerin nasıl kullanıldığını açıklar.</p>
+            <h3>1. Bilgi Toplama ve Kullanım</h3>
+            <p>Sitemizde doldurulan iletişim formları vasıtasıyla sağladığınız kişisel bilgiler, yalnızca hizmet taleplerinize yanıt vermek ve sözleşmesel süreçleri yürütmek için kullanılır.</p>
+            <h3>2. Veri Güvenliği</h3>
+            <p>Verileriniz endüstri standardı SSL şifreleme ve güvenli sunucu altyapıları ile korunmaktadır.</p>
+        `;
+    } else if (type === 'cookies') {
+        content = `
+            <h2>Çerez (Cookie) Politikası</h2>
+            <p>Nova Digital web sitesinde kullanıcı deneyimini artırmak ve performans analizi yapmak amacıyla çerezler kullanılmaktadır.</p>
+            <h3>1. Kullanılan Çerez Türleri</h3>
+            <ul>
+                <li><strong>Zorunlu Çerezler:</strong> Sitenin temel fonksiyonlarının çalışması için gereklidir.</li>
+                <li><strong>Analitik Çerezler:</strong> Ziyaretçi trafiğini ve davranışlarını anonim olarak ölçümler.</li>
+            </ul>
+            <p>Tarayıcı ayarlarınız üzerinden dilediğiniz zaman çerezleri engelleyebilirsiniz.</p>
+        `;
+    } else if (type === 'disclaimer') {
+        content = `
+            <h2>Yasal Uyarı & Telif Hakkı (FSEK) Beyanı</h2>
+            <p><strong>5846 Sayılı Fikir ve Sanat Eserleri Kanunu Uyarınca İkaz:</strong></p>
+            <p>Bu web sitesinde yer alan tüm yazılım kodları, arayüz tasarımları, grafikler, metinler ve kurumsal materyaller Nova Digital'in mülkiyetindedir.</p>
+            <p>Yazılı izin olmaksızın kopyalanması, dağıtılması veya başka mecralarda kullanılması durumunda FSEK m. 71 uyarınca yasal ve cezai işlem başlatılacaktır.</p>
+        `;
+    }
+
+    modalBody.innerHTML = content;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+};
+
+// ─── STANDALONE PORTFOLIO CATEGORY FILTERING (STANDART / KURUMSAL / PROFESYONEL) ───
+function initPortfolioFilterBar() {
+    const filterBar = document.getElementById('portfolioFilterBar');
+    if (!filterBar) return;
+
+    const filterBtns = filterBar.querySelectorAll('.filter-btn');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const targetCat = btn.getAttribute('data-filter');
+            if (!targetCat) return;
+
+            // Reset active state for all buttons and activate clicked button
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Filter all slides strictly to selected category
+            const allSlides = document.querySelectorAll('#portfolioTrack .portfolio-slide');
+            allSlides.forEach(slide => {
+                const slideCat = slide.getAttribute('data-category');
+                if (slideCat === targetCat) {
+                    slide.style.setProperty('display', 'flex', 'important');
+                    slide.classList.remove('hidden-slide');
+                } else {
+                    slide.style.setProperty('display', 'none', 'important');
+                    slide.classList.add('hidden-slide');
+                }
+            });
+
+            // Scroll back to track origin
+            const trackEl = document.getElementById('portfolioTrack');
+            if (trackEl) {
+                trackEl.scrollTo({ left: 0, behavior: 'smooth' });
+            }
+        });
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPortfolioFilterBar);
+} else {
+    initPortfolioFilterBar();
+}
+
+
+

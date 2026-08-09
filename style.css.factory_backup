@@ -1,15 +1,15 @@
-/* ═══════════════════════════════════════════════════════════════
-   NOVA DIGITAL — AÇIK TEMA (style.css)
-   ───────────────────────────────────────────────────────────────
+/* ???????????????????????????????????????????????????????????????
+   NOVA DIGITAL ? A?IK TEMA (style.css)
+   ???????????????????????????????????????????????????????????????
    Light theme. Mobile-first. Ultra responsive.
-   ═══════════════════════════════════════════════════════════════ */
+   ??????????????????????????????????????????????????????????????? */
 
 @import url('./_design-system/tokens.css');
 @import url('./_design-system/base.css');
 @import url('./_design-system/components.css');
 @import url('./_design-system/animations.css');
 
-/* ─── AÇIK TEMA OVERRIDE ─── */
+/* ??? A?IK TEMA OVERRIDE ??? */
 :root {
     --color-primary: #2563EB;
     --color-primary-light: #3B82F6;
@@ -23,7 +23,7 @@
     --color-warning: #D97706;
     --color-error: #DC2626;
 
-    /* ─── AÇIK Arka Planlar ─── */
+    /* ??? A?IK Arka Planlar ??? */
     --bg-body: #FFFFFF;
     --bg-surface: #F8FAFC;
     --bg-card: #FFFFFF;
@@ -31,17 +31,17 @@
     --bg-glass: rgba(255, 255, 255, 0.85);
     --bg-input: #F1F5F9;
 
-    /* ─── Koyu Metin ─── */
+    /* ??? Koyu Metin ??? */
     --text-primary: #0F172A;
     --text-secondary: #475569;
     --text-muted: #94A3B8;
 
-    /* ─── Kenarlık ─── */
+    /* ??? Kenarl?k ??? */
     --border-default: #E2E8F0;
     --border-hover: rgba(37, 99, 235, 0.5);
     --border-glass: #E2E8F0;
 
-    /* ─── Gölgeler (Açık tema) ─── */
+    /* ??? G?lgeler (A??k tema) ??? */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.08);
@@ -54,7 +54,14 @@ body {
     color: var(--text-primary);
 }
 
-/* ─── UYUMU ÖLÇEKLENDİRME: TÜM BÖLÜM BAŞLIKLARI HİZALAMASI ─── */
+/* ═══════════════════════════════════════════════════════════
+   TÜM BÖLÜM ARKA PLAN VEKTÖRLERİ TAMAMEN KALDIRILDI
+   ═══════════════════════════════════════════════════════════ */
+.section-bg-vector {
+    display: none !important;
+}
+
+/* ??? UYUMU ?L?EKLEND?RME: T?M B?L?M BA?LIKLARI H?ZALAMASI ??? */
 .section-header {
     text-align: center;
     max-width: 720px;
@@ -89,7 +96,7 @@ body {
     line-height: var(--leading-relaxed);
 }
 
-/* Card override — açık temada gölge ile ayrım */
+/* Card override ? a??k temada g?lge ile ayr?m */
 .card {
     background: var(--bg-card);
     border: 1px solid var(--border-default);
@@ -103,7 +110,7 @@ body {
     transform: translateY(-4px);
 }
 
-/* Btn override — açık tema */
+/* Btn override ? a??k tema */
 .btn-outline {
     color: var(--text-primary);
     border-color: var(--border-default);
@@ -118,9 +125,9 @@ body {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* ???????????????????????????????????????????????????????????????
    NAV
-   ═══════════════════════════════════════════════════════════════ */
+   ??????????????????????????????????????????????????????????????? */
 
 .site-nav {
     position: fixed;
@@ -145,7 +152,7 @@ body {
     align-items: center;
 }
 
-/* ─── LOGO (Büyük & Okunabilir) ─── */
+/* ??? LOGO (B?y?k & Okunabilir) ??? */
 .nav-logo {
     display: flex;
     align-items: center;
@@ -213,7 +220,7 @@ body {
     .nav-cta { display: inline-flex; }
 }
 
-/* ─── Hamburger ─── */
+/* ??? Hamburger ??? */
 .hamburger {
     display: flex;
     flex-direction: column;
@@ -250,7 +257,7 @@ body {
     .hamburger { display: none; }
 }
 
-/* ─── Mobile Menu Drawer (Apple/Stripe Seviyesi Modern Tasarım) ─── */
+/* ??? Mobile Menu Drawer (Apple/Stripe Seviyesi Modern Tasar?m) ??? */
 .mobile-menu {
     position: fixed;
     inset: 0;
@@ -404,9 +411,23 @@ body {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════
+   1. ARCHITECTURAL DOT MATRIX GRID (Linear/Vercel Style)
+   ═══════════════════════════════════════════════════════════ */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(rgba(37, 99, 235, 0.07) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.85;
+}
+
+/* ═══════════════════════════════════════════════════════════
    HERO — Açık, Ferah, İşlevsel
-   ═══════════════════════════════════════════════════════════════ */
+   ═══════════════════════════════════════════════════════════ */
 
 .hero {
     display: flex;
@@ -415,6 +436,39 @@ body {
     position: relative;
     overflow: hidden;
     background: linear-gradient(180deg, #EFF6FF 0%, #FFFFFF 60%);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   2. AURORA MESH GLOW (Apple/Stripe Style Soft Ambient Glow)
+   ═══════════════════════════════════════════════════════════ */
+.aurora-mesh-glow {
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    max-width: 1200px;
+    height: 480px;
+    background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.12) 0%, rgba(6, 182, 212, 0.06) 45%, transparent 70%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+    border-radius: 50%;
+    will-change: transform;
+}
+
+/* Desktop-only subtle cursor aura */
+@media (min-width: 993px) {
+    .hero-mouse-spotlight {
+        position: absolute;
+        width: 380px;
+        height: 380px;
+        background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
 }
 
 @media (min-width: 768px) {
@@ -440,6 +494,39 @@ body {
 
 .hero-content {
     max-width: 100%;
+}
+
+.hero-trust-bar {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 12px 18px;
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border-default);
+    align-items: center;
+}
+
+@media (max-width: 992px) {
+    .hero-trust-bar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-trust-bar {
+        grid-template-columns: 1fr;
+    }
+}
+
+.hero-trust-bar span {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
 }
 
 .hero-visual {
@@ -538,7 +625,7 @@ body {
     margin-bottom: var(--space-6);
 }
 
-/* ─── Hızlı Erişim Barı (Quick Price Jump) ─── */
+/* ??? H?zl? Eri?im Bar? (Quick Price Jump) ??? */
 .hero-quick-jump {
     display: flex;
     flex-wrap: wrap;
@@ -586,7 +673,7 @@ body {
     }
 }
 
-/* Hero background glow — açık tema */
+/* Hero background glow ? a??k tema */
 .hero-glow {
     position: absolute;
     width: 500px;
@@ -610,9 +697,9 @@ body {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   GÜVEN ŞERİDİ
-   ═══════════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????????
+   G?VEN ?ER?D?
+   ??????????????????????????????????????????????????????????????? */
 
 .trust-strip {
     padding: var(--space-8) 0;
@@ -661,9 +748,9 @@ body {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   HİZMETLER (Ürünleşmiş Modern Tasarım)
-   ═══════════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????????
+   H?ZMETLER (?r?nle?mi? Modern Tasar?m)
+   ??????????????????????????????????????????????????????????????? */
 
 .service-card {
     padding: var(--space-7);
@@ -719,80 +806,73 @@ body {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   FİYATLANDIRMA — 2026 AWARD-WINNING COMPACT MINIMALIST DESIGN
-   ═══════════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????????
+   F?YATLANDIRMA ? 2026 AWARD-WINNING COMPACT MINIMALIST DESIGN
+   ??????????????????????????????????????????????????????????????? */
 
-/* ═══════════════════════════════════════════════════════════════
-   FİYATLANDIRMA — GENİŞ, FERAH & PRESTİJLİ PAKET KARTLARI
-   ═══════════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????????
+   F?YATLANDIRMA ? GEN??, FERAH & PREST?JL? PAKET KARTLARI
+   ??????????????????????????????????????????????????????????????? */
 
 .pricing-card {
-    padding: var(--space-8);
+    padding: 1rem 1.15rem;
     position: relative;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    overflow: visible;
     background: #FFFFFF;
     border: 1px solid var(--border-default);
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-sm);
-    transition: all var(--speed-normal) var(--ease-default);
+    transition: border-color var(--speed-normal) var(--ease-default),
+                box-shadow var(--speed-normal) var(--ease-default),
+                transform var(--speed-normal) var(--ease-default);
 }
 
 .pricing-card:hover {
     border-color: var(--border-hover);
     box-shadow: var(--shadow-lg), var(--shadow-glow);
-    transform: translateY(-4px);
+    transform: translateY(-3px);
 }
 
 .pricing-card.featured {
-    border: 2px solid var(--color-primary);
-    box-shadow: 0 12px 36px rgba(37, 99, 235, 0.12);
+    border: 1px solid var(--border-default);
+    box-shadow: var(--shadow-sm);
 }
 
 .pricing-card.featured::before {
-    content: 'En Popüler';
-    position: absolute;
-    top: -1px;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    padding: var(--space-1.5) var(--space-5);
-    background: var(--color-primary);
-    color: white;
-    font-size: var(--text-xs);
-    font-weight: var(--weight-bold);
-    border-radius: var(--radius-full);
-    letter-spacing: 0.04em;
-    box-shadow: 0 4px 14px var(--color-primary-glow);
-    white-space: nowrap;
+    content: none;
+    display: none;
 }
 
 .pricing-name {
     font-family: var(--font-heading);
-    font-size: var(--text-xl);
+    font-size: 1.05rem;
     font-weight: var(--weight-extrabold);
     color: var(--text-primary);
-    margin-bottom: var(--space-2);
+    margin-bottom: 0;
+    line-height: 1.2;
 }
 
 .pricing-desc {
-    font-size: var(--text-sm);
+    font-size: 0.75rem;
     color: var(--text-secondary);
-    margin-bottom: var(--space-5);
-    line-height: var(--leading-relaxed);
-    min-height: 44px;
+    margin-bottom: 6px;
+    line-height: 1.35;
+    min-height: 0;
 }
 
 .pricing-amount {
     display: flex;
     align-items: baseline;
-    gap: var(--space-2);
-    margin-bottom: var(--space-2);
+    gap: 4px;
+    margin: 4px 0 6px;
 }
 
 .pricing-amount strong {
     font-family: var(--font-heading);
-    font-size: clamp(2.25rem, 4vw, 2.75rem);
+    font-size: clamp(1.65rem, 2.6vw, 1.9rem);
     font-weight: var(--weight-extrabold);
     color: var(--text-primary);
     letter-spacing: -0.02em;
@@ -800,23 +880,23 @@ body {
 }
 
 .pricing-amount span {
-    font-size: var(--text-base);
+    font-size: 0.85rem;
     font-weight: var(--weight-bold);
-    color: var(--color-primary);
+    color: #0F172A !important;
 }
 
 .pricing-teslim {
     display: inline-flex;
     align-items: center;
-    gap: var(--space-2);
-    font-size: var(--text-xs);
+    gap: 5px;
+    font-size: 0.68rem;
     color: var(--color-primary-dark);
     background: #EFF6FF;
     border: 1px solid #BFDBFE;
-    padding: var(--space-1.5) var(--space-3.5);
+    padding: 3px 8px;
     border-radius: var(--radius-full);
     font-weight: var(--weight-semibold);
-    margin-bottom: var(--space-6);
+    margin-bottom: 8px;
     width: fit-content;
 }
 
@@ -824,41 +904,41 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
-    margin-bottom: var(--space-8);
-    padding-top: var(--space-5);
+    gap: 4px;
+    margin-bottom: 10px;
+    padding-top: 8px;
     border-top: 1px solid var(--border-default);
 }
 
 .pricing-features li {
     display: flex;
     align-items: flex-start;
-    gap: var(--space-3);
-    font-size: var(--text-sm);
+    gap: 6px;
+    font-size: 0.75rem;
     font-weight: var(--weight-medium);
     color: var(--text-primary);
-    line-height: 1.45;
+    line-height: 1.3;
 }
 
 .pricing-features li i {
     color: var(--color-success);
-    font-size: var(--text-sm);
     margin-top: 2px;
+    font-size: 0.7rem;
     flex-shrink: 0;
 }
 
 .pricing-card .btn {
     width: 100%;
-    min-height: 50px;
-    font-size: var(--text-base);
+    min-height: 42px;
+    font-size: 0.88rem;
     font-weight: var(--weight-bold);
     border-radius: var(--radius-lg);
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* ???????????????????????????????????????????????????????????????
    NEDEN NOVA DIGITAL
-   ═══════════════════════════════════════════════════════════════ */
+   ??????????????????????????????????????????????????????????????? */
 
 .reason-card {
     padding: var(--space-6);
@@ -889,9 +969,9 @@ body {
 .reason-card p { font-size: var(--text-sm); }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   NASIL ÇALIŞIYORUZ
-   ═══════════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????????
+   NASIL ?ALI?IYORUZ
+   ??????????????????????????????????????????????????????????????? */
 
 .process-steps {
     display: grid;
@@ -946,9 +1026,9 @@ body {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   PORTFÖY
-   ═══════════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????????
+   PORTF?Y
+   ??????????????????????????????????????????????????????????????? */
 
 .portfolio-filters {
     display: flex;
@@ -988,7 +1068,7 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
-/* ─── Browser Window UI Mockup Header (macOS/Chrome Style) ─── */
+/* ??? Browser Window UI Mockup Header (macOS/Chrome Style) ??? */
 .browser-window-bar {
     display: flex;
     align-items: center;
@@ -1099,9 +1179,9 @@ body {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   REKLAM YÖNETİMİ
-   ═══════════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????????
+   REKLAM Y?NET?M?
+   ??????????????????????????????????????????????????????????????? */
 
 .ads-section {
     background: var(--bg-surface);
@@ -1140,9 +1220,9 @@ body {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   MOBİL & ÖZEL YAZILIM
-   ═══════════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????????
+   MOB?L & ?ZEL YAZILIM
+   ??????????????????????????????????????????????????????????????? */
 
 .premium-section { text-align: center; }
 
@@ -1180,13 +1260,13 @@ body {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* ???????????????????????????????????????????????????????????????
    SSS (FAQ)
-   ═══════════════════════════════════════════════════════════════ */
+   ??????????????????????????????????????????????????????????????? */
 
-/* ═══════════════════════════════════════════════════════════════
+/* ???????????????????????????????????????????????????????????????
    SSS (FAQ)
-   ═══════════════════════════════════════════════════════════════ */
+   ??????????????????????????????????????????????????????????????? */
 
 .faq-list {
     max-width: 840px;
@@ -1250,9 +1330,9 @@ body {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   İLETİŞİM — YÜKSEK KONTRASTLI MODERN DÜZEN
-   ═══════════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????????
+   ?LET???M ? Y?KSEK KONTRASTLI MODERN D?ZEN
+   ??????????????????????????????????????????????????????????????? */
 
 .contact-grid {
     display: grid;
@@ -1392,9 +1472,9 @@ body {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* ???????????????????????????????????????????????????????????????
    CTA BANNER
-   ═══════════════════════════════════════════════════════════════ */
+   ??????????????????????????????????????????????????????????????? */
 
 .cta-banner {
     text-align: center;
@@ -1415,9 +1495,9 @@ body {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* ???????????????????????????????????????????????????????????????
    FOOTER
-   ═══════════════════════════════════════════════════════════════ */
+   ??????????????????????????????????????????????????????????????? */
 
 .site-footer {
     border-top: 1px solid var(--border-default);
@@ -1502,9 +1582,9 @@ body {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   WHATSAPP FAB — Daha büyük mobilde
-   ═══════════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????????
+   WHATSAPP FAB ? Daha b?y?k mobilde
+   ??????????????????????????????????????????????????????????????? */
 
 .whatsapp-fab {
     position: fixed;
@@ -1530,11 +1610,11 @@ body {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   ULTRA MOBİL OPTİMİZASYON — Küçük ekranlar
-   ═══════════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????????
+   ULTRA MOB?L OPT?M?ZASYON ? K???k ekranlar
+   ??????????????????????????????????????????????????????????????? */
 
-/* 320px — En küçük cihaz */
+/* 320px ? En k???k cihaz */
 @media (max-width: 359px) {
     :root {
         --container-padding: var(--space-4);
@@ -1551,13 +1631,13 @@ body {
     }
 }
 
-/* 360-414px — Orta mobil */
+/* 360-414px ? Orta mobil */
 @media (min-width: 360px) and (max-width: 479px) {
     .hero h1 { font-size: 1.85rem; }
     .section-header h2 { font-size: 1.5rem; }
 }
 
-/* Tüm mobil — Dokunma hedefleri */
+/* T?m mobil ? Dokunma hedefleri */
 @media (max-width: 767px) {
     .section {
         padding: var(--space-12) 0;
@@ -1598,7 +1678,7 @@ body {
     .hero { min-height: auto; padding-top: 140px; padding-bottom: var(--space-16); }
 }
 
-/* ─── Badge açık tema ─── */
+/* ??? Badge a??k tema ??? */
 .badge-primary {
     background: #EFF6FF;
     color: var(--color-primary);
@@ -1610,7 +1690,7 @@ body {
     border: 1px solid #A7F3D0;
 }
 
-/* ─── Text Gradient açık tema ─── */
+/* ??? Text Gradient a??k tema ??? */
 .text-gradient {
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
     -webkit-background-clip: text;
@@ -1618,7 +1698,7 @@ body {
     background-clip: text;
 }
 
-/* ─── Section header açık tema ─── */
+/* ??? Section header a??k tema ??? */
 .section-header h2 {
     color: var(--text-primary);
 }
@@ -1626,9 +1706,9 @@ body {
     color: var(--text-secondary);
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   PRELOADER (Modern Bekleme Ekranı)
-   ═══════════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????????
+   PRELOADER (Modern Bekleme Ekran?)
+   ??????????????????????????????????????????????????????????????? */
 .preloader {
     position: fixed;
     inset: 0;
@@ -1684,11 +1764,11 @@ body {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   REVİZYON: KOMPAKT PORTFÖY KARTLARI VE SIKIŞMAYAN TEKLİF FORMU
-   ═══════════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????????
+   REV?ZYON: KOMPAKT PORTF?Y KARTLARI VE SIKI?MAYAN TEKL?F FORMU
+   ??????????????????????????????????????????????????????????????? */
 
-/* 1. PORTFÖY KARTLARI — KOMPAKT WIDESCREEN RASYOSU & BROWSER MOCKUP */
+/* 1. PORTF?Y KARTLARI ? KOMPAKT WIDESCREEN RASYOSU & BROWSER MOCKUP */
 .portfolio-card {
     border-radius: var(--radius-lg) !important;
     overflow: hidden !important;
@@ -1740,7 +1820,7 @@ body {
     line-height: 1.4 !important;
 }
 
-/* 2. TEKLİF AL / İLETİŞİM FORMU — KOMPAKT, SIKIŞMAYAN MİNİMAL DÜZEN */
+/* 2. TEKL?F AL / ?LET???M FORMU ? KOMPAKT, SIKI?MAYAN M?N?MAL D?ZEN */
 .contact-form {
     padding: 26px 30px !important;
     gap: 16px !important;
@@ -1815,9 +1895,9 @@ textarea.form-input {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   HORIZONAL PORTFOLIO CAROUSEL & SEKTÖREL BÜYÜME KATMANI
-   ═══════════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????????
+   HORIZONAL PORTFOLIO CAROUSEL & SEKT?REL B?Y?ME KATMANI
+   ??????????????????????????????????????????????????????????????? */
 
 /* 1. HORIZONTAL CAROUSEL HEADER & NAVIGATION BUTTONS */
 .portfolio-header-wrap {
@@ -1934,7 +2014,7 @@ textarea.form-input {
     background: var(--color-primary);
 }
 
-/* 3. SEKTÖREL ÇÖZÜMLER (LANDING CARDS) */
+/* 3. SEKT?REL ??Z?MLER (LANDING CARDS) */
 .sectoral-section {
     background: #F8FAFC;
     border-top: 1px solid var(--border-default);
@@ -2039,11 +2119,11 @@ textarea.form-input {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   REVİZYON: FARE İLE SÜRÜKLEME & MASAÜSTÜNDE YAN YANA PAKET KARTLARI
-   ═══════════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????????
+   REV?ZYON: FARE ?LE S?R?KLEME & MASA?ST?NDE YAN YANA PAKET KARTLARI
+   ??????????????????????????????????????????????????????????????? */
 
-/* 1. FARE İLE SÜRÜKLEME (MOUSE DRAG CURSOR) */
+/* 1. FARE ?LE S?R?KLEME (MOUSE DRAG CURSOR) */
 .portfolio-carousel-track {
     cursor: grab !important;
     user-select: none !important;
@@ -2051,31 +2131,31 @@ textarea.form-input {
 
 .portfolio-carousel-track.dragging {
     cursor: grabbing !important;
-    scroll-snap-type: none !important; /* Drag anında snap yumuşatılır */
+    scroll-snap-type: none !important; /* Drag an?nda snap yumu?at?l?r */
 }
 
-/* 2. MASAÜSTÜNDE YAN YANA MİNİMAL PAKET KARTLARI (DESKTOP SIDE-BY-SIDE) */
+/* 2. MASA?ST?NDE YAN YANA M?N?MAL PAKET KARTLARI (DESKTOP SIDE-BY-SIDE) */
 @media (min-width: 992px) {
     #paketler .grid-3 {
         display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
-        gap: 24px !important;
+        gap: 18px !important;
         align-items: stretch !important;
     }
 
     #paketler .pricing-card {
-        padding: 28px 24px !important;
+        padding: 1rem 1.1rem !important;
         display: flex !important;
         flex-direction: column !important;
         height: 100% !important;
     }
 
     #paketler .pricing-amount strong {
-        font-size: 2.25rem !important;
+        font-size: 1.85rem !important;
     }
 
     #paketler .pricing-features {
-        margin-bottom: 24px !important;
+        margin-bottom: 10px !important;
     }
 }
 
@@ -2088,9 +2168,9 @@ textarea.form-input {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* ???????????????????????????????????????????????????????????????
    ACCESSIBILITY & TACTILE FEEDBACK (WCAG 2.1 AA COMPLIANCE)
-   ═══════════════════════════════════════════════════════════════ */
+   ??????????????????????????????????????????????????????????????? */
 
 /* Focus-Visible Outline for Keyboard Navigation */
 a:focus-visible,
@@ -2111,11 +2191,11 @@ textarea:focus-visible {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   REVİZYON: PORTFÖY KART SALLANMA / OYNAMA DÜZELTMESİ (ZERO JITTER)
-   ═══════════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????????
+   REV?ZYON: PORTF?Y KART SALLANMA / OYNAMA D?ZELTMES? (ZERO JITTER)
+   ??????????????????????????????????????????????????????????????? */
 
-/* Track sabit kalır, dokunmadan veya sürüklemeden asla oynamaz */
+/* Track sabit kal?r, dokunmadan veya s?r?klemeden asla oynamaz */
 .portfolio-carousel-track {
     display: flex !important;
     gap: 24px !important;
@@ -2151,14 +2231,14 @@ textarea:focus-visible {
     }
 }
 
-/* Sürükleme anında snap iptal edilerek akıcılık sağlanır */
+/* S?r?kleme an?nda snap iptal edilerek ak?c?l?k sa?lan?r */
 .portfolio-carousel-track.dragging {
     cursor: grabbing !important;
     scroll-snap-type: none !important;
     scroll-behavior: auto !important;
 }
 
-/* Kart hover esnasında transform kaldırıldı -> Titreme ve kendi kendine oynama riski %100 engellendi */
+/* Kart hover esnas?nda transform kald?r?ld? -> Titreme ve kendi kendine oynama riski %100 engellendi */
 .portfolio-slide .portfolio-card {
     transform: none !important;
     transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
@@ -2176,15 +2256,15 @@ textarea:focus-visible {
 .portfolio-slide .portfolio-card:hover {
     border-color: #3B82F6 !important;
     box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12) !important;
-    transform: none !important; /* Dikey kayma kaldırıldı, layout titremesi çözüldü */
+    transform: none !important; /* Dikey kayma kald?r?ld?, layout titremesi ??z?ld? */
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* ???????????????????????????????????????????????????????????????
    PREVENT BLUE SELECTION HIGHLIGHT & ZERO TEXT OVERFLOW
-   ═══════════════════════════════════════════════════════════════ */
+   ??????????????????????????????????????????????????????????????? */
 
-/* Mavi Ekran Seçim Vurgusunu Engelle (Prevent Blue Highlight) */
+/* Mavi Ekran Se?im Vurgusunu Engelle (Prevent Blue Highlight) */
 .portfolio-carousel-track,
 .portfolio-card,
 .portfolio-card *,
@@ -2200,7 +2280,7 @@ textarea:focus-visible {
     -webkit-user-drag: none !important;
 }
 
-/* Sıfır Taşma ve Kusursuz Tipografi Güvenliği (Zero Text Overflow) */
+/* S?f?r Ta?ma ve Kusursuz Tipografi G?venli?i (Zero Text Overflow) */
 h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
     overflow-wrap: break-word !important;
     word-wrap: break-word !important;
@@ -2208,7 +2288,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
     max-width: 100% !important;
 }
 
-/* Yaratıcılık Harikası Mikro İnce Detaylar */
+/* Yarat?c?l?k Harikas? Mikro ?nce Detaylar */
 .portfolio-card {
     border: 1px solid #E2E8F0 !important;
     background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%) !important;
@@ -2228,18 +2308,18 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   REVİZYON: MAVİ KAPLAMA VE SAYFA AŞAĞI SIÇRAMA TEMİZLİĞİ
-   ═══════════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????????
+   REV?ZYON: MAV? KAPLAMA VE SAYFA A?A?I SI?RAMA TEM?ZL???
+   ??????????????????????????????????????????????????????????????? */
 
-/* Mavi kaplama katmanını tamamen kaldır */
+/* Mavi kaplama katman?n? tamamen kald?r */
 .portfolio-overlay {
     display: none !important;
     opacity: 0 !important;
     visibility: hidden !important;
 }
 
-/* Görsel zemin temizliği ve yumuşak resim zoom efekti */
+/* G?rsel zemin temizli?i ve yumu?ak resim zoom efekti */
 .portfolio-thumb-wrap {
     background: #F8FAFC !important;
     position: relative !important;
@@ -2250,7 +2330,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
     transform: scale(1.03) !important;
 }
 
-/* Kart hover durumunda sadece çok hafif border ve gölge yükselmesi (sıfır mavi kaplama) */
+/* Kart hover durumunda sadece ?ok hafif border ve g?lge y?kselmesi (s?f?r mavi kaplama) */
 .portfolio-card {
     border: 1px solid #E2E8F0 !important;
     background: #FFFFFF !important;
@@ -2266,11 +2346,11 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   2026 MOBİL UX & PERFORMANS REVİZYONU (ULTRA FERAH & AKICI)
-   ═══════════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????????
+   2026 MOB?L UX & PERFORMANS REV?ZYONU (ULTRA FERAH & AKICI)
+   ??????????????????????????????????????????????????????????????? */
 
-/* 1. HİZMETLERİMİZ MOBİL FERAH HİYERARŞİ */
+/* 1. H?ZMETLER?M?Z MOB?L FERAH H?YERAR?? */
 @media (max-width: 767px) {
     #hizmetler .grid-3 {
         display: flex !important;
@@ -2323,7 +2403,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
     }
 }
 
-/* 2. MOBİLDE YAĞ GİBİ AKAN DOKUNMATİK PORTFÖY SWIPE */
+/* 2. MOB?LDE YA? G?B? AKAN DOKUNMAT?K PORTF?Y SWIPE */
 @media (max-width: 767px) {
     .portfolio-carousel-viewport {
         overflow: visible !important;
@@ -2339,7 +2419,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
         -webkit-overflow-scrolling: touch !important;
         scroll-behavior: smooth !important;
         padding: 8px 4px 20px !important;
-        touch-action: pan-x !important; /* Yalnızca yatay parmak hareketine 60fps izin ver */
+        touch-action: pan-x pan-y !important; /* Yatay swipe + dikey sayfa/demo scroll */
     }
 
     .portfolio-slide {
@@ -2359,9 +2439,9 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* ???????????????????????????????????????????????????????????????
    CONVERSION PSYCHOLOGY LAYER & PROCESS STYLING
-   ═══════════════════════════════════════════════════════════════ */
+   ??????????????????????????????????????????????????????????????? */
 
 /* Capacity Psychology Badge */
 .badge-capacity {
@@ -2436,9 +2516,9 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* ???????????????????????????????????????????????????????????????
    BLOG MODAL OKUYUCU (INTERACTIVE ARTICLE READER) STYLES
-   ═══════════════════════════════════════════════════════════════ */
+   ??????????????????????????????????????????????????????????????? */
 
 .open-blog-btn {
     background: none;
@@ -2561,9 +2641,9 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   REVİZYON: PORTFÖY KART METİN ÜST ÜSTE BİNME & KOMPAKT YAZI DÜZELTMESİ
-   ═══════════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????????
+   REV?ZYON: PORTF?Y KART MET?N ?ST ?STE B?NME & KOMPAKT YAZI D?ZELTMES?
+   ??????????????????????????????????????????????????????????????? */
 
 .portfolio-info {
     padding: 18px 20px !important;
@@ -2610,7 +2690,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
     color: #475569 !important;
 }
 
-/* Section Header Kompakt Başlık Düzeni */
+/* Section Header Kompakt Ba?l?k D?zeni */
 .section-header h2 {
     font-size: clamp(1.4rem, 5vw, 2.25rem) !important;
     line-height: 1.3 !important;
@@ -2639,9 +2719,9 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* ???????????????????????????????????????????????????????????????
    FINAL BUSINESS GROWTH & PRICING PSYCHOLOGY CSS
-   ═══════════════════════════════════════════════════════════════ */
+   ??????????????????????????????????????????????????????????????? */
 
 /* Pricing Badge Popular & Sales Emphasis */
 .pricing-badge-popular {
@@ -2692,9 +2772,9 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* ???????????????????????????????????????????????????????????????
    HERO & HEADER OPTIMIZATION REVISION CSS
-   ═══════════════════════════════════════════════════════════════ */
+   ??????????????????????????????????????????????????????????????? */
 
 .site-nav {
     height: 76px !important;
@@ -2748,9 +2828,9 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* ???????????????????????????????????????????????????????????????
    NAVBAR COLOR & HERO TOP OVERLAP FIX
-   ═══════════════════════════════════════════════════════════════ */
+   ??????????????????????????????????????????????????????????????? */
 
 .site-nav {
     position: fixed !important;
@@ -2793,9 +2873,9 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* ???????????????????????????????????????????????????????????????
    STRIPE / VERCEL / APPLE 2026 PREMIUM DESIGN SYSTEM REFACTOR
-   ═══════════════════════════════════════════════════════════════ */
+   ??????????????????????????????????????????????????????????????? */
 
 :root {
     --space-section: 130px; /* Apple-level breathable section spacing */
@@ -2884,9 +2964,9 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* ???????????????????????????????????????????????????????????????
    INTERACTIVE EXPERIENCE & SECTOR PILLS CSS
-   ═══════════════════════════════════════════════════════════════ */
+   ??????????????????????????????????????????????????????????????? */
 
 .sector-pill {
     background: #F1F5F9;
@@ -2908,9 +2988,9 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button, .badge, .form-input {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   NOVA DIGITAL — APPLE & VERCEL PREMIUM DESIGN SYSTEM 2026
-   ═══════════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????????
+   NOVA DIGITAL ? APPLE & VERCEL PREMIUM DESIGN SYSTEM 2026
+   ??????????????????????????????????????????????????????????????? */
 
 :root {
     --bg-main: #FFFFFF;
@@ -2995,9 +3075,9 @@ body {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   NOVA DIGITAL — 100% PERFECT MOBILE HERO RESPONSIVE FIX
-   ═══════════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????????
+   NOVA DIGITAL ? 100% PERFECT MOBILE HERO RESPONSIVE FIX
+   ??????????????????????????????????????????????????????????????? */
 
 /* DESKTOP LAYOUT (992px AND UP) */
 @media (min-width: 992px) {
@@ -3136,9 +3216,9 @@ body {
 }
 
 
-/* ═══════════════════════════════════════════════════════════
-   NOVA DIGITAL — FINAL PRODUCTION DESIGN & CONTRAST ENGINE
-   ═══════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????
+   NOVA DIGITAL ? FINAL PRODUCTION DESIGN & CONTRAST ENGINE
+   ??????????????????????????????????????????????????????????? */
 
 /* Section Spacing & Standard Layout Boundaries */
 .section {
@@ -3207,9 +3287,9 @@ body {
     .section .card { transition: none !important; transform: none !important; }
 }
 
-/* ═══════════════════════════════════════════════════════════
-   SIGNATURE INTERACTIONS — 2026-08-06
-   ═══════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????
+   SIGNATURE INTERACTIONS ? 2026-08-06
+   ??????????????????????????????????????????????????????????? */
 
 /* 1. Hero Blur-To-Focus Title Entrance Animation */
 @keyframes heroBlurFocus {
@@ -3301,9 +3381,9 @@ body {
 }
 
 
-/* ═══════════════════════════════════════════════════════════
-   CREATIVE LAYER — 2026-08-06
-   ═══════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????
+   CREATIVE LAYER ? 2026-08-06
+   ??????????????????????????????????????????????????????????? */
 
 /* 1. Scroll Progress Bar at top of viewport */
 .scroll-progress-bar {
@@ -3366,11 +3446,11 @@ h1, h2 {
 }
 
 
-/* ═══════════════════════════════════════════════════════════
-   CREATIVE IDENTITY LAYER — 2026-08-06
-   ═══════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????
+   CREATIVE IDENTITY LAYER ? 2026-08-06
+   ??????????????????????????????????????????????????????????? */
 
-/* 2. Tipografik Güven Şeridi (Hero Trust Metric Strip) */
+/* 2. Tipografik G?ven ?eridi (Hero Trust Metric Strip) */
 .hero-trust-strip {
     display: inline-flex;
     align-items: center;
@@ -3467,9 +3547,9 @@ h1, h2 {
     }
 
 
-/* ═══════════════════════════════════════════════════════════
-   AURORA MESH & TRUST COUNTER LAYER — 2026-08-06
-   ═══════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????
+   AURORA MESH & TRUST COUNTER LAYER ? 2026-08-06
+   ??????????????????????????????????????????????????????????? */
 
 /* 1. Nefes Alan 25-Saniye CSS Aurora Mesh Glow Animation */
 @keyframes auroraPulse {
@@ -3524,9 +3604,9 @@ h1, h2 {
 }
 
 
-/* ═══════════════════════════════════════════════════════════
-   EMERGENCY MOBILE UI & OVERFLOW PERFECTION LAYER — 2026-08-06
-   ═══════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????
+   EMERGENCY MOBILE UI & OVERFLOW PERFECTION LAYER ? 2026-08-06
+   ??????????????????????????????????????????????????????????? */
 
 @media (max-width: 768px) {
     /* 1. Universal Zero Horizontal Overflow Safety */
@@ -3577,7 +3657,7 @@ h1, h2 {
         line-height: 1.5 !important;
     }
 
-    /* 3. Compact & Akışkan Pricing Package Cards for Mobile */
+    /* 3. Compact & Ak??kan Pricing Package Cards for Mobile */
     .pricing-grid {
         display: flex !important;
         flex-direction: column !important;
@@ -3633,9 +3713,9 @@ h1, h2 {
 }
 
 
-/* ═══════════════════════════════════════════════════════════
-   PERFECT MOBILE LINE-HEIGHT & COMPACT FLUID SPACING — 2026-08-06
-   ═══════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????
+   PERFECT MOBILE LINE-HEIGHT & COMPACT FLUID SPACING ? 2026-08-06
+   ??????????????????????????????????????????????????????????? */
 
 @media (max-width: 768px) {
     /* 1. Perfect Mobile Line-Height & Zero Text Intersection */
@@ -3706,9 +3786,9 @@ h1, h2 {
 }
 
 
-/* ═══════════════════════════════════════════════════════════
-   UNIVERSAL MOBILE HEADING LINE-HEIGHT & BADGE SPACING FIX — 2026-08-06
-   ═══════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????
+   UNIVERSAL MOBILE HEADING LINE-HEIGHT & BADGE SPACING FIX ? 2026-08-06
+   ??????????????????????????????????????????????????????????? */
 
 @media (max-width: 768px) {
     /* 1. Universal Line-Height & Margin Lock for ALL H1, H2, H3 Across All Sections */
@@ -3740,7 +3820,7 @@ h1, h2 {
         font-size: 0.95rem !important;
     }
 
-    /* 3. Process Section ("3 Adımda...") & Blog Section Lower Glitch Fix */
+    /* 3. Process Section ("3 Ad?mda...") & Blog Section Lower Glitch Fix */
     .process-step-num {
         margin-bottom: 8px !important;
         line-height: 1 !important;
@@ -3752,12 +3832,12 @@ h1, h2 {
 }
 
 
-/* ═══════════════════════════════════════════════════════════
-   FINAL MOBILE UI & BADGE MARGIN OPTIMIZATION — 2026-08-06
-   ═══════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????
+   FINAL MOBILE UI & BADGE MARGIN OPTIMIZATION ? 2026-08-06
+   ??????????????????????????????????????????????????????????? */
 
 @media (max-width: 768px) {
-    /* 1. Mavi Etiket (Badge) & Başlık Ayrımı — Kesin Dikey Boşluk */
+    /* 1. Mavi Etiket (Badge) & Ba?l?k Ayr?m? ? Kesin Dikey Bo?luk */
     .badge,
     .hero-badge,
     .section-header .badge,
@@ -3769,7 +3849,7 @@ h1, h2 {
         line-height: 1.3 !important;
     }
 
-    /* 2. Hero & Güven Şeridi Dikey Boşluk Dengesi */
+    /* 2. Hero & G?ven ?eridi Dikey Bo?luk Dengesi */
     .hero {
         padding-top: 24px !important;
         padding-bottom: 16px !important;
@@ -3790,7 +3870,7 @@ h1, h2 {
         margin-bottom: 24px !important;
     }
 
-    /* 3. Satır Yüksekliği (line-height: 1.35) & Harf Çakışması Önleme */
+    /* 3. Sat?r Y?ksekli?i (line-height: 1.35) & Harf ?ak??mas? ?nleme */
     .hero-content h1,
     h1 {
         margin-top: 8px !important;
@@ -3812,12 +3892,12 @@ h1, h2 {
 }
 
 
-/* ═══════════════════════════════════════════════════════════
-   EXACT MOBILE TYPOGRAPHY & CONTAINER OVERFLOW FIX — 2026-08-06
-   ═══════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????
+   EXACT MOBILE TYPOGRAPHY & CONTAINER OVERFLOW FIX ? 2026-08-06
+   ??????????????????????????????????????????????????????????? */
 
 @media (max-width: 768px) {
-    /* 1. Metin Çakışmaları İçin Kesin Satır Yüksekliği */
+    /* 1. Metin ?ak??malar? ??in Kesin Sat?r Y?ksekli?i */
     h1, h2, h3,
     .hero-title,
     .section-title,
@@ -3829,7 +3909,7 @@ h1, h2 {
         overflow-wrap: break-word !important;
     }
 
-    /* 2. Kategori Etiketleri (Badge/Subtitle) Dikey Boşluk */
+    /* 2. Kategori Etiketleri (Badge/Subtitle) Dikey Bo?luk */
     .badge,
     .hero-badge,
     .section-header .badge,
@@ -3840,7 +3920,7 @@ h1, h2 {
         margin-bottom: 8px !important;
     }
 
-    /* 3. Container Genişliği & Kenar Taşıması Önleme */
+    /* 3. Container Geni?li?i & Kenar Ta??mas? ?nleme */
     .container,
     .wrapper,
     .hero-container,
@@ -3855,9 +3935,9 @@ h1, h2 {
 }
 
 
-/* ═══════════════════════════════════════════════════════════
-   FINAL MOBILE TYPOGRAPHY & SECTION PADDING DIRECTIVES — 2026-08-06
-   ═══════════════════════════════════════════════════════════ */
+/* ???????????????????????????????????????????????????????????
+   FINAL MOBILE TYPOGRAPHY & SECTION PADDING DIRECTIVES ? 2026-08-06
+   ??????????????????????????????????????????????????????????? */
 
 @media only screen and (max-width: 768px) {
   h1, h2, h3, .hero-title, .section-title, .section-header h2 {
@@ -3875,4 +3955,1621 @@ h1, h2 {
     padding-top: 32px !important;
     padding-bottom: 32px !important;
   }
+}
+
+
+/* ???????????????????????????????????????????????????????????
+   MOB?L BA?LIK ?AKI?MA D?ZELTMES? ? 2026-08-06
+   ??????????????????????????????????????????????????????????? */
+@media only screen and (max-width: 768px) {
+  h1, h2, h3, .hero-title, .section-title, .hero-content h1, .section-header h2 {
+    line-height: 1.35 !important;
+    letter-spacing: normal !important;
+  }
+  .badge-text, .sub-title, .badge, .hero-badge, .section-header .badge {
+    margin-bottom: 10px !important;
+    display: inline-block !important;
+  }
+}
+
+
+/* ???????????????????????????????????????????????????????????
+   MOB?L BA?LIK ?AKI?MASI & FLEX SPACING TAM D?ZELTME ? 2026-08-06
+   ??????????????????????????????????????????????????????????? */
+@media only screen and (max-width: 768px) {
+  .section-header {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important; /* Etiket, ba?l?k ve paragraf? birbirinden ay?r?r */
+  }
+  
+  h1, h2, h3, .hero-title, .section-title, .section-header h2, .hero-content h1 {
+    line-height: 1.4 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    letter-spacing: normal !important;
+  }
+
+  .badge, .badge-text, .sub-title, .hero-badge, .section-header .badge {
+    display: inline-flex !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+
+/* ???????????????????????????????????????????????????????????
+   NAVBAR HERO OVERLAP FIX & CENTERED PRICING CARDS ? 2026-08-06
+   ??????????????????????????????????????????????????????????? */
+
+@media (max-width: 768px) {
+    /* 1. Navbar & Hero Title Overlap Fix (Sufficient Top Padding for Fixed Nav) */
+    .hero {
+        padding-top: 104px !important;
+        padding-bottom: 24px !important;
+        margin-top: 0 !important;
+    }
+
+    .hero-content {
+        margin-top: 0 !important;
+    }
+
+    .hero-badge {
+        margin-bottom: 14px !important;
+        display: inline-block !important;
+    }
+
+    .hero-content h1 {
+        line-height: 1.35 !important;
+        margin-top: 6px !important;
+        margin-bottom: 14px !important;
+    }
+
+    /* 2. Sleek & Effective Mobile Pricing Cards with Centered Numbers */
+    .pricing-card {
+        padding: 24px 20px !important;
+        text-align: center !important;
+        border-radius: 20px !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+        margin-bottom: 16px !important;
+    }
+
+    .pricing-name {
+        text-align: center !important;
+        font-size: 1.25rem !important;
+        margin-bottom: 4px !important;
+    }
+
+    .pricing-desc {
+        text-align: center !important;
+        font-size: 0.88rem !important;
+        margin-bottom: 12px !important;
+    }
+
+    .pricing-amount {
+        display: flex !important;
+        align-items: baseline !important;
+        justify-content: center !important;
+        gap: 4px !important;
+        margin: 12px 0 !important;
+        text-align: center !important;
+    }
+
+    .pricing-amount strong {
+        font-size: 2.35rem !important;
+        font-weight: 800 !important;
+        color: var(--color-primary, #2563EB) !important;
+        line-height: 1 !important;
+    }
+
+    .pricing-amount span {
+        font-size: 1.1rem !important;
+        font-weight: 700 !important;
+        color: var(--text-secondary, #475569) !important;
+    }
+
+    .pricing-teslim {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        margin-bottom: 16px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .pricing-features {
+        text-align: left !important;
+        margin: 16px 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .pricing-features li {
+        font-size: 0.88rem !important;
+        line-height: 1.45 !important;
+        margin-bottom: 8px !important;
+    }
+
+    .pricing-card .btn {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+        margin-top: 12px !important;
+    }
+}
+
+/* ===============================================================
+   PAKET KARTLARI ? kompakt, e?it yap?; Premium yaln?zca renk
+   =============================================================== */
+
+.pricing-grid {
+    align-items: stretch;
+}
+
+.pricing-subtitle {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #2563EB;
+    margin: 0 0 4px;
+    letter-spacing: 0.01em;
+}
+
+.pricing-desc {
+    min-height: 2.6em;
+}
+
+/* Kimler i?in? ? bask?n metin tetikleyici */
+.pricing-audience {
+    position: relative;
+    margin: 0 0 10px;
+    padding: 0;
+    background: none;
+    border: none;
+    z-index: 5;
+}
+
+.pricing-audience-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.84rem;
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: 0.01em;
+    color: #1D4ED8;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(29, 78, 216, 0.35);
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.pricing-audience-btn:hover,
+.pricing-audience-btn:focus-visible {
+    color: #1E40AF;
+    text-decoration-color: #1E40AF;
+}
+
+.pricing-audience-btn[aria-expanded="true"] {
+    color: #1E3A8A;
+    text-decoration-color: #1E3A8A;
+}
+
+.pricing-audience-panel {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 6px);
+    width: min(100%, 260px);
+    z-index: 20;
+    padding: 10px 12px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);
+}
+
+.pricing-audience-panel[hidden] {
+    display: none !important;
+}
+
+.pricing-audience-list {
+    margin: 0 !important;
+    font-size: 0.75rem !important;
+    line-height: 1.4 !important;
+    color: #475569 !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+}
+
+/* Ortak kart g?r?n?m? ? pop?ler yaln?zca rozet ile ayr?l?r */
+.section .card.pricing-card--starter,
+.section .card.pricing-card--popular,
+.pricing-card--starter,
+.pricing-card--popular {
+    background: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05) !important;
+    transform: none !important;
+    overflow: visible !important;
+}
+
+.section .card.pricing-card--popular:hover,
+.section .card.pricing-card--starter:hover,
+.pricing-card--popular:hover,
+.pricing-card--starter:hover {
+    border-color: #93C5FD !important;
+    box-shadow: 0 12px 28px -6px rgba(37, 99, 235, 0.12) !important;
+    transform: translateY(-3px) !important;
+}
+
+.pricing-badge-popular {
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background: #2563EB;
+    color: #FFFFFF;
+    font-size: 0.68rem;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.28);
+    white-space: nowrap;
+    line-height: 1.2;
+}
+
+/* Premium ? ayn? yap?, koyu renk varyant? + okunakl? kontrast */
+.section .card.pricing-card--premium,
+.pricing-card--premium,
+#paketler .pricing-card--premium {
+    background: #FFFFFF !important;
+    border: 1px solid #1E293B !important;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.18) !important;
+    color: #F1F5F9 !important;
+    transform: none !important;
+    overflow: visible !important;
+    z-index: 2;
+}
+
+.pricing-card--premium::after {
+    display: none;
+}
+
+.section .card.pricing-card--premium:hover,
+.pricing-card--premium:hover,
+#paketler .pricing-card--premium:hover {
+    border-color: #334155 !important;
+    box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.35) !important;
+    transform: translateY(-3px) !important;
+}
+
+.pricing-badge-premium {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-bottom: 6px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #DBEAFE;
+    background: rgba(37, 99, 235, 0.28);
+    border: 1px solid rgba(147, 197, 253, 0.35);
+}
+
+#paketler .pricing-card--premium .pricing-name,
+#paketler .pricing-card--premium h3 {
+    color: #F8FAFC !important;
+}
+
+#paketler .pricing-card--premium .pricing-subtitle {
+    color: #93C5FD !important;
+}
+
+#paketler .pricing-card--premium .pricing-desc,
+#paketler .pricing-card--premium p.pricing-desc {
+    color: #CBD5E1 !important;
+}
+
+#paketler .pricing-card--premium .pricing-amount strong {
+    color: #FFFFFF !important;
+}
+
+#paketler .pricing-card--premium .pricing-amount span {
+    color: #93C5FD !important;
+}
+
+#paketler .pricing-card--premium .pricing-teslim {
+    background: rgba(37, 99, 235, 0.22) !important;
+    border-color: rgba(147, 197, 253, 0.4) !important;
+    color: #DBEAFE !important;
+}
+
+#paketler .pricing-card--premium .pricing-features {
+    border-top-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+#paketler .pricing-card--premium .pricing-features li {
+    color: #E2E8F0 !important;
+}
+
+#paketler .pricing-card--premium .pricing-features li i {
+    color: #34D399 !important;
+}
+
+#paketler .pricing-card--premium .pricing-audience-btn {
+    color: #93C5FD !important;
+    text-decoration-color: rgba(147, 197, 253, 0.55) !important;
+}
+
+#paketler .pricing-card--premium .pricing-audience-btn:hover,
+#paketler .pricing-card--premium .pricing-audience-btn:focus-visible,
+#paketler .pricing-card--premium .pricing-audience-btn[aria-expanded="true"] {
+    color: #BFDBFE !important;
+    text-decoration-color: #BFDBFE !important;
+}
+
+#paketler .pricing-card--premium .pricing-audience-panel {
+    background: #1E293B;
+    border-color: #334155;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+#paketler .pricing-card--premium .pricing-audience-list {
+    color: #E2E8F0 !important;
+}
+
+.btn-premium {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 44px;
+    padding: 0.65rem 1rem;
+    border-radius: var(--radius-lg);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #0F172A !important;
+    background: #F8FAFC !important;
+    border: 1px solid #E2E8F0 !important;
+    box-shadow: none;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-premium:hover {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+    transform: translateY(-1px);
+}
+
+.pricing-card .btn,
+.pricing-card .btn-premium {
+    margin-top: auto;
+}
+
+.pricing-trust {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 24px;
+    margin-top: 28px;
+    padding-top: 4px;
+}
+
+.pricing-trust-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+.pricing-trust-item i {
+    color: #2563EB;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 991px) {
+    #paketler .pricing-grid.grid-3,
+    .pricing-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+
+    .pricing-card {
+        width: 100%;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* mobile order removed ? keep 1-2-3 */
+
+    .pricing-trust {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin-top: 22px;
+    }
+
+    .pricing-audience-panel {
+        width: min(100%, 100%);
+    }
+}
+
+/* ===============================================================
+   FINAL PACKAGES LOCK ? same fill, compact, order 1-2-3
+   =============================================================== */
+#paketler .pricing-grid {
+  align-items: stretch;
+}
+#paketler .pricing-card,
+#paketler .section .card.pricing-card,
+#paketler .card.pricing-card--starter,
+#paketler .card.pricing-card--popular,
+#paketler .card.pricing-card--premium,
+#paketler .pricing-card--starter,
+#paketler .pricing-card--popular,
+#paketler .pricing-card--premium {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 4px 16px -4px rgba(15, 23, 42, 0.06) !important;
+  color: #0F172A !important;
+  transform: none !important;
+  overflow: visible !important;
+  padding: 1rem 1.1rem !important;
+  height: 100%;
+  display: flex !important;
+  flex-direction: column !important;
+}
+#paketler .pricing-card:hover,
+#paketler .card.pricing-card--starter:hover,
+#paketler .card.pricing-card--popular:hover,
+#paketler .card.pricing-card--premium:hover {
+  border-color: #93C5FD !important;
+  box-shadow: 0 10px 24px -6px rgba(37, 99, 235, 0.12) !important;
+  transform: translateY(-2px) !important;
+}
+#paketler .pricing-card--premium::after { display: none !important; content: none !important; }
+#paketler .pricing-card--popular {
+  border-color: #2563EB !important;
+  box-shadow: 0 6px 20px -4px rgba(37, 99, 235, 0.14) !important;
+}
+#paketler .pricing-card--premium {
+  border-color: #64748B !important;
+}
+#paketler .pricing-name,
+#paketler .pricing-card--premium .pricing-name,
+#paketler .pricing-card--premium h3 {
+  color: #0F172A !important;
+  font-size: 1.05rem !important;
+  margin: 0 0 2px !important;
+  line-height: 1.2 !important;
+}
+#paketler .pricing-subtitle,
+#paketler .pricing-card--premium .pricing-subtitle {
+  color: #2563EB !important;
+  font-size: 0.72rem !important;
+  margin: 0 0 2px !important;
+}
+#paketler .pricing-desc,
+#paketler .pricing-card--premium .pricing-desc,
+#paketler .pricing-card--premium p.pricing-desc {
+  color: #475569 !important;
+  font-size: 0.75rem !important;
+  line-height: 1.35 !important;
+  margin: 0 0 6px !important;
+  min-height: 0 !important;
+}
+#paketler .pricing-amount { margin: 4px 0 6px !important; }
+#paketler .pricing-amount strong,
+#paketler .pricing-card--premium .pricing-amount strong {
+  color: #0F172A !important;
+  font-size: 1.75rem !important;
+}
+#paketler .pricing-amount span,
+#paketler .pricing-card--premium .pricing-amount span {
+  color: #2563EB !important;
+  font-size: 0.85rem !important;
+}
+#paketler .pricing-teslim,
+#paketler .pricing-card--premium .pricing-teslim {
+  background: #EFF6FF !important;
+  border: 1px solid #BFDBFE !important;
+  color: #1D4ED8 !important;
+  font-size: 0.68rem !important;
+  padding: 3px 8px !important;
+  margin-bottom: 8px !important;
+}
+#paketler .pricing-features {
+  gap: 4px !important;
+  margin-bottom: 10px !important;
+  padding-top: 8px !important;
+  border-top: 1px solid #E2E8F0 !important;
+  flex: 1;
+}
+#paketler .pricing-features li,
+#paketler .pricing-card--premium .pricing-features li {
+  color: #0F172A !important;
+  font-size: 0.75rem !important;
+  line-height: 1.3 !important;
+  margin: 0 !important;
+}
+#paketler .pricing-features li i,
+#paketler .pricing-card--premium .pricing-features li i {
+  color: #16A34A !important;
+}
+#paketler .pricing-audience {
+  position: relative;
+  margin: 0 0 6px !important;
+  padding: 0 !important;
+  background: none !important;
+  border: none !important;
+  z-index: 5;
+}
+#paketler .pricing-audience-btn,
+#paketler .pricing-card--premium .pricing-audience-btn {
+  font-family: var(--font-body) !important;
+  font-size: 0.8rem !important;
+  font-weight: 800 !important;
+  font-style: italic !important;
+  color: #1D4ED8 !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer;
+  text-decoration: underline !important;
+  text-decoration-thickness: 1.5px !important;
+  text-underline-offset: 3px !important;
+  text-decoration-color: rgba(29, 78, 216, 0.35) !important;
+}
+#paketler .pricing-audience-btn:hover,
+#paketler .pricing-card--premium .pricing-audience-btn:hover {
+  color: #1E40AF !important;
+}
+#paketler .pricing-audience-panel {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 6px);
+  width: min(100%, 260px);
+  z-index: 30;
+  padding: 10px 12px;
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 10px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);
+}
+#paketler .pricing-audience-panel[hidden] { display: none !important; }
+#paketler .pricing-audience-list,
+#paketler .pricing-card--premium .pricing-audience-list {
+  margin: 0 !important;
+  font-size: 0.75rem !important;
+  line-height: 1.4 !important;
+  color: #475569 !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+}
+#paketler .pricing-badge-premium {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 6px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1E40AF !important;
+  background: #EFF6FF !important;
+  border: 1px solid #BFDBFE !important;
+}
+#paketler .btn-premium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 42px;
+  margin-top: auto;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-lg);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #FFFFFF !important;
+  background: #0F172A !important;
+  border: 1px solid #0F172A !important;
+  text-decoration: none;
+}
+#paketler .btn-premium:hover {
+  background: #1E293B !important;
+  color: #FFFFFF !important;
+}
+#paketler .pricing-card .btn,
+#paketler .pricing-card .btn-premium {
+  margin-top: auto;
+  min-height: 42px;
+  font-size: 0.88rem;
+}
+#paketler .pricing-card--starter,
+#paketler .pricing-card--popular,
+#paketler .pricing-card--premium {
+  order: unset !important;
+}
+@media (max-width: 991px) {
+  #paketler .pricing-grid.grid-3,
+  #paketler .pricing-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+  }
+  #paketler .pricing-card,
+  #paketler .pricing-card--starter,
+  #paketler .pricing-card--popular,
+  #paketler .pricing-card--premium {
+    order: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    padding: 1.25rem !important;
+    text-align: left !important;
+    box-sizing: border-box !important;
+  }
+  #paketler .pricing-name,
+  #paketler .pricing-desc,
+  #paketler .pricing-amount {
+    text-align: left !important;
+  }
+  #paketler .pricing-amount {
+    justify-content: flex-start !important;
+    margin: 4px 0 6px !important;
+  }
+  #paketler .pricing-amount strong {
+    font-size: 1.7rem !important;
+    color: #0F172A !important;
+  }
+  #paketler .pricing-features {
+    margin: 8px 0 10px !important;
+  }
+  #paketler .pricing-features li {
+    font-size: 0.75rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+/* ─── HERO EMBEDDED SEAMLESS VIDEO CARD (ZERO MARGINS, SOFT SHADOW) ─── */
+.hero-embedded-video-card {
+    width: 100% !important;
+    max-width: 520px !important;
+    height: 340px !important;
+    margin: 0 auto !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: 0 20px 48px rgba(15, 23, 42, 0.14) !important;
+    position: relative !important;
+}
+
+.hero-embedded-video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    border-radius: 20px !important;
+    border: none !important;
+}
+
+@media (max-width: 768px) {
+    /* Mobilde video kartı ve tüm kartlar 1:1 tam container genişliğine (%100) kilitlenir */
+    .hero-embedded-video-card,
+    .premium-video-wrap .hero-embedded-video-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        height: 250px !important;
+    }
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   2026 LUXURY VECTOR BACKGROUNDS & SLEEK CARD PROPORTIONS
+   ═══════════════════════════════════════════════════════════ */
+
+/* Sleek wide card proportions & HSL borders */
+.pricing-card,
+.reason-card,
+.service-card,
+.process-card {
+    border-radius: 18px !important;
+    padding: 20px 20px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    background-color: #FFFFFF !important;
+    border: 1px solid rgba(226, 232, 240, 0.9) !important;
+    box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.05), 0 0 0 1px rgba(37, 99, 235, 0.04) !important;
+}
+
+/* 1. Paket Kartı Arka Planları (Temiz, Flu/Bulanık Renk Katmanları Kaldırıldı) */
+.pricing-card--starter,
+.pricing-card--popular,
+.pricing-card--premium {
+    background-image: none !important;
+    background-color: #FFFFFF !important;
+}
+
+.pricing-card--popular::before,
+.pricing-card--premium::before {
+    display: none !important;
+}
+
+/* Feature list grid in pricing cards */
+.pricing-features {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 5px 10px !important;
+}
+
+/* Hover elevation with subtle border glow */
+.pricing-card:hover,
+.reason-card:hover,
+.service-card:hover,
+.process-card:hover {
+    transform: translateY(-3px) !important;
+    border-color: rgba(37, 99, 235, 0.35) !important;
+    box-shadow: 0 16px 36px -8px rgba(37, 99, 235, 0.14), 0 0 0 1px rgba(37, 99, 235, 0.12) !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   ULTRA-WIDE & COMPACT MOBILE CARD SCALING SYSTEM
+   ═══════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════
+   PREMIUM MOBILE SAAS PRICING & CARD SCALING SYSTEM (320px-430px)
+   ═══════════════════════════════════════════════════════════ */
+
+@media only screen and (max-width: 768px) {
+    /* 1. Precise Mobile Container Padding (calc(100% - 32px) Width) */
+    .container {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+    }
+
+    /* 2. All Cards Match Video Card Rhythm (100% width up to 440px) */
+    .card,
+    .reason-card,
+    .service-card,
+    .process-card,
+    .portfolio-card,
+    .contact-form {
+        padding: 18px 18px !important;
+        border-radius: 20px !important;
+        width: 100% !important;
+        max-width: 440px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+        margin-bottom: 16px !important;
+        box-shadow: 0 10px 28px -6px rgba(15, 23, 42, 0.08) !important;
+    }
+
+    /* 3. Modern Mobile SaaS Pricing Cards */
+    #paketler .pricing-card,
+    #paketler .pricing-card--starter,
+    #paketler .pricing-card--popular,
+    #paketler .pricing-card--premium,
+    .pricing-card {
+        width: 100% !important;
+        max-width: 440px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: 18px !important;
+        padding: 20px 20px !important;
+        border-radius: 20px !important;
+        box-shadow: 0 12px 30px -6px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(226, 232, 240, 0.9) !important;
+        box-sizing: border-box !important;
+        text-align: left !important;
+    }
+
+    /* Premium / Popular Card Stands Out */
+    #paketler .pricing-card--popular {
+        border-color: rgba(37, 99, 235, 0.4) !important;
+        box-shadow: 0 16px 36px -6px rgba(37, 99, 235, 0.16), 0 0 0 2px rgba(37, 99, 235, 0.25) !important;
+    }
+
+    #paketler .pricing-card--premium {
+        border-color: rgba(16, 185, 129, 0.4) !important;
+        box-shadow: 0 16px 36px -6px rgba(16, 185, 129, 0.16), 0 0 0 2px rgba(16, 185, 129, 0.25) !important;
+    }
+
+    /* 4. Optimized Mobile Typography & Content Spacing */
+    .pricing-name {
+        font-size: 1.3rem !important;
+        font-weight: 800 !important;
+        color: #0F172A !important;
+        margin-bottom: 2px !important;
+        letter-spacing: -0.01em !important;
+    }
+
+    .pricing-subtitle {
+        font-size: 0.78rem !important;
+        color: #64748B !important;
+        margin-bottom: 6px !important;
+        font-weight: 500 !important;
+    }
+
+    .pricing-desc {
+        font-size: 0.84rem !important;
+        margin-bottom: 8px !important;
+        line-height: 1.4 !important;
+        color: #334155 !important;
+    }
+
+    .pricing-amount {
+        margin: 6px 0 8px !important;
+        justify-content: flex-start !important;
+    }
+
+    .pricing-amount strong {
+        font-size: 2.1rem !important;
+        font-weight: 900 !important;
+        color: #0F172A !important;
+        letter-spacing: -0.02em !important;
+    }
+
+    .pricing-amount span {
+        font-size: 0.95rem !important;
+        font-weight: 700 !important;
+        color: #64748B !important;
+        margin-left: 4px !important;
+    }
+
+    .pricing-teslim {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        font-size: 0.78rem !important;
+        font-weight: 600 !important;
+        padding: 4px 10px !important;
+        border-radius: 8px !important;
+        margin-bottom: 12px !important;
+    }
+
+    /* Generous Mobile Feature List Spacing */
+    .pricing-features {
+        margin: 12px 0 16px !important;
+        padding-top: 10px !important;
+        border-top: 1px solid #F1F5F9 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+
+    .pricing-features li {
+        font-size: 0.86rem !important;
+        line-height: 1.45 !important;
+        color: #1E293B !important;
+        display: flex !important;
+        align-items: center !important;
+        margin-bottom: 0 !important;
+    }
+
+    .pricing-features li i {
+        font-size: 0.95rem !important;
+        color: #16A34A !important;
+        margin-right: 10px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .pricing-card .btn,
+    .pricing-card .btn-premium {
+        min-height: 44px !important;
+        padding: 10px 16px !important;
+        font-size: 0.92rem !important;
+        font-weight: 700 !important;
+        margin-top: 12px !important;
+        border-radius: 12px !important;
+    }
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   FULL CONTRAST & %30 LARGER PACKAGE VECTOR ILLUSTRATIONS
+   ═══════════════════════════════════════════════════════════ */
+/* Paket Kartı Vektörleri (%30 Büyütülmüş: 98px x 98px, Tam Kontrast %100 Orijinal Canlılık) */
+.card-bg-vector {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    width: 98px !important;
+    height: 98px !important;
+    object-fit: contain !important;
+    opacity: 1 !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    filter: none !important;
+}
+
+.pricing-card--popular .card-bg-vector,
+.pricing-card--premium .card-bg-vector {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* Hover İletişimi: Sabit & Tam Kontrast */
+.pricing-card:hover .card-bg-vector {
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+/* 2. Genel Sayfa Arka Plan Vektörleri (Yavaş Süzülen, Görünür Kenar Boşluğu Vektörleri) */
+@keyframes vectorFloat2D {
+    0%, 100% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    25% {
+        transform: translate(10px, -8px) rotate(3deg);
+    }
+    50% {
+        transform: translate(-8px, -14px) rotate(-3deg);
+    }
+    75% {
+        transform: translate(-10px, 6px) rotate(2deg);
+    }
+}
+
+.section-bg-vector {
+    position: absolute !important;
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: contain !important;
+    opacity: 0.50 !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+    animation: vectorFloat2D 22s ease-in-out infinite !important;
+    filter: drop-shadow(0 4px 12px rgba(37, 99, 235, 0.15)) !important;
+}
+
+.section-bg-vector--left {
+    left: 1.5% !important;
+    top: 6% !important;
+}
+
+.section-bg-vector--right {
+    right: 1.5% !important;
+    top: 6% !important;
+    animation-delay: -5s !important;
+}
+
+.section-bg-vector--center {
+    right: 3% !important;
+    bottom: 8% !important;
+    animation-delay: -9s !important;
+}
+
+.section-bg-vector--center-left {
+    left: 2% !important;
+    top: 22% !important;
+    animation-delay: -4s !important;
+}
+
+.section-bg-vector--center-right {
+    right: 2% !important;
+    top: 22% !important;
+    animation-delay: -11s !important;
+}
+
+.section-bg-vector--inter-1 {
+    left: 1.5% !important;
+    bottom: 4% !important;
+    animation-delay: -7s !important;
+}
+
+.section-bg-vector--inter-2 {
+    right: 2% !important;
+    top: 2% !important;
+    animation-delay: -13s !important;
+}
+
+.section-bg-vector--inter-3 {
+    right: 1.5% !important;
+    bottom: 4% !important;
+    animation-delay: -3s !important;
+}
+
+/* Mobil Uyumlu Ölçekleme & Mobilde Sadece Paket Kartı Vektörlerini Tutma */
+@media (max-width: 768px) {
+    #paketler .pricing-trust {
+        display: none !important;
+    }
+
+    /* Mobilde sayfa arka plan vektörleri gizlenir (sıfır dikkat dağınıklığı) */
+    .section-bg-vector {
+        display: none !important;
+    }
+
+    /* Sadece paket kartlarının sağ üst köşesindeki 3D vektörler kalır */
+    .card-bg-vector {
+        display: block !important;
+        width: 55px !important;
+        height: 55px !important;
+        top: 8px !important;
+        right: 8px !important;
+        opacity: 1 !important;
+    }
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   ULTRA-COMPACT MOBILE FOOTER & SECTION LENGTH OPTIMIZATION
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+    /* 1. Tighten Mobile Section Vertical Spacing */
+    section, .section {
+        padding-top: 22px !important;
+        padding-bottom: 22px !important;
+    }
+
+    .section-header {
+        margin-bottom: 14px !important;
+        gap: 6px !important;
+    }
+
+    .section-header h2 {
+        font-size: 1.4rem !important;
+        margin-bottom: 4px !important;
+    }
+
+    .section-header p {
+        font-size: 0.82rem !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* 2. Spacious Mobile Contact Info List (Zero Text Squeezing) */
+    .contact-info-list {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        margin-bottom: 18px !important;
+    }
+
+    .contact-info-item {
+        padding: 12px 14px !important;
+        border-radius: 14px !important;
+        gap: 12px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .contact-info-icon {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 0.95rem !important;
+        flex-shrink: 0 !important;
+    }
+
+    .contact-info-text h4 {
+        font-size: 0.75rem !important;
+        margin-bottom: 2px !important;
+    }
+
+    .contact-info-text a,
+    .contact-info-text p {
+        font-size: 0.84rem !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+
+    .contact-form {
+        padding: 16px 14px !important;
+        border-radius: 16px !important;
+    }
+
+    .contact-form .form-group {
+        margin-bottom: 10px !important;
+    }
+
+    .contact-form .form-input {
+        padding: 8px 12px !important;
+        font-size: 0.82rem !important;
+    }
+
+    /* 3. Compact 2-Column Inline Mobile Footer Grid (Cuts Height by 50%) */
+    .site-footer {
+        padding-top: 28px !important;
+        padding-bottom: 20px !important;
+    }
+
+    .footer-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px 12px !important;
+    }
+
+    .footer-brand {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* Hover İletişimi: Sabit & Tam Kontrast */
+.pricing-card:hover .card-bg-vector {
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+/* 2. Genel Sayfa Arka Plan Vektörleri (Yavaş Süzülen, Görünür Kenar Boşluğu Vektörleri) */
+@keyframes vectorFloat2D {
+    0%, 100% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    25% {
+        transform: translate(10px, -8px) rotate(3deg);
+    }
+    50% {
+        transform: translate(-8px, -14px) rotate(-3deg);
+    }
+    75% {
+        transform: translate(-10px, 6px) rotate(2deg);
+    }
+}
+
+.section-bg-vector {
+    position: absolute !important;
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: contain !important;
+    opacity: 0.50 !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+    animation: vectorFloat2D 22s ease-in-out infinite !important;
+    filter: drop-shadow(0 4px 12px rgba(37, 99, 235, 0.15)) !important;
+}
+
+.section-bg-vector--left {
+    left: 1.5% !important;
+    top: 6% !important;
+}
+
+.section-bg-vector--right {
+    right: 1.5% !important;
+    top: 6% !important;
+    animation-delay: -5s !important;
+}
+
+.section-bg-vector--center {
+    right: 3% !important;
+    bottom: 8% !important;
+    animation-delay: -9s !important;
+}
+
+.section-bg-vector--center-left {
+    left: 2% !important;
+    top: 22% !important;
+    animation-delay: -4s !important;
+}
+
+.section-bg-vector--center-right {
+    right: 2% !important;
+    top: 22% !important;
+    animation-delay: -11s !important;
+}
+
+.section-bg-vector--inter-1 {
+    left: 1.5% !important;
+    bottom: 4% !important;
+    animation-delay: -7s !important;
+}
+
+.section-bg-vector--inter-2 {
+    right: 2% !important;
+    top: 2% !important;
+    animation-delay: -13s !important;
+}
+
+.section-bg-vector--inter-3 {
+    right: 1.5% !important;
+    bottom: 4% !important;
+    animation-delay: -3s !important;
+}
+
+/* Mobil Uyumlu Ölçekleme & Mobilde Sadece Paket Kartı Vektörlerini Tutma */
+@media (max-width: 768px) {
+    #paketler .pricing-trust {
+        display: none !important;
+    }
+
+    /* Mobilde sayfa arka plan vektörleri gizlenir (sıfır dikkat dağınıklığı) */
+    .section-bg-vector {
+        display: none !important;
+    }
+
+    /* Sadece paket kartlarının sağ üst köşesindeki 3D vektörler kalır */
+    .card-bg-vector {
+        display: block !important;
+        width: 55px !important;
+        height: 55px !important;
+        top: 8px !important;
+        right: 8px !important;
+        opacity: 1 !important;
+    }
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   ULTRA-COMPACT MOBILE FOOTER & SECTION LENGTH OPTIMIZATION
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+    /* 1. Tighten Mobile Section Vertical Spacing */
+    section, .section {
+        padding-top: 22px !important;
+        padding-bottom: 22px !important;
+    }
+
+    .section-header {
+        margin-bottom: 14px !important;
+        gap: 6px !important;
+    }
+
+    .section-header h2 {
+        font-size: 1.4rem !important;
+        margin-bottom: 4px !important;
+    }
+
+    .section-header p {
+        font-size: 0.82rem !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* 2. Spacious Mobile Contact Info List (Zero Text Squeezing) */
+    .contact-info-list {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        margin-bottom: 18px !important;
+    }
+
+    .contact-info-item {
+        padding: 12px 14px !important;
+        border-radius: 14px !important;
+        gap: 12px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .contact-info-icon {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 0.95rem !important;
+        flex-shrink: 0 !important;
+    }
+
+    .contact-info-text h4 {
+        font-size: 0.75rem !important;
+        margin-bottom: 2px !important;
+    }
+
+    .contact-info-text a,
+    .contact-info-text p {
+        font-size: 0.84rem !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+
+    .contact-form {
+        padding: 16px 14px !important;
+        border-radius: 16px !important;
+    }
+
+    .contact-form .form-group {
+        margin-bottom: 10px !important;
+    }
+
+    .contact-form .form-input {
+        padding: 8px 12px !important;
+        font-size: 0.82rem !important;
+    }
+
+    /* 3. Compact 2-Column Inline Mobile Footer Grid (Cuts Height by 50%) */
+    .site-footer {
+        padding-top: 28px !important;
+        padding-bottom: 20px !important;
+    }
+
+    .footer-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px 12px !important;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1 !important;
+        margin-bottom: 8px !important;
+        text-align: left !important;
+    }
+
+    .footer-brand p {
+        font-size: 0.8rem !important;
+        line-height: 1.35 !important;
+        margin-bottom: 10px !important;
+    }
+
+    .footer-col h4 {
+        font-size: 0.85rem !important;
+        margin-bottom: 8px !important;
+    }
+
+    .footer-col a {
+        font-size: 0.78rem !important;
+        margin-bottom: 4px !important;
+    }
+
+    .footer-bottom {
+        margin-top: 20px !important;
+        padding-top: 14px !important;
+        flex-direction: column !important;
+        gap: 4px !important;
+        font-size: 0.72rem !important;
+    }
+}
+
+/* Side by side Social Icon Buttons with a sweet gap */
+.contact-social-icons {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-top: 4px !important;
+}
+
+.contact-social-icons .social-icon-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+        color: #2563EB !important;
+        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.12) !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   100% SYMMETRICAL PORTFOLIO META BADGES LAYOUT
+   ═══════════════════════════════════════════════════════════ */
+.portfolio-meta {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    margin-bottom: 12px !important;
+}
+
+.portfolio-meta .badge,
+.portfolio-meta .portfolio-type-tag {
+    font-size: 0.74rem !important;
+    padding: 4px 10px !important;
+    border-radius: 8px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+.filter-btn {
+    background: transparent;
+    border: none;
+    padding: 6px 14px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #64748B;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+        overflow-x: auto;
+        padding: 4px 6px;
+        margin-top: 8px;
+        margin-bottom: 4px;
+        scrollbar-width: none;
+    }
+
+    .portfolio-filter-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-btn {
+        padding: 5px 8px;
+        font-size: 0.72rem;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   STRICT 100% EQUAL DIMENSIONS FOR PORTFOLIO CARDS
+   ═══════════════════════════════════════════════════════════ */
+.portfolio-carousel-track {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 24px !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 16px !important;
+    scrollbar-width: none !important;
+}
+
+.portfolio-carousel-track::-webkit-scrollbar {
+    display: none !important;
+}
+
+.portfolio-slide {
+    flex: 0 0 360px !important;
+    width: 360px !important;
+    min-width: 360px !important;
+    max-width: 360px !important;
+    scroll-snap-align: start !important;
+    box-sizing: border-box !important;
+}
+
+.portfolio-card {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    height: 480px !important;
+    box-sizing: border-box !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+}
+
+.browser-window-bar {
+    height: 38px !important;
+    flex-shrink: 0 !important;
+}
+
+.portfolio-thumb-wrap {
+    width: 100% !important;
+    height: 200px !important;
+    flex-shrink: 0 !important;
+    overflow: hidden !important;
+    background: #0F172A !important;
+}
+
+.portfolio-thumb {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+}
+
+.portfolio-info {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 1 auto !important;
+    justify-content: space-between !important;
+    padding: 18px !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+.portfolio-info h3 {
+    font-size: 1.1rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 8px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.portfolio-info p {
+    font-size: 0.84rem !important;
+    line-height: 1.45 !important;
+    color: #64748B !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+}
+
+@media (max-width: 768px) {
+    .portfolio-slide {
+        flex: 0 0 85vw !important;
+        width: 85vw !important;
+        min-width: 280px !important;
+        max-width: 360px !important;
+    }
+
+    .portfolio-card {
+        height: 460px !important;
+    }
+
+    .portfolio-thumb-wrap {
+        height: 180px !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MODERN GLASSMORPHIC FILTER PILLS & STRICT HIDING RULES
+   ═══════════════════════════════════════════════════════════ */
+.portfolio-filter-bar {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    background: #F8FAFC !important;
+    padding: 4px 6px !important;
+    border-radius: 30px !important;
+    border: 1.5px solid #E2E8F0 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+.filter-btn {
+    background: transparent !important;
+    border: 1.5px solid transparent !important;
+    padding: 6px 16px !important;
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    color: #64748B !important;
+    border-radius: 20px !important;
+    cursor: pointer !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    white-space: nowrap !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    user-select: none !important;
+}
+
+.filter-btn:hover {
+    color: #2563EB !important;
+    background: #EFF6FF !important;
+    border-color: #BFDBFE !important;
+}
+
+.filter-btn:focus,
+.filter-btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.filter-btn.active {
+    background: #EFF6FF !important;
+    color: #1D4ED8 !important;
+    border: 1.5px solid #2563EB !important;
+    font-weight: 800 !important;
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.18) !important;
+}
+
+.portfolio-slide.hidden-slide {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
 }
