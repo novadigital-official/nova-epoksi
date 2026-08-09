@@ -849,6 +849,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ─── LIGHTWEIGHT DESKTOP HERO MOUSE SPOTLIGHT (ZERO LAG) ──────
+    if (window.innerWidth >= 993) {
+        const heroEl = document.getElementById('hero');
+        if (heroEl) {
+            const spotlight = document.createElement('div');
+            spotlight.className = 'hero-mouse-spotlight';
+            heroEl.appendChild(spotlight);
+
+            let ticking = false;
+            heroEl.addEventListener('mousemove', (e) => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        const rect = heroEl.getBoundingClientRect();
+                        spotlight.style.left = `${e.clientX - rect.left}px`;
+                        spotlight.style.top = `${e.clientY - rect.top}px`;
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        }
+    }
+
 });
 
 
