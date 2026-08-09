@@ -5575,7 +5575,7 @@ h1, h2 {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   VARYASYON 4: BOLD VISIBLE EMERALD TECH (NEO-MINT ZÜMRÜT YEŞİLİ) OVERRIDE
+   VARYASYON 4: BOLD VISIBLE EMERALD TECH (NEO-MINT ZÜMRÜT YEŞİLİ) GLOBAL OVERRIDE
    ═══════════════════════════════════════════════════════════ */
 :root {
     --color-primary: #10B981 !important;
@@ -5585,10 +5585,44 @@ h1, h2 {
     --border-hover: rgba(16, 185, 129, 0.6) !important;
 }
 
+/* 1. All text gradients & primary text colors */
+.text-gradient,
+h1 .text-gradient,
+h2 .text-gradient,
+h3 .text-gradient,
+.nav-logo-text span,
+.section-header h2 span {
+    background: linear-gradient(135deg, #10B981, #047857) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+/* 2. All badges & capacity indicators */
+.badge-primary,
+.badge,
+.section-header .badge {
+    background: #ECFDF5 !important;
+    color: #047857 !important;
+    border-color: #A7F3D0 !important;
+}
+
+/* 3. Icons, Service Numbers & Links */
+.service-icon,
+.reason-icon,
+.process-num,
+.blog-link,
+.faq-item summary::after,
+.contact-info-icon,
+.mobile-menu-links a i {
+    color: #10B981 !important;
+}
+
+/* 4. All Buttons & CTA Elements */
 .btn-primary,
 .nav-cta,
 #heroCta,
-.btn-premium {
+.btn-premium,
+.mobile-menu-cta {
     background: linear-gradient(135deg, #10B981, #059669) !important;
     border-color: #10B981 !important;
     color: #FFFFFF !important;
@@ -5603,14 +5637,20 @@ h1, h2 {
     box-shadow: 0 6px 24px rgba(16, 185, 129, 0.45) !important;
 }
 
-.text-gradient {
-    background: linear-gradient(135deg, #10B981, #047857) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
+/* 5. Filter Bar & Filter Buttons */
+.portfolio-filter-bar {
+    background: #F0FDF4 !important;
+    border-color: #A7F3D0 !important;
 }
 
-.nav-logo-text span {
-    color: #10B981 !important;
+.filter-btn {
+    color: #047857 !important;
+}
+
+.filter-btn:hover {
+    color: #059669 !important;
+    background: #ECFDF5 !important;
+    border-color: #A7F3D0 !important;
 }
 
 .filter-btn.active {
@@ -5620,12 +5660,7 @@ h1, h2 {
     box-shadow: 0 3px 10px rgba(16, 185, 129, 0.22) !important;
 }
 
-.filter-btn:hover {
-    color: #059669 !important;
-    background: #F0FDF4 !important;
-    border-color: #A7F3D0 !important;
-}
-
+/* 6. Pricing Cards, Badges & Delivery Tags */
 .pricing-card.featured,
 .pricing-card--popular {
     border: 2px solid #10B981 !important;
@@ -5640,4 +5675,10 @@ h1, h2 {
 .pricing-badge-premium {
     background: #047857 !important;
     color: #FFFFFF !important;
+}
+
+.pricing-teslim {
+    background: #ECFDF5 !important;
+    color: #047857 !important;
+    border-color: #A7F3D0 !important;
 }
