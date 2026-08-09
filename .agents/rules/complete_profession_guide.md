@@ -46,7 +46,7 @@ Müşteri WhatsApp'tan veya telefondan işini söylediğinde **anında doğru pa
 
 ## 👑 3. ULTRA PREMIUM PAKET — `39.999 TL`
 * **Müşteri Amacı:** *"Yurtdışından euro/dolar getireceğim (Sağlık Turizmi) veya 7/24 online kredi kartıyla satış yapacağım"* diyen büyük markalar ve klinikler.
-* **Kapsam & Özellikler:** Özel Yazılım / Next.js 14 Altyapısı, Çoklu Dil Desteği (İngilizce/Fransızca/Almanca), Kredi Kartı Ödeme Entegrasyonu, Özel Dönüşüm Sihirbazı (Norwood/M²), 60 Gün Destek.
+* **Kapsam & Özellikler:** Özel Yazılım / Next.js 14 Altyapısı, Çoklu Dil Desteği (İngilizce/Fransızca/Almanca), **İyzico, PayTR, Stripe & Banka Sanal POS Entegrasyonları**, Özel Dönüşüm Sihirbazı (Norwood/M²), 60 Gün Destek.
 * **Google & Analitik Desteği:**
   * ✅ **VIP Google Haritalar & Harita SEO optimizasyonu DAHİLDİR!** 📍
   * ✅ **Google Analytics (GA4) Ziyaretçi Takip Kurulumu DAHİLDİR!** 📊
