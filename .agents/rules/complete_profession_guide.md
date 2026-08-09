@@ -1,12 +1,16 @@
 # 📚 Nova Digital A-Z Sektör & Meslek Paket Tavsiye Rehberi (Hızlı Müşteri Sorgulama)
 
-Müşteri WhatsApp'tan veya telefondan işini söylediğinde **anında doğru paketi ve canlı demoyu önermenizi sağlayan 170+ mesleklik eksiksiz rehberdir.**
+Müşteri WhatsApp'tan veya telefondan işini söylediğinde **anında doğru paketi, özellikleri ve canlı demoyu önermenizi sağlayan 170+ mesleklik eksiksiz rehberdir.**
 
 ---
 
 ## 🟢 1. BAŞLANGIÇ PAKETİ — `4.999 TL`
 * **Müşteri Amacı:** *"Dükkanım internette görünsün, adresim, telefonum ve menüm bulunsun"* diyen lokal esnaf.
-* **Ne Veriyoruz?:** Tek Sayfa (Landing Page), Mobil Uyum, WhatsApp Butonu, Harita Konumu, 2 Günde Yayın.
+* **Kapsam & Özellikler:** Tek Sayfa (Landing Page), Mobil Uyum, WhatsApp Butonu, Harita Konum Linki, Temel SEO Ayarları, 2 Günde Yayın.
+* **Google & Analitik Desteği:**
+  * ✅ Var olan Google Harita konumuna bağlantı ekleme.
+  * ❌ *Sıfırdan Google Business profil kurulumu & doğrulaması dahil DEĞİLDİR (İsterse +1.500 TL).*
+  * ❌ *Google Analytics GA4 / Tag Manager dahil DEĞİLDİR.*
 * **CANLI DEMO:** 👉 `https://nova-cafe-one.vercel.app/`
 
 ### 📋 Önerilecek Sektör ve Meslekler (50+ Meslek):
@@ -20,7 +24,12 @@ Müşteri WhatsApp'tan veya telefondan işini söylediğinde **anında doğru pa
 
 ## 🔵 2. KURUMSAL WEB PAKETİ — `14.999 TL` ⭐ (EN ÇOK SATAN AMİRAL GEMİSİ!)
 * **Müşteri Amacı:** *"Google'dan müşteri toplayayım, kurumsal görüneyim, randevu/keşif alayım"* diyen orta boy işletmeler.
-* **Ne Veriyoruz?:** Çok Sayfalı Altyapı, Hizmet Kataloğu, 7/24 Online Randevu / M² Keşif Sihirbazı, Blog Yönetimi, Gelişmiş SEO, GA4 & GTM Analitik Takibi.
+* **Kapsam & Özellikler:** Çok Sayfalı Altyapı, Hizmet Kataloğu, 7/24 Online Randevu / M² Keşif Sihirbazı, Blog Yönetimi, Gelişmiş SEO Altyapısı.
+* **Google & Analitik Desteği:**
+  * ✅ **Sıfırdan Google Haritalar (Business) profil kurulumu & doğrulaması DAHİLDİR!** 📍
+  * ✅ **Google Analytics (GA4) ziyaretçi takip kurulumu DAHİLDİR!** 📊
+  * ✅ **Gelişmiş SEO (Title, Meta, H1-H6 başlık mimarisi) DAHİLDİR!** 🔍
+  * ❌ *Google Ads & Meta Pixel ileri düzey e-ticaret dönüşüm etiketleri dahil değildir (39.999 TL pakettedir).*
 * **CANLI DEMOLAR:** 
   👉 Güzellik/Estetik: `https://nova-guzellik-phi.vercel.app/`  
   👉 Epoksi/Yapı: `https://nova-epoksi-ksam.vercel.app/`  
@@ -38,7 +47,12 @@ Müşteri WhatsApp'tan veya telefondan işini söylediğinde **anında doğru pa
 
 ## 👑 3. ULTRA PREMIUM PAKET — `39.999 TL`
 * **Müşteri Amacı:** *"Yurtdışından euro/dolar getireceğim (Sağlık Turizmi) veya 7/24 online kredi kartıyla satış yapacağım"* diyen büyük markalar ve klinikler.
-* **Ne Veriyoruz?:** Özel Yazılım / Next.js 14 Altyapısı, Çoklu Dil Desteği (İngilizce/Fransızca/Almanca), Kredi Kartı Ödeme Entegrasyonu, Özel Dönüşüm Sihirbazı, 60 Gün Destek.
+* **Kapsam & Özellikler:** Özel Yazılım / Next.js 14 Altyapısı, Çoklu Dil Desteği (İngilizce/Fransızca/Almanca), Kredi Kartı Ödeme Entegrasyonu, Özel Dönüşüm Sihirbazı, 60 Gün Destek.
+* **Google & Analitik Desteği:**
+  * ✅ **VIP Google Haritalar & Harita SEO optimizasyonu DAHİLDİR!** 📍
+  * ✅ **Google Tag Manager (GTM) & GA4 e-ticaret dönüşüm takibi DAHİLDİR!** ⚡
+  * ✅ **Google Ads & Meta Pixel dönüşüm etiketleri kurulumu DAHİLDİR!** 🎯
+  * ✅ **Çok dilli uluslararası SEO altyapısı DAHİLDİR!** 🌍
 * **CANLI DEMO:** 👉 `https://antalya-dhi.vercel.app`
 
 ### 📋 Önerilecek Sektör ve Meslekler (40+ Meslek):
