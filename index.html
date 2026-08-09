@@ -524,7 +524,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </section>
 
-
 <!-- ═══════════════════════════════════════════════════════════
      SEÇİLİ PORTFÖY & CANLI REFERANSLAR
      ═══════════════════════════════════════════════════════════ -->
@@ -537,6 +536,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <h2>Sektörünüze Hazır <span class="text-gradient">Canlı Demolar</span></h2>
                 <p>İşletmeniz için hazırlanan canlı sektör altyapılarını tıklayarak doğrudan test edin.</p>
             </div>
+
+            <!-- DYNAMIC PORTFOLIO CATEGORY FILTERS -->
+            <div class="portfolio-filter-bar" id="portfolioFilterBar">
+                <button class="filter-btn active" data-filter="all">Tümü</button>
+                <button class="filter-btn" data-filter="standart">Standart (4.999 TL)</button>
+                <button class="filter-btn" data-filter="kurumsal">Kurumsal (14.999 TL)</button>
+                <button class="filter-btn" data-filter="ultra">Ultra VIP</button>
+            </div>
+
             <div class="carousel-nav-controls">
                 <button class="carousel-nav-btn" id="portfolioPrev" aria-label="Önceki Proje"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
                 <button class="carousel-nav-btn" id="portfolioNext" aria-label="Sonraki Proje"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
@@ -547,8 +555,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="portfolio-carousel-viewport reveal" id="portfolioViewport">
             <div class="portfolio-carousel-track" id="portfolioTrack">
 
-                <!-- 0. Sağlık Turizmi & Saç Ekimi (1. Sıra: Antalya DHI) -->
-                <div class="portfolio-slide">
+                <!-- 0. Sağlık Turizmi & Saç Ekimi (Ultra VIP) -->
+                <div class="portfolio-slide" data-category="ultra">
                     <a href="https://antalya-dhi.vercel.app" target="_blank" rel="noopener noreferrer" class="card portfolio-card">
                         <div class="browser-window-bar" style="justify-content: flex-end; padding: 10px 16px; background: rgba(248, 250, 252, 0.8); border-bottom: 1px solid #E2E8F0;"><i class="fa-solid fa-arrow-up-right-from-square" style="color: #2563EB; font-size: 0.85rem;"></i></div>
                         <div class="portfolio-thumb-wrap">
@@ -557,7 +565,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="portfolio-info">
                             <div class="portfolio-meta">
                                 <span class="badge badge-primary" style="background: #EFF6FF !important; color: #1D4ED8 !important; border: 1px solid #93C5FD !important;">🩺 Sağlık Turizmi & DHI</span>
-                                <span class="portfolio-type-tag" style="background: #FEF3C7 !important; color: #92400E !important; font-weight: 700;">👑 Ultra Premium Paket (39.999 TL)</span>
+                                <span class="portfolio-type-tag" style="background: #FEF3C7 !important; color: #92400E !important; font-weight: 700;">👑 Ultra VIP Paket</span>
                             </div>
                             <h3>Antalya DHI Hair Transplant Portal ↗</h3>
                             <p>Çok dilli Norwood saç analiz sihirbazı, şeffaf VIP paket hesaplayıcı ve doktor teyitli özel dönüşüm altyapısı.</p>
@@ -565,8 +573,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </a>
                 </div>
 
-                <!-- 1. Restoran & Kafe (2. Sıra: Nova Cafe) -->
-                <div class="portfolio-slide">
+                <!-- 1. Restoran & Kafe (Standart) -->
+                <div class="portfolio-slide" data-category="standart">
                     <a href="https://nova-cafe-one.vercel.app/" target="_blank" rel="noopener noreferrer" class="card portfolio-card">
                         <div class="browser-window-bar" style="justify-content: flex-end; padding: 10px 16px; background: rgba(248, 250, 252, 0.8); border-bottom: 1px solid #E2E8F0;"><i class="fa-solid fa-arrow-up-right-from-square" style="color: #2563EB; font-size: 0.85rem;"></i></div>
                         <div class="portfolio-thumb-wrap">
@@ -575,7 +583,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="portfolio-info">
                             <div class="portfolio-meta">
                                 <span class="badge badge-primary" style="background: #EFF6FF !important; color: #2563EB !important; border: 1px solid #BFDBFE !important;">🍽️ Restoran & Kafe</span>
-                                <span class="portfolio-type-tag" style="background: #DBEAFE !important; color: #1E40AF !important; font-weight: 700;">🚀 Başlangıç Paketi (4.999 TL)</span>
+                                <span class="portfolio-type-tag" style="background: #DBEAFE !important; color: #1E40AF !important; font-weight: 700;">🚀 Standart Paket (4.999 TL)</span>
                             </div>
                             <h3>Nova Cafe & Bistro ↗</h3>
                             <p>Online masa rezervasyonu, 40+ şef menüsü, dijital QR menü ve anlık WhatsApp sipariş entegrasyonlu web sitesi.</p>
@@ -583,8 +591,52 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </a>
                 </div>
 
-                <!-- 2. Güzellik & Estetik (3. Sıra: Nova Güzellik) -->
-                <div class="portfolio-slide">
+                <!-- 2. Evden Eve Nakliyat (Standart - 3.999 / 4.999 TL) -->
+                <div class="portfolio-slide" data-category="standart">
+                    <a href="../nova-nakliyat/index.html" target="_blank" class="card portfolio-card">
+                        <div class="browser-window-bar" style="justify-content: flex-end; padding: 10px 16px; background: rgba(248, 250, 252, 0.8); border-bottom: 1px solid #E2E8F0;"><i class="fa-solid fa-arrow-up-right-from-square" style="color: #2563EB; font-size: 0.85rem;"></i></div>
+                        <div class="portfolio-thumb-wrap">
+                            <div style="height: 200px; background: linear-gradient(135deg, #0F172A, #1E40AF); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; padding: 20px;">
+                                <i class="fa-solid fa-truck-ramp-box" style="font-size: 3rem; color: #38BDF8; margin-bottom: 10px;"></i>
+                                <span style="font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 900;">NOVA NAKLİYAT</span>
+                                <span style="font-size: 0.8rem; color: #94A3B8;">Antalya Asansörlü Ev Taşıma (3.999 TL)</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <div class="portfolio-meta">
+                                <span class="badge badge-primary" style="background: #EFF6FF !important; color: #1E40AF !important; border: 1px solid #BFDBFE !important;">🚚 Nakliyat & Lojistik</span>
+                                <span class="portfolio-type-tag" style="background: #FEF3C7 !important; color: #92400E !important; font-weight: 700;">🚀 Standart Paket (3.999 TL)</span>
+                            </div>
+                            <h3>Nova Nakliyat & Asansörlü Taşıma ↗</h3>
+                            <p>Antalya içi 3.999 TL'den başlayan paketlerle sigortalı, ambalajlı, marangozlu ve 15. kat mobil asansörlü evden eve nakliyat portalı.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 3. Klima Servisi (Standart - 899 / 4.999 TL) -->
+                <div class="portfolio-slide" data-category="standart">
+                    <a href="../nova-klima/index.html" target="_blank" class="card portfolio-card">
+                        <div class="browser-window-bar" style="justify-content: flex-end; padding: 10px 16px; background: rgba(248, 250, 252, 0.8); border-bottom: 1px solid #E2E8F0;"><i class="fa-solid fa-arrow-up-right-from-square" style="color: #0284C7; font-size: 0.85rem;"></i></div>
+                        <div class="portfolio-thumb-wrap">
+                            <div style="height: 200px; background: linear-gradient(135deg, #0F172A, #0284C7); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; padding: 20px;">
+                                <i class="fa-solid fa-fan" style="font-size: 3rem; color: #38BDF8; margin-bottom: 10px;"></i>
+                                <span style="font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 900;">NOVA KLİMA SERVİSİ</span>
+                                <span style="font-size: 0.8rem; color: #94A3B8;">Antalya Acil Klima Bakım & Montaj (899 TL)</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <div class="portfolio-meta">
+                                <span class="badge badge-primary" style="background: #E0F2FE !important; color: #0369A1 !important; border: 1px solid #BAE6FD !important;">❄️ İklimlendirme & Servis</span>
+                                <span class="portfolio-type-tag" style="background: #FEF3C7 !important; color: #92400E !important; font-weight: 700;">🚀 Standart Paket (899 TL)</span>
+                            </div>
+                            <h3>Nova İklimlendirme & Klima Servisi ↗</h3>
+                            <p>30 dakikada adrese ulaşan acil klima bakımı, evinizi kirletmeyen ilaçlı yıkama, gaz dolumu ve montaj altyapısı.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 4. Güzellik & Estetik (Kurumsal) -->
+                <div class="portfolio-slide" data-category="kurumsal">
                     <a href="https://nova-guzellik-phi.vercel.app/" target="_blank" rel="noopener noreferrer" class="card portfolio-card">
                         <div class="browser-window-bar" style="justify-content: flex-end; padding: 10px 16px; background: rgba(248, 250, 252, 0.8); border-bottom: 1px solid #E2E8F0;"><i class="fa-solid fa-arrow-up-right-from-square" style="color: #2563EB; font-size: 0.85rem;"></i></div>
                         <div class="portfolio-thumb-wrap">
@@ -601,8 +653,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </a>
                 </div>
 
-                <!-- 3. Mobilya & Dekorasyon (4. Sıra: Kocaeli Kelebek) -->
-                <div class="portfolio-slide">
+                <!-- 5. Mobilya & Dekorasyon (Kurumsal) -->
+                <div class="portfolio-slide" data-category="kurumsal">
                     <a href="https://kocaeli-kelebek.vercel.app" target="_blank" rel="noopener noreferrer" class="card portfolio-card">
                         <div class="browser-window-bar" style="justify-content: flex-end; padding: 10px 16px; background: rgba(248, 250, 252, 0.8); border-bottom: 1px solid #E2E8F0;"><i class="fa-solid fa-arrow-up-right-from-square" style="color: #2563EB; font-size: 0.85rem;"></i></div>
                         <div class="portfolio-thumb-wrap">
@@ -619,8 +671,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </a>
                 </div>
 
-                <!-- 4. Endüstriyel & Yapı (5. Sıra: Nova Epoksi) -->
-                <div class="portfolio-slide">
+                <!-- 6. Endüstriyel & Yapı (Kurumsal) -->
+                <div class="portfolio-slide" data-category="kurumsal">
                     <a href="https://nova-epoksi-ksam.vercel.app/" target="_blank" rel="noopener noreferrer" class="card portfolio-card">
                         <div class="browser-window-bar" style="justify-content: flex-end; padding: 10px 16px; background: rgba(248, 250, 252, 0.8); border-bottom: 1px solid #E2E8F0;"><i class="fa-solid fa-arrow-up-right-from-square" style="color: #2563EB; font-size: 0.85rem;"></i></div>
                         <div class="portfolio-thumb-wrap">
@@ -630,6 +682,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="portfolio-meta">
                                 <span class="badge badge-warning" style="background: #FEF3C7 !important; color: #92400E !important; border: 1px solid #FCD34D !important;">🏗️ Endüstriyel & Yapı</span>
                                 <span class="portfolio-type-tag" style="background: #E0E7FF !important; color: #3730A3 !important; font-weight: 700;">💼 Kurumsal Paket (14.999 TL)</span>
+                            </div>
+                            <h3>Nova Epoksi & Endüstriyel Zemin ↗</h3>
+                            <p>Fabrika ve otoparklar için 10 yıl garantili epoksi zemin kaplama, m² bütçe sihirbazı ve saha betonu teklif altyapısı.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 7. Emlak & Gayrimenkul (Kurumsal) -->
+                <div class="portfolio-slide" data-category="kurumsal">
+                    <a href="https://nova-emlak.vercel.app/" target="_blank" rel="noopener noreferrer" class="card portfolio-card">
+                        <div class="browser-window-bar" style="justify-content: flex-end; padding: 10px 16px; background: rgba(248, 250, 252, 0.8); border-bottom: 1px solid #E2E8F0;"><i class="fa-solid fa-arrow-up-right-from-square" style="color: #2563EB; font-size: 0.85rem;"></i></div>
+                        <div class="portfolio-thumb-wrap">
+                            <img src="images/gayrimenkul-ui-preview.jpg" alt="Nova Emlak & Gayrimenkul Demo" class="portfolio-thumb" width="480" height="270" loading="lazy">
+                        </div>
+                        <div class="portfolio-info">
+                            <div class="portfolio-meta">
+                                <span class="badge badge-primary" style="background: #ECFDF5 !important; color: #047857 !important; border: 1px solid #A7F3D0 !important;">🏠 Emlak & Portföy</span>
+                                <span class="portfolio-type-tag" style="background: #E0E7FF !important; color: #3730A3 !important; font-weight: 700;">💼 Kurumsal Paket (14.999 TL)</span>
+                            </div>
+                            <h3>Nova Emlak & Gayrimenkul ↗</h3>
+                            <p>Lüks konut ve villa portföyü, m² değerleme sihirbazı, 3D sanal tur entegrasyonu ve full admin yönetim altyapısı.</p>
+                        </div>
+                    </a>
+                </div>                            <span class="portfolio-type-tag" style="background: #E0E7FF !important; color: #3730A3 !important; font-weight: 700;">💼 Kurumsal Paket (14.999 TL)</span>
                             </div>
                             <h3>Nova Epoksi & Endüstriyel Zemin ↗</h3>
                             <p>Fabrika ve otoparklar için 10 yıl garantili epoksi zemin kaplama, m² bütçe sihirbazı ve saha betonu teklif altyapısı.</p>

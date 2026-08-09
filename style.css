@@ -5404,3 +5404,62 @@ h1, h2 {
     text-overflow: ellipsis !important;
 }
 
+/* ═══════════════════════════════════════════════════════════
+   MINIMAL DYNAMIC PORTFOLIO FILTER BAR (3 PACKAGE FILTERS)
+   ═══════════════════════════════════════════════════════════ */
+.portfolio-filter-bar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #F1F5F9;
+    padding: 4px;
+    border-radius: 30px;
+    border: 1px solid #E2E8F0;
+}
+
+.filter-btn {
+    background: transparent;
+    border: none;
+    padding: 6px 14px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #64748B;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+.filter-btn:hover {
+    color: #2563EB;
+}
+
+.filter-btn.active {
+    background: #2563EB;
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+@media (max-width: 768px) {
+    .portfolio-filter-bar {
+        width: 100%;
+        justify-content: space-between;
+        overflow-x: auto;
+        padding: 4px 6px;
+        margin-top: 8px;
+        margin-bottom: 4px;
+        scrollbar-width: none;
+    }
+
+    .portfolio-filter-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-btn {
+        padding: 5px 8px;
+        font-size: 0.72rem;
+    }
+}
+
+

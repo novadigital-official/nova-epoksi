@@ -387,6 +387,33 @@ document.addEventListener('DOMContentLoaded', () => {
             track.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
         });
 
+        // ─── DYNAMIC PORTFOLIO CATEGORY FILTERING (ALL / STANDART / KURUMSAL / ULTRA) ───
+        const filterBtns = document.querySelectorAll('#portfolioFilterBar .filter-btn');
+        const slides = track.querySelectorAll('.portfolio-slide');
+
+        if (filterBtns.length > 0 && slides.length > 0) {
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const category = btn.getAttribute('data-filter') || 'all';
+
+                    slides.forEach(slide => {
+                        const slideCat = slide.getAttribute('data-category');
+                        if (category === 'all' || slideCat === category) {
+                            slide.style.display = 'block';
+                        } else {
+                            slide.style.display = 'none';
+                        }
+                    });
+
+                    track.scrollTo({ left: 0, behavior: 'smooth' });
+                });
+            });
+        }
+
         // Indicators update
         track.addEventListener('scroll', () => {
             const index = Math.round(track.scrollLeft / getSlideWidth());
