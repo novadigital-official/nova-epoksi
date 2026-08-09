@@ -9,43 +9,43 @@
 @import url('./_design-system/components.css');
 @import url('./_design-system/animations.css');
 
-/* ─── VARYASYON 3: INDIGO CYBER VIOLET TEMA OVERRIDE ─── */
+/* ??? A?IK TEMA OVERRIDE ??? */
 :root {
-    --color-primary: #4F46E5;
-    --color-primary-light: #6366F1;
-    --color-primary-dark: #4338CA;
-    --color-primary-glow: rgba(99, 102, 241, 0.18);
+    --color-primary: #2563EB;
+    --color-primary-light: #3B82F6;
+    --color-primary-dark: #1D4ED8;
+    --color-primary-glow: rgba(37, 99, 235, 0.12);
 
-    --color-accent: #7C3AED;
-    --color-accent-light: #8B5CF6;
+    --color-accent: #0891B2;
+    --color-accent-light: #06B6D4;
 
     --color-success: #059669;
     --color-warning: #D97706;
     --color-error: #DC2626;
 
-    /* ─── Açık Arka Planlar ─── */
+    /* ??? A?IK Arka Planlar ??? */
     --bg-body: #FFFFFF;
-    --bg-surface: #FAF9FF;
+    --bg-surface: #F8FAFC;
     --bg-card: #FFFFFF;
     --bg-card-hover: #FFFFFF;
     --bg-glass: rgba(255, 255, 255, 0.85);
-    --bg-input: #F3F0FF;
+    --bg-input: #F1F5F9;
 
-    /* ─── Koyu Metin ─── */
+    /* ??? Koyu Metin ??? */
     --text-primary: #0F172A;
     --text-secondary: #475569;
     --text-muted: #94A3B8;
 
-    /* ─── Kenarlık ─── */
+    /* ??? Kenarl?k ??? */
     --border-default: #E2E8F0;
-    --border-hover: rgba(99, 102, 241, 0.5);
+    --border-hover: rgba(37, 99, 235, 0.5);
     --border-glass: #E2E8F0;
 
-    /* ─── Gölgeler ─── */
+    /* ??? G?lgeler (A??k tema) ??? */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 12px 40px rgba(99, 102, 241, 0.14);
-    --shadow-glow: 0 4px 20px rgba(99, 102, 241, 0.18);
+    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.08);
+    --shadow-glow: 0 4px 20px rgba(37, 99, 235, 0.12);
 }
 
 /* Body açık tema */
@@ -5575,17 +5575,17 @@ h1, h2 {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   VARYASYON 3: BOLD VISIBLE INDIGO CYBER VIOLET GLOBAL OVERRIDE
+   ULTRA MODERN DEEP NAVY & ELECTRIC SAPPHIRE GLOBAL OVERRIDE
    ═══════════════════════════════════════════════════════════ */
 :root {
-    --color-primary: #4F46E5 !important;
-    --color-primary-light: #6366F1 !important;
-    --color-primary-dark: #4338CA !important;
-    --color-primary-glow: rgba(99, 102, 241, 0.25) !important;
-    --border-hover: rgba(99, 102, 241, 0.6) !important;
+    --color-primary: #1E40AF !important;
+    --color-primary-light: #2563EB !important;
+    --color-primary-dark: #0F172A !important;
+    --color-primary-glow: rgba(30, 64, 175, 0.22) !important;
+    --border-hover: rgba(30, 64, 175, 0.5) !important;
 }
 
-/* 1. All text gradients & primary text colors */
+/* 1. High-Contrast Deep Navy to Electric Sapphire Text Gradients */
 .text-gradient,
 #paketler .text-gradient,
 #blog .text-gradient,
@@ -5601,21 +5601,42 @@ h2 .text-gradient,
 h3 .text-gradient,
 .nav-logo-text span,
 .section-header h2 span {
-    background: linear-gradient(135deg, #6366F1 0%, #4338CA 100%) !important;
+    background: linear-gradient(135deg, #0F172A 0%, #1E40AF 60%, #2563EB 100%) !important;
+    background-size: 200% auto !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
 }
 
-/* 2. All badges & capacity indicators */
+/* 2. Deep Navy Buttons & Primary CTAs */
+.btn-primary,
+.nav-cta,
+#heroCta,
+.btn-premium,
+.mobile-menu-cta {
+    background: linear-gradient(135deg, #1E40AF 0%, #2563EB 100%) !important;
+    border-color: #1E40AF !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 18px rgba(30, 64, 175, 0.35) !important;
+}
+
+.btn-primary:hover,
+.nav-cta:hover,
+#heroCta:hover,
+.btn-premium:hover {
+    background: linear-gradient(135deg, #0F172A 0%, #1E40AF 100%) !important;
+    box-shadow: 0 6px 24px rgba(15, 23, 42, 0.45) !important;
+}
+
+/* 3. Deep Navy Badges & Capacity Tags */
 .badge-primary,
 .badge,
 .section-header .badge {
-    background: #F5F3FF !important;
-    color: #5B21B6 !important;
-    border-color: #DDD6FE !important;
+    background: #EFF6FF !important;
+    color: #1E40AF !important;
+    border-color: #BFDBFE !important;
 }
 
-/* 3. Icons, Service Numbers & Links */
+/* 4. Deep Navy Icons & Numbers */
 .service-icon,
 .reason-icon,
 .process-num,
@@ -5623,71 +5644,51 @@ h3 .text-gradient,
 .faq-item summary::after,
 .contact-info-icon,
 .mobile-menu-links a i {
-    color: #4F46E5 !important;
+    color: #1E40AF !important;
 }
 
-/* 4. All Buttons & CTA Elements */
-.btn-primary,
-.nav-cta,
-#heroCta,
-.btn-premium,
-.mobile-menu-cta {
-    background: linear-gradient(135deg, #6366F1, #4338CA) !important;
-    border-color: #4F46E5 !important;
-    color: #FFFFFF !important;
-    box-shadow: 0 4px 18px rgba(99, 102, 241, 0.35) !important;
-}
-
-.btn-primary:hover,
-.nav-cta:hover,
-#heroCta:hover,
-.btn-premium:hover {
-    background: linear-gradient(135deg, #4338CA, #3730A3) !important;
-    box-shadow: 0 6px 24px rgba(99, 102, 241, 0.45) !important;
-}
-
-/* 5. Filter Bar & Filter Buttons */
+/* 5. Modern Filter Bar & Active Pills */
 .portfolio-filter-bar {
-    background: #FAF9FF !important;
-    border-color: #DDD6FE !important;
+    background: #F8FAFC !important;
+    border-color: #E2E8F0 !important;
 }
 
 .filter-btn {
-    color: #5B21B6 !important;
+    color: #475569 !important;
 }
 
 .filter-btn:hover {
-    color: #4338CA !important;
-    background: #F5F3FF !important;
-    border-color: #DDD6FE !important;
+    color: #1E40AF !important;
+    background: #EFF6FF !important;
+    border-color: #BFDBFE !important;
 }
 
 .filter-btn.active {
-    background: #F5F3FF !important;
-    color: #5B21B6 !important;
-    border: 1.5px solid #4F46E5 !important;
-    box-shadow: 0 3px 10px rgba(99, 102, 241, 0.22) !important;
+    background: #EFF6FF !important;
+    color: #1E40AF !important;
+    border: 1.5px solid #1E40AF !important;
+    box-shadow: 0 3px 10px rgba(30, 64, 175, 0.22) !important;
 }
 
-/* 6. Pricing Cards, Badges & Delivery Tags */
+/* 6. Pricing Cards & Delivery Tags */
 .pricing-card.featured,
 .pricing-card--popular {
-    border: 2px solid #4F46E5 !important;
-    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.18) !important;
+    border: 2px solid #1E40AF !important;
+    box-shadow: 0 8px 30px rgba(30, 64, 175, 0.18) !important;
 }
 
 .pricing-badge-popular {
-    background: #4F46E5 !important;
+    background: #1E40AF !important;
     color: #FFFFFF !important;
 }
 
 .pricing-badge-premium {
-    background: #4338CA !important;
+    background: #0F172A !important;
     color: #FFFFFF !important;
 }
 
 .pricing-teslim {
-    background: #F5F3FF !important;
-    color: #5B21B6 !important;
-    border-color: #DDD6FE !important;
+    background: #EFF6FF !important;
+    color: #1E40AF !important;
+    border-color: #BFDBFE !important;
 }
