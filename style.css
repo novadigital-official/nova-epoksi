@@ -5149,231 +5149,6 @@ h1, h2 {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 38px !important;
-    height: 38px !important;
-    border-radius: 10px !important;
-    background: #EFF6FF !important;
-    border: 1px solid #BFDBFE !important;
-    color: #2563EB !important;
-    font-size: 1.15rem !important;
-    transition: all 0.25s ease !important;
-    text-decoration: none !important;
-}
-
-.contact-social-icons .social-icon-btn:hover {
-    background: #2563EB !important;
-    color: #FFFFFF !important;
-    border-color: #2563EB !important;
-    transform: translateY(-2px) scale(1.05) !important;
-}
-
-
-/* ═══════════════════════════════════════════════════════════
-   FINAL AUTHORITATIVE MOBILE CARD FULL-WIDTH LOCK (320px-430px)
-   ═══════════════════════════════════════════════════════════ */
-@media only screen and (max-width: 768px) {
-    /* 1. Eliminate any narrow container side padding */
-    .container,
-    #paketler .container,
-    #hero .container {
-        padding-left: 12px !important;
-        padding-right: 12px !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
-    /* 2. Lock ALL pricing cards and video cards to 100% full container width */
-    #paketler .pricing-grid,
-    .pricing-grid {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-
-    #paketler .pricing-card,
-    #paketler .pricing-card--starter,
-    #paketler .pricing-card--popular,
-    #paketler .pricing-card--premium,
-    #paketler .section .card.pricing-card,
-    #paketler .card.pricing-card--starter,
-    #paketler .card.pricing-card--popular,
-    #paketler .card.pricing-card--premium,
-    .pricing-card,
-    .hero-embedded-video-card,
-    .premium-video-wrap .hero-embedded-video-card,
-    .reason-card,
-    .service-card,
-    .process-card,
-    .contact-form {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        box-sizing: border-box !important;
-        border-radius: 20px !important;
-    }
-}
-
-/* ═══════════════════════════════════════════════════════════
-   SYMMETRICAL PORTFOLIO CARDS & COMPACT MOBILE CAROUSEL FIT
-   ═══════════════════════════════════════════════════════════ */
-.portfolio-carousel-track {
-    display: flex !important;
-    align-items: stretch !important; /* Equal height for all slides */
-    gap: 20px !important;
-}
-
-.portfolio-slide {
-    display: flex !important;
-    flex-direction: column !important;
-    flex: 0 0 360px !important;
-    max-width: 360px !important;
-}
-
-.portfolio-card {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: space-between !important;
-    height: 100% !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    border-radius: 20px !important;
-    overflow: hidden !important;
-}
-
-.portfolio-thumb-wrap {
-    width: 100% !important;
-    aspect-ratio: 16 / 9 !important;
-    overflow: hidden !important;
-    background: #0F172A !important;
-}
-
-.portfolio-thumb {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-}
-
-.portfolio-info {
-    display: flex !important;
-    flex-direction: column !important;
-    flex-grow: 1 !important;
-    justify-content: space-between !important;
-    padding: 20px !important;
-}
-
-@media only screen and (max-width: 768px) {
-    .portfolio-carousel-viewport {
-        width: 100% !important;
-        max-width: 100vw !important;
-        padding-left: 16px !important;
-        padding-right: 16px !important;
-        box-sizing: border-box !important;
-        overflow-x: auto !important;
-        scroll-snap-type: x mandatory !important;
-        -webkit-overflow-scrolling: touch !important;
-    }
-
-    .portfolio-carousel-track {
-        gap: 14px !important;
-    }
-
-    .portfolio-slide {
-        flex: 0 0 calc(100vw - 44px) !important;
-        max-width: calc(100vw - 44px) !important;
-        min-width: calc(100vw - 44px) !important;
-        scroll-snap-align: center !important;
-        box-sizing: border-box !important;
-    }
-
-    .portfolio-card {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
-    .portfolio-info {
-        padding: 16px !important;
-    }
-
-    .portfolio-info h3 {
-        font-size: 1.05rem !important;
-        line-height: 1.35 !important;
-    }
-
-    .portfolio-info p {
-        font-size: 0.84rem !important;
-        line-height: 1.45 !important;
-    }
-}
-
-/* ═══════════════════════════════════════════════════════════
-   ACCESSIBILITY & THUMB-FRIENDLY MOBILE CAROUSEL CONTROLS
-   ═══════════════════════════════════════════════════════════ */
-.carousel-nav-controls {
-    display: flex !important;
-    align-items: center !important;
-    gap: 16px !important;
-}
-
-.carousel-nav-btn {
-    width: 48px !important;
-    height: 48px !important;
-    min-width: 48px !important;
-    min-height: 48px !important;
-    border-radius: 50% !important;
-    background: #FFFFFF !important;
-    border: 1px solid #CBD5E1 !important;
-    color: #1E293B !important;
-    font-size: 1.1rem !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    cursor: pointer !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    -webkit-tap-highlight-color: transparent !important;
-}
-
-.carousel-nav-btn:hover,
-.carousel-nav-btn:active {
-    background: #2563EB !important;
-    color: #FFFFFF !important;
-    border-color: #2563EB !important;
-    transform: scale(1.08) !important;
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25) !important;
-}
-
-@media only screen and (max-width: 768px) {
-    .portfolio-header-wrap {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 12px !important;
-    }
-
-    /* Maximum thumb separation on mobile: Prev button on far-left, Next button on far-right */
-    .carousel-nav-controls {
-        width: 100% !important;
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        margin-top: 16px !important;
-        padding: 0 4px !important;
-        box-sizing: border-box !important;
-    }
-
-    .carousel-nav-btn {
-        width: 52px !important;
-        height: 52px !important;
-        min-width: 52px !important;
-        min-height: 52px !important;
-        border-radius: 16px !important;
-        font-size: 1.25rem !important;
-        background: #EFF6FF !important;
-        border: 1.5px solid #BFDBFE !important;
         color: #2563EB !important;
         box-shadow: 0 6px 16px rgba(37, 99, 235, 0.12) !important;
     }
@@ -5430,21 +5205,6 @@ h1, h2 {
     transition: all 0.25s ease;
     white-space: nowrap;
 }
-
-.filter-btn:hover {
-    color: #2563EB;
-}
-
-.filter-btn.active {
-    background: #2563EB;
-    color: #FFFFFF;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-}
-
-@media (max-width: 768px) {
-    .portfolio-filter-bar {
-        width: 100%;
-        justify-content: space-between;
         overflow-x: auto;
         padding: 4px 6px;
         margin-top: 8px;
@@ -5462,17 +5222,199 @@ h1, h2 {
     }
 }
 
-/* ═══════════════════════════════════════════════════════════
-   STRICT HORIZONTAL SINGLE-ROW CAROUSEL & FILTER HIDING
-   ═══════════════════════════════════════════════════════════ */
-.hidden-slide {
+.portfolio-carousel-track {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 24px !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 16px !important;
+    scrollbar-width: none !important;
+}
+
+.portfolio-carousel-track::-webkit-scrollbar {
     display: none !important;
 }
 
-.portfolio-carousel-viewport {
-    width: 100% !important;
+.portfolio-slide {
+    flex: 0 0 360px !important;
+    max-width: 360px !important;
+    .contact-info-list {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        margin-bottom: 18px !important;
+    }
+
+    .contact-info-item {
+        padding: 12px 14px !important;
+        border-radius: 14px !important;
+        gap: 12px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .contact-info-icon {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 0.95rem !important;
+        flex-shrink: 0 !important;
+    }
+
+    .contact-info-text h4 {
+        font-size: 0.75rem !important;
+        margin-bottom: 2px !important;
+    }
+
+    .contact-info-text a,
+    .contact-info-text p {
+        font-size: 0.84rem !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+
+    .contact-form {
+        padding: 16px 14px !important;
+        border-radius: 16px !important;
+    }
+
+    .contact-form .form-group {
+        margin-bottom: 10px !important;
+    }
+
+    .contact-form .form-input {
+        padding: 8px 12px !important;
+        font-size: 0.82rem !important;
+    }
+
+    /* 3. Compact 2-Column Inline Mobile Footer Grid (Cuts Height by 50%) */
+    .site-footer {
+        padding-top: 28px !important;
+        padding-bottom: 20px !important;
+    }
+
+    .footer-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px 12px !important;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1 !important;
+        margin-bottom: 8px !important;
+        text-align: left !important;
+    }
+
+    .footer-brand p {
+        font-size: 0.8rem !important;
+        line-height: 1.35 !important;
+        margin-bottom: 10px !important;
+    }
+
+    .footer-col h4 {
+        font-size: 0.85rem !important;
+        margin-bottom: 8px !important;
+    }
+
+    .footer-col a {
+        font-size: 0.78rem !important;
+        margin-bottom: 4px !important;
+    }
+
+    .footer-bottom {
+        margin-top: 20px !important;
+        padding-top: 14px !important;
+        flex-direction: column !important;
+        gap: 4px !important;
+        font-size: 0.72rem !important;
+    }
+}
+
+/* Side by side Social Icon Buttons with a sweet gap */
+.contact-social-icons {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-top: 4px !important;
+}
+
+.contact-social-icons .social-icon-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+        color: #2563EB !important;
+        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.12) !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   100% SYMMETRICAL PORTFOLIO META BADGES LAYOUT
+   ═══════════════════════════════════════════════════════════ */
+.portfolio-meta {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    margin-bottom: 12px !important;
+}
+
+.portfolio-meta .badge,
+.portfolio-meta .portfolio-type-tag {
+    font-size: 0.74rem !important;
+    padding: 4px 10px !important;
+    border-radius: 8px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
     overflow: hidden !important;
-    position: relative !important;
+    text-overflow: ellipsis !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MINIMAL DYNAMIC PORTFOLIO FILTER BAR (3 PACKAGE FILTERS)
+   ═══════════════════════════════════════════════════════════ */
+.portfolio-filter-bar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #F1F5F9;
+    padding: 4px;
+    border-radius: 30px;
+    border: 1px solid #E2E8F0;
+}
+
+.filter-btn {
+    background: transparent;
+    border: none;
+    padding: 6px 14px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #64748B;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+        overflow-x: auto;
+        padding: 4px 6px;
+        margin-top: 8px;
+        margin-bottom: 4px;
+        scrollbar-width: none;
+    }
+
+    .portfolio-filter-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-btn {
+        padding: 5px 8px;
+        font-size: 0.72rem;
+    }
 }
 
 .portfolio-carousel-track {
@@ -5504,4 +5446,59 @@ h1, h2 {
         max-width: 85vw !important;
         min-width: 280px !important;
     }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MODERN GLASSMORPHIC FILTER PILLS & STRICT HIDING RULES
+   ═══════════════════════════════════════════════════════════ */
+.portfolio-filter-bar {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: rgba(248, 250, 252, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    padding: 6px 10px !important;
+    border-radius: 30px !important;
+    border: 1.5px solid #E2E8F0 !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04) !important;
+}
+
+.filter-btn {
+    background: transparent !important;
+    border: 1.5px solid transparent !important;
+    padding: 6px 16px !important;
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    color: #64748B !important;
+    border-radius: 20px !important;
+    cursor: pointer !important;
+    transition: all 0.25s ease !important;
+    white-space: nowrap !important;
+}
+
+.filter-btn:hover {
+    color: #2563EB !important;
+    background: #EFF6FF !important;
+    border-color: #BFDBFE !important;
+}
+
+.filter-btn.active {
+    background: #EFF6FF !important;
+    color: #1D4ED8 !important;
+    border: 1.5px solid #2563EB !important;
+    font-weight: 800 !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15) !important;
+}
+
+.portfolio-slide.hidden-slide {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
 }

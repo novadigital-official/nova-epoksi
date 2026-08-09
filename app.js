@@ -387,35 +387,42 @@ document.addEventListener('DOMContentLoaded', () => {
             track.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
         });
 
-        // ─── DYNAMIC PORTFOLIO CATEGORY FILTERING (STANDART / KURUMSAL / ULTRA - TOGGLEABLE) ───
+        // ─── DYNAMIC PORTFOLIO CATEGORY FILTERING (STANDART / KURUMSAL / ULTRA) ───
         const filterBtns = document.querySelectorAll('#portfolioFilterBar .filter-btn');
-        const slides = track.querySelectorAll('.portfolio-slide');
 
-        if (filterBtns.length > 0 && slides.length > 0) {
+        if (filterBtns.length > 0) {
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
+                    e.stopPropagation();
+
                     const isAlreadyActive = btn.classList.contains('active');
 
+                    // Reset active state for all buttons
                     filterBtns.forEach(b => b.classList.remove('active'));
 
-                    let category = 'all';
+                    let targetCat = 'all';
+
                     if (!isAlreadyActive) {
                         btn.classList.add('active');
-                        category = btn.getAttribute('data-filter') || 'all';
+                        targetCat = btn.getAttribute('data-filter') || 'all';
                     }
 
-                    slides.forEach(slide => {
+                    // Query slides freshly to guarantee catching all cards
+                    const allSlides = document.querySelectorAll('#portfolioTrack .portfolio-slide');
+                    allSlides.forEach(slide => {
                         const slideCat = slide.getAttribute('data-category');
-                        if (category === 'all' || slideCat === category) {
+                        if (targetCat === 'all' || slideCat === targetCat) {
                             slide.classList.remove('hidden-slide');
                         } else {
                             slide.classList.add('hidden-slide');
                         }
                     });
 
-                    // Reset horizontal scroll position to beginning smoothly
-                    track.scrollTo({ left: 0, behavior: 'smooth' });
+                    // Scroll back to track origin
+                    if (track) {
+                        track.scrollTo({ left: 0, behavior: 'smooth' });
+                    }
                 });
             });
         }
