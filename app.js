@@ -709,25 +709,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ─── CREATIVE IDENTITY LOGIC — 2026-08-06 ──────────────────
 
-    // 2. Contact Form Micro-Success Animation State Intercept
+    // 2. Contact Form Micro-Success Animation State Intercept with Strict Validation
     const contactFormEl = document.getElementById('contactForm');
     if (contactFormEl) {
         contactFormEl.addEventListener('submit', (e) => {
-            // Give original WP link redirect 300ms, then show success state inside card
-            setTimeout(() => {
-                const parentCard = contactFormEl.closest('.card') || contactFormEl.parentElement;
-                if (parentCard) {
-                    parentCard.innerHTML = `
-                        <div class="form-success-state">
-                            <div class="form-success-icon">
-                                <i class="fa-solid fa-check"></i>
-                            </div>
-                            <h3>Talebiniz Alındı!</h3>
-                            <p>WhatsApp üzerinden yönlendirildiniz. Ekibimiz 15 dakika içinde sizinle iletişime geçecektir.</p>
-                        </div>
-                    `;
-                }
-            }, 300);
+            // Check native HTML5 validity
+            if (!contactFormEl.checkValidity()) {
+                e.preventDefault();
+                contactFormEl.reportValidity();
+                return;
+            }
+
+            // Check KVKK consent checkbox
+            const kvkkConsent = document.getElementById('formKvkkConsent');
+            if (kvkkConsent && !kvkkConsent.checked) {
+                e.preventDefault();
+                alert('Lütfen devam etmek için KVKK Onay Kutusu\'nu işaretleyiniz.');
+                return;
+            }
+
+            e.preventDefault();
+
+            // Format WhatsApp Message
+            const name = document.getElementById('formName')?.value || '';
+            const business = document.getElementById('formBusiness')?.value || '';
+            const phone = document.getElementById('formPhone')?.value || '';
+            const service = document.getElementById('formService')?.value || 'Genel';
+            const message = document.getElementById('formMessage')?.value || '';
+
+            const waText = `Merhaba Nova Digital, sitemizden yeni bir teklif talebi geldi:%0A%0A👤 Ad Soyad: ${encodeURIComponent(name)}%0A🏢 Firma: ${encodeURIComponent(business)}%0A📞 Telefon: ${encodeURIComponent(phone)}%0A💼 Hizmet: ${encodeURIComponent(service)}%0A💬 Mesaj: ${encodeURIComponent(message)}`;
+            const waUrl = `https://wa.me/${SITE_CONFIG.company.whatsappRaw}?text=${waText}`;
+
+            // Open WhatsApp in new tab
+            window.open(waUrl, '_blank');
+
+            // Render clean success state inside form
+            contactFormEl.innerHTML = `
+                <div class="form-success-state" style="padding: 40px 20px; text-align: center; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 16px; box-shadow: 0 4px 14px rgba(0,0,0,0.04);">
+                    <div class="form-success-icon" style="width: 56px; height: 56px; background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; color: #10B981; font-size: 1.5rem;">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; color: #0F172A; margin-bottom: 8px;">Talebiniz Alındı!</h3>
+                    <p style="font-size: 0.9rem; color: #64748B; line-height: 1.5; margin: 0;">WhatsApp üzerinden yönlendirildiniz. Ekibimiz 15 dakika içinde sizinle iletişime geçecektir.</p>
+                </div>
+            `;
         });
     }
 

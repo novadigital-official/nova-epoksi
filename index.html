@@ -1169,13 +1169,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <label for="formMessage" class="form-label">Projenizi Kısaca Anlatın</label>
                     <textarea id="formMessage" class="form-input" rows="4" placeholder="Projeniz hakkında kısa bilgi verin..."></textarea>
                 </div>
-                <!-- İletişim Formu KVKK Onay Kutusu (KVKK m. 10 & m. 11) -->
-                <div class="form-group form-checkbox-group" style="margin-top: 14px; margin-bottom: 18px;">
-                    <label class="checkbox-label" style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; color: #475569; cursor: pointer; line-height: 1.4;">
-                        <input type="checkbox" id="formKvkkConsent" name="kvkkConsent" required style="margin-top: 3px; accent-color: #2563EB; width: 16px; height: 16px; flex-shrink: 0;">
-                        <span>
-                            <a href="#" onclick="openLegalModal('kvkk'); return false;" style="color: #2563EB; text-decoration: underline; font-weight: 600;">KVKK Aydınlatma Metni</a>'ni okudum ve kabul ediyorum. Kişisel verilerimin bu kapsamda işlenmesine ve benimle iletişime geçilmesine onay veriyorum. *
-                        </span>
+                <!-- İletişim Formu KVKK Onay Kutusu -->
+                <div class="form-group form-checkbox-group" style="margin-top: 10px; margin-bottom: 16px;">
+                    <label class="checkbox-label" style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: #64748B; cursor: pointer; line-height: 1.35; flex-wrap: wrap;">
+                        <input type="checkbox" id="formKvkkConsent" name="kvkkConsent" required style="accent-color: #2563EB; width: 16px; height: 16px; flex-shrink: 0; cursor: pointer;">
+                        <span><a href="#" onclick="openLegalModal('kvkk'); return false;" style="color: #2563EB; font-weight: 700; text-decoration: underline;">KVKK Metni</a>'ni ve kişisel verilerimin işlenmesini onaylıyorum. *</span>
                     </label>
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg">
