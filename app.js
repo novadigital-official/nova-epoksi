@@ -994,25 +994,18 @@ function initPortfolioFilterBar() {
             e.preventDefault();
             e.stopPropagation();
 
-            const isAlreadyActive = btn.classList.contains('active');
+            const targetCat = btn.getAttribute('data-filter');
+            if (!targetCat) return;
 
-            // Reset active state for all buttons
+            // Reset active state for all buttons and activate clicked button
             filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
 
-            let targetCat = 'all';
-
-            // If it was not active before, activate it now!
-            // If it WAS already active, clicking it again deactivates it -> leaves no button active -> shows ALL slides!
-            if (!isAlreadyActive) {
-                btn.classList.add('active');
-                targetCat = btn.getAttribute('data-filter') || 'all';
-            }
-
-            // Query slides freshly to guarantee catching all cards
+            // Filter all slides strictly to selected category
             const allSlides = document.querySelectorAll('#portfolioTrack .portfolio-slide');
             allSlides.forEach(slide => {
                 const slideCat = slide.getAttribute('data-category');
-                if (targetCat === 'all' || slideCat === targetCat) {
+                if (slideCat === targetCat) {
                     slide.style.setProperty('display', 'flex', 'important');
                     slide.classList.remove('hidden-slide');
                 } else {
