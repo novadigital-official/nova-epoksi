@@ -5587,12 +5587,21 @@ h1, h2 {
 
 /* 1. All text gradients & primary text colors */
 .text-gradient,
+#paketler .text-gradient,
+#blog .text-gradient,
+#hizmetler .text-gradient,
+#surec .text-gradient,
+#neden-nova .text-gradient,
+#nasil-calisiyoruz .text-gradient,
+#mobil-yazilim .text-gradient,
+#sss .text-gradient,
+#hero .text-gradient,
 h1 .text-gradient,
 h2 .text-gradient,
 h3 .text-gradient,
 .nav-logo-text span,
 .section-header h2 span {
-    background: linear-gradient(135deg, #10B981, #047857) !important;
+    background: linear-gradient(135deg, #10B981 0%, #047857 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
 }
