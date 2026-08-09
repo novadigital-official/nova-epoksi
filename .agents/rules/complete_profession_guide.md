@@ -29,7 +29,6 @@ Müşteri WhatsApp'tan veya telefondan işini söylediğinde **anında doğru pa
   * ✅ **Sıfırdan Google Haritalar (Business) profil kurulumu & doğrulaması DAHİLDİR!** 📍
   * ✅ **Google Analytics (GA4) ziyaretçi takip kurulumu DAHİLDİR!** 📊
   * ✅ **Gelişmiş SEO (Title, Meta, H1-H6 başlık mimarisi) DAHİLDİR!** 🔍
-  * ❌ *Google Ads & Meta Pixel ileri düzey e-ticaret dönüşüm etiketleri dahil değildir (39.999 TL pakettedir).*
 * **CANLI DEMOLAR:** 
   👉 Güzellik/Estetik: `https://nova-guzellik-phi.vercel.app/`  
   👉 Epoksi/Yapı: `https://nova-epoksi-ksam.vercel.app/`  
@@ -47,12 +46,11 @@ Müşteri WhatsApp'tan veya telefondan işini söylediğinde **anında doğru pa
 
 ## 👑 3. ULTRA PREMIUM PAKET — `39.999 TL`
 * **Müşteri Amacı:** *"Yurtdışından euro/dolar getireceğim (Sağlık Turizmi) veya 7/24 online kredi kartıyla satış yapacağım"* diyen büyük markalar ve klinikler.
-* **Kapsam & Özellikler:** Özel Yazılım / Next.js 14 Altyapısı, Çoklu Dil Desteği (İngilizce/Fransızca/Almanca), Kredi Kartı Ödeme Entegrasyonu, Özel Dönüşüm Sihirbazı, 60 Gün Destek.
+* **Kapsam & Özellikler:** Özel Yazılım / Next.js 14 Altyapısı, Çoklu Dil Desteği (İngilizce/Fransızca/Almanca), Kredi Kartı Ödeme Entegrasyonu, Özel Dönüşüm Sihirbazı (Norwood/M²), 60 Gün Destek.
 * **Google & Analitik Desteği:**
   * ✅ **VIP Google Haritalar & Harita SEO optimizasyonu DAHİLDİR!** 📍
-  * ✅ **Google Tag Manager (GTM) & GA4 e-ticaret dönüşüm takibi DAHİLDİR!** ⚡
-  * ✅ **Google Ads & Meta Pixel dönüşüm etiketleri kurulumu DAHİLDİR!** 🎯
-  * ✅ **Çok dilli uluslararası SEO altyapısı DAHİLDİR!** 🌍
+  * ✅ **Google Analytics (GA4) Ziyaretçi Takip Kurulumu DAHİLDİR!** 📊
+  * 💡 *NOT: Google Ads & Meta Pixel Reklam Dönüşüm Kodları Web Paketi Teslimatına Dahil DEĞİLDİR. Müşteri bizden "Aylık Reklam Yönetim Hizmeti" satın aldığında Ads paketinin parçası olarak kurulur.*
 * **CANLI DEMO:** 👉 `https://antalya-dhi.vercel.app`
 
 ### 📋 Önerilecek Sektör ve Meslekler (40+ Meslek):
