@@ -5738,10 +5738,38 @@ h3 .text-gradient,
     pointer-events: none !important;
 }
 
-/* 10. Global Architectural Symmetry & Equal Card Heights */
-.pricing-card {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: space-between !important;
-    height: 100% !important;
+/* 11. Pixel-Perfect Equal Height for Contact Info and Form Box */
+@media (min-width: 992px) {
+    .contact-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1.25fr !important;
+        align-items: stretch !important;
+        gap: 32px !important;
+    }
+
+    .contact-info-list {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        height: 100% !important;
+        margin-bottom: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .contact-info-item {
+        flex: 1 1 auto !important;
+        display: flex !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+        margin-bottom: 0 !important;
+        padding: 16px 20px !important;
+    }
+
+    .contact-form {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        height: 100% !important;
+        box-sizing: border-box !important;
+    }
 }
