@@ -387,50 +387,6 @@ document.addEventListener('DOMContentLoaded', () => {
             track.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
         });
 
-        // ─── DYNAMIC PORTFOLIO CATEGORY FILTERING (STANDART / KURUMSAL / PROFESYONEL) ───
-        const filterBtns = document.querySelectorAll('#portfolioFilterBar .filter-btn');
-
-        if (filterBtns.length > 0) {
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-
-                    const isAlreadyActive = btn.classList.contains('active');
-
-                    // Reset active state for all buttons
-                    filterBtns.forEach(b => b.classList.remove('active'));
-
-                    let targetCat = 'all';
-
-                    // If it was not active, activate it. If it WAS active, leave no button active -> show ALL slides!
-                    if (!isAlreadyActive) {
-                        btn.classList.add('active');
-                        targetCat = btn.getAttribute('data-filter') || 'all';
-                    }
-
-                    // Filter all slides strictly
-                    const allSlides = document.querySelectorAll('#portfolioTrack .portfolio-slide');
-                    allSlides.forEach(slide => {
-                        const slideCat = slide.getAttribute('data-category');
-                        if (targetCat === 'all' || slideCat === targetCat) {
-                            slide.style.removeProperty('display');
-                            slide.classList.remove('hidden-slide');
-                        } else {
-                            slide.style.setProperty('display', 'none', 'important');
-                            slide.classList.add('hidden-slide');
-                        }
-                    });
-
-                    // Scroll back to track origin
-                    const trackEl = document.getElementById('portfolioTrack');
-                    if (trackEl) {
-                        trackEl.scrollTo({ left: 0, behavior: 'smooth' });
-                    }
-                });
-            });
-        }
-
         // Indicators update
         track.addEventListener('scroll', () => {
             const index = Math.round(track.scrollLeft / getSlideWidth());
@@ -1025,6 +981,60 @@ window.openLegalModal = function(type) {
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
 };
+
+// ─── STANDALONE PORTFOLIO CATEGORY FILTERING (STANDART / KURUMSAL / PROFESYONEL) ───
+function initPortfolioFilterBar() {
+    const filterBar = document.getElementById('portfolioFilterBar');
+    if (!filterBar) return;
+
+    const filterBtns = filterBar.querySelectorAll('.filter-btn');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const isAlreadyActive = btn.classList.contains('active');
+
+            // Reset active state for all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+
+            let targetCat = 'all';
+
+            // If it was not active before, activate it now!
+            // If it WAS already active, clicking it again deactivates it -> leaves no button active -> shows ALL slides!
+            if (!isAlreadyActive) {
+                btn.classList.add('active');
+                targetCat = btn.getAttribute('data-filter') || 'all';
+            }
+
+            // Query slides freshly to guarantee catching all cards
+            const allSlides = document.querySelectorAll('#portfolioTrack .portfolio-slide');
+            allSlides.forEach(slide => {
+                const slideCat = slide.getAttribute('data-category');
+                if (targetCat === 'all' || slideCat === targetCat) {
+                    slide.style.setProperty('display', 'flex', 'important');
+                    slide.classList.remove('hidden-slide');
+                } else {
+                    slide.style.setProperty('display', 'none', 'important');
+                    slide.classList.add('hidden-slide');
+                }
+            });
+
+            // Scroll back to track origin
+            const trackEl = document.getElementById('portfolioTrack');
+            if (trackEl) {
+                trackEl.scrollTo({ left: 0, behavior: 'smooth' });
+            }
+        });
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPortfolioFilterBar);
+} else {
+    initPortfolioFilterBar();
+}
 
 
 
