@@ -867,11 +867,91 @@ document.addEventListener('DOMContentLoaded', () => {
                         ticking = false;
                     });
                     ticking = true;
-                }
-            });
-        }
+    // ─── ÇEREZ YÖNETİMİ & HUKUKİ MODAL ENTEGRASYONU ─────────────
+    const cookieBanner = document.getElementById('cookieBanner');
+    const acceptBtn = document.getElementById('acceptCookies');
+    const declineBtn = document.getElementById('declineCookies');
+
+    if (cookieBanner && !localStorage.getItem('nova_cookie_consent')) {
+        setTimeout(() => {
+            cookieBanner.style.display = 'block';
+        }, 1200);
+    }
+
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('nova_cookie_consent', 'accepted');
+            cookieBanner.style.display = 'none';
+        });
+    }
+
+    if (declineBtn) {
+        declineBtn.addEventListener('click', () => {
+            localStorage.setItem('nova_cookie_consent', 'essential_only');
+            cookieBanner.style.display = 'none';
+        });
     }
 
 });
+
+// ─── HUKUKİ METİNLER DİNAMİK MODAL AÇMA FONKSİYONU ──────────────────
+window.openLegalModal = function(type) {
+    const modal = document.getElementById('blogModal');
+    const modalBody = document.getElementById('blogModalBody');
+    if (!modal || !modalBody) return;
+
+    let content = '';
+
+    if (type === 'kvkk') {
+        content = `
+            <h2>6698 Sayılı KVKK Aydınlatma Metni</h2>
+            <p><strong>Veri Sorumlusu:</strong> Nova Digital Yazılım & Dijital Pazarlama ("Nova Digital")</p>
+            <p>Nova Digital olarak kişisel verilerinizin güvenliğine ve gizliliğine azami önem veriyoruz. 6698 Sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") m. 10 uyarınca sizleri bilgilendiriyoruz.</p>
+            <h3>1. İşlenen Kişisel Verileriniz ve İşleme Amaçları</h3>
+            <p>İletişim formlarımız ve hizmet talepleriniz kapsamında toplanan Ad-Soyad, Telefon Numarası, E-posta Adresi ve Firma Bilgileri;</p>
+            <ul>
+                <li>Sizlerle iletişim kurulması ve hizmet tekliflerinin iletilmesi,</li>
+                <li>Müşteri ilişkileri süreçlerinin yürütülmesi,</li>
+                <li>Yasal yükümlülüklerin yerine getirilmesi amaçlarıyla işlenmektedir.</li>
+            </ul>
+            <h3>2. Kişisel Verilerin Aktarımı</h3>
+            <p>Verileriniz, yasal zorunluluklar saklı kalmak kaydıyla 3. şahıslarla paylaşılmamaktadır.</p>
+            <h3>3. KVKK m. 11 Kapsamındaki Haklarınız</h3>
+            <p>Veri sahibi olarak info@novadigital.com.tr adresine başvurarak verilerinizin işlenip işlenmediğini öğrenme, silinmesini veya düzeltilmesini talep etme hakkına sahipsiniz.</p>
+        `;
+    } else if (type === 'privacy') {
+        content = `
+            <h2>Gizlilik Politikası</h2>
+            <p>Nova Digital, kullanıcılarının gizlilik haklarını korumayı taahhüt eder. Bu politika, sitemizi ziyaret ettiğinizde toplanan bilgilerin nasıl kullanıldığını açıklar.</p>
+            <h3>1. Bilgi Toplama ve Kullanım</h3>
+            <p>Sitemizde doldurulan iletişim formları vasıtasıyla sağladığınız kişisel bilgiler, yalnızca hizmet taleplerinize yanıt vermek ve sözleşmesel süreçleri yürütmek için kullanılır.</p>
+            <h3>2. Veri Güvenliği</h3>
+            <p>Verileriniz endüstri standardı SSL şifreleme ve güvenli sunucu altyapıları ile korunmaktadır.</p>
+        `;
+    } else if (type === 'cookies') {
+        content = `
+            <h2>Çerez (Cookie) Politikası</h2>
+            <p>Nova Digital web sitesinde kullanıcı deneyimini artırmak ve performans analizi yapmak amacıyla çerezler kullanılmaktadır.</p>
+            <h3>1. Kullanılan Çerez Türleri</h3>
+            <ul>
+                <li><strong>Zorunlu Çerezler:</strong> Sitenin temel fonksiyonlarının çalışması için gereklidir.</li>
+                <li><strong>Analitik Çerezler:</strong> Ziyaretçi trafiğini ve davranışlarını anonim olarak ölçümler.</li>
+            </ul>
+            <p>Tarayıcı ayarlarınız üzerinden dilediğiniz zaman çerezleri engelleyebilirsiniz.</p>
+        `;
+    } else if (type === 'disclaimer') {
+        content = `
+            <h2>Yasal Uyarı & Telif Hakkı (FSEK) Beyanı</h2>
+            <p><strong>5846 Sayılı Fikir ve Sanat Eserleri Kanunu Uyarınca İkaz:</strong></p>
+            <p>Bu web sitesinde yer alan tüm yazılım kodları, arayüz tasarımları, grafikler, metinler ve kurumsal materyaller Nova Digital'in mülkiyetindedir.</p>
+            <p>Yazılı izin olmaksızın kopyalanması, dağıtılması veya başka mecralarda kullanılması durumunda FSEK m. 71 uyarınca yasal ve cezai işlem başlatılacaktır.</p>
+        `;
+    }
+
+    modalBody.innerHTML = content;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+};
+
 
 
