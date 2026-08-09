@@ -5107,140 +5107,140 @@ h1, h2 {
     }
 
     .footer-brand {
-        grid-column: 1 / -1 !important;
-        margin-bottom: 8px !important;
-        text-align: left !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* Hover İletişimi: Sabit & Tam Kontrast */
+.pricing-card:hover .card-bg-vector {
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+/* 2. Genel Sayfa Arka Plan Vektörleri (Yavaş Süzülen, Görünür Kenar Boşluğu Vektörleri) */
+@keyframes vectorFloat2D {
+    0%, 100% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    25% {
+        transform: translate(10px, -8px) rotate(3deg);
+    }
+    50% {
+        transform: translate(-8px, -14px) rotate(-3deg);
+    }
+    75% {
+        transform: translate(-10px, 6px) rotate(2deg);
+    }
+}
+
+.section-bg-vector {
+    position: absolute !important;
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: contain !important;
+    opacity: 0.50 !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+    animation: vectorFloat2D 22s ease-in-out infinite !important;
+    filter: drop-shadow(0 4px 12px rgba(37, 99, 235, 0.15)) !important;
+}
+
+.section-bg-vector--left {
+    left: 1.5% !important;
+    top: 6% !important;
+}
+
+.section-bg-vector--right {
+    right: 1.5% !important;
+    top: 6% !important;
+    animation-delay: -5s !important;
+}
+
+.section-bg-vector--center {
+    right: 3% !important;
+    bottom: 8% !important;
+    animation-delay: -9s !important;
+}
+
+.section-bg-vector--center-left {
+    left: 2% !important;
+    top: 22% !important;
+    animation-delay: -4s !important;
+}
+
+.section-bg-vector--center-right {
+    right: 2% !important;
+    top: 22% !important;
+    animation-delay: -11s !important;
+}
+
+.section-bg-vector--inter-1 {
+    left: 1.5% !important;
+    bottom: 4% !important;
+    animation-delay: -7s !important;
+}
+
+.section-bg-vector--inter-2 {
+    right: 2% !important;
+    top: 2% !important;
+    animation-delay: -13s !important;
+}
+
+.section-bg-vector--inter-3 {
+    right: 1.5% !important;
+    bottom: 4% !important;
+    animation-delay: -3s !important;
+}
+
+/* Mobil Uyumlu Ölçekleme & Mobilde Sadece Paket Kartı Vektörlerini Tutma */
+@media (max-width: 768px) {
+    #paketler .pricing-trust {
+        display: none !important;
     }
 
-    .footer-brand p {
-        font-size: 0.8rem !important;
-        line-height: 1.35 !important;
-        margin-bottom: 10px !important;
+    /* Mobilde sayfa arka plan vektörleri gizlenir (sıfır dikkat dağınıklığı) */
+    .section-bg-vector {
+        display: none !important;
     }
 
-    .footer-col h4 {
-        font-size: 0.85rem !important;
-        margin-bottom: 8px !important;
+    /* Sadece paket kartlarının sağ üst köşesindeki 3D vektörler kalır */
+    .card-bg-vector {
+        display: block !important;
+        width: 55px !important;
+        height: 55px !important;
+        top: 8px !important;
+        right: 8px !important;
+        opacity: 1 !important;
+    }
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   ULTRA-COMPACT MOBILE FOOTER & SECTION LENGTH OPTIMIZATION
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+    /* 1. Tighten Mobile Section Vertical Spacing */
+    section, .section {
+        padding-top: 22px !important;
+        padding-bottom: 22px !important;
     }
 
-    .footer-col a {
-        font-size: 0.78rem !important;
+    .section-header {
+        margin-bottom: 14px !important;
+        gap: 6px !important;
+    }
+
+    .section-header h2 {
+        font-size: 1.4rem !important;
         margin-bottom: 4px !important;
     }
 
-    .footer-bottom {
-        margin-top: 20px !important;
-        padding-top: 14px !important;
-        flex-direction: column !important;
-        gap: 4px !important;
-        font-size: 0.72rem !important;
-    }
-}
-
-/* Side by side Social Icon Buttons with a sweet gap */
-.contact-social-icons {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 12px !important;
-    margin-top: 4px !important;
-}
-
-.contact-social-icons .social-icon-btn {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-        color: #2563EB !important;
-        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.12) !important;
-    }
-}
-
-/* ═══════════════════════════════════════════════════════════
-   100% SYMMETRICAL PORTFOLIO META BADGES LAYOUT
-   ═══════════════════════════════════════════════════════════ */
-.portfolio-meta {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 6px !important;
-    margin-bottom: 12px !important;
-}
-
-.portfolio-meta .badge,
-.portfolio-meta .portfolio-type-tag {
-    font-size: 0.74rem !important;
-    padding: 4px 10px !important;
-    border-radius: 8px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-}
-
-/* ═══════════════════════════════════════════════════════════
-   MINIMAL DYNAMIC PORTFOLIO FILTER BAR (3 PACKAGE FILTERS)
-   ═══════════════════════════════════════════════════════════ */
-.portfolio-filter-bar {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #F1F5F9;
-    padding: 4px;
-    border-radius: 30px;
-    border: 1px solid #E2E8F0;
-}
-
-.filter-btn {
-    background: transparent;
-    border: none;
-    padding: 6px 14px;
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 700;
-    color: #64748B;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    white-space: nowrap;
-}
-        overflow-x: auto;
-        padding: 4px 6px;
-        margin-top: 8px;
-        margin-bottom: 4px;
-        scrollbar-width: none;
+    .section-header p {
+        font-size: 0.82rem !important;
+        margin-bottom: 0 !important;
     }
 
-    .portfolio-filter-bar::-webkit-scrollbar {
-        display: none;
-    }
-
-    .filter-btn {
-        padding: 5px 8px;
-        font-size: 0.72rem;
-    }
-}
-
-.portfolio-carousel-track {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    gap: 24px !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory !important;
-    -webkit-overflow-scrolling: touch !important;
-    padding-bottom: 16px !important;
-    scrollbar-width: none !important;
-}
-
-.portfolio-carousel-track::-webkit-scrollbar {
-    display: none !important;
-}
-
-.portfolio-slide {
-    flex: 0 0 360px !important;
-    max-width: 360px !important;
+    /* 2. Spacious Mobile Contact Info List (Zero Text Squeezing) */
     .contact-info-list {
         display: flex !important;
         flex-direction: column !important;
@@ -5375,18 +5375,6 @@ h1, h2 {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   MINIMAL DYNAMIC PORTFOLIO FILTER BAR (3 PACKAGE FILTERS)
-   ═══════════════════════════════════════════════════════════ */
-.portfolio-filter-bar {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #F1F5F9;
-    padding: 4px;
-    border-radius: 30px;
-    border: 1px solid #E2E8F0;
-}
-
 .filter-btn {
     background: transparent;
     border: none;
@@ -5454,13 +5442,12 @@ h1, h2 {
 .portfolio-filter-bar {
     display: inline-flex !important;
     align-items: center !important;
-    gap: 8px !important;
-    background: rgba(248, 250, 252, 0.95) !important;
-    backdrop-filter: blur(10px) !important;
-    padding: 6px 10px !important;
+    gap: 6px !important;
+    background: #F8FAFC !important;
+    padding: 4px 6px !important;
     border-radius: 30px !important;
     border: 1.5px solid #E2E8F0 !important;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
 }
 
 .filter-btn {
@@ -5468,13 +5455,16 @@ h1, h2 {
     border: 1.5px solid transparent !important;
     padding: 6px 16px !important;
     font-family: 'Outfit', sans-serif !important;
-    font-size: 0.85rem !important;
+    font-size: 0.82rem !important;
     font-weight: 600 !important;
     color: #64748B !important;
     border-radius: 20px !important;
     cursor: pointer !important;
-    transition: all 0.25s ease !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
     white-space: nowrap !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    user-select: none !important;
 }
 
 .filter-btn:hover {
@@ -5483,12 +5473,18 @@ h1, h2 {
     border-color: #BFDBFE !important;
 }
 
+.filter-btn:focus,
+.filter-btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 .filter-btn.active {
     background: #EFF6FF !important;
     color: #1D4ED8 !important;
     border: 1.5px solid #2563EB !important;
     font-weight: 800 !important;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15) !important;
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.18) !important;
 }
 
 .portfolio-slide.hidden-slide {

@@ -396,32 +396,30 @@ document.addEventListener('DOMContentLoaded', () => {
                     e.preventDefault();
                     e.stopPropagation();
 
-                    const isAlreadyActive = btn.classList.contains('active');
+                    const targetCat = btn.getAttribute('data-filter');
+                    if (!targetCat) return;
 
-                    // Reset active state for all buttons
+                    // Set active class on clicked button
                     filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
 
-                    let targetCat = 'all';
-
-                    if (!isAlreadyActive) {
-                        btn.classList.add('active');
-                        targetCat = btn.getAttribute('data-filter') || 'all';
-                    }
-
-                    // Query slides freshly to guarantee catching all cards
+                    // Filter all slides strictly
                     const allSlides = document.querySelectorAll('#portfolioTrack .portfolio-slide');
                     allSlides.forEach(slide => {
                         const slideCat = slide.getAttribute('data-category');
                         if (targetCat === 'all' || slideCat === targetCat) {
+                            slide.style.removeProperty('display');
                             slide.classList.remove('hidden-slide');
                         } else {
+                            slide.style.setProperty('display', 'none', 'important');
                             slide.classList.add('hidden-slide');
                         }
                     });
 
                     // Scroll back to track origin
-                    if (track) {
-                        track.scrollTo({ left: 0, behavior: 'smooth' });
+                    const trackEl = document.getElementById('portfolioTrack');
+                    if (trackEl) {
+                        trackEl.scrollTo({ left: 0, behavior: 'smooth' });
                     }
                 });
             });
