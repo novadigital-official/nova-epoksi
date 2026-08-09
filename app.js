@@ -387,7 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
             track.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
         });
 
-        // ─── DYNAMIC PORTFOLIO CATEGORY FILTERING (STANDART / KURUMSAL / ULTRA) ───
+        // ─── DYNAMIC PORTFOLIO CATEGORY FILTERING (STANDART / KURUMSAL / PROFESYONEL) ───
         const filterBtns = document.querySelectorAll('#portfolioFilterBar .filter-btn');
 
         if (filterBtns.length > 0) {
@@ -396,12 +396,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     e.preventDefault();
                     e.stopPropagation();
 
-                    const targetCat = btn.getAttribute('data-filter');
-                    if (!targetCat) return;
+                    const isAlreadyActive = btn.classList.contains('active');
 
-                    // Set active class on clicked button
+                    // Reset active state for all buttons
                     filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
+
+                    let targetCat = 'all';
+
+                    // If it was not active, activate it. If it WAS active, leave no button active -> show ALL slides!
+                    if (!isAlreadyActive) {
+                        btn.classList.add('active');
+                        targetCat = btn.getAttribute('data-filter') || 'all';
+                    }
 
                     // Filter all slides strictly
                     const allSlides = document.querySelectorAll('#portfolioTrack .portfolio-slide');
