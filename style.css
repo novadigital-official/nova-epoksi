@@ -9,15 +9,15 @@
 @import url('./_design-system/components.css');
 @import url('./_design-system/animations.css');
 
-/* ─── VARYASYON 2: TITANIUM GOLD & LUXE SLATE TEMA OVERRIDE ─── */
+/* ─── VARYASYON 3: INDIGO CYBER VIOLET TEMA OVERRIDE ─── */
 :root {
-    --color-primary: #D97706;
-    --color-primary-light: #F59E0B;
-    --color-primary-dark: #B45309;
-    --color-primary-glow: rgba(217, 119, 6, 0.18);
+    --color-primary: #4F46E5;
+    --color-primary-light: #6366F1;
+    --color-primary-dark: #4338CA;
+    --color-primary-glow: rgba(99, 102, 241, 0.18);
 
-    --color-accent: #B45309;
-    --color-accent-light: #F59E0B;
+    --color-accent: #7C3AED;
+    --color-accent-light: #8B5CF6;
 
     --color-success: #059669;
     --color-warning: #D97706;
@@ -25,11 +25,11 @@
 
     /* ─── Açık Arka Planlar ─── */
     --bg-body: #FFFFFF;
-    --bg-surface: #FFFDFA;
+    --bg-surface: #FAF9FF;
     --bg-card: #FFFFFF;
     --bg-card-hover: #FFFFFF;
     --bg-glass: rgba(255, 255, 255, 0.85);
-    --bg-input: #FAF5EF;
+    --bg-input: #F3F0FF;
 
     /* ─── Koyu Metin ─── */
     --text-primary: #0F172A;
@@ -38,14 +38,14 @@
 
     /* ─── Kenarlık ─── */
     --border-default: #E2E8F0;
-    --border-hover: rgba(217, 119, 6, 0.5);
+    --border-hover: rgba(99, 102, 241, 0.5);
     --border-glass: #E2E8F0;
 
     /* ─── Gölgeler ─── */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 12px 40px rgba(217, 119, 6, 0.12);
-    --shadow-glow: 0 4px 20px rgba(217, 119, 6, 0.18);
+    --shadow-lg: 0 12px 40px rgba(99, 102, 241, 0.14);
+    --shadow-glow: 0 4px 20px rgba(99, 102, 241, 0.18);
 }
 
 /* Body açık tema */
