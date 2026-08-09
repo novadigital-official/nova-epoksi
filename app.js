@@ -403,12 +403,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     slides.forEach(slide => {
                         const slideCat = slide.getAttribute('data-category');
                         if (category === 'all' || slideCat === category) {
-                            slide.style.display = 'block';
+                            slide.classList.remove('hidden-slide');
                         } else {
-                            slide.style.display = 'none';
+                            slide.classList.add('hidden-slide');
                         }
                     });
 
+                    // Reset horizontal scroll position to beginning smoothly
                     track.scrollTo({ left: 0, behavior: 'smooth' });
                 });
             });
