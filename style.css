@@ -9,43 +9,43 @@
 @import url('./_design-system/components.css');
 @import url('./_design-system/animations.css');
 
-/* ??? A?IK TEMA OVERRIDE ??? */
+/* ─── VARYASYON 2: TITANIUM GOLD & LUXE SLATE TEMA OVERRIDE ─── */
 :root {
-    --color-primary: #2563EB;
-    --color-primary-light: #3B82F6;
-    --color-primary-dark: #1D4ED8;
-    --color-primary-glow: rgba(37, 99, 235, 0.12);
+    --color-primary: #D97706;
+    --color-primary-light: #F59E0B;
+    --color-primary-dark: #B45309;
+    --color-primary-glow: rgba(217, 119, 6, 0.18);
 
-    --color-accent: #0891B2;
-    --color-accent-light: #06B6D4;
+    --color-accent: #B45309;
+    --color-accent-light: #F59E0B;
 
     --color-success: #059669;
     --color-warning: #D97706;
     --color-error: #DC2626;
 
-    /* ??? A?IK Arka Planlar ??? */
+    /* ─── Açık Arka Planlar ─── */
     --bg-body: #FFFFFF;
-    --bg-surface: #F8FAFC;
+    --bg-surface: #FFFDFA;
     --bg-card: #FFFFFF;
     --bg-card-hover: #FFFFFF;
     --bg-glass: rgba(255, 255, 255, 0.85);
-    --bg-input: #F1F5F9;
+    --bg-input: #FAF5EF;
 
-    /* ??? Koyu Metin ??? */
+    /* ─── Koyu Metin ─── */
     --text-primary: #0F172A;
     --text-secondary: #475569;
     --text-muted: #94A3B8;
 
-    /* ??? Kenarl?k ??? */
+    /* ─── Kenarlık ─── */
     --border-default: #E2E8F0;
-    --border-hover: rgba(37, 99, 235, 0.5);
+    --border-hover: rgba(217, 119, 6, 0.5);
     --border-glass: #E2E8F0;
 
-    /* ??? G?lgeler (A??k tema) ??? */
+    /* ─── Gölgeler ─── */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.08);
-    --shadow-glow: 0 4px 20px rgba(37, 99, 235, 0.12);
+    --shadow-lg: 0 12px 40px rgba(217, 119, 6, 0.12);
+    --shadow-glow: 0 4px 20px rgba(217, 119, 6, 0.18);
 }
 
 /* Body açık tema */
