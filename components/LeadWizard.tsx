@@ -1,20 +1,40 @@
 'use client';
 
 // ═══════════════════════════════════════════════════════════
-// NOVA EPOKSI ANTALYA — YALIN VE ANLAŞILIR İLETİŞİM FORMU
-// Tekrarlayan "Fiyat Al" Butonlarından Arındırılmış Temiz Yapı
+// NOVA EPOKSI ANTALYA — ENDÜSTRİYEL TEKNİK KONFİGÜRATÖR FORMU
 // ═══════════════════════════════════════════════════════════
 
 import React, { useState, useTransition } from 'react';
 import { submitAntalyaLeadAction } from '../app/actions/antalyaLeadAction';
 
-const SQUARE_METER_OPTIONS = ['0 - 50 m²', '50 - 200 m²', '200 - 500 m²', '500+ m²'];
-const SERVICE_TYPE_OPTIONS = ['Fabrika', 'Depo', 'Otopark', 'Otel / Restoran', 'Garaj', 'Dekoratif'];
-const ANTALYA_LOCATIONS = ['Antalya / Merkez', 'Muratpaşa', 'Kepez', 'Konyaaltı', 'Döşemealtı OSB', 'Alanya', 'Manavgat', 'Serik'];
+const SQUARE_METER_OPTIONS = [
+  { label: '0 – 100 m²', sub: 'Küçük Depo / Atölye' },
+  { label: '100 – 300 m²', sub: 'Otopark / Mağaza' },
+  { label: '300 – 1.000 m²', sub: 'Fabrika Holü' },
+  { label: '1.000+ m²', sub: 'Büyük Tesis / OSB' }
+];
+
+const SERVICE_TYPE_OPTIONS = [
+  { name: 'Fabrika & OSB', price: '350 TL/m²' },
+  { name: 'Depo & Lojistik', price: '200 TL/m²' },
+  { name: 'Kapalı Otopark', price: '400 TL/m²' },
+  { name: 'Ağır Forklift Zemin', price: '500 TL/m²' },
+  { name: 'Otel & Ticari', price: '350 TL/m²' },
+  { name: 'Antistatik ESD', price: '700 TL/m²' }
+];
+
+const ANTALYA_LOCATIONS = [
+  'Döşemealtı OSB',
+  'Muratpaşa',
+  'Kepez / Sanayi',
+  'Konyaaltı',
+  'Aksu / Serik',
+  'Alanya / Manavgat'
+];
 
 export default function LeadWizard({ defaultSource = 'GOOGLE_ADS' }: { defaultSource?: string }) {
-  const [selectedSqM, setSelectedSqM] = useState<string>(SQUARE_METER_OPTIONS[1]);
-  const [selectedService, setSelectedService] = useState<string>(SERVICE_TYPE_OPTIONS[0]);
+  const [selectedSqM, setSelectedSqM] = useState<string>(SQUARE_METER_OPTIONS[1].label);
+  const [selectedService, setSelectedService] = useState<string>(SERVICE_TYPE_OPTIONS[0].name);
   const [selectedLocation, setSelectedLocation] = useState<string>(ANTALYA_LOCATIONS[0]);
   
   const [name, setName] = useState<string>('');
@@ -23,6 +43,8 @@ export default function LeadWizard({ defaultSource = 'GOOGLE_ADS' }: { defaultSo
 
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  const currentEstimatedPrice = SERVICE_TYPE_OPTIONS.find(s => s.name === selectedService)?.price || '350 TL/m²';
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,135 +79,159 @@ export default function LeadWizard({ defaultSource = 'GOOGLE_ADS' }: { defaultSo
   };
 
   return (
-    <div className="w-full bg-white border border-slate-200 rounded-3xl p-5 sm:p-8 shadow-xl text-slate-900 min-h-[490px] flex flex-col justify-between">
+    <div className="w-full bg-white border border-gray-300 rounded p-6 sm:p-7 shadow-lg text-[#1A1C20] flex flex-col justify-between border-t-4 border-t-[#F4B400]">
       <div>
-        <div className="mb-4 bg-slate-100 border border-slate-200 p-2.5 rounded-2xl flex items-center gap-2 text-xs font-bold text-slate-700">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></span>
-          <span>Antalya İçi Yerinde İnceleme ve Bilgi Formu</span>
+        <div className="mb-3 flex items-center justify-between border-b border-gray-200 pb-2.5">
+          <span className="text-[11px] font-mono font-bold text-gray-500 uppercase tracking-wider">
+            TEKNİK KEŞİF KONFİGÜRATÖRÜ
+          </span>
+          <span className="inline-flex items-center gap-1.5 text-[11px] font-mono font-bold text-[#2F7A4D]">
+            <span className="w-2 h-2 rounded-full bg-[#2F7A4D] animate-pulse"></span>
+            AKTİF MÜHENDİS HATTI
+          </span>
         </div>
 
-        <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight mb-1">
-          Projeniz İçin İletişime Geçin
+        <h3 className="text-xl font-black text-[#1A1C20] tracking-tight mb-1">
+          Zemin Şartnamesi & Keşif Talebi
         </h3>
-        <p className="text-xs text-slate-600 mb-5 leading-relaxed">
-          Zemininizi yerinde analiz ediyor, mekanınıza uygun sistemi birlikte planlıyoruz.
+        <p className="text-xs text-gray-600 mb-4 leading-relaxed">
+          Tesisinizin alan büyüklüğünü ve zemin türünü belirleyin, mühendislerimiz aynı gün yerinde incelesin.
         </p>
 
         {isSubmitted ? (
           <div className="py-8 text-center animate-fadeIn">
-            <div className="w-14 h-14 bg-emerald-100 text-emerald-700 border border-emerald-300 rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-4">
+            <div className="w-12 h-12 bg-[#EDF7F1] text-[#2F7A4D] border border-[#2F7A4D] rounded flex items-center justify-center text-xl font-bold mx-auto mb-3 font-mono">
               ✓
             </div>
-            <h4 className="text-2xl font-extrabold text-slate-900 mb-2">Talebiniz Alındı</h4>
-            <p className="text-sm text-slate-700 font-medium max-w-md mx-auto mb-6 leading-relaxed">
-              Ekibimiz en kısa sürede sizinle iletişime geçecektir.
+            <h4 className="text-xl font-black text-[#1A1C20] mb-1">Keşif Kaydınız Oluşturuldu</h4>
+            <p className="text-xs text-gray-600 max-w-sm mx-auto mb-5">
+              Teknik ekibimiz zemin analizi için en kısa sürede telefon numaranız üzerinden ulaşacaktır.
             </p>
             <button
               onClick={() => setIsSubmitted(false)}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-black min-h-[48px] px-6 rounded-xl transition-all text-sm shadow-md cursor-pointer"
+              className="w-full bg-[#1A1C20] hover:bg-[#24262B] text-white font-bold py-3 rounded text-xs transition-colors"
             >
-              Yeni Talep Gönder
+              Yeni Talep Oluştur
             </button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-3.5">
+            {/* 1. Tesis / Zemin Türü */}
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">
-                1. Kullanım Alanı
+              <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-gray-600 mb-1.5">
+                1. Tesis & Zemin Tipi
               </label>
-              <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
                 {SERVICE_TYPE_OPTIONS.map((srv) => (
                   <button
-                    key={srv}
+                    key={srv.name}
                     type="button"
-                    onClick={() => setSelectedService(srv)}
-                    className={`min-h-[42px] px-2 rounded-xl font-bold text-xs transition-all border text-center cursor-pointer ${
-                      selectedService === srv
-                        ? 'bg-blue-600 text-white border-blue-600 shadow-sm'
-                        : 'bg-slate-50 text-slate-700 border-slate-200 hover:border-slate-300'
+                    onClick={() => setSelectedService(srv.name)}
+                    className={`py-2 px-2.5 rounded text-left transition-all border text-xs cursor-pointer ${
+                      selectedService === srv.name
+                        ? 'bg-[#1A1C20] text-white border-[#1A1C20] font-bold shadow-sm'
+                        : 'bg-gray-50 text-gray-700 border-gray-200 hover:border-gray-400 font-medium'
                     }`}
                   >
-                    {srv}
+                    <div className="truncate">{srv.name}</div>
                   </button>
                 ))}
               </div>
             </div>
 
+            {/* 2. Metrekare Büyüklüğü */}
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">
-                2. Yaklaşık m²
+              <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-gray-600 mb-1.5">
+                2. Yaklaşık Metrekare (m²)
               </label>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
                 {SQUARE_METER_OPTIONS.map((sqm) => (
                   <button
-                    key={sqm}
+                    key={sqm.label}
                     type="button"
-                    onClick={() => setSelectedSqM(sqm)}
-                    className={`min-h-[42px] px-3 rounded-xl font-extrabold text-xs transition-all border cursor-pointer ${
-                      selectedSqM === sqm
-                        ? 'bg-blue-600 text-white border-blue-600 shadow-sm'
-                        : 'bg-slate-50 text-slate-700 border-slate-200 hover:border-slate-300'
+                    onClick={() => setSelectedSqM(sqm.label)}
+                    className={`py-2 px-2 rounded text-center transition-all border font-mono text-xs cursor-pointer ${
+                      selectedSqM === sqm.label
+                        ? 'bg-[#1A1C20] text-[#F4B400] border-[#1A1C20] font-bold shadow-sm'
+                        : 'bg-gray-50 text-gray-700 border-gray-200 hover:border-gray-400'
                     }`}
                   >
-                    {sqm}
+                    <div className="font-bold">{sqm.label}</div>
                   </button>
                 ))}
               </div>
             </div>
 
+            {/* 3. Lokasyon */}
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">
-                3. Konum
+              <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-gray-600 mb-1">
+                3. Tesis Konumu (Antalya)
               </label>
               <select
                 value={selectedLocation}
                 onChange={(e) => setSelectedLocation(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 text-slate-900 font-bold text-xs min-h-[44px] px-3 rounded-xl outline-none focus:border-blue-600"
+                className="w-full h-9 rounded border border-gray-300 px-2.5 text-xs bg-gray-50 text-gray-800 font-medium outline-none focus:border-[#1A1C20]"
               >
                 {ANTALYA_LOCATIONS.map((loc) => (
-                  <option key={loc} value={loc}>{loc}</option>
+                  <option key={loc} value={loc}>
+                    {loc}
+                  </option>
                 ))}
               </select>
             </div>
 
-            <div className="space-y-3 pt-1">
-              {errorMsg && (
-                <div className="p-2.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-semibold">
-                  {errorMsg}
-                </div>
-              )}
+            {/* DYNAMIC ESTIMATED STARTING SPEC ROW */}
+            <div className="bg-[#F4F5F7] border border-gray-200 p-2.5 rounded flex items-center justify-between">
+              <span className="text-[11px] font-medium text-gray-600">
+                Seçilen Sistem Birim Başlangıç:
+              </span>
+              <span className="font-mono text-xs font-black text-[#1A1C20] bg-white px-2 py-0.5 border border-gray-300 rounded">
+                {currentEstimatedPrice}
+              </span>
+            </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            {/* 4. İletişim Bilgileri */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+              <div>
                 <input
                   type="text"
-                  placeholder="Adınız Soyadınız *"
+                  placeholder="Yetkili Adı Soyadı *"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  className="w-full h-10 rounded border border-gray-300 px-3 text-xs text-gray-900 bg-white placeholder:text-gray-400 outline-none focus:border-[#1A1C20]"
                   required
-                  className="w-full bg-slate-50 border border-slate-200 text-slate-900 min-h-[46px] px-4 rounded-xl text-xs outline-none focus:border-blue-600"
-                />
-                <input
-                  type="tel"
-                  placeholder="Telefon Numaranız *"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  required
-                  className="w-full bg-slate-50 border border-slate-200 text-slate-900 min-h-[46px] px-4 rounded-xl text-xs outline-none focus:border-blue-600"
                 />
               </div>
-
-              <button
-                type="submit"
-                disabled={isPending}
-                className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black min-h-[48px] text-sm rounded-xl shadow-md transition-all cursor-pointer flex items-center justify-center gap-2"
-              >
-                {isPending ? (
-                  <span>Gönderiliyor...</span>
-                ) : (
-                  <span>Talebi Gönder</span>
-                )}
-              </button>
+              <div>
+                <input
+                  type="tel"
+                  placeholder="Telefon Numarası *"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="w-full h-10 rounded border border-gray-300 px-3 text-xs text-gray-900 bg-white placeholder:text-gray-400 outline-none focus:border-[#1A1C20]"
+                  required
+                />
+              </div>
             </div>
+
+            {errorMsg && (
+              <div className="text-red-600 text-[11px] font-bold text-center">
+                {errorMsg}
+              </div>
+            )}
+
+            {/* Primary Action Button */}
+            <button
+              type="submit"
+              disabled={isPending}
+              className="w-full bg-[#F4B400] hover:bg-[#DDA200] text-[#1A1C20] font-black h-11 rounded text-xs uppercase tracking-wider transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
+            >
+              {isPending ? (
+                <span>Kayıt Açılıyor...</span>
+              ) : (
+                <span>Ücretsiz Yerinde Keşif Randevusu Al →</span>
+              )}
+            </button>
           </form>
         )}
       </div>

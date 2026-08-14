@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Space_Grotesk, Public_Sans, IBM_Plex_Mono } from 'next/font/google';
+import { Archivo, Public_Sans, IBM_Plex_Mono } from 'next/font/google';
 import '../style.css';
 
 const publicSans = Public_Sans({
@@ -9,9 +9,9 @@ const publicSans = Public_Sans({
   display: 'swap',
 });
 
-const spaceGrotesk = Space_Grotesk({
+const archivo = Archivo({
   subsets: ['latin', 'latin-ext'],
-  weight: ['500', '600', '700'],
+  weight: ['600', '700', '800'],
   variable: '--font-heading',
   display: 'swap',
 });
@@ -52,7 +52,7 @@ export default function RootLayout({
   return (
     <html
       lang="tr"
-      className={`${publicSans.variable} ${spaceGrotesk.variable} ${ibmPlexMono.variable}`}
+      className={`${publicSans.variable} ${archivo.variable} ${ibmPlexMono.variable}`}
       suppressHydrationWarning
     >
       <body className="font-sans antialiased" suppressHydrationWarning>{children}</body>

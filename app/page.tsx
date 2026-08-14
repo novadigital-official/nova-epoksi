@@ -11,145 +11,184 @@ import FiyatStratejisi2026 from '../components/FiyatStratejisi2026';
 
 export default function AntalyaEpoksiMasterSalesPage() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-blue-600 selection:text-white relative">
-      {/* 1. PROFESSIONAL CORPORATE NAVBAR */}
+    <main className="min-h-screen bg-[#F4F5F7] text-[#1A1C20] font-sans selection:bg-[#F4B400] selection:text-[#1A1C20] relative">
+      {/* 1. INDUSTRIAL NAVBAR */}
       <Navbar />
 
-      {/* 2. HERO SECTION — GÖRSEL HİYERARŞİSİ NETLEŞTİRİLMİŞ SATIŞ ALANI */}
+      {/* 2. HERO SECTION — B2B ENDÜSTRİYEL MÜHENDİSLİK ALANI */}
       <section id="kesif" className="pt-24 pb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black bg-blue-100 text-blue-800 border border-blue-200 mb-4 uppercase tracking-wider">
-              ANTALYA İÇİ YERİNDE İNCELEME
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#1A1C20] text-[#F4B400] font-mono text-xs font-bold mb-4 uppercase tracking-wider">
+              <span className="w-2 h-2 rounded-full bg-[#F4B400] animate-pulse"></span>
+              <span>ANTALYA & OSB SANAYİ ZEMİN ŞARTNAMESİ</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-black text-slate-900 leading-tight mb-4">
-              Antalya'da Fabrika, Depo ve İşletmeler İçin <span className="text-blue-600">Dayanıklı Epoksi</span> Zemin Çözümleri
+            
+            <h1 className="text-3xl sm:text-5xl font-black text-[#1A1C20] leading-tight mb-4 tracking-tight">
+              Fabrika, Depo ve Tesisler İçin <span className="text-[#1A1C20] underline decoration-[#F4B400] decoration-4">Yüksek Mukavemetli</span> Epoksi Zemin Çözümleri
             </h1>
-            <p className="text-slate-700 text-base sm:text-lg mb-4 font-semibold leading-relaxed">
-              Zemin durumunu analiz ediyor, ihtiyacınıza uygun epoksi sistemi belirliyor ve uygulama sürecini baştan sona yönetiyoruz.
-            </p>
-            <p className="text-slate-600 text-xs sm:text-sm mb-6 leading-relaxed bg-white border border-slate-200 p-3.5 rounded-2xl">
-              "Zemininizi görmeden net fiyat vermiyoruz. Önce ücretsiz keşif yapıyor, ihtiyacınıza uygun sistemi birlikte planlıyoruz."
+            
+            <p className="text-gray-700 text-base sm:text-lg mb-5 font-medium leading-relaxed max-w-2xl">
+              Antalya Organize Sanayi Bölgesi ve ticari işletmeler için lazerli nem analizi, elmas silim zemin hazırlığı ve ağır tonaj dayanımlı çok katmanlı epoksi uygulamaları.
             </p>
 
-            {/* 4 Sade Güven Kartı */}
-            <div className="grid grid-cols-2 gap-3 mb-8 text-xs font-extrabold text-slate-800">
-              <div className="flex items-center gap-2 bg-white border border-slate-200 p-3.5 rounded-xl shadow-sm min-h-[48px]">
-                <span className="text-emerald-600 font-black">✓</span> Ücretsiz Yerinde Keşif
+            {/* 4 Sade Endüstriyel Şartname Kutusu */}
+            <div className="grid grid-cols-2 gap-2.5 mb-6 text-xs font-bold text-[#1A1C20]">
+              <div className="flex items-center gap-2 bg-white border border-gray-300 p-3 rounded shadow-sm">
+                <span className="text-[#2F7A4D] font-black font-mono">✓</span> Lazerli Nem & Zemin Analizi
               </div>
-              <div className="flex items-center gap-2 bg-white border border-slate-200 p-3.5 rounded-xl shadow-sm min-h-[48px]">
-                <span className="text-emerald-600 font-black">✓</span> Aynı Gün Ön Teklif
+              <div className="flex items-center gap-2 bg-white border border-gray-300 p-3 rounded shadow-sm">
+                <span className="text-[#2F7A4D] font-black font-mono">✓</span> 10 Yıl Sistem Mukavemeti
               </div>
-              <div className="flex items-center gap-2 bg-white border border-slate-200 p-3.5 rounded-xl shadow-sm min-h-[48px]">
-                <span className="text-emerald-600 font-black">✓</span> Profesyonel Uygulama Süreci
+              <div className="flex items-center gap-2 bg-white border border-gray-300 p-3 rounded shadow-sm">
+                <span className="text-[#2F7A4D] font-black font-mono">✓</span> Forklift & Kimyasal Dayanım
               </div>
-              <div className="flex items-center gap-2 bg-white border border-slate-200 p-3.5 rounded-xl shadow-sm min-h-[48px]">
-                <span className="text-emerald-600 font-black">✓</span> Garanti Seçenekleri
+              <div className="flex items-center gap-2 bg-white border border-gray-300 p-3 rounded shadow-sm">
+                <span className="text-[#2F7A4D] font-black font-mono">✓</span> Aynı Gün Teknik Şartname
               </div>
             </div>
 
-            {/* NET GÖRSEL HİYERARŞİ: 1. YEŞİL WHATSAPP + 2. SIYAH/ÇERÇEVELİ KEŞİF BUTONU */}
+            {/* NET GÖRSEL HİYERARŞİ: 1. SARI WHATSAPP + 2. ANTRASİT ŞARTNAME BUTONU */}
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href="https://wa.me/905070871789?text=Merhaba%20Antalya%20epoksi%20fiyat%20teklifi%20ve%20kesif%20istiyorum"
+                href="https://wa.me/905070871789?text=Merhaba,%20Antalya%20epoksi%20zemin%20şartnamesi%20ve%20keşif%20istiyorum."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-emerald-600 hover:bg-emerald-500 text-white font-black px-6 py-4 min-h-[48px] rounded-xl text-sm flex items-center justify-center gap-2 shadow-md cursor-pointer transition-transform active:scale-95"
+                className="bg-[#F4B400] hover:bg-[#DDA200] text-[#1A1C20] font-black px-6 py-3.5 min-h-[48px] rounded text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md cursor-pointer transition-transform active:scale-95"
               >
-                <span>WhatsApp İletişim Hattı</span>
+                <span>Mühendis ile WhatsApp'tan Görüş</span>
               </a>
               <a
-                href="#kesif"
-                className="bg-slate-900 hover:bg-slate-800 text-white border-2 border-slate-800 font-extrabold px-6 py-4 min-h-[48px] rounded-xl text-sm flex items-center justify-center gap-2 shadow-sm transition-colors"
+                href="#fiyatlar"
+                className="bg-[#1A1C20] hover:bg-[#24262B] text-white border border-[#1A1C20] font-bold px-6 py-3.5 min-h-[48px] rounded text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors"
               >
-                <span>Ücretsiz Keşif Formu</span>
+                <span>Fiyat & Şartname Listesi ↗</span>
               </a>
             </div>
           </div>
 
-          {/* Lead Form Wizard */}
-          <div>
+          {/* Lead Form Wizard (Technical Configurator) */}
+          <div className="lg:col-span-5">
             <LeadWizard defaultSource="GOOGLE_ADS" />
           </div>
         </div>
       </section>
 
-      {/* 3. UYGULAMA ALANLARI */}
-      <section className="py-12 bg-white border-y border-slate-200 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 shadow-sm">
-        <CorporateReferences />
-      </section>
-
-      {/* 4. SAYAÇ VE PERFORMANS METRİKLERİ */}
-      <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-          <div className="bg-white border border-slate-200 p-6 rounded-3xl shadow-sm">
-            <div className="text-4xl sm:text-5xl font-black text-blue-600 mb-1">50+</div>
-            <div className="text-sm font-extrabold text-slate-900">Tamamlanan Proje</div>
-            <div className="text-xs text-slate-500 mt-1">Antalya ve Bölgesel Uygulama Sahası</div>
+      {/* 3. 3-KOLONLU ENDÜSTRİYEL DASHBOARD METRİK BLOĞU */}
+      <section className="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="metric-dash-card">
+            <div className="font-mono text-3xl sm:text-4xl font-black text-[#1A1C20] mb-0.5">
+              50+
+            </div>
+            <div className="text-xs font-black text-[#1A1C20] uppercase tracking-wider">
+              Tamamlanan Endüstriyel Tesis
+            </div>
+            <div className="text-[11px] text-gray-500 font-mono mt-1">
+              Döşemealtı OSB, Kepez & Muratpaşa Sahası
+            </div>
           </div>
 
-          <div className="bg-white border border-slate-200 p-6 rounded-3xl shadow-sm">
-            <div className="text-4xl sm:text-5xl font-black text-emerald-600 mb-1">15.000+</div>
-            <div className="text-sm font-extrabold text-slate-900">m² Toplam Zemin Kaplama</div>
-            <div className="text-xs text-slate-500 mt-1">Antalya ve OSB Genelinde</div>
+          <div className="metric-dash-card">
+            <div className="font-mono text-3xl sm:text-4xl font-black text-[#1A1C20] mb-0.5">
+              15.000+ <span className="text-sm font-bold text-gray-500">m²</span>
+            </div>
+            <div className="text-xs font-black text-[#1A1C20] uppercase tracking-wider">
+              Toplam Kaplanan Saha Betonu
+            </div>
+            <div className="text-[11px] text-gray-500 font-mono mt-1">
+              Ağır sanayi, lojistik depo ve otoparklar
+            </div>
           </div>
 
-          <div className="bg-white border border-slate-200 p-6 rounded-3xl shadow-sm">
-            <div className="text-4xl sm:text-5xl font-black text-blue-700 mb-1">%98</div>
-            <div className="text-sm font-extrabold text-slate-900">Müşteri Memnuniyeti</div>
-            <div className="text-xs text-slate-500 mt-1">Uygulama ve İletişim Garantisi</div>
+          <div className="metric-dash-card">
+            <div className="font-mono text-3xl sm:text-4xl font-black text-[#1A1C20] mb-0.5">
+              %98.4
+            </div>
+            <div className="text-xs font-black text-[#1A1C20] uppercase tracking-wider">
+              Şartnameye Uygunluk Oranı
+            </div>
+            <div className="text-[11px] text-gray-500 font-mono mt-1">
+              Sözleşmeli metrekare ve teslim garantisi
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 5. 2026 ANTALYA EPOKSİ ORTALAMA FİYATLARI */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+      {/* 4. KULLANIM ALANLARI / SEKTÖREL ÇÖZÜMLER */}
+      <section className="py-12 bg-white border-y border-gray-300 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <CorporateReferences />
+      </section>
+
+      {/* 5. 2026 ANTALYA ENDÜSTRİYEL SPEC VE FİYAT MATRİSİ */}
+      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gray-300">
         <FiyatStratejisi2026 />
       </section>
 
-      {/* 6. TAMAMLANAN UYGULAMA ÖRNEKLERİ (6 GERÇEK FOTOĞRAF) */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+      {/* 6. TAMAMLANAN UYGULAMA ÖRNEKLERİ */}
+      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gray-300">
         <BitirdigimizIsler />
       </section>
 
-      {/* 7. ANLAŞILIR VE SADE UYGULAMA SÜRECİ */}
-      <section id="hizmetler" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+      {/* 7. TEKNİK UYGULAMA SÜRECİ */}
+      <section id="hizmetler" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gray-300">
         <EpoksiTeknikSurec />
       </section>
 
       {/* 8. ÖNCE / SONRA DÖNÜŞÜM SÜRGÜSÜ */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gray-300">
         <BeforeAfterSlider />
       </section>
 
       {/* 9. İNTERAKTİF HESAPLAMA MOTORU */}
-      <section id="hesaplayici" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+      <section id="hesaplayici" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gray-300">
         <TeklifHesaplayici />
       </section>
 
       {/* 10. SERTİFİKA VE GÜVEN ROZETLERİ */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gray-300">
         <TrustBadges />
       </section>
 
-      {/* 11. FLOATING WHATSAPP BUTTON */}
+      {/* 11. FLOATING WHATSAPP BOT */}
       <WhatsAppBotWidget />
 
       {/* FOOTER */}
-      <footer className="bg-slate-900 text-slate-400 py-12 text-xs text-center border-t border-slate-800">
+      <footer className="bg-[#1A1C20] text-gray-400 py-12 text-xs border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="font-black text-lg text-white mb-2">Antalya Nova Epoksi Zemin Çözümleri</div>
-          <p className="mb-4">Antalya Bölge Müdürlüğü: Muratpaşa / Antalya — Tel: 0507 087 17 89</p>
-          <div className="flex justify-center gap-4 mb-4 font-bold text-slate-300">
-            <a href="/blog" className="hover:text-blue-400">Blog & Fiyat Rehberi</a>
-            <a href="/antalya-fabrika-epoksi-teklif" className="hover:text-blue-400">Google Ads Landing</a>
-            <a href="/self-leveling-epoksi" className="hover:text-blue-400">Self Leveling Epoksi</a>
-            <a href="/dosemealti-epoksi" className="hover:text-blue-400">Döşemealtı OSB</a>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 border-b border-gray-800 pb-6 mb-6">
+            <div>
+              <div className="font-black text-lg text-white mb-1">
+                ANTALYA NOVA EPOKSİ ZEMİN SİSTEMLERİ
+              </div>
+              <p className="text-gray-400">
+                Antalya OSB, Fabrika, Depo ve Otopark Zemin Mühendisliği — Tel: 0507 087 17 89
+              </p>
+            </div>
+            <div className="flex gap-3">
+              <a
+                href="https://wa.me/905070871789"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#F4B400] text-[#1A1C20] font-black px-4 py-2 rounded text-xs"
+              >
+                Mühendis WhatsApp
+              </a>
+            </div>
           </div>
-          <div className="flex items-center justify-center gap-2 text-[10px] text-slate-600">
-            <span>© 2026 Antalya Nova Epoksi. Tüm Hakları Saklıdır.</span>
-            <span>•</span>
-            <a href="/admin/dashboard" className="text-slate-500 hover:text-slate-400 font-bold">Yönetici Girişi</a>
+          
+          <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-6 font-bold text-gray-300">
+            <a href="/blog" className="hover:text-[#F4B400]">Blog & Fiyat Rehberi</a>
+            <a href="/antalya-fabrika-epoksi-teklif" className="hover:text-[#F4B400]">Fabrika Zemin Şartnamesi</a>
+            <a href="/self-leveling-epoksi" className="hover:text-[#F4B400]">Self Leveling Epoksi</a>
+            <a href="/dosemealti-epoksi" className="hover:text-[#F4B400]">Döşemealtı OSB Hizmetleri</a>
+          </div>
+
+          <div className="flex items-center justify-between text-[11px] text-gray-500 font-mono">
+            <span>© 2026 Antalya Nova Epoksi Zemin Çözümleri. Tüm Hakları Saklıdır.</span>
+            <a href="/admin/dashboard" className="text-gray-500 hover:text-gray-300 font-bold">
+              Yönetici Paneli
+            </a>
           </div>
         </div>
       </footer>

@@ -1,41 +1,61 @@
 'use client';
 
 // ═══════════════════════════════════════════════════════════
-// NOVA EPOKSI ANTALYA — 2026 ORTALAMA FİYAT REHBERİ
+// NOVA EPOKSİ ANTALYA — ENDÜSTRİYEL ZEMİN SPEC MATRİSİ & FİYAT LİSTESİ
 // ═══════════════════════════════════════════════════════════
 
 import React from 'react';
 
-const PRICING_SYSTEMS = [
+const SPEC_PRICE_MATRIX = [
   {
-    title: 'Epoksi Boya Kaplama',
-    usage: 'Depo, Garaj, Hafif Trafik',
-    startingPrice: '200 TL / m²',
-    desc: 'Hafif yaya ve araç trafiğine uygun, tozumayı önleyen ekonomik zemin çözümü.'
+    code: 'EPX-01',
+    title: 'Epoksi Boya Kaplama (Tozuma Önleyici)',
+    category: 'Depo, Lojistik, Hafif Trafik',
+    thickness: '0.3 – 0.5 mm Film',
+    startingPrice: '200 TL',
+    unit: '/ m²',
+    badge: 'Ekonomik Koruma',
+    features: 'Tozumasız beton, kolay temizlenebilir, rulo uygulama'
   },
   {
-    title: 'Self Leveling Epoksi',
-    usage: 'Fabrika, Showroom, Ticari Alan',
-    startingPrice: '350 TL / m²',
-    desc: 'Pürüzsüz, derzsiz ve hijyenik kendiliğinden yayılan kaplama.'
+    code: 'EPX-02',
+    title: 'Self-Leveling Epoksi Zemin',
+    category: 'Fabrika, Showroom, İlaç & Gıda',
+    thickness: '2.0 – 3.0 mm Pürüzsüz',
+    startingPrice: '350 TL',
+    unit: '/ m²',
+    badge: 'Hijyenik & Derzsiz',
+    features: 'Ayna pürüzsüzlük, bakteri barındırmayan derzsiz monolitik yapı'
   },
   {
-    title: 'Otopark Epoksi Kaplama',
-    usage: 'AVM, Site Otoparkı, Garaj',
-    startingPrice: '400 TL / m²',
-    desc: 'Araç lastik sesi ve kaymasını önleyen, çizgilere dayanıklı zemin.'
+    code: 'EPX-03',
+    title: 'Otopark Portakal Kabuğu / Kaymaz Kaplama',
+    category: 'AVM, Site Kapalı/Açık Otoparkı',
+    thickness: '1.5 – 2.5 mm Dokulu',
+    startingPrice: '400 TL',
+    unit: '/ m²',
+    badge: 'Yüksek Sürtünme',
+    features: 'Lastik sesi kesici, ıslak zeminde kaydırmaz tekstür, rampa dayanımı'
   },
   {
-    title: 'Endüstriyel Epoksi Sistem',
-    usage: 'Fabrika, Ağır Forklift Yolu',
-    startingPrice: '500 TL / m²',
-    desc: 'Ağır forklift trafiğine ve kimyasal dökülmelere dayanıklı multilayer katman.'
+    code: 'EPX-04',
+    title: 'Ağır Hizmet Multilayer Epoksi',
+    category: 'Ağır Sanayi, Forklift Yolları, Atölye',
+    thickness: '3.0 – 5.0 mm Çok Katmanlı',
+    startingPrice: '500 TL',
+    unit: '/ m²',
+    badge: 'Ağır Tonaj / Forklift',
+    features: 'Noktasal darbe dayanımı, asit ve kimyasal dökülmelere tam mukavemet'
   },
   {
-    title: 'Dekoratif / Metalik Epoksi',
-    usage: 'Otel Lobisi, Restoran, Özel Alan',
-    startingPrice: '700 TL / m²',
-    desc: 'Mermer efektli, estetik görünüm sağlayan özel kaplama.'
+    code: 'EPX-05',
+    title: 'Poliüretan / Antistatik ESD Epoksi',
+    category: 'Soğuk Hava, Elektronik Tesis, Laboratuvar',
+    thickness: '2.0 – 4.0 mm Esnek / ESD',
+    startingPrice: '700 TL',
+    unit: '/ m²',
+    badge: 'Özel Mühendislik',
+    features: 'Statik elektrik tahliyesi, termal şok ve UV ışın dayanımı'
   }
 ];
 
@@ -46,60 +66,98 @@ export default function FiyatStratejisi2026() {
   };
 
   return (
-    <div id="fiyatlar" className="w-full space-y-8">
-      <div className="text-center max-w-3xl mx-auto">
-        <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-black bg-blue-100 text-blue-800 border border-blue-200 mb-3 uppercase tracking-wider">
-          ŞEFFAF FİYATLANDIRMA
-        </span>
-        <h2 className="text-2xl sm:text-4xl font-black text-slate-900">
-          2026 Antalya Epoksi Zemin Kaplama Ortalama Fiyatları
-        </h2>
-        <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
-          Kesin fiyat için zemin durumu ve kullanım alanı görülmelidir. Zemin hazırlığı, metrekare büyüklüğü ve sistem türüne göre net teklif verilir.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-        {PRICING_SYSTEMS.map((system, idx) => (
-          <div
-            key={idx}
-            className={`bg-white border border-slate-200 rounded-3xl p-5 shadow-sm hover:shadow-md hover:border-blue-500 transition-all flex flex-col justify-between ${
-              idx === 4 ? 'sm:col-span-2 lg:col-span-3 xl:col-span-1' : ''
-            }`}
-          >
-            <div>
-              <span className="text-[10px] font-extrabold text-blue-600 uppercase tracking-wider block mb-1">
-                {system.usage}
-              </span>
-              <h3 className="text-base font-black text-slate-900 mb-2 leading-tight">
-                {system.title}
-              </h3>
-              <p className="text-xs text-slate-600 mb-4 leading-relaxed">
-                {system.desc}
-              </p>
-            </div>
-
-            <div className="pt-3 border-t border-slate-100">
-              <span className="text-[10px] text-slate-400 font-bold block">Başlangıç Fiyatı</span>
-              <span className="text-base font-black text-blue-700">{system.startingPrice}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl text-center space-y-4">
-        <h3 className="text-lg font-black text-white">İşletmenize Özel Çözüm İçin Görüşelim</h3>
-        <p className="text-xs text-slate-300 max-w-xl mx-auto leading-relaxed">
-          Zemininizi yerinde inceliyor, ihtiyacınıza uygun sistemi ve bütçeyi birlikte netleştiriyoruz.
-        </p>
-        <div>
-          <button
-            onClick={handleScrollToForm}
-            className="bg-emerald-600 hover:bg-emerald-500 text-white font-black px-8 py-4 min-h-[48px] rounded-xl text-sm shadow-lg transition-transform active:scale-95 cursor-pointer"
-          >
-            Projenizi İletin
-          </button>
+    <div id="fiyatlar" className="w-full space-y-6">
+      {/* Header */}
+      <div className="text-left border-b border-gray-300 pb-4">
+        <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded text-[11px] font-mono font-bold bg-[#1A1C20] text-[#F4B400] mb-2 uppercase tracking-wider">
+          TEKNİK ŞARTNAME & METREKARE MATRİSİ
         </div>
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1A1C20] tracking-tight">
+          2026 Antalya Endüstriyel Epoksi Zemin Fiyat Listesi
+        </h2>
+        <p className="text-xs sm:text-sm text-gray-600 mt-1 max-w-3xl">
+          Tüm fiyatlar m² bazında anahtar teslim başlangıç birim maliyetleridir. Saha keşfi sonrasında zemin nem durumu, çatlak tamiratı ve katman sayısına göre kesin sözleşme düzenlenir.
+        </p>
+      </div>
+
+      {/* Industrial Spec Matrix Table */}
+      <div className="bg-white border border-gray-300 rounded overflow-hidden shadow-sm">
+        <div className="overflow-x-auto">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-[#1A1C20] text-white text-xs font-mono uppercase tracking-wider">
+                <th className="py-3.5 px-4 font-bold">Kod / Sistem</th>
+                <th className="py-3.5 px-4 font-bold hidden md:table-cell">Kullanım Alanı</th>
+                <th className="py-3.5 px-4 font-bold hidden lg:table-cell">Kalınlık / Katman</th>
+                <th className="py-3.5 px-4 font-bold text-right sm:text-left">m² Başlangıç</th>
+                <th className="py-3.5 px-4 font-bold text-right">İşlem</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-200 text-xs">
+              {SPEC_PRICE_MATRIX.map((item, idx) => (
+                <tr key={idx} className="hover:bg-gray-50 transition-colors">
+                  <td className="py-4 px-4 align-middle">
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono text-[10px] bg-gray-200 text-gray-700 px-1.5 py-0.5 rounded font-bold">
+                        {item.code}
+                      </span>
+                      <div>
+                        <div className="font-extrabold text-[#1A1C20] text-sm">
+                          {item.title}
+                        </div>
+                        <div className="text-gray-500 text-[11px] mt-0.5 md:hidden">
+                          {item.category} • {item.thickness}
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="py-4 px-4 text-gray-700 font-medium hidden md:table-cell align-middle">
+                    {item.category}
+                  </td>
+                  <td className="py-4 px-4 text-gray-600 font-mono text-[11px] hidden lg:table-cell align-middle">
+                    {item.thickness}
+                  </td>
+                  <td className="py-4 px-4 align-middle text-right sm:text-left">
+                    <span className="font-mono text-base font-black text-[#1A1C20] block">
+                      {item.startingPrice}
+                    </span>
+                    <span className="text-[10px] text-gray-400 font-mono block">
+                      {item.unit} + KDV
+                    </span>
+                  </td>
+                  <td className="py-4 px-4 text-right align-middle">
+                    <button
+                      onClick={handleScrollToForm}
+                      className="inline-flex items-center justify-center px-3.5 py-2 rounded bg-[#1A1C20] hover:bg-[#F4B400] text-white hover:text-[#1A1C20] font-bold text-xs transition-colors cursor-pointer whitespace-nowrap"
+                    >
+                      Keşif İste ↗
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* B2B Engineering Callout */}
+      <div className="bg-[#1A1C20] text-white rounded p-5 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4 border-l-4 border-[#F4B400]">
+        <div>
+          <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
+            500 m² ve Üzeri Endüstriyel Saha Projeleri İçin Yerinde Numune Keşfi
+          </h3>
+          <p className="text-xs text-gray-300 mt-1">
+            Antalya OSB ve çevre ilçelerdeki fabrika zeminleriniz için lazerli nem ölçümü ve mukavemet testi ücretsiz yapılır.
+          </p>
+        </div>
+        <a
+          href="https://wa.me/905070871789?text=Merhaba,%20Antalya%20OSB%20fabrika%20epoksi%20zemin%20keşfi%20talep%20ediyorum."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-[#F4B400] hover:bg-[#DDA200] text-[#1A1C20] font-black px-6 py-3 rounded text-xs whitespace-nowrap transition-all shadow-md flex items-center gap-2 flex-shrink-0"
+        >
+          <span>Mühendis ile WhatsApp'tan Görüş</span>
+        </a>
       </div>
     </div>
   );

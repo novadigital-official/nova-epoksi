@@ -1,8 +1,7 @@
 'use client';
 
 // ═══════════════════════════════════════════════════════════
-// NOVA EPOKSI ANTALYA — TAMAMLANAN UYGULAMA ÖRNEKLERİ
-// 6 Adet Gerçek Saha Uygulama Referansı
+// NOVA EPOKSI ANTALYA — SAHA REFERANSLARI & PROJE GALERİSİ
 // ═══════════════════════════════════════════════════════════
 
 import React, { useState } from 'react';
@@ -25,7 +24,7 @@ const COMPLETED_SIX_PROJECTS: ProjectItem[] = [
     category: 'Fabrika',
     location: 'Antalya / Döşemealtı OSB',
     squareMeters: '2.500 m²',
-    system: 'Self Leveling Epoksi',
+    system: 'Self-Leveling Epoksi',
     image: '/images/saha-endustriyel.png',
     description: 'Ağır sanayi üretim alanı için tozumaz, pürüzsüz ve gıda standartlarına uygun epoksi zemin kaplaması.'
   },
@@ -41,7 +40,7 @@ const COMPLETED_SIX_PROJECTS: ProjectItem[] = [
   },
   {
     id: '3',
-    title: 'Otel Lobi Uygulaması',
+    title: 'Otel Lobi ve Fuaye Uygulaması',
     category: 'Otel & Lobi',
     location: 'Antalya / Lara',
     squareMeters: '450 m²',
@@ -61,7 +60,7 @@ const COMPLETED_SIX_PROJECTS: ProjectItem[] = [
   },
   {
     id: '5',
-    title: 'Tekstil Atölyesi Zemin Kaplaması',
+    title: 'Tekstil İmalathanesi Zemin Kaplaması',
     category: 'İmalathane',
     location: 'Antalya / Muratpaşa',
     squareMeters: '1.800 m²',
@@ -71,7 +70,7 @@ const COMPLETED_SIX_PROJECTS: ProjectItem[] = [
   },
   {
     id: '6',
-    title: 'Lojistik Depo Otopark Uygulaması',
+    title: 'Lojistik Depo & Otopark Uygulaması',
     category: 'Depo & Otopark',
     location: 'Döşemealtı OSB',
     squareMeters: '3.500 m²',
@@ -84,37 +83,37 @@ const COMPLETED_SIX_PROJECTS: ProjectItem[] = [
 export default function BitirdigimizIsler() {
   const [selectedFilter, setSelectedFilter] = useState<string>('HEPSİ');
 
-  const categories = ['HEPSİ', 'Fabrika', 'Depo / Üretim', 'Otopark', 'Otel & Lobi', 'Otomotiv'];
+  const categories = ['HEPSİ', 'Fabrika', 'Depo / Üretim', 'Depo & Otopark', 'Otel & Lobi', 'Otomotiv'];
 
   const filteredProjects = selectedFilter === 'HEPSİ'
     ? COMPLETED_SIX_PROJECTS
     : COMPLETED_SIX_PROJECTS.filter(p => p.category === selectedFilter || p.category.includes(selectedFilter));
 
   return (
-    <div id="isler" className="w-full space-y-8">
-      {/* Başlık */}
-      <div className="text-center max-w-3xl mx-auto">
-        <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-black bg-blue-100 text-blue-800 border border-blue-200 mb-3 uppercase tracking-wider">
-          SAHA UYGULAMA SAHALARIMIZ
-        </span>
-        <h2 className="text-2xl sm:text-4xl font-black text-slate-900">
-          Tamamlanan Uygulama Örnekleri
+    <div id="isler" className="w-full space-y-6">
+      {/* Header */}
+      <div className="text-left border-b border-gray-300 pb-4">
+        <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded text-[11px] font-mono font-bold bg-[#1A1C20] text-[#F4B400] mb-2 uppercase tracking-wider">
+          SAHA UYGULAMA RAPORLARI
+        </div>
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1A1C20] tracking-tight">
+          Tamamlanan Endüstriyel Saha Referansları
         </h2>
-        <p className="text-sm text-slate-600 mt-2">
-          Antalya ve sanayi bölgelerinde gerçekleştirdiğimiz örnek uygulama görsellerimiz.
+        <p className="text-xs sm:text-sm text-gray-600 mt-1 max-w-3xl">
+          Antalya Organize Sanayi Bölgesi ve ticari tesislerde başarıyla teslim edilen zemin projelerimiz.
         </p>
       </div>
 
-      {/* Kategori Filtre Butonları */}
-      <div className="flex flex-wrap items-center justify-center gap-2">
+      {/* Industrial Filter Buttons (Sharp 4px Radius) */}
+      <div className="flex flex-wrap items-center gap-1.5">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setSelectedFilter(cat)}
-            className={`px-4 py-2 rounded-xl text-xs font-extrabold transition-all border cursor-pointer ${
+            className={`px-3.5 py-1.5 rounded text-xs font-bold font-mono transition-all border cursor-pointer ${
               selectedFilter === cat
-                ? 'bg-blue-600 text-white border-blue-600 shadow-sm'
-                : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300'
+                ? 'bg-[#1A1C20] text-[#F4B400] border-[#1A1C20] shadow-sm'
+                : 'bg-white text-gray-700 border-gray-300 hover:border-gray-500'
             }`}
           >
             {cat}
@@ -122,42 +121,48 @@ export default function BitirdigimizIsler() {
         ))}
       </div>
 
-      {/* 6 Proje Galeri Kartı */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* 6 Project Gallery Cards with Consistent 16:10 Ratio & Dark Gradient */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {filteredProjects.map((project) => (
           <div
             key={project.id}
-            className="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-md hover:border-blue-500 transition-all cursor-pointer group flex flex-col justify-between"
+            className="bg-white border border-gray-300 rounded overflow-hidden shadow-sm hover:shadow-md transition-all group flex flex-col justify-between"
           >
             <div>
-              <div className="h-56 overflow-hidden relative">
+              <div className="aspect-[16/10] overflow-hidden relative bg-gray-900">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90"
                 />
-                <span className="absolute top-3 left-3 bg-blue-600 text-white font-black text-[10px] px-2.5 py-1 rounded-md uppercase tracking-wide">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1C20]/90 via-transparent to-transparent pointer-events-none" />
+                
+                <span className="absolute top-2.5 left-2.5 bg-[#1A1C20] text-[#F4B400] font-mono font-bold text-[10px] px-2 py-0.5 rounded uppercase tracking-wide border border-gray-700">
                   {project.category}
                 </span>
-                <span className="absolute bottom-3 right-3 bg-slate-900/90 text-white font-bold text-[10px] px-2.5 py-1 rounded-md border border-slate-700">
+                
+                <span className="absolute bottom-2.5 right-2.5 bg-[#1A1C20]/95 text-white font-mono font-black text-xs px-2 py-0.5 rounded border border-gray-700">
                   {project.squareMeters}
+                </span>
+
+                <span className="absolute bottom-2.5 left-2.5 text-gray-300 font-mono text-[11px] truncate max-w-[65%]">
+                  {project.location}
                 </span>
               </div>
 
-              <div className="p-5">
-                <div className="text-[11px] font-bold text-blue-600 mb-1">Konum: {project.location}</div>
-                <h3 className="text-base font-black text-slate-900 mb-2 leading-snug group-hover:text-blue-600 transition-colors">
+              <div className="p-4">
+                <h3 className="text-sm font-extrabold text-[#1A1C20] mb-1.5 leading-snug group-hover:text-[#F4B400] transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-gray-600 leading-relaxed line-clamp-2">
                   {project.description}
                 </p>
               </div>
             </div>
 
-            <div className="px-5 pb-5 pt-2 border-t border-slate-100 flex items-center justify-between">
-              <span className="text-[11px] font-bold text-slate-500">Sistem: {project.system}</span>
-              <span className="text-xs font-black text-blue-600">İncele →</span>
+            <div className="px-4 pb-4 pt-2 border-t border-gray-100 flex items-center justify-between font-mono text-[11px]">
+              <span className="text-gray-500 font-bold">Sistem: {project.system}</span>
+              <span className="font-bold text-[#1A1C20] group-hover:text-[#F4B400] transition-colors">Şartname ↗</span>
             </div>
           </div>
         ))}
