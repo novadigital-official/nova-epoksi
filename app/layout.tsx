@@ -58,6 +58,9 @@ export const metadata: Metadata = {
     description: 'Antalya fabrika ve otopark epoksi zemin çözümleri.',
     images: ['/images/saha-endustriyel.png'],
   },
+  verification: {
+    google: 'google683b96f9e18d1ed7',
+  },
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
