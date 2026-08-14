@@ -52,11 +52,11 @@ export default function BeforeAfterSlider() {
           className="absolute inset-y-0 left-0 overflow-hidden border-r-2 border-blue-600 shadow-xl"
           style={{ width: `${sliderPos}%` }}
         >
-          <div className="relative w-full h-full bg-slate-400">
+          <div className="absolute inset-0 w-full h-full bg-slate-400">
             <img
               src="/images/saha-depo.png"
               alt="Önce - Epoksisiz Ham Mat Beton Zemin"
-              className="absolute inset-0 w-full h-full object-cover max-w-none filter grayscale contrast-75 brightness-90 saturate-0"
+              className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-75 brightness-90 saturate-0"
               style={{ width: '100%', height: '100%' }}
             />
             {/* Epoksisiz Mat Beton Yüzey Overlay (Parlaklığı tamamen yok eden mat şeffaf katman) */}

@@ -59,11 +59,13 @@ export default function FiyatStratejisi2026() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
         {PRICING_SYSTEMS.map((system, idx) => (
           <div
             key={idx}
-            className="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm hover:shadow-md hover:border-blue-500 transition-all flex flex-col justify-between"
+            className={`bg-white border border-slate-200 rounded-3xl p-5 shadow-sm hover:shadow-md hover:border-blue-500 transition-all flex flex-col justify-between ${
+              idx === 4 ? 'sm:col-span-2 lg:col-span-3 xl:col-span-1' : ''
+            }`}
           >
             <div>
               <span className="text-[10px] font-extrabold text-blue-600 uppercase tracking-wider block mb-1">

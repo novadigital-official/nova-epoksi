@@ -1,5 +1,13 @@
 import type { Metadata } from 'next';
+import { Plus_Jakarta_Sans } from 'next/font/google';
 import '../style.css';
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-sans',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://antalyaepoksizemin.com.tr'),
@@ -28,8 +36,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="tr" suppressHydrationWarning>
-      <body suppressHydrationWarning>{children}</body>
+    <html lang="tr" className={jakarta.variable} suppressHydrationWarning>
+      <body className="font-sans antialiased" suppressHydrationWarning>{children}</body>
     </html>
   );
 }
