@@ -10,19 +10,19 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 h-20 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 z-50 transition-all">
+    <nav className="fixed top-0 left-0 right-0 h-16 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 z-50 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex items-center justify-between">
         {/* LOGO */}
-        <a href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 bg-blue-600 text-white font-black rounded-xl flex items-center justify-center text-xl shadow-md group-hover:bg-blue-500 transition-colors">
+        <a href="/" className="flex items-center gap-2.5 group">
+          <div className="w-8 h-8 bg-blue-600 text-white font-black rounded-lg flex items-center justify-center text-lg shadow-md group-hover:bg-blue-500 transition-colors">
             A
           </div>
           <div>
-            <span className="font-extrabold text-xl text-white block leading-none tracking-tight">
+            <span className="font-extrabold text-lg text-white block leading-none tracking-tight">
               Antalya<span className="text-blue-400">Epoksi</span>
             </span>
-            <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block mt-0.5">
-              Endüstriyel Zemin Sistemleri
+            <span className="text-[9px] text-slate-400 font-bold uppercase tracking-wider block mt-0.5">
+              Endüstriyel Zemin
             </span>
           </div>
         </a>

@@ -16,7 +16,7 @@ export default function AntalyaEpoksiMasterSalesPage() {
       <Navbar />
 
       {/* 2. HERO SECTION — GÖRSEL HİYERARŞİSİ NETLEŞTİRİLMİŞ SATIŞ ALANI */}
-      <section id="kesif" className="pt-32 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="kesif" className="pt-24 pb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black bg-blue-100 text-blue-800 border border-blue-200 mb-4 uppercase tracking-wider">
