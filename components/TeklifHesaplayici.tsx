@@ -7,11 +7,11 @@
 import React, { useState } from 'react';
 
 const FACILITY_TYPES = [
-  { id: 'fabrika', name: '🏭 Fabrika / Üretim', basePrice: 240 },
-  { id: 'otel', name: '🏨 Otel / Lobi', basePrice: 350 },
-  { id: 'otopark', name: '🚗 Otopark / Garaj', basePrice: 210 },
-  { id: 'metalik', name: '✨ Metalik Epoksi', basePrice: 420 },
-  { id: '3d', name: '🎨 3D / Dekoratif', basePrice: 480 }
+  { id: 'fabrika', name: 'Fabrika / Üretim', basePrice: 240 },
+  { id: 'otel', name: 'Otel / Lobi', basePrice: 350 },
+  { id: 'otopark', name: 'Otopark / Garaj', basePrice: 210 },
+  { id: 'metalik', name: 'Metalik Epoksi', basePrice: 420 },
+  { id: '3d', name: '3D / Dekoratif', basePrice: 480 }
 ];
 
 const FLOOR_CONDITIONS = [
@@ -38,7 +38,7 @@ export default function TeklifHesaplayici() {
   const handleWhatsAppRedirect = (e: React.FormEvent) => {
     e.preventDefault();
     const waText = encodeURIComponent(
-      `🔥 *ANINDA TEKLİF & KEŞİF TALEBİ*\n` +
+      `*ANINDA TEKLİF & KEŞİF TALEBİ*\n` +
       `• *İsim:* ${name || 'Belirtilmedi'}\n` +
       `• *Telefon:* ${phone || 'Belirtilmedi'}\n` +
       `• *Lokasyon:* ${location}\n` +
@@ -56,7 +56,7 @@ export default function TeklifHesaplayici() {
       <div className="flex items-center justify-between pb-4 mb-6 border-b border-slate-200">
         <div>
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-blue-100 text-blue-800 border border-blue-200 mb-2">
-            🧮 ANINDA TEKLİF & KEŞİF MOTORU
+            ANINDA TEKLİF & KEŞİF HESAPLAYICI
           </span>
           <h3 className="text-xl sm:text-2xl font-black text-slate-900">
             Epoksi Zemin Keşif Hesaplayıcı

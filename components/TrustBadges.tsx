@@ -32,8 +32,8 @@ export default function TrustBadges() {
         </div>
 
         <div className="bg-white border border-slate-200 p-5 rounded-2xl flex items-center gap-4 shadow-sm hover:shadow-md transition-all">
-          <div className="w-12 h-12 bg-amber-100 text-amber-800 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 font-black">
-            ⚙️
+          <div className="w-12 h-12 bg-amber-100 text-amber-800 rounded-xl flex items-center justify-center text-xs flex-shrink-0 font-black">
+            ISO
           </div>
           <div>
             <h4 className="text-sm font-extrabold text-slate-900 leading-snug">%100 Darbe & Yağ Dayanımı</h4>
@@ -42,8 +42,8 @@ export default function TrustBadges() {
         </div>
 
         <div className="bg-white border border-slate-200 p-5 rounded-2xl flex items-center gap-4 shadow-sm hover:shadow-md transition-all">
-          <div className="w-12 h-12 bg-indigo-100 text-indigo-800 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 font-black">
-            📍
+          <div className="w-12 h-12 bg-indigo-100 text-indigo-800 rounded-xl flex items-center justify-center text-xs flex-shrink-0 font-black">
+            OSB
           </div>
           <div>
             <h4 className="text-sm font-extrabold text-slate-900 leading-snug">Aynı Gün Yerinde Keşif</h4>
@@ -57,12 +57,12 @@ export default function TrustBadges() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-2">
           <div>
             <span className="text-xs font-extrabold text-blue-600 uppercase tracking-wider block mb-1">
-              ⭐ SAHA MÜŞTERİ GERİ BİLDİRİMLERİ
+              SAHA MÜŞTERİ GERİ BİLDİRİMLERİ
             </span>
             <h3 className="text-xl font-black text-slate-900">Antalya Sanayi ve Tesis Yorumları</h3>
           </div>
-          <div className="flex items-center gap-1 text-amber-500 font-black text-sm">
-            ★★★★★ <span className="text-slate-700">5.0 / 5.0 (150+ Referans)</span>
+          <div className="flex items-center gap-1 text-slate-700 font-black text-sm">
+            <span className="text-amber-500">★★★★★</span> 5.0 / 5.0 (150+ Saha Referansı)
           </div>
         </div>
 
