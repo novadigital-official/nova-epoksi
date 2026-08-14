@@ -90,7 +90,7 @@ export default function FiyatStratejisi2026() {
                 <th className="py-3.5 px-4 font-bold hidden md:table-cell">Kullanım Alanı</th>
                 <th className="py-3.5 px-4 font-bold hidden lg:table-cell">Kalınlık / Katman</th>
                 <th className="py-3.5 px-4 font-bold text-right sm:text-left">m² Başlangıç</th>
-                <th className="py-3.5 px-4 font-bold text-right">İşlem</th>
+                <th className="py-3.5 px-4 font-bold text-right hidden sm:table-cell">İşlem</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200 text-xs">
@@ -125,7 +125,7 @@ export default function FiyatStratejisi2026() {
                       {item.unit} + KDV
                     </span>
                   </td>
-                  <td className="py-4 px-4 text-right align-middle">
+                  <td className="py-4 px-4 text-right align-middle hidden sm:table-cell">
                     <button
                       onClick={handleScrollToForm}
                       className="inline-flex items-center justify-center px-3.5 py-2 rounded bg-[#1A1C20] hover:bg-[#F4B400] text-white hover:text-[#1A1C20] font-bold text-xs transition-colors cursor-pointer whitespace-nowrap"
