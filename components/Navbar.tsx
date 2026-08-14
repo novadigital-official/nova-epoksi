@@ -15,14 +15,14 @@ export default function Navbar() {
         {/* LOGO */}
         <a href="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 bg-blue-600 text-white font-black rounded-xl flex items-center justify-center text-xl shadow-md group-hover:bg-blue-500 transition-colors">
-            N
+            A
           </div>
           <div>
             <span className="font-extrabold text-xl text-white block leading-none tracking-tight">
-              Nova<span className="text-blue-400">Epoksi</span>
+              Antalya<span className="text-blue-400">Epoksi</span>
             </span>
             <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block mt-0.5">
-              Antalya Zemin Sistemleri
+              Endüstriyel Zemin Sistemleri
             </span>
           </div>
         </a>
