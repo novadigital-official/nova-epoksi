@@ -12,13 +12,13 @@ import MobileStickyBar from '../components/MobileStickyBar';
 
 export default function AntalyaEpoksiMasterSalesPage() {
   return (
-    <main className="min-h-screen bg-[#F8FAFC] text-[#111827] font-sans selection:bg-[#F59E0B] selection:text-[#111827] relative pb-16 md:pb-0">
+    <main className="min-h-screen bg-[#F8FAFC] text-[#111827] font-sans selection:bg-[#F59E0B] selection:text-[#111827] relative pb-28 md:pb-0">
       {/* 1. SCARCITY & URGENCY TOP BAR */}
-      <div className="bg-[#111827] text-white py-1.5 px-4 text-center text-xs font-mono border-b border-gray-800">
-        <div className="max-w-7xl mx-auto flex items-center justify-center gap-2">
+      <div className="bg-[#111827] text-white py-1.5 px-3 text-center text-xs font-mono border-b border-gray-800">
+        <div className="max-w-7xl mx-auto flex items-center justify-center gap-1.5 flex-wrap">
           <span className="inline-block w-2 h-2 rounded-full bg-[#F59E0B] animate-ping" />
-          <span className="text-[#F59E0B] font-bold">BU HAFTA ANTALYA KEŞİF KONTENJANI:</span>
-          <span className="font-semibold">Son 3 Randevu — Sezon Öncesi Sabit m² Fiyat Garantisi</span>
+          <span className="text-[#F59E0B] font-bold">BU HAFTA ANTALYA KONTENJANI:</span>
+          <span className="font-semibold">Son 3 Keşif Randevusu • Sabit m² Fiyatı</span>
         </div>
       </div>
 
@@ -26,37 +26,43 @@ export default function AntalyaEpoksiMasterSalesPage() {
       <Navbar />
 
       {/* 3. HERO SECTION — ABOVE THE FOLD 3-SANİYE DÖNÜŞÜM ALANI */}
-      <section id="kesif" className="pt-24 pb-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="kesif" className="pt-24 pb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7">
-            {/* SOCIAL PROOF MICRO-PILL */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-gray-300 text-xs font-bold shadow-sm mb-4">
-              <span className="text-[#F59E0B] text-sm">★★★★★</span>
-              <span className="font-extrabold text-[#111827]">4.9 / 5.0</span>
-              <span className="text-gray-500 font-medium">| 480+ Antalya Zemin Projesi • 10 Yıl Garanti</span>
+            {/* COMPACT SINGLE-LINE SOCIAL PROOF PILL */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gray-300 text-xs font-bold shadow-sm mb-3.5 max-w-full">
+              <span className="text-[#F59E0B] font-black">★ 4.9/5.0</span>
+              <span className="text-gray-300">•</span>
+              <span className="text-[#111827] font-bold whitespace-nowrap">500+ Saha Projesi</span>
+              <span className="text-gray-300">•</span>
+              <span className="text-gray-700 font-bold whitespace-nowrap">10 Yıl Garanti</span>
             </div>
             
             <h1 className="text-3xl sm:text-5xl font-extrabold text-[#111827] leading-tight mb-4 tracking-tight">
-              Fabrika, Depo ve Tesisler İçin <span className="text-[#111827] underline decoration-[#F59E0B] decoration-4">Yüksek Mukavemetli</span> Epoksi Zemin Çözümleri
+              Fabrika, Depo ve Tesisler İçin <span className="text-[#D97706]">Yüksek Mukavemetli</span> Epoksi Zemin Çözümleri
             </h1>
             
-            <p className="text-gray-800 text-base sm:text-lg mb-6 font-semibold leading-relaxed max-w-2xl">
+            <p className="text-gray-800 text-base sm:text-lg mb-5 font-semibold leading-relaxed max-w-2xl">
               Antalya OSB ve ticari işletmeler için lazerli nem analizi, elmas silim zemin hazırlığı ve ağır tonaj dayanımlı çok katmanlı epoksi uygulamaları. <strong className="text-[#111827]">200 TL/m²'den başlayan anahtar teslim fiyatlar.</strong>
             </p>
 
-            {/* 4 Sade Endüstriyel Şartname Kutusu */}
+            {/* 4 Sade Endüstriyel Şartname Kutusu (Kompakt 2x2 Grid) */}
             <div className="grid grid-cols-2 gap-2.5 mb-6 text-xs sm:text-sm font-bold text-[#111827]">
-              <div className="flex items-center gap-2 bg-white border border-gray-300 p-3 rounded-lg shadow-sm">
-                <span className="text-[#15803D] font-black text-base">✓</span> Lazerli Nem & Zemin Analizi
+              <div className="flex items-center gap-2.5 bg-white border border-gray-300 p-3 rounded-lg shadow-sm">
+                <span className="w-5 h-5 rounded bg-[#DCFCE7] text-[#15803D] flex items-center justify-center font-black text-xs flex-shrink-0">✓</span>
+                <span className="truncate">Lazerli Nem Analizi</span>
               </div>
-              <div className="flex items-center gap-2 bg-white border border-gray-300 p-3 rounded-lg shadow-sm">
-                <span className="text-[#15803D] font-black text-base">✓</span> 10 Yıl Sistem Mukavemeti
+              <div className="flex items-center gap-2.5 bg-white border border-gray-300 p-3 rounded-lg shadow-sm">
+                <span className="w-5 h-5 rounded bg-[#DCFCE7] text-[#15803D] flex items-center justify-center font-black text-xs flex-shrink-0">✓</span>
+                <span className="truncate">10 Yıl Mukavemet</span>
               </div>
-              <div className="flex items-center gap-2 bg-white border border-gray-300 p-3 rounded-lg shadow-sm">
-                <span className="text-[#15803D] font-black text-base">✓</span> Forklift & Kimyasal Dayanım
+              <div className="flex items-center gap-2.5 bg-white border border-gray-300 p-3 rounded-lg shadow-sm">
+                <span className="w-5 h-5 rounded bg-[#DCFCE7] text-[#15803D] flex items-center justify-center font-black text-xs flex-shrink-0">✓</span>
+                <span className="truncate">Forklift & Asit Dayanımı</span>
               </div>
-              <div className="flex items-center gap-2 bg-white border border-gray-300 p-3 rounded-lg shadow-sm">
-                <span className="text-[#15803D] font-black text-base">✓</span> Aynı Gün Sözleşmeli Teklif
+              <div className="flex items-center gap-2.5 bg-white border border-gray-300 p-3 rounded-lg shadow-sm">
+                <span className="w-5 h-5 rounded bg-[#DCFCE7] text-[#15803D] flex items-center justify-center font-black text-xs flex-shrink-0">✓</span>
+                <span className="truncate">Sabit Fiyat Sözleşmesi</span>
               </div>
             </div>
 

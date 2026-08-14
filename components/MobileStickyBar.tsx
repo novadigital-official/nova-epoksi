@@ -1,7 +1,7 @@
 'use client';
 
 // ═══════════════════════════════════════════════════════════
-// NOVA EPOKSI ANTALYA — HIGH-CONVERSION MOBILE STICKY BAR
+// NOVA EPOKSI ANTALYA — SAFE-AREA AWARE HIGH-CONVERSION MOBILE STICKY BAR
 // ═══════════════════════════════════════════════════════════
 
 import React, { useState, useEffect } from 'react';
@@ -16,15 +16,19 @@ export default function MobileStickyBar() {
   if (!mounted) return null;
 
   return (
-    <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#111827]/98 backdrop-blur-md p-2.5 border-t border-gray-800 shadow-2xl">
+    <div 
+      className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#111827]/98 backdrop-blur-md px-3 pt-2.5 border-t border-gray-800 shadow-2xl"
+      style={{ paddingBottom: 'calc(12px + env(safe-area-inset-bottom, 0px))' }}
+    >
       <div className="flex items-center gap-2 max-w-md mx-auto">
         {/* SOL BUTON (%38): Hızlı Ara */}
         <a
           href="tel:+905070871789"
           aria-label="Telefon ile Ara"
-          className="w-[38%] bg-[#1F2937] hover:bg-[#374151] text-white font-bold text-xs min-h-[48px] px-2 rounded-lg flex items-center justify-center gap-1 text-center border border-gray-700 transition-colors"
+          className="w-[38%] bg-[#1F2937] hover:bg-[#374151] active:bg-[#111827] text-white font-bold text-xs min-h-[46px] px-2 rounded-lg flex items-center justify-center gap-1.5 text-center border border-gray-700 transition-colors"
         >
-          <span>📞 0507 087 17 89</span>
+          <span className="text-sm">📞</span>
+          <span>0507 087 17 89</span>
         </a>
 
         {/* SAĞ BUTON (%62): Dominant Pulsing WhatsApp Butonu */}
@@ -33,9 +37,10 @@ export default function MobileStickyBar() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp Mühendis Hattı"
-          className="w-[62%] bg-[#F59E0B] hover:bg-[#D97706] text-[#111827] font-black text-xs min-h-[48px] px-3 rounded-lg flex items-center justify-center gap-1.5 text-center shadow-lg transition-transform active:scale-95 animate-pulse"
+          className="w-[62%] bg-[#F59E0B] hover:bg-[#D97706] active:scale-95 text-[#111827] font-black text-xs min-h-[46px] px-3 rounded-lg flex items-center justify-center gap-1.5 text-center shadow-lg transition-transform"
         >
-          <span>⚡ WhatsApp ile Keşif İste</span>
+          <span className="text-sm">⚡</span>
+          <span>WhatsApp Keşif İste</span>
         </a>
       </div>
     </div>
