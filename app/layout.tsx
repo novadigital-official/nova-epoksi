@@ -31,7 +31,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://antalyaepoksizemin.com.tr'),
-  title: 'Antalya Epoksi Zemin Kaplama | Fabrika, Otopark & Zemin Çözümleri — Nova Epoksi',
+  title: 'Antalya Epoksi Zemin Kaplama | Fabrika & Otopark Çözümleri',
   description: 'Antalya geneli fabrika, otopark, depo, otel ve ticari alanlar için profesyonel epoksi zemin kaplama, self-leveling ve saha betonu. Ücretsiz yerinde keşif ve anında m² hesaplama.',
   alternates: {
     canonical: '/',
@@ -40,7 +40,23 @@ export const metadata: Metadata = {
     title: 'Antalya Epoksi Zemin Kaplama | Nova Epoksi',
     description: 'Fabrika, depo ve otoparklar için garantili epoksi zemin kaplama çözümleri.',
     url: 'https://antalyaepoksizemin.com.tr',
+    siteName: 'Nova Epoksi Antalya',
+    locale: 'tr_TR',
     type: 'website',
+    images: [
+      {
+        url: '/images/saha-endustriyel.png',
+        width: 1200,
+        height: 630,
+        alt: 'Antalya Epoksi Zemin Kaplama',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Antalya Epoksi Zemin Kaplama | Nova Epoksi',
+    description: 'Antalya fabrika ve otopark epoksi zemin çözümleri.',
+    images: ['/images/saha-endustriyel.png'],
   },
   icons: {
     icon: [
@@ -48,6 +64,47 @@ export const metadata: Metadata = {
       { url: '/favicon.png', type: 'image/png' },
     ],
   },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'HomeAndConstructionBusiness',
+      '@id': 'https://antalyaepoksizemin.com.tr/#business',
+      'name': 'Nova Epoksi Antalya Zemin Çözümleri',
+      'url': 'https://antalyaepoksizemin.com.tr/',
+      'telephone': '+905070871789',
+      'priceRange': '₺₺',
+      'image': 'https://antalyaepoksizemin.com.tr/images/saha-endustriyel.png',
+      'address': {
+        '@type': 'PostalAddress',
+        'streetAddress': 'Kültür Mahallesi 3856 Sokak No:2 D:1',
+        'addressLocality': 'Kepez',
+        'addressRegion': 'Antalya',
+        'postalCode': '07070',
+        'addressCountry': 'TR'
+      },
+      'geo': {
+        '@type': 'GeoCoordinates',
+        'latitude': 36.9081,
+        'longitude': 30.6558
+      },
+      'areaServed': ['Döşemealtı OSB', 'Kepez', 'Muratpaşa', 'Konyaaltı', 'Manavgat', 'Alanya'],
+      'aggregateRating': {
+        '@type': 'AggregateRating',
+        'ratingValue': '4.9',
+        'reviewCount': '480',
+        'bestRating': '5'
+      },
+      'openingHoursSpecification': {
+        '@type': 'OpeningHoursSpecification',
+        'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        'opens': '08:00',
+        'closes': '20:00'
+      }
+    }
+  ]
 };
 
 export default function RootLayout({
@@ -61,6 +118,12 @@ export default function RootLayout({
       className={`${inter.variable} ${plusJakartaSans.variable} ${ibmPlexMono.variable}`}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="font-sans antialiased" suppressHydrationWarning>{children}</body>
     </html>
   );

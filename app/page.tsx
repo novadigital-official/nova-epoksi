@@ -319,11 +319,16 @@ export default function AntalyaEpoksiMasterSalesPage() {
             <a href="/dosemealti-epoksi" className="hover:text-[#F59E0B]">Döşemealtı OSB Hizmetleri</a>
           </div>
 
-          <div className="flex items-center justify-between text-[11px] text-gray-500 font-mono">
-            <span>© 2026 Antalya Nova Epoksi Zemin Çözümleri. Tüm Hakları Saklıdır.</span>
-            <a href="/admin/dashboard" className="text-gray-500 hover:text-gray-300 font-bold">
-              Yönetici Paneli
-            </a>
+          <div className="flex flex-col sm:flex-row items-center justify-between text-[11px] text-gray-500 font-mono gap-3 pt-4 border-t border-gray-800">
+            <span>© 2026 Antalya Nova Epoksi Zemin Çözümleri. Tüm Hakları Saklıdır. | Nova Digital İştiraki</span>
+            <div className="flex gap-4">
+              <span>Gizlilik Politikası</span>
+              <span>KVKK Aydınlatma Metni</span>
+              <span>Çerez Politikası</span>
+              <a href="/admin/dashboard" className="text-gray-500 hover:text-gray-300 font-bold">
+                Yönetici Paneli
+              </a>
+            </div>
           </div>
         </div>
       </footer>
