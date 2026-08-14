@@ -11,7 +11,7 @@ const publicSans = Public_Sans({
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin', 'latin-ext'],
-  weight: ['600', '700', '800'],
+  weight: ['500', '600', '700'],
   variable: '--font-heading',
   display: 'swap',
 });
