@@ -1,11 +1,25 @@
 import type { Metadata } from 'next';
-import { Plus_Jakarta_Sans } from 'next/font/google';
+import { Space_Grotesk, Public_Sans, IBM_Plex_Mono } from 'next/font/google';
 import '../style.css';
 
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
+const publicSans = Public_Sans({
+  subsets: ['latin', 'latin-ext'],
+  weight: ['400', '500', '600', '700', '800'],
   variable: '--font-sans',
+  display: 'swap',
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin', 'latin-ext'],
+  weight: ['600', '700', '800'],
+  variable: '--font-heading',
+  display: 'swap',
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ['latin', 'latin-ext'],
+  weight: ['500', '600', '700'],
+  variable: '--font-mono',
   display: 'swap',
 });
 
@@ -36,7 +50,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="tr" className={jakarta.variable} suppressHydrationWarning>
+    <html
+      lang="tr"
+      className={`${publicSans.variable} ${spaceGrotesk.variable} ${ibmPlexMono.variable}`}
+      suppressHydrationWarning
+    >
       <body className="font-sans antialiased" suppressHydrationWarning>{children}</body>
     </html>
   );
