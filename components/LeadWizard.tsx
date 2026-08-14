@@ -118,19 +118,19 @@ export default function LeadWizard({ defaultSource = 'GOOGLE_ADS' }: { defaultSo
           <form onSubmit={handleSubmit} className="space-y-3.5">
             {/* 1. Tesis / Zemin Türü */}
             <div>
-              <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-gray-600 mb-1.5">
+              <label className="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1.5">
                 1. Tesis & Zemin Tipi
               </label>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                 {SERVICE_TYPE_OPTIONS.map((srv) => (
                   <button
                     key={srv.name}
                     type="button"
                     onClick={() => setSelectedService(srv.name)}
-                    className={`py-2 px-2.5 rounded text-left transition-all border text-xs cursor-pointer ${
+                    className={`py-2.5 px-3 rounded-lg text-left transition-all border text-xs cursor-pointer ${
                       selectedService === srv.name
-                        ? 'bg-[#1A1C20] text-white border-[#1A1C20] font-bold shadow-sm'
-                        : 'bg-gray-50 text-gray-700 border-gray-200 hover:border-gray-400 font-medium'
+                        ? 'bg-[#111827] text-white border-[#111827] font-bold shadow-sm'
+                        : 'bg-gray-50 text-gray-800 border-gray-300 hover:border-gray-500 font-semibold'
                     }`}
                   >
                     <div className="truncate">{srv.name}</div>
@@ -141,19 +141,19 @@ export default function LeadWizard({ defaultSource = 'GOOGLE_ADS' }: { defaultSo
 
             {/* 2. Metrekare Büyüklüğü */}
             <div>
-              <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-gray-600 mb-1.5">
+              <label className="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1.5">
                 2. Yaklaşık Metrekare (m²)
               </label>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 {SQUARE_METER_OPTIONS.map((sqm) => (
                   <button
                     key={sqm.label}
                     type="button"
                     onClick={() => setSelectedSqM(sqm.label)}
-                    className={`py-2 px-2 rounded text-center transition-all border font-mono text-xs cursor-pointer ${
+                    className={`py-2.5 px-2 rounded-lg text-center transition-all border text-xs cursor-pointer ${
                       selectedSqM === sqm.label
-                        ? 'bg-[#1A1C20] text-[#F4B400] border-[#1A1C20] font-bold shadow-sm'
-                        : 'bg-gray-50 text-gray-700 border-gray-200 hover:border-gray-400'
+                        ? 'bg-[#111827] text-[#F59E0B] border-[#111827] font-bold shadow-sm'
+                        : 'bg-gray-50 text-gray-800 border-gray-300 hover:border-gray-500 font-semibold'
                     }`}
                   >
                     <div className="font-bold">{sqm.label}</div>
@@ -164,13 +164,13 @@ export default function LeadWizard({ defaultSource = 'GOOGLE_ADS' }: { defaultSo
 
             {/* 3. Lokasyon */}
             <div>
-              <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-gray-600 mb-1">
+              <label className="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1.5">
                 3. Tesis Konumu (Antalya)
               </label>
               <select
                 value={selectedLocation}
                 onChange={(e) => setSelectedLocation(e.target.value)}
-                className="w-full h-9 rounded border border-gray-300 px-2.5 text-xs bg-gray-50 text-gray-800 font-medium outline-none focus:border-[#1A1C20]"
+                className="w-full h-10 rounded-lg border border-gray-300 px-3 text-xs bg-gray-50 text-gray-900 font-semibold outline-none focus:border-[#111827]"
               >
                 {ANTALYA_LOCATIONS.map((loc) => (
                   <option key={loc} value={loc}>
@@ -181,11 +181,11 @@ export default function LeadWizard({ defaultSource = 'GOOGLE_ADS' }: { defaultSo
             </div>
 
             {/* DYNAMIC ESTIMATED STARTING SPEC ROW */}
-            <div className="bg-[#F4F5F7] border border-gray-200 p-2.5 rounded flex items-center justify-between">
-              <span className="text-[11px] font-medium text-gray-600">
+            <div className="bg-[#F8FAFC] border border-gray-300 p-3 rounded-lg flex items-center justify-between">
+              <span className="text-xs font-bold text-gray-800">
                 Seçilen Sistem Birim Başlangıç:
               </span>
-              <span className="font-mono text-xs font-black text-[#1A1C20] bg-white px-2 py-0.5 border border-gray-300 rounded">
+              <span className="font-mono text-xs font-black text-[#111827] bg-white px-2.5 py-1 border border-gray-300 rounded-md">
                 {currentEstimatedPrice}
               </span>
             </div>
@@ -198,7 +198,7 @@ export default function LeadWizard({ defaultSource = 'GOOGLE_ADS' }: { defaultSo
                   placeholder="Yetkili Adı Soyadı *"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full h-10 rounded border border-gray-300 px-3 text-xs text-gray-900 bg-white placeholder:text-gray-400 outline-none focus:border-[#1A1C20]"
+                  className="w-full h-11 rounded-lg border border-gray-300 px-3 text-xs font-semibold text-gray-900 bg-white placeholder:text-gray-400 outline-none focus:border-[#111827]"
                   required
                 />
               </div>
@@ -208,14 +208,14 @@ export default function LeadWizard({ defaultSource = 'GOOGLE_ADS' }: { defaultSo
                   placeholder="Telefon Numarası *"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full h-10 rounded border border-gray-300 px-3 text-xs text-gray-900 bg-white placeholder:text-gray-400 outline-none focus:border-[#1A1C20]"
+                  className="w-full h-11 rounded-lg border border-gray-300 px-3 text-xs font-semibold text-gray-900 bg-white placeholder:text-gray-400 outline-none focus:border-[#111827]"
                   required
                 />
               </div>
             </div>
 
             {errorMsg && (
-              <div className="text-red-600 text-[11px] font-bold text-center">
+              <div className="text-red-600 text-xs font-bold text-center">
                 {errorMsg}
               </div>
             )}
@@ -224,7 +224,7 @@ export default function LeadWizard({ defaultSource = 'GOOGLE_ADS' }: { defaultSo
             <button
               type="submit"
               disabled={isPending}
-              className="w-full bg-[#F4B400] hover:bg-[#DDA200] text-[#1A1C20] font-black h-11 rounded text-xs uppercase tracking-wider transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
+              className="w-full bg-[#F59E0B] hover:bg-[#D97706] text-[#111827] font-black h-12 rounded-lg text-xs uppercase tracking-wider transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
             >
               {isPending ? (
                 <span>Kayıt Açılıyor...</span>

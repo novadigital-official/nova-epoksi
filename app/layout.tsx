@@ -1,15 +1,15 @@
 import type { Metadata } from 'next';
-import { Archivo, Public_Sans, IBM_Plex_Mono } from 'next/font/google';
+import { Inter, Plus_Jakarta_Sans, IBM_Plex_Mono } from 'next/font/google';
 import '../style.css';
 
-const publicSans = Public_Sans({
+const inter = Inter({
   subsets: ['latin', 'latin-ext'],
   weight: ['400', '500', '600', '700', '800'],
   variable: '--font-sans',
   display: 'swap',
 });
 
-const archivo = Archivo({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin', 'latin-ext'],
   weight: ['600', '700', '800'],
   variable: '--font-heading',
@@ -18,7 +18,7 @@ const archivo = Archivo({
 
 const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin', 'latin-ext'],
-  weight: ['500', '600', '700'],
+  weight: ['600', '700'],
   variable: '--font-mono',
   display: 'swap',
 });
@@ -52,7 +52,7 @@ export default function RootLayout({
   return (
     <html
       lang="tr"
-      className={`${publicSans.variable} ${archivo.variable} ${ibmPlexMono.variable}`}
+      className={`${inter.variable} ${plusJakartaSans.variable} ${ibmPlexMono.variable}`}
       suppressHydrationWarning
     >
       <body className="font-sans antialiased" suppressHydrationWarning>{children}</body>

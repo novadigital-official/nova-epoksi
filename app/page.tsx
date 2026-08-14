@@ -24,43 +24,43 @@ export default function AntalyaEpoksiMasterSalesPage() {
               <span>ANTALYA & OSB SANAYİ ZEMİN ŞARTNAMESİ</span>
             </div>
             
-            <h1 className="text-3xl sm:text-5xl font-black text-[#1A1C20] leading-tight mb-4 tracking-tight">
-              Fabrika, Depo ve Tesisler İçin <span className="text-[#1A1C20] underline decoration-[#F4B400] decoration-4">Yüksek Mukavemetli</span> Epoksi Zemin Çözümleri
+            <h1 className="text-3xl sm:text-5xl font-extrabold text-[#111827] leading-tight mb-4 tracking-tight">
+              Fabrika, Depo ve Tesisler İçin <span className="text-[#111827] underline decoration-[#F59E0B] decoration-4">Yüksek Mukavemetli</span> Epoksi Zemin Çözümleri
             </h1>
             
-            <p className="text-gray-700 text-base sm:text-lg mb-5 font-medium leading-relaxed max-w-2xl">
+            <p className="text-gray-800 text-base sm:text-lg mb-6 font-semibold leading-relaxed max-w-2xl">
               Antalya Organize Sanayi Bölgesi ve ticari işletmeler için lazerli nem analizi, elmas silim zemin hazırlığı ve ağır tonaj dayanımlı çok katmanlı epoksi uygulamaları.
             </p>
 
             {/* 4 Sade Endüstriyel Şartname Kutusu */}
-            <div className="grid grid-cols-2 gap-2.5 mb-6 text-xs font-bold text-[#1A1C20]">
-              <div className="flex items-center gap-2 bg-white border border-gray-300 p-3 rounded shadow-sm">
-                <span className="text-[#2F7A4D] font-black font-mono">✓</span> Lazerli Nem & Zemin Analizi
+            <div className="grid grid-cols-2 gap-3 mb-6 text-sm font-bold text-[#111827]">
+              <div className="flex items-center gap-2 bg-white border border-gray-300 p-3.5 rounded-lg shadow-sm">
+                <span className="text-[#15803D] font-black text-base">✓</span> Lazerli Nem & Zemin Analizi
               </div>
-              <div className="flex items-center gap-2 bg-white border border-gray-300 p-3 rounded shadow-sm">
-                <span className="text-[#2F7A4D] font-black font-mono">✓</span> 10 Yıl Sistem Mukavemeti
+              <div className="flex items-center gap-2 bg-white border border-gray-300 p-3.5 rounded-lg shadow-sm">
+                <span className="text-[#15803D] font-black text-base">✓</span> 10 Yıl Sistem Mukavemeti
               </div>
-              <div className="flex items-center gap-2 bg-white border border-gray-300 p-3 rounded shadow-sm">
-                <span className="text-[#2F7A4D] font-black font-mono">✓</span> Forklift & Kimyasal Dayanım
+              <div className="flex items-center gap-2 bg-white border border-gray-300 p-3.5 rounded-lg shadow-sm">
+                <span className="text-[#15803D] font-black text-base">✓</span> Forklift & Kimyasal Dayanım
               </div>
-              <div className="flex items-center gap-2 bg-white border border-gray-300 p-3 rounded shadow-sm">
-                <span className="text-[#2F7A4D] font-black font-mono">✓</span> Aynı Gün Teknik Şartname
+              <div className="flex items-center gap-2 bg-white border border-gray-300 p-3.5 rounded-lg shadow-sm">
+                <span className="text-[#15803D] font-black text-base">✓</span> Aynı Gün Teknik Şartname
               </div>
             </div>
 
-            {/* NET GÖRSEL HİYERARŞİ: 1. SARI WHATSAPP + 2. ANTRASİT ŞARTNAME BUTONU */}
+            {/* NET GÖRSEL HİYERARŞİ */}
             <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href="https://wa.me/905070871789?text=Merhaba,%20Antalya%20epoksi%20zemin%20şartnamesi%20ve%20keşif%20istiyorum."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#F4B400] hover:bg-[#DDA200] text-[#1A1C20] font-black px-6 py-3.5 min-h-[48px] rounded text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md cursor-pointer transition-transform active:scale-95"
+                className="bg-[#F59E0B] hover:bg-[#D97706] text-[#111827] font-black px-6 py-4 min-h-[50px] rounded-lg text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-md cursor-pointer transition-transform active:scale-95"
               >
                 <span>Mühendis ile WhatsApp'tan Görüş</span>
               </a>
               <a
                 href="#fiyatlar"
-                className="bg-[#1A1C20] hover:bg-[#24262B] text-white border border-[#1A1C20] font-bold px-6 py-3.5 min-h-[48px] rounded text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors"
+                className="bg-[#111827] hover:bg-[#1F2937] text-white border-2 border-[#111827] font-extrabold px-6 py-4 min-h-[50px] rounded-lg text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-colors"
               >
                 <span>Fiyat & Şartname Listesi ↗</span>
               </a>
