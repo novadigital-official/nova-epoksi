@@ -2,8 +2,18 @@ import type { Metadata } from 'next';
 import '../style.css';
 
 export const metadata: Metadata = {
-  title: 'Nova Epoksi Antalya — Dayanıklı Zemin Kaplama Çözümleri',
-  description: 'Fabrika, depo, otopark ve otel alanları için dayanıklı epoksi zemin kaplama. Ücretsiz yerinde keşif ve şeffaf fiyatlandırma.',
+  metadataBase: new URL('https://antalyaepoksizemin.com.tr'),
+  title: 'Antalya Epoksi Zemin Kaplama | Fabrika, Otopark & Zemin Çözümleri — Nova Epoksi',
+  description: 'Antalya geneli fabrika, otopark, depo, otel ve ticari alanlar için profesyonel epoksi zemin kaplama, self-leveling ve saha betonu. Ücretsiz yerinde keşif ve anında m² hesaplama.',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Antalya Epoksi Zemin Kaplama | Nova Epoksi',
+    description: 'Fabrika, depo ve otoparklar için garantili epoksi zemin kaplama çözümleri.',
+    url: 'https://antalyaepoksizemin.com.tr',
+    type: 'website',
+  },
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
