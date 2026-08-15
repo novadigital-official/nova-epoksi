@@ -15,9 +15,9 @@ export default function Navbar() {
         {/* LOGO */}
         <a href="/" className="flex items-center gap-2.5 group">
           <img
-            src="/images/logo.jpg"
+            src="/images/logo.png"
             alt="Nova Epoksi Logo"
-            className="w-10 h-10 rounded-lg object-cover border border-[#F4B400]/40 shadow-sm"
+            className="w-10 h-10 rounded-lg object-contain bg-black p-0.5 border border-[#F4B400]/60 shadow-sm"
           />
           <div>
             <span className="font-extrabold text-base text-white block leading-none tracking-tight">
