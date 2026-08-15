@@ -14,9 +14,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex items-center justify-between">
         {/* LOGO */}
         <a href="/" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 bg-[#F4B400] text-[#1A1C20] font-black rounded flex items-center justify-center text-base shadow-sm font-mono">
-            E
-          </div>
+          <img
+            src="/images/logo.jpg"
+            alt="Nova Epoksi Logo"
+            className="w-10 h-10 rounded-lg object-cover border border-[#F4B400]/40 shadow-sm"
+          />
           <div>
             <span className="font-extrabold text-base text-white block leading-none tracking-tight">
               ANTALYA<span className="text-[#F4B400]">EPOKSİ</span>
