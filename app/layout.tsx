@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
-import { Inter, Plus_Jakarta_Sans, IBM_Plex_Mono } from 'next/font/google';
+import { Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
 import '../style.css';
 
 export const viewport: Viewport = {
@@ -9,23 +9,16 @@ export const viewport: Viewport = {
   viewportFit: 'cover',
 };
 
-const inter = Inter({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin', 'latin-ext'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700', '800'],
   variable: '--font-sans',
   display: 'swap',
 });
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const jetbrains = JetBrains_Mono({
   subsets: ['latin', 'latin-ext'],
-  weight: ['600', '700', '800'],
-  variable: '--font-heading',
-  display: 'swap',
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-  subsets: ['latin', 'latin-ext'],
-  weight: ['500', '600', '700'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-mono',
   display: 'swap',
 });
@@ -106,7 +99,7 @@ export default function RootLayout({
   return (
     <html
       lang="tr"
-      className={`${inter.variable} ${plusJakartaSans.variable} ${ibmPlexMono.variable}`}
+      className={`${jakarta.variable} ${jetbrains.variable}`}
       suppressHydrationWarning
     >
       <head>
@@ -127,7 +120,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-sans antialiased bg-[#F8FAFC] text-[#0F172A] selection:bg-[#F59E0B] selection:text-[#0F172A]" suppressHydrationWarning>
+      <body className="font-sans antialiased bg-[#F8FAFC] text-slate-900 selection:bg-amber-500 selection:text-slate-950 min-h-screen relative overflow-x-hidden" suppressHydrationWarning>
         {children}
       </body>
     </html>
