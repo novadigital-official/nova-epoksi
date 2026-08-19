@@ -12,7 +12,7 @@ import MobileStickyBar from '../components/MobileStickyBar';
 
 export default function AntalyaEpoksiMasterSalesPage() {
   return (
-    <main className="min-h-screen bg-[#F8FAFC] text-[#111827] font-sans selection:bg-[#F59E0B] selection:text-[#111827] relative pb-28 md:pb-0">
+    <main className="min-h-screen bg-[#F8FAFC] text-[#0F172A] font-sans selection:bg-[#F59E0B] selection:text-[#0F172A] relative pb-12 md:pb-0">
       {/* 1. SCARCITY & URGENCY TOP BAR */}
       <div className="bg-[#111827] text-white py-1.5 px-3 text-center text-xs font-mono border-b border-gray-800">
         <div className="max-w-7xl mx-auto flex items-center justify-center gap-1.5 flex-wrap">

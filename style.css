@@ -3,36 +3,34 @@
 @tailwind utilities;
 
 /* ═══════════════════════════════════════════════════════════
-   ANTALYA NOVA EPOKSI — ULTRA-LEGIBLE CORPORATE DESIGN SYSTEM (2026)
-   Typography: Plus Jakarta Sans (Headings, 700-800) + Inter (Body, 500-600) + IBM Plex Mono (Prices/Metrics)
-   Color: High-Contrast Charcoal (#111827), Industrial Amber/Yellow (#F59E0B), Concrete Canvas (#F8FAFC)
+   ANTALYA NOVA EPOKSI — ULTRA-PREMIUM MODERN DESIGN SYSTEM (2026)
+   Inspired by Nova Digital aesthetic:
+   - Deep obsidian slate surfaces (#0B1120, #0F172A)
+   - Luminous pearl white cards (#FFFFFF) with crisp borders (#E2E8F0)
+   - Industrial safety amber/gold accents (#F59E0B, #D97706)
+   - Plus Jakarta Sans + Inter typography with tight tracking
    ═══════════════════════════════════════════════════════════ */
 
 :root {
-    /* High-Contrast Palette */
-    --color-graphite: #111827;
-    --color-graphite-dark: #0B0F17;
-    --color-graphite-light: #1F2937;
+    --color-graphite: #0F172A;
+    --color-graphite-dark: #020617;
+    --color-graphite-light: #1E293B;
     
-    /* Safety Yellow / Amber Accent */
     --color-safety-yellow: #F59E0B;
     --color-safety-yellow-hover: #D97706;
     --color-safety-yellow-light: #FEF3C7;
     
-    /* Industrial Emerald / Safe Operation */
-    --color-ind-green: #15803D;
-    --color-ind-green-light: #DCFCE7;
+    --color-ind-green: #10B981;
+    --color-ind-green-light: #D1FAE5;
     
-    /* Crisp Canvas & Surfaces */
     --color-concrete-bg: #F8FAFC;
     --color-surface-white: #FFFFFF;
-    --color-border-steel: #D1D5DB;
-    --color-border-light: #E5E7EB;
+    --color-border-steel: #E2E8F0;
+    --color-border-light: #F1F5F9;
     
-    /* Typography & Extreme Contrast */
-    --color-text-main: #111827;
-    --color-text-sub: #374151;
-    --color-text-muted: #4B5563;
+    --color-text-main: #0F172A;
+    --color-text-sub: #334155;
+    --color-text-muted: #64748B;
     
     --font-sans: var(--font-sans), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-heading: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
@@ -58,13 +56,13 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Headings: Thick, Bold & High Contrast */
+/* Headings: Bold, Crisp & Modern Tracking */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     letter-spacing: -0.025em;
     font-weight: 800;
     color: var(--color-graphite);
-    line-height: 1.3;
+    line-height: 1.25;
 }
 
 p {
@@ -76,54 +74,83 @@ p {
     font-family: var(--font-mono);
 }
 
-/* Metric Dashboard Card */
+/* Ultra-Modern Metric Card */
 .metric-dash-card {
     background: #FFFFFF;
-    border: 1.5px solid var(--color-border-steel);
-    border-top: 4px solid var(--color-graphite);
-    border-radius: 8px;
-    padding: 22px;
+    border: 1px solid var(--color-border-steel);
+    border-radius: 16px;
+    padding: 24px;
     text-align: left;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .metric-dash-card:hover {
-    border-top-color: var(--color-safety-yellow);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    border-color: #F59E0B;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px -6px rgba(245, 158, 11, 0.15);
+}
+
+/* Modern Pill Badges */
+.badge-modern {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
 }
 
 /* Buttons */
 .btn-industrial-yellow {
-    background: var(--color-safety-yellow);
-    color: #111827;
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+    color: #0F172A;
     font-family: var(--font-heading);
     font-weight: 800;
-    border-radius: 6px;
+    border-radius: 12px;
     box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-industrial-yellow:hover {
-    background: var(--color-safety-yellow-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(245, 158, 11, 0.5);
+    box-shadow: 0 8px 22px rgba(245, 158, 11, 0.45);
 }
 
 .btn-industrial-outline {
     background: transparent;
     color: var(--color-graphite);
-    border: 2px solid var(--color-graphite);
+    border: 1.5px solid #CBD5E1;
     font-family: var(--font-heading);
-    font-weight: 800;
-    border-radius: 6px;
+    font-weight: 700;
+    border-radius: 12px;
     transition: all 0.2s ease;
 }
 
 .btn-industrial-outline:hover {
-    background: var(--color-graphite);
+    background: #0F172A;
     color: #FFFFFF;
+    border-color: #0F172A;
+}
+
+/* Slim scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
 }
 
 @media (max-width: 768px) {
