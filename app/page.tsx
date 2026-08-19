@@ -4,9 +4,9 @@ import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import TrustBadges from '../components/TrustBadges';
 import TeklifHesaplayici from '../components/TeklifHesaplayici';
 import EpoksiTeknikSurec from '../components/EpoksiTeknikSurec';
-import CorporateReferences from '../components/CorporateReferences';
 import BitirdigimizIsler from '../components/BitirdigimizIsler';
 import FiyatStratejisi2026 from '../components/FiyatStratejisi2026';
+import FAQSection from '../components/FAQSection';
 import FloatingActionWidget from '../components/FloatingActionWidget';
 
 export default function AntalyaEpoksiMasterSalesPage() {
@@ -139,20 +139,25 @@ export default function AntalyaEpoksiMasterSalesPage() {
         </div>
       </section>
 
-      {/* 5. SEKTÖREL KULLANIM ALANLARI (FOTOĞRAFLI KARTLAR) */}
-      <section className="py-12 sm:py-16 bg-white border-y border-slate-200/90">
+      {/* 5. TAMAMLANAN SAHA PROJELERİ & REFERANSLAR (TEK VE ZENGİN GALERİ BÖLÜMÜ) */}
+      <section id="isler" className="py-12 sm:py-16 bg-white border-y border-slate-200/90">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CorporateReferences />
+          <BitirdigimizIsler />
         </div>
       </section>
 
-      {/* 6. 2026 ANTALYA ENDÜSTRİYEL SPEC VE FİYAT MATRİSİ */}
+      {/* 6. ÖNCE / SONRA CANLI DÖNÜŞÜM SÜRGÜSÜ */}
       <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <BeforeAfterSlider />
+      </section>
+
+      {/* 7. 2026 ANTALYA ENDÜSTRİYEL SPEC VE FİYAT MATRİSİ */}
+      <section id="fiyatlar" className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/90">
         <FiyatStratejisi2026 />
       </section>
 
-      {/* 7. MID-PAGE GERİLLA DÖNÜŞÜM KUTUSU */}
-      <section className="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* 8. MID-PAGE GERİLLA DÖNÜŞÜM KUTUSU */}
+      <section className="py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-to-br from-[#0B1120] via-[#0F172A] to-[#1E293B] text-white rounded-3xl p-6 sm:p-10 border border-amber-500/30 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
           <div className="space-y-2 relative z-10">
             <span className="inline-block px-3 py-1 rounded-full bg-amber-400 text-slate-950 font-heading text-xs font-black uppercase tracking-wider">
@@ -176,7 +181,7 @@ export default function AntalyaEpoksiMasterSalesPage() {
         </div>
       </section>
 
-      {/* 8. BİZ VS STANDART USTALAR (GÜVEN VE KARŞILAŞTIRMA MATRİSİ) */}
+      {/* 9. BİZ VS STANDART USTALAR (GÜVEN VE KARŞILAŞTIRMA MATRİSİ) */}
       <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/90">
         <div className="text-center max-w-3xl mx-auto space-y-2 mb-8 sm:mb-10">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-heading font-extrabold bg-amber-50 text-amber-900 border border-amber-200 uppercase tracking-wider">
@@ -241,7 +246,17 @@ export default function AntalyaEpoksiMasterSalesPage() {
         </div>
       </section>
 
-      {/* 9. GERÇEK MÜŞTERİ DEĞERLENDİRMELERİ */}
+      {/* 10. TEKNİK UYGULAMA SÜRECİ */}
+      <section id="hizmetler" className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/90">
+        <EpoksiTeknikSurec />
+      </section>
+
+      {/* 11. İNTERAKTİF HESAPLAMA MOTORU */}
+      <section id="hesaplayici" className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/90">
+        <TeklifHesaplayici />
+      </section>
+
+      {/* 12. GERÇEK MÜŞTERİ DEĞERLENDİRMELERİ */}
       <section className="py-12 sm:py-16 bg-white border-t border-slate-200/90">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="text-center max-w-3xl mx-auto space-y-2">
@@ -290,24 +305,9 @@ export default function AntalyaEpoksiMasterSalesPage() {
         </div>
       </section>
 
-      {/* 10. TAMAMLANAN UYGULAMA ÖRNEKLERİ */}
+      {/* 13. SIKÇA SORULAN SORULAR (FAQ) */}
       <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/90">
-        <BitirdigimizIsler />
-      </section>
-
-      {/* 11. TEKNİK UYGULAMA SÜRECİ */}
-      <section id="hizmetler" className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/90">
-        <EpoksiTeknikSurec />
-      </section>
-
-      {/* 12. ÖNCE / SONRA DÖNÜŞÜM SÜRGÜSÜ */}
-      <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/90">
-        <BeforeAfterSlider />
-      </section>
-
-      {/* 13. İNTERAKTİF HESAPLAMA MOTORU */}
-      <section id="hesaplayici" className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/90">
-        <TeklifHesaplayici />
+        <FAQSection />
       </section>
 
       {/* 14. SERTİFİKA VE GÜVEN ROZETLERİ */}
@@ -318,7 +318,7 @@ export default function AntalyaEpoksiMasterSalesPage() {
       {/* 15. UNIFIED FLOATING ACTION WIDGET */}
       <FloatingActionWidget />
 
-      {/* 16. FOOTER (SITS FLUSH AT THE BOTTOM WITH ZERO WHITE GAP) */}
+      {/* 16. FOOTER */}
       <footer className="bg-[#0B1120] text-slate-400 py-10 sm:py-12 text-xs border-t border-slate-800 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 border-b border-slate-800 pb-6">
