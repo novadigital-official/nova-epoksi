@@ -11,7 +11,7 @@ export const viewport: Viewport = {
 
 const inter = Inter({
   subsets: ['latin', 'latin-ext'],
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-sans',
   display: 'swap',
 });
@@ -25,28 +25,28 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin', 'latin-ext'],
-  weight: ['600', '700'],
+  weight: ['500', '600', '700'],
   variable: '--font-mono',
   display: 'swap',
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://antalyaepoksizemin.com.tr'),
-  title: 'Antalya Epoksi Zemin Kaplama | Fabrika & Otopark Çözümleri',
-  description: 'Antalya geneli fabrika, otopark, depo, otel ve ticari alanlar için profesyonel epoksi zemin kaplama, self-leveling ve saha betonu. Ücretsiz yerinde keşif ve anında m² hesaplama.',
+  title: 'Antalya Epoksi Zemin Kaplama | Fabrika & Endüstriyel Zemin Sistemleri',
+  description: 'Antalya OSB ve tüm ilçelerde fabrika, otopark, depo ve oteller için garantili epoksi zemin kaplama, self-leveling ve elmas silim zemin hazırlığı. Ücretsiz yerinde lazerli keşif.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'Antalya Epoksi Zemin Kaplama | Nova Epoksi',
-    description: 'Fabrika, depo ve otoparklar için garantili epoksi zemin kaplama çözümleri.',
+    description: 'Fabrika, depo ve otoparklar için yüksek mukavemetli endüstriyel epoksi zemin çözümleri.',
     url: 'https://antalyaepoksizemin.com.tr',
     siteName: 'Nova Epoksi Antalya',
     locale: 'tr_TR',
     type: 'website',
     images: [
       {
-        url: '/images/saha-endustriyel.png',
+        url: '/images/real-factory.jpg',
         width: 1200,
         height: 630,
         alt: 'Antalya Epoksi Zemin Kaplama',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Antalya Epoksi Zemin Kaplama | Nova Epoksi',
     description: 'Antalya fabrika ve otopark epoksi zemin çözümleri.',
-    images: ['/images/saha-endustriyel.png'],
+    images: ['/images/real-factory.jpg'],
   },
   verification: {
     google: 'google683b96f9e18d1ed7',
@@ -80,32 +80,19 @@ const jsonLd = {
       'url': 'https://antalyaepoksizemin.com.tr/',
       'telephone': '+905070871789',
       'priceRange': '₺₺',
-      'image': 'https://antalyaepoksizemin.com.tr/images/saha-endustriyel.png',
+      'image': 'https://antalyaepoksizemin.com.tr/images/real-factory.jpg',
       'address': {
         '@type': 'PostalAddress',
-        'streetAddress': 'Kültür Mahallesi 3856 Sokak No:2 D:1',
         'addressLocality': 'Kepez',
         'addressRegion': 'Antalya',
-        'postalCode': '07070',
         'addressCountry': 'TR'
       },
-      'geo': {
-        '@type': 'GeoCoordinates',
-        'latitude': 36.9081,
-        'longitude': 30.6558
-      },
-      'areaServed': ['Döşemealtı OSB', 'Kepez', 'Muratpaşa', 'Konyaaltı', 'Manavgat', 'Alanya'],
+      'areaServed': ['Antalya', 'Döşemealtı OSB', 'Kepez', 'Muratpaşa', 'Konyaaltı', 'Manavgat', 'Alanya'],
       'aggregateRating': {
         '@type': 'AggregateRating',
         'ratingValue': '4.9',
         'reviewCount': '480',
         'bestRating': '5'
-      },
-      'openingHoursSpecification': {
-        '@type': 'OpeningHoursSpecification',
-        'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        'opens': '08:00',
-        'closes': '20:00'
       }
     }
   ]
@@ -140,7 +127,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-sans antialiased" suppressHydrationWarning>{children}</body>
+      <body className="font-sans antialiased bg-[#F8FAFC] text-[#0F172A] selection:bg-[#F59E0B] selection:text-[#0F172A]" suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }

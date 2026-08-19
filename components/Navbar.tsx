@@ -1,7 +1,7 @@
 'use client';
 
 // ═══════════════════════════════════════════════════════════
-// NOVA EPOKSI ANTALYA — INDUSTRIAL B2B NAVBAR
+// NOVA EPOKSI ANTALYA — ULTRA-PREMIUM B2B INDUSTRIAL NAVBAR
 // ═══════════════════════════════════════════════════════════
 
 import React, { useState } from 'react';
@@ -10,61 +10,62 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 h-16 bg-[#1A1C20]/95 backdrop-blur-md border-b border-gray-800 z-50 transition-all">
+    <nav className="fixed top-0 left-0 right-0 h-16 bg-[#0B1120]/95 backdrop-blur-xl border-b border-slate-800/80 z-50 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex items-center justify-between">
+        
         {/* LOGO */}
-        <a href="/" className="flex items-center gap-2.5 group">
-          <img
-            src="/images/logo.png"
-            alt="Nova Epoksi Logo"
-            className="w-10 h-10 rounded-lg object-contain bg-black p-0.5 border border-[#F4B400]/60 shadow-sm"
-          />
+        <a href="/" className="flex items-center gap-2.5 group select-none">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 p-0.5 flex items-center justify-center shadow-md shadow-amber-500/20">
+            <div className="w-full h-full bg-[#0B1120] rounded-[10px] flex items-center justify-center text-amber-400 font-heading font-black text-xs">
+              NE
+            </div>
+          </div>
           <div>
-            <span className="font-extrabold text-base text-white block leading-none tracking-tight">
-              ANTALYA<span className="text-[#F4B400]">EPOKSİ</span>
+            <span className="font-heading font-extrabold text-base sm:text-lg text-white block leading-none tracking-tight">
+              ANTALYA<span className="text-amber-400">EPOKSİ</span>
             </span>
-            <span className="text-[9px] text-gray-400 font-mono font-bold uppercase tracking-wider block mt-0.5">
+            <span className="text-[9px] text-slate-400 font-mono font-bold uppercase tracking-widest block mt-0.5">
               Endüstriyel Zemin Sistemleri
             </span>
           </div>
         </a>
 
         {/* DESKTOP NAV LINKS */}
-        <div className="hidden lg:flex items-center gap-6 text-xs font-bold text-gray-300">
-          <a href="/" className="hover:text-[#F4B400] transition-colors">
+        <div className="hidden lg:flex items-center gap-7 text-xs font-bold text-slate-300">
+          <a href="/" className="hover:text-amber-400 transition-colors">
             Ana Sayfa
           </a>
-          <a href="#fiyatlar" className="hover:text-[#F4B400] transition-colors">
+          <a href="#fiyatlar" className="hover:text-amber-400 transition-colors">
             Fiyat Şartnamesi
           </a>
-          <a href="#isler" className="hover:text-[#F4B400] transition-colors">
+          <a href="#isler" className="hover:text-amber-400 transition-colors">
             Saha Referansları
           </a>
-          <a href="#hizmetler" className="hover:text-[#F4B400] transition-colors">
+          <a href="#hizmetler" className="hover:text-amber-400 transition-colors">
             Uygulama Süreci
           </a>
-          <a href="#hesaplayici" className="hover:text-[#F4B400] transition-colors">
+          <a href="#hesaplayici" className="hover:text-amber-400 transition-colors">
             m² Hesaplayıcı
           </a>
         </div>
 
         {/* DESKTOP CTA BUTTONS */}
-        <div className="hidden sm:flex items-center gap-2.5">
+        <div className="hidden sm:flex items-center gap-3">
           <a
-            href="tel:+905070871789"
+            href="tel:05070871789"
             aria-label="Telefon ile ara 0507 087 17 89"
-            className="bg-[#24262B] hover:bg-[#34373E] text-white text-xs font-mono font-bold px-3.5 py-2 rounded border border-gray-700 transition-colors flex items-center gap-1.5"
+            className="bg-slate-900/90 hover:bg-slate-800 text-slate-200 text-xs font-mono font-bold px-3.5 py-2 rounded-xl border border-slate-700/80 transition-all flex items-center gap-1.5 shadow-2xs"
           >
-            <span>0507 087 17 89</span>
+            <span>📞 0507 087 17 89</span>
           </a>
           <a
-            href="https://wa.me/905070871789?text=Merhaba,%20Antalya%20epoksi%20fiyat%20teklifi%20ve%20keşif%20istiyorum."
+            href="https://wa.me/905070871789?text=Merhaba,%20Antalya%20epoksi%20fiyat%20teklifi%20ve%20ücretsiz%20keşif%20istiyorum."
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp'tan Keşif Al"
-            className="bg-[#F4B400] hover:bg-[#DDA200] text-[#1A1C20] font-black text-xs px-4 py-2 rounded transition-colors shadow-sm"
+            className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-heading font-black text-xs px-4 py-2 rounded-xl transition-all shadow-md shadow-amber-500/20 active:scale-98"
           >
-            <span>WhatsApp Mühendis</span>
+            <span>WhatsApp Keşif</span>
           </a>
         </div>
 
@@ -73,7 +74,7 @@ export default function Navbar() {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-expanded={mobileMenuOpen}
           aria-label="Mobil Menüyü Aç/Kapat"
-          className="lg:hidden p-2 text-gray-300 hover:text-white focus:outline-none"
+          className="lg:hidden p-2 text-slate-300 hover:text-white focus:outline-none"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {mobileMenuOpen ? (
@@ -87,27 +88,27 @@ export default function Navbar() {
 
       {/* MOBILE MENU DROPDOWN */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#1A1C20] border-b border-gray-800 px-4 pt-3 pb-6 space-y-3 animate-fadeIn text-xs font-bold text-gray-200">
-          <a href="/" onClick={() => setMobileMenuOpen(false)} className="block py-2 hover:text-[#F4B400] border-b border-gray-800">
+        <div className="lg:hidden bg-[#0B1120] border-b border-slate-800 px-4 pt-3 pb-6 space-y-3 animate-fadeIn text-xs font-bold text-slate-200 shadow-2xl">
+          <a href="/" onClick={() => setMobileMenuOpen(false)} className="block py-2 hover:text-amber-400 border-b border-slate-800">
             Ana Sayfa
           </a>
-          <a href="#fiyatlar" onClick={() => setMobileMenuOpen(false)} className="block py-2 hover:text-[#F4B400] border-b border-gray-800">
+          <a href="#fiyatlar" onClick={() => setMobileMenuOpen(false)} className="block py-2 hover:text-amber-400 border-b border-slate-800">
             Fiyat Şartnamesi
           </a>
-          <a href="#isler" onClick={() => setMobileMenuOpen(false)} className="block py-2 hover:text-[#F4B400] border-b border-gray-800">
+          <a href="#isler" onClick={() => setMobileMenuOpen(false)} className="block py-2 hover:text-amber-400 border-b border-slate-800">
             Saha Referansları
           </a>
-          <a href="#hizmetler" onClick={() => setMobileMenuOpen(false)} className="block py-2 hover:text-[#F4B400] border-b border-gray-800">
+          <a href="#hizmetler" onClick={() => setMobileMenuOpen(false)} className="block py-2 hover:text-amber-400 border-b border-slate-800">
             Uygulama Süreci
           </a>
-          <a href="#hesaplayici" onClick={() => setMobileMenuOpen(false)} className="block py-2 hover:text-[#F4B400] border-b border-gray-800">
+          <a href="#hesaplayici" onClick={() => setMobileMenuOpen(false)} className="block py-2 hover:text-amber-400 border-b border-slate-800">
             m² Hesaplayıcı
           </a>
 
           <div className="pt-2 grid grid-cols-2 gap-2">
             <a
-              href="tel:+905070871789"
-              className="bg-[#24262B] text-white font-bold py-2.5 px-3 rounded text-center border border-gray-700 font-mono text-[11px]"
+              href="tel:05070871789"
+              className="bg-slate-900 text-white font-bold py-2.5 px-3 rounded-xl text-center border border-slate-700 font-mono text-[11px]"
             >
               0507 087 17 89
             </a>
@@ -115,7 +116,7 @@ export default function Navbar() {
               href="https://wa.me/905070871789?text=Merhaba,%20Antalya%20epoksi%20fiyat%20teklifi%20ve%20keşif%20istiyorum."
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#F4B400] text-[#1A1C20] font-black py-2.5 px-3 rounded text-center text-xs"
+              className="bg-amber-500 text-slate-950 font-black py-2.5 px-3 rounded-xl text-center text-xs"
             >
               WhatsApp Keşif
             </a>

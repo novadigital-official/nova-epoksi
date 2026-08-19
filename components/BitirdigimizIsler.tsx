@@ -25,7 +25,7 @@ const COMPLETED_SIX_PROJECTS: ProjectItem[] = [
     location: 'Antalya / Döşemealtı OSB',
     squareMeters: '2.500 m²',
     system: 'Self-Leveling Epoksi',
-    image: '/images/saha-endustriyel.png',
+    image: '/images/real-factory.jpg',
     description: 'Ağır sanayi üretim alanı için tozumaz, pürüzsüz ve gıda standartlarına uygun epoksi zemin kaplaması.'
   },
   {
@@ -45,7 +45,7 @@ const COMPLETED_SIX_PROJECTS: ProjectItem[] = [
     location: 'Antalya / Lara',
     squareMeters: '450 m²',
     system: 'Metalik Efekt Epoksi',
-    image: '/images/saha-otel.png',
+    image: '/images/real-hotel.jpg',
     description: 'Mermer görünümüne sahip, yüksek reflektif ve estetik hotel lobi zemin kaplaması.'
   },
   {
@@ -75,7 +75,7 @@ const COMPLETED_SIX_PROJECTS: ProjectItem[] = [
     location: 'Döşemealtı OSB',
     squareMeters: '3.500 m²',
     system: 'Ağır Yük Multilayer Epoksi',
-    image: '/images/saha-depo.png',
+    image: '/images/real-garage.jpg',
     description: 'Forklift ve araç trafiğine dayanıklı, beton tozumasını tamamen kesen zemin kaplaması.'
   }
 ];
@@ -90,30 +90,30 @@ export default function BitirdigimizIsler() {
     : COMPLETED_SIX_PROJECTS.filter(p => p.category === selectedFilter || p.category.includes(selectedFilter));
 
   return (
-    <div id="isler" className="w-full space-y-6">
+    <div id="isler" className="w-full space-y-8">
       {/* Header */}
-      <div className="text-left border-b border-gray-300 pb-4">
-        <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded text-[11px] font-mono font-bold bg-[#1A1C20] text-[#F4B400] mb-2 uppercase tracking-wider">
-          SAHA UYGULAMA RAPORLARI
+      <div className="text-center max-w-3xl mx-auto space-y-2">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-heading font-extrabold bg-amber-50 text-amber-900 border border-amber-200 uppercase tracking-wider">
+          <span>📸 Canlı Saha Raporları</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1A1C20] tracking-tight">
-          Tamamlanan Endüstriyel Saha Referansları
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-extrabold text-slate-900 tracking-tight">
+          Tamamlanan Endüstriyel Saha Projelerimiz
         </h2>
-        <p className="text-xs sm:text-sm text-gray-600 mt-1 max-w-3xl">
+        <p className="text-xs sm:text-sm text-slate-500 max-w-3xl mx-auto">
           Antalya Organize Sanayi Bölgesi ve ticari tesislerde başarıyla teslim edilen zemin projelerimiz.
         </p>
       </div>
 
-      {/* Industrial Filter Buttons (Sharp 4px Radius) */}
-      <div className="flex flex-wrap items-center gap-1.5">
+      {/* Modern Filter Pills */}
+      <div className="flex flex-wrap items-center justify-center gap-2">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setSelectedFilter(cat)}
-            className={`px-3.5 py-1.5 rounded text-xs font-bold font-mono transition-all border cursor-pointer ${
+            className={`px-4 py-2 rounded-2xl text-xs font-bold font-heading transition-all border cursor-pointer ${
               selectedFilter === cat
-                ? 'bg-[#1A1C20] text-[#F4B400] border-[#1A1C20] shadow-sm'
-                : 'bg-white text-gray-700 border-gray-300 hover:border-gray-500'
+                ? 'bg-slate-950 text-amber-400 border-slate-950 shadow-md ring-2 ring-amber-500/30'
+                : 'bg-white text-slate-700 border-slate-200/90 hover:border-amber-400 hover:bg-slate-50'
             }`}
           >
             {cat}
@@ -121,48 +121,48 @@ export default function BitirdigimizIsler() {
         ))}
       </div>
 
-      {/* 6 Project Gallery Cards with Consistent 16:10 Ratio & Dark Gradient */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      {/* 6 Project Gallery Cards with 16:10 Ratio & Modern Depth */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredProjects.map((project) => (
           <div
             key={project.id}
-            className="bg-white border border-gray-300 rounded overflow-hidden shadow-sm hover:shadow-md transition-all group flex flex-col justify-between"
+            className="bg-white border border-slate-200/90 rounded-3xl overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 group flex flex-col justify-between hover:-translate-y-1"
           >
             <div>
-              <div className="aspect-[16/10] overflow-hidden relative bg-gray-900">
+              <div className="aspect-[16/10] overflow-hidden relative bg-slate-950">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700 opacity-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1C20]/90 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent pointer-events-none" />
                 
-                <span className="absolute top-2.5 left-2.5 bg-[#1A1C20] text-[#F4B400] font-mono font-bold text-[10px] px-2 py-0.5 rounded uppercase tracking-wide border border-gray-700">
+                <span className="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-md text-amber-400 font-mono font-bold text-[10px] px-2.5 py-1 rounded-xl uppercase tracking-wide border border-slate-700">
                   {project.category}
                 </span>
                 
-                <span className="absolute bottom-2.5 right-2.5 bg-[#1A1C20]/95 text-white font-mono font-black text-xs px-2 py-0.5 rounded border border-gray-700">
+                <span className="absolute bottom-3 right-3 bg-slate-900/90 text-white font-mono font-black text-xs px-2.5 py-1 rounded-xl border border-slate-700">
                   {project.squareMeters}
                 </span>
 
-                <span className="absolute bottom-2.5 left-2.5 text-gray-300 font-mono text-[11px] truncate max-w-[65%]">
+                <span className="absolute bottom-3 left-3 text-slate-300 font-mono text-[11px] truncate max-w-[60%]">
                   {project.location}
                 </span>
               </div>
 
-              <div className="p-4">
-                <h3 className="text-sm font-extrabold text-[#1A1C20] mb-1.5 leading-snug group-hover:text-[#F4B400] transition-colors">
+              <div className="p-5 space-y-2">
+                <h3 className="text-base font-heading font-extrabold text-slate-900 leading-snug group-hover:text-amber-600 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-xs text-gray-600 leading-relaxed line-clamp-2">
+                <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
                   {project.description}
                 </p>
               </div>
             </div>
 
-            <div className="px-4 pb-4 pt-2 border-t border-gray-100 flex items-center justify-between font-mono text-[11px]">
-              <span className="text-gray-500 font-bold">Sistem: {project.system}</span>
-              <span className="font-bold text-[#1A1C20] group-hover:text-[#F4B400] transition-colors">Şartname ↗</span>
+            <div className="px-5 pb-5 pt-3 border-t border-slate-100 flex items-center justify-between font-mono text-[11px]">
+              <span className="text-slate-500 font-bold">{project.system}</span>
+              <span className="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Şartname ↗</span>
             </div>
           </div>
         ))}
