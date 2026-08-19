@@ -13,12 +13,14 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 h-16 bg-[#0B1120]/95 backdrop-blur-xl border-b border-slate-800/80 z-50 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex items-center justify-between">
         
-        {/* LOGO */}
-        <a href="/" className="flex items-center gap-2.5 group select-none">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 p-0.5 flex items-center justify-center shadow-md shadow-amber-500/20">
-            <div className="w-full h-full bg-[#0B1120] rounded-[10px] flex items-center justify-center text-amber-400 font-heading font-black text-xs">
-              NE
-            </div>
+        {/* LOGO WITH BESPOKE 3D EMBLEM */}
+        <a href="/" className="flex items-center gap-3 group select-none">
+          <div className="w-10 h-10 rounded-xl overflow-hidden bg-slate-950 p-0.5 border border-amber-500/50 shadow-md shadow-amber-500/20 group-hover:scale-105 transition-transform shrink-0">
+            <img
+              src="/images/logo.png"
+              alt="Nova Epoksi Logo"
+              className="w-full h-full object-contain rounded-[10px]"
+            />
           </div>
           <div>
             <span className="font-heading font-extrabold text-base sm:text-lg text-white block leading-none tracking-tight">

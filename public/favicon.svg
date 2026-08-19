@@ -1,4 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" rx="20" fill="#1D4ED8"/>
-  <text x="50" y="70" font-size="60" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">N</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="16" fill="#0B1120"/>
+  
+  <!-- Outer Halo Ring -->
+  <circle cx="32" cy="28" r="20" stroke="#F59E0B" stroke-width="3.5" fill="none" opacity="0.8"/>
+  <circle cx="32" cy="28" r="20" stroke="#334155" stroke-width="2" fill="none"/>
+  
+  <!-- Dynamic Bold 'N' Structure -->
+  <!-- Left Pillar -->
+  <rect x="18" y="16" width="7" height="28" rx="2" fill="#334155"/>
+  <rect x="18" y="16" width="2" height="28" fill="#64748B"/>
+  
+  <!-- Diagonal Beam (Epoxy Yellow Gold) -->
+  <path d="M18 16L39 44H46L25 16H18Z" fill="url(#epoxyGrad)"/>
+  
+  <!-- Right Pillar -->
+  <rect x="39" y="16" width="7" height="28" rx="2" fill="#1E293B"/>
+  
+  <!-- Epoxy Bucket on Top Right -->
+  <path d="M42 10L50 6L54 14L46 18Z" fill="#334155" stroke="#F59E0B" stroke-width="1.5"/>
+  
+  <!-- Pouring Liquid Epoxy Resin -->
+  <path d="M46 14C46 22 47 34 46 46C46 50 48 54 52 54C46 56 34 56 20 54C14 53 10 50 14 48L42 46C45 46 44 26 44 16L46 14Z" fill="url(#epoxyGrad)"/>
+  
+  <!-- Floor Foundation Base -->
+  <path d="M10 54L22 48H44L54 54H10Z" fill="#1E293B" opacity="0.9"/>
+  <path d="M10 54L22 48H33L26 54H10Z" fill="#F59E0B" opacity="0.9"/>
+  
+  <defs>
+    <linearGradient id="epoxyGrad" x1="18" y1="10" x2="50" y2="54" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FCD34D"/>
+      <stop offset="0.5" stop-color="#F59E0B"/>
+      <stop offset="1" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
 </svg>

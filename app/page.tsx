@@ -11,7 +11,7 @@ import FloatingActionWidget from '../components/FloatingActionWidget';
 
 export default function AntalyaEpoksiMasterSalesPage() {
   return (
-    <main className="min-h-screen bg-[#F8FAFC] text-[#0F172A] font-sans selection:bg-[#F59E0B] selection:text-[#0F172A] relative pb-16 md:pb-0 overflow-x-hidden">
+    <main className="min-h-screen bg-[#F8FAFC] text-slate-900 font-sans selection:bg-amber-500 selection:text-slate-950 relative overflow-x-hidden w-full max-w-full">
       
       {/* 1. SCARCITY & URGENCY TOP BAR */}
       <div className="bg-[#0B1120] text-slate-200 py-2 px-4 text-center text-xs font-mono border-b border-slate-800">
@@ -26,10 +26,10 @@ export default function AntalyaEpoksiMasterSalesPage() {
       <Navbar />
 
       {/* 3. HERO SECTION — ABOVE THE FOLD 3-SANİYE DÖNÜŞÜM ALANI */}
-      <section id="kesif" className="pt-24 sm:pt-28 pb-12 sm:pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="kesif" className="pt-20 sm:pt-24 pb-10 sm:pb-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-5">
             
             {/* SOCIAL PROOF PILL */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-bold shadow-2xs max-w-full">
@@ -51,38 +51,38 @@ export default function AntalyaEpoksiMasterSalesPage() {
             </p>
 
             {/* 4 SPECIFICATION CARDS (2x2 GRID) */}
-            <div className="grid grid-cols-2 gap-3 text-xs sm:text-sm font-bold text-slate-800">
-              <div className="flex items-center gap-2.5 bg-white border border-slate-200/90 p-3.5 rounded-2xl shadow-xs">
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-3 text-xs sm:text-sm font-bold text-slate-800">
+              <div className="flex items-center gap-2 bg-white border border-slate-200/90 p-3 sm:p-3.5 rounded-2xl shadow-xs">
                 <span className="w-5 h-5 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center font-black text-xs shrink-0">✓</span>
                 <span className="truncate">Lazerli Nem Analizi</span>
               </div>
-              <div className="flex items-center gap-2.5 bg-white border border-slate-200/90 p-3.5 rounded-2xl shadow-xs">
+              <div className="flex items-center gap-2 bg-white border border-slate-200/90 p-3 sm:p-3.5 rounded-2xl shadow-xs">
                 <span className="w-5 h-5 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center font-black text-xs shrink-0">✓</span>
                 <span className="truncate">10 Yıl Mukavemet</span>
               </div>
-              <div className="flex items-center gap-2.5 bg-white border border-slate-200/90 p-3.5 rounded-2xl shadow-xs">
+              <div className="flex items-center gap-2 bg-white border border-slate-200/90 p-3 sm:p-3.5 rounded-2xl shadow-xs">
                 <span className="w-5 h-5 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center font-black text-xs shrink-0">✓</span>
                 <span className="truncate">Forklift & Asit Direnci</span>
               </div>
-              <div className="flex items-center gap-2.5 bg-white border border-slate-200/90 p-3.5 rounded-2xl shadow-xs">
+              <div className="flex items-center gap-2 bg-white border border-slate-200/90 p-3 sm:p-3.5 rounded-2xl shadow-xs">
                 <span className="w-5 h-5 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center font-black text-xs shrink-0">✓</span>
                 <span className="truncate">Sabit Fiyat Sözleşmesi</span>
               </div>
             </div>
 
             {/* HERO CTA BUTTONS */}
-            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+            <div className="flex flex-col sm:flex-row gap-3 pt-1">
               <a
                 href="https://wa.me/905070871789?text=Merhaba,%20Antalya%20epoksi%20zemin%20şartnamesi%20ve%20ücretsiz%20keşif%20istiyorum."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-heading font-black px-7 py-4 min-h-[52px] rounded-2xl text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-amber-500/25 cursor-pointer transition-all hover:scale-102 active:scale-98"
+                className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-heading font-black px-7 py-3.5 min-h-[50px] rounded-2xl text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-amber-500/25 cursor-pointer transition-all hover:scale-102 active:scale-98"
               >
                 <span>⚡ WhatsApp ile Ücretsiz Keşif Al</span>
               </a>
               <a
                 href="tel:05070871789"
-                className="bg-slate-900 hover:bg-slate-800 text-white font-heading font-extrabold px-6 py-4 min-h-[52px] rounded-2xl text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md"
+                className="bg-slate-900 hover:bg-slate-800 text-white font-heading font-extrabold px-6 py-3.5 min-h-[50px] rounded-2xl text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md"
               >
                 <span>📞 0507 087 17 89</span>
               </a>
@@ -99,8 +99,8 @@ export default function AntalyaEpoksiMasterSalesPage() {
       </section>
 
       {/* 4. 3-KOLONLU ENDÜSTRİYEL DASHBOARD METRİK BLOĞU */}
-      <section className="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+      <section className="py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
           <div className="metric-dash-card">
             <div className="font-mono text-3xl sm:text-4xl font-black text-slate-900 mb-1">
               50+
@@ -140,25 +140,25 @@ export default function AntalyaEpoksiMasterSalesPage() {
       </section>
 
       {/* 5. SEKTÖREL KULLANIM ALANLARI (FOTOĞRAFLI KARTLAR) */}
-      <section className="py-16 bg-white border-y border-slate-200/90">
+      <section className="py-12 sm:py-16 bg-white border-y border-slate-200/90">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <CorporateReferences />
         </div>
       </section>
 
       {/* 6. 2026 ANTALYA ENDÜSTRİYEL SPEC VE FİYAT MATRİSİ */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FiyatStratejisi2026 />
       </section>
 
       {/* 7. MID-PAGE GERİLLA DÖNÜŞÜM KUTUSU */}
-      <section className="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-[#0B1120] via-[#0F172A] to-[#1E293B] text-white rounded-3xl p-7 sm:p-10 border border-amber-500/30 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
+      <section className="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-br from-[#0B1120] via-[#0F172A] to-[#1E293B] text-white rounded-3xl p-6 sm:p-10 border border-amber-500/30 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
           <div className="space-y-2 relative z-10">
             <span className="inline-block px-3 py-1 rounded-full bg-amber-400 text-slate-950 font-heading text-xs font-black uppercase tracking-wider">
               ⚡ 15 Dakikada Hızlı Zemin Analizi
             </span>
-            <h3 className="text-2xl sm:text-3xl font-heading font-extrabold text-white">
+            <h3 className="text-xl sm:text-3xl font-heading font-extrabold text-white">
               Hangi Epoksi Sisteminin Uygun Olduğundan Emin Değil misiniz?
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 max-w-2xl font-normal leading-relaxed">
@@ -169,7 +169,7 @@ export default function AntalyaEpoksiMasterSalesPage() {
             href="https://wa.me/905070871789?text=Merhaba,%20zeminimin%20fotoğrafını%20iletiyorum.%20En%20uygun%20epoksi%20sistemi%20ve%20fiyat%20analizi%20yapabilir%20misiniz?"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-heading font-black px-8 py-4 rounded-2xl text-xs sm:text-sm whitespace-nowrap shadow-xl shadow-amber-500/20 flex items-center gap-2 shrink-0 transition-all hover:scale-102 active:scale-98 relative z-10 cursor-pointer"
+            className="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-heading font-black px-7 py-3.5 rounded-2xl text-xs sm:text-sm whitespace-nowrap shadow-xl shadow-amber-500/20 flex items-center gap-2 shrink-0 transition-all hover:scale-102 active:scale-98 relative z-10 cursor-pointer"
           >
             <span>📸 Fotoğraf Gönder & Analiz İste</span>
           </a>
@@ -177,8 +177,8 @@ export default function AntalyaEpoksiMasterSalesPage() {
       </section>
 
       {/* 8. BİZ VS STANDART USTALAR (GÜVEN VE KARŞILAŞTIRMA MATRİSİ) */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/90">
-        <div className="text-center max-w-3xl mx-auto space-y-2 mb-10">
+      <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/90">
+        <div className="text-center max-w-3xl mx-auto space-y-2 mb-8 sm:mb-10">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-heading font-extrabold bg-amber-50 text-amber-900 border border-amber-200 uppercase tracking-wider">
             <span>🛡️ Kalite & Güvence Standartları</span>
           </span>
@@ -190,7 +190,7 @@ export default function AntalyaEpoksiMasterSalesPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
           <div className="bg-white border-2 border-emerald-500/60 p-6 sm:p-7 rounded-3xl shadow-xs space-y-4">
             <div className="flex items-center gap-2 text-emerald-800 font-heading font-extrabold text-sm sm:text-base uppercase">
               <span>✓</span> NOVA EPOKSİ SİSTEMLERİ
@@ -242,8 +242,8 @@ export default function AntalyaEpoksiMasterSalesPage() {
       </section>
 
       {/* 9. GERÇEK MÜŞTERİ DEĞERLENDİRMELERİ */}
-      <section className="py-16 bg-white border-t border-slate-200/90">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <section className="py-12 sm:py-16 bg-white border-t border-slate-200/90">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="text-center max-w-3xl mx-auto space-y-2">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-heading font-extrabold bg-amber-50 text-amber-900 border border-amber-200 uppercase tracking-wider">
               <span>💬 Doğrulanmış Referanslar</span>
@@ -253,7 +253,7 @@ export default function AntalyaEpoksiMasterSalesPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-6xl mx-auto">
             <div className="bg-slate-50 border border-slate-200 p-6 rounded-3xl space-y-3">
               <div className="text-amber-500 font-bold text-xs">★★★★★ 5.0</div>
               <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
@@ -291,35 +291,35 @@ export default function AntalyaEpoksiMasterSalesPage() {
       </section>
 
       {/* 10. TAMAMLANAN UYGULAMA ÖRNEKLERİ */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/90">
+      <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/90">
         <BitirdigimizIsler />
       </section>
 
       {/* 11. TEKNİK UYGULAMA SÜRECİ */}
-      <section id="hizmetler" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/90">
+      <section id="hizmetler" className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/90">
         <EpoksiTeknikSurec />
       </section>
 
       {/* 12. ÖNCE / SONRA DÖNÜŞÜM SÜRGÜSÜ */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/90">
+      <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/90">
         <BeforeAfterSlider />
       </section>
 
       {/* 13. İNTERAKTİF HESAPLAMA MOTORU */}
-      <section id="hesaplayici" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/90">
+      <section id="hesaplayici" className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/90">
         <TeklifHesaplayici />
       </section>
 
       {/* 14. SERTİFİKA VE GÜVEN ROZETLERİ */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/90">
+      <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/90">
         <TrustBadges />
       </section>
 
-      {/* 15. UNIFIED FLOATING ACTION WIDGET (WHATSAPP + PHONE BUTTONS STACKED CLEANLY ON RIGHT) */}
+      {/* 15. UNIFIED FLOATING ACTION WIDGET */}
       <FloatingActionWidget />
 
-      {/* FOOTER */}
-      <footer className="bg-[#0B1120] text-slate-400 py-12 text-xs border-t border-slate-800">
+      {/* 16. FOOTER (SITS FLUSH AT THE BOTTOM WITH ZERO WHITE GAP) */}
+      <footer className="bg-[#0B1120] text-slate-400 py-10 sm:py-12 text-xs border-t border-slate-800 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 border-b border-slate-800 pb-6">
             <div>
