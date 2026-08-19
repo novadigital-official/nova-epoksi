@@ -1,23 +1,23 @@
 'use client';
 
 // ═══════════════════════════════════════════════════════════
-// NOVA EPOKSI ANTALYA — YÖNETİM & MÜŞTERİ TEKLİF HESAPLAYICI
+// NOVA EPOKSI ANTALYA — İNTERAKTİF MALİYET VE KEŞİF HESAPLAYICI
 // ═══════════════════════════════════════════════════════════
 
 import React, { useState } from 'react';
 
 const FACILITY_TYPES = [
-  { id: 'fabrika', name: 'Fabrika / Üretim', basePrice: 240 },
-  { id: 'otel', name: 'Otel / Lobi', basePrice: 350 },
+  { id: 'fabrika', name: 'Fabrika / OSB Tesis', basePrice: 240 },
+  { id: 'depo', name: 'Lojistik Depo', basePrice: 200 },
   { id: 'otopark', name: 'Otopark / Garaj', basePrice: 210 },
-  { id: 'metalik', name: 'Metalik Epoksi', basePrice: 420 },
-  { id: '3d', name: '3D / Dekoratif', basePrice: 480 }
+  { id: 'otel', name: 'Otel & Showroom', basePrice: 350 },
+  { id: 'esd', name: 'Antistatik ESD', basePrice: 480 }
 ];
 
 const FLOOR_CONDITIONS = [
-  { id: 'iyi', name: 'İyi (Hafif Zımpara / Astar)', multiplier: 1.0 },
-  { id: 'orta', name: 'Orta (Çatlak Tamiri / Çift Astar)', multiplier: 1.15 },
-  { id: 'bozuk', name: 'Bozuk (Beton Freze / Tam Yoğun Astar)', multiplier: 1.35 }
+  { id: 'iyi', name: 'İyi (Hafif Silim & Astar)', multiplier: 1.0 },
+  { id: 'orta', name: 'Orta (Çatlak Tamiri & Çift Kat Astar)', multiplier: 1.15 },
+  { id: 'bozuk', name: 'Yıpranmış (Freze Silim & Dolgu Harcı)', multiplier: 1.35 }
 ];
 
 export default function TeklifHesaplayici() {
@@ -27,7 +27,7 @@ export default function TeklifHesaplayici() {
 
   const [name, setName] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
-  const [location, setLocation] = useState<string>('Antalya / Lara');
+  const [location, setLocation] = useState<string>('Döşemealtı OSB');
 
   const baseBudget = squareMeters * selectedFacility.basePrice * selectedCondition.multiplier;
   const minBudget = Math.floor(baseBudget * 0.95);
@@ -38,137 +38,175 @@ export default function TeklifHesaplayici() {
   const handleWhatsAppRedirect = (e: React.FormEvent) => {
     e.preventDefault();
     const waText = encodeURIComponent(
-      `*ANINDA TEKLİF & KEŞİF TALEBİ*\n` +
-      `• *İsim:* ${name || 'Belirtilmedi'}\n` +
+      `*ANTALYA EPOKSİ ZEMİN KEŞİF TALEBİ*\n` +
+      `• *Yetkili:* ${name || 'Belirtilmedi'}\n` +
       `• *Telefon:* ${phone || 'Belirtilmedi'}\n` +
-      `• *Lokasyon:* ${location}\n` +
-      `• *Alan Tipi:* ${selectedFacility.name}\n` +
+      `• *Konum:* ${location}\n` +
+      `• *Tesis:* ${selectedFacility.name}\n` +
       `• *Metrekare:* ${squareMeters} m²\n` +
       `• *Zemin Durumu:* ${selectedCondition.name}\n` +
-      `• *Tahmini Keşif Aralığı:* ${formatTL(minBudget)} TL - ${formatTL(maxBudget)} TL\n\n` +
-      `Adresimde ücretsiz yerinde keşif yapmak istiyorum.`
+      `• *Tahmini Bütçe:* ${formatTL(minBudget)} TL - ${formatTL(maxBudget)} TL\n\n` +
+      `Adresimde ücretsiz yerinde lazerli keşif talep ediyorum.`
     );
     window.open(`https://wa.me/905070871789?text=${waText}`, '_blank');
   };
 
   return (
-    <div className="w-full bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm text-slate-900">
-      <div className="flex items-center justify-between pb-4 mb-6 border-b border-slate-200">
-        <div>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-blue-100 text-blue-800 border border-blue-200 mb-2">
-            ANINDA TEKLİF & KEŞİF HESAPLAYICI
-          </span>
-          <h3 className="text-xl sm:text-2xl font-black text-slate-900">
-            Epoksi Zemin Keşif Hesaplayıcı
-          </h3>
+    <div className="w-full bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-10 shadow-xs text-slate-900">
+      
+      {/* Header */}
+      <div className="text-center max-w-3xl mx-auto space-y-2 mb-8 sm:mb-10">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-heading font-extrabold bg-amber-50 text-amber-900 border border-amber-200 uppercase tracking-wider">
+          <span>⚡ Anında Metraj Hesaplama</span>
         </div>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-extrabold text-slate-900 tracking-tight">
+          İnteraktif Zemin Maliyet Hesaplayıcı
+        </h2>
+        <p className="text-xs sm:text-sm text-slate-500 max-w-2xl mx-auto">
+          Tesis tipini, yaklaşık metrekareyi ve mevcut zemin durumunu belirleyerek anında tahmini keşif bütçenizi hesaplayın.
+        </p>
       </div>
 
-      <form onSubmit={handleWhatsAppRedirect} className="space-y-6">
-        {/* Adım 1: Alan Tipi */}
-        <div>
-          <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
-            1. Tesis / Alan Tipi
-          </label>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-            {FACILITY_TYPES.map((fac) => (
-              <button
-                key={fac.id}
-                type="button"
-                onClick={() => setSelectedFacility(fac)}
-                className={`p-3 rounded-xl font-bold text-xs border text-left transition-all ${
-                  selectedFacility.id === fac.id
-                    ? 'bg-blue-600 text-white border-blue-600 font-black shadow-sm'
-                    : 'bg-slate-50 text-slate-700 border-slate-200 hover:border-slate-300'
-                }`}
-              >
-                {fac.name}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Adım 2: m² ve Zemin Durumu */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        {/* Sol Kolon: Seçenekler */}
+        <div className="lg:col-span-7 space-y-6">
+          {/* 1. Tesis Tipi */}
           <div>
-            <div className="flex justify-between items-center mb-2">
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                2. Toplam Alan (m²)
+            <label className="block text-xs font-heading font-extrabold uppercase tracking-wider text-slate-700 mb-2.5">
+              1. Tesis Faaliyet Alanı
+            </label>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+              {FACILITY_TYPES.map((fac) => (
+                <button
+                  key={fac.id}
+                  type="button"
+                  onClick={() => setSelectedFacility(fac)}
+                  className={`p-3 rounded-2xl text-left transition-all border text-xs cursor-pointer ${
+                    selectedFacility.id === fac.id
+                      ? 'bg-slate-900 text-white border-slate-900 shadow-sm font-bold'
+                      : 'bg-slate-50 text-slate-700 border-slate-200 hover:border-slate-400 font-semibold'
+                  }`}
+                >
+                  <div className="truncate">{fac.name}</div>
+                  <div className={`text-[10px] font-mono mt-1 ${selectedFacility.id === fac.id ? 'text-amber-400' : 'text-slate-400'}`}>
+                    ~{fac.basePrice} TL/m²
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* 2. Zemin Durumu */}
+          <div>
+            <label className="block text-xs font-heading font-extrabold uppercase tracking-wider text-slate-700 mb-2.5">
+              2. Mevcut Zemin Durumu
+            </label>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+              {FLOOR_CONDITIONS.map((cond) => (
+                <button
+                  key={cond.id}
+                  type="button"
+                  onClick={() => setSelectedCondition(cond)}
+                  className={`p-3 rounded-2xl text-left transition-all border text-xs cursor-pointer ${
+                    selectedCondition.id === cond.id
+                      ? 'bg-slate-900 text-amber-400 border-slate-900 shadow-sm font-bold'
+                      : 'bg-slate-50 text-slate-700 border-slate-200 hover:border-slate-400 font-semibold'
+                  }`}
+                >
+                  <div>{cond.name.split('(')[0]}</div>
+                  <div className="text-[10px] text-slate-400 font-normal mt-0.5 truncate">
+                    ({cond.name.split('(')[1]}
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* 3. Metrekare Slider */}
+          <div>
+            <div className="flex items-center justify-between mb-2">
+              <label className="text-xs font-heading font-extrabold uppercase tracking-wider text-slate-700">
+                3. Alan Büyüklüğü (m²)
               </label>
-              <span className="text-blue-600 font-black text-sm">{squareMeters} m²</span>
+              <span className="font-mono text-sm font-black text-slate-900 bg-amber-50 border border-amber-200/80 px-3 py-1 rounded-xl">
+                {squareMeters} m²
+              </span>
             </div>
             <input
               type="range"
-              min={50}
-              max={5000}
-              step={50}
+              min="50"
+              max="5000"
+              step="50"
               value={squareMeters}
               onChange={(e) => setSquareMeters(Number(e.target.value))}
-              className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+              aria-label="Metrekare Seçici"
+              className="w-full accent-amber-500 cursor-pointer h-2 bg-slate-100 rounded-lg appearance-none"
             />
-          </div>
-
-          <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
-              3. Mevcut Zemin Durumu
-            </label>
-            <select
-              value={selectedCondition.id}
-              onChange={(e) => {
-                const found = FLOOR_CONDITIONS.find(c => c.id === e.target.value);
-                if (found) setSelectedCondition(found);
-              }}
-              className="w-full bg-slate-50 border border-slate-200 text-slate-900 font-bold text-xs rounded-xl p-3 outline-none focus:border-blue-600"
-            >
-              {FLOOR_CONDITIONS.map((cond) => (
-                <option key={cond.id} value={cond.id}>{cond.name}</option>
-              ))}
-            </select>
+            <div className="flex justify-between text-[10px] font-mono text-slate-400 mt-1">
+              <span>50 m²</span>
+              <span>1.000 m²</span>
+              <span>2.500 m²</span>
+              <span>5.000+ m²</span>
+            </div>
           </div>
         </div>
 
-        {/* Adım 3: ÇIKTI - Tahmini Keşif Aralığı */}
-        <div className="bg-slate-50 border border-blue-200 rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        {/* Sağ Kolon: Tahmini Bütçe ve Hızlı Form */}
+        <div className="lg:col-span-5 bg-slate-900 text-white p-6 sm:p-7 rounded-3xl space-y-5 border border-slate-800 shadow-lg">
           <div>
-            <span className="text-xs font-bold text-slate-500 block">Tahmini Keşif Bütçe Aralığı</span>
-            <span className="text-2xl sm:text-3xl font-black text-blue-600">
-              {formatTL(minBudget)} TL - {formatTL(maxBudget)} TL
+            <span className="text-[11px] font-mono font-bold text-amber-400 uppercase tracking-widest block mb-1">
+              TAHMİNİ BAŞLANGIÇ BÜTÇESİ
             </span>
-          </div>
-          <span className="text-[10px] bg-blue-100 text-blue-800 border border-blue-200 px-3 py-1.5 rounded-full font-extrabold whitespace-nowrap">
-            *Ücretsiz Adreste Keşif Dahil
-          </span>
-        </div>
-
-        {/* İletişim & WhatsApp Butonu */}
-        <div className="space-y-3">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <input
-              type="text"
-              placeholder="Adınız Soyadınız *"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-              className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3 rounded-xl text-xs outline-none focus:border-blue-600"
-            />
-            <input
-              type="tel"
-              placeholder="Telefon Numaranız *"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              required
-              className="w-full bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3 rounded-xl text-xs outline-none focus:border-blue-600"
-            />
+            <div className="font-mono text-2xl sm:text-3xl font-extrabold text-white">
+              {formatTL(minBudget)} – {formatTL(maxBudget)} ₺
+            </div>
+            <p className="text-[11px] text-slate-400 mt-1 font-normal">
+              Anahtar teslim (Elmas silim + astar + epoksi + işçilik) tahmini keşif aralığıdır.
+            </p>
           </div>
 
-          <button
-            type="submit"
-            className="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-black text-base py-4 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
-          >
-            <span>🟢 WhatsApp'tan Kesin Fiyat Al & Keşif İste</span>
-          </button>
+          <form onSubmit={handleWhatsAppRedirect} className="space-y-3 pt-2 border-t border-slate-800">
+            <div>
+              <input
+                type="text"
+                placeholder="Firma Yetkilisi Adı *"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full h-11 rounded-xl bg-slate-800/90 border border-slate-700 px-3.5 text-xs text-white placeholder:text-slate-400 outline-none focus:border-amber-400"
+                required
+              />
+            </div>
+            <div>
+              <input
+                type="tel"
+                placeholder="Telefon Numarası *"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="w-full h-11 rounded-xl bg-slate-800/90 border border-slate-700 px-3.5 text-xs text-white placeholder:text-slate-400 outline-none focus:border-amber-400"
+                required
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                placeholder="İlçe / Tesis Konumu (Örn: Döşemealtı OSB)"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                className="w-full h-11 rounded-xl bg-slate-800/90 border border-slate-700 px-3.5 text-xs text-white placeholder:text-slate-400 outline-none focus:border-amber-400"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-heading font-black h-12 rounded-2xl text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-98"
+            >
+              <span>Ücretsiz Keşif Raporu İste →</span>
+            </button>
+          </form>
         </div>
-      </form>
+
+      </div>
     </div>
   );
 }

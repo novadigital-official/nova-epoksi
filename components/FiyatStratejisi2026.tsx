@@ -1,7 +1,7 @@
 'use client';
 
 // ═══════════════════════════════════════════════════════════
-// NOVA EPOKSİ ANTALYA — ENDÜSTRİYEL ZEMİN SPEC MATRİSİ & FİYAT LİSTESİ
+// NOVA EPOKSI ANTALYA — KURUMSAL FİYAT & ŞARTNAME MATRİSİ
 // ═══════════════════════════════════════════════════════════
 
 import React from 'react';
@@ -66,69 +66,69 @@ export default function FiyatStratejisi2026() {
   };
 
   return (
-    <div id="fiyatlar" className="w-full space-y-6">
+    <div id="fiyatlar" className="w-full space-y-8">
       {/* Header */}
-      <div className="text-left border-b border-gray-300 pb-4">
-        <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded text-[11px] font-mono font-bold bg-[#1A1C20] text-[#F4B400] mb-2 uppercase tracking-wider">
-          TEKNİK ŞARTNAME & METREKARE MATRİSİ
+      <div className="text-center max-w-3xl mx-auto space-y-2">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-heading font-extrabold bg-amber-50 text-amber-900 border border-amber-200 uppercase tracking-wider">
+          <span>📊 2026 Birim Fiyat Tablosu</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1A1C20] tracking-tight">
-          2026 Antalya Endüstriyel Epoksi Zemin Fiyat Listesi
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-extrabold text-slate-900 tracking-tight">
+          Endüstriyel Epoksi Zemin Şartnamesi & Birim Fiyatlar
         </h2>
-        <p className="text-xs sm:text-sm text-gray-600 mt-1 max-w-3xl">
-          Tüm fiyatlar m² bazında anahtar teslim başlangıç birim maliyetleridir. Saha keşfi sonrasında zemin nem durumu, çatlak tamiratı ve katman sayısına göre kesin sözleşme düzenlenir.
+        <p className="text-xs sm:text-sm text-slate-500 max-w-2xl mx-auto">
+          Tüm fiyatlar m² bazında anahtar teslim başlangıç maliyetleridir. Zemin keşfi sonrasında nem durumu ve çatlak yoğunluğuna göre kesin sözleşme düzenlenir.
         </p>
       </div>
 
-      {/* Industrial Spec Matrix Table */}
-      <div className="bg-white border border-gray-300 rounded overflow-hidden shadow-sm">
+      {/* Corporate Spec Matrix Table */}
+      <div className="bg-white border border-slate-200/90 rounded-3xl overflow-hidden shadow-xs">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-[#1A1C20] text-white text-xs font-mono uppercase tracking-wider">
-                <th className="py-3.5 px-4 font-bold">Kod / Sistem</th>
-                <th className="py-3.5 px-4 font-bold hidden md:table-cell">Kullanım Alanı</th>
-                <th className="py-3.5 px-4 font-bold hidden lg:table-cell">Kalınlık / Katman</th>
-                <th className="py-3.5 px-4 font-bold text-right sm:text-left">m² Başlangıç</th>
-                <th className="py-3.5 px-4 font-bold text-right hidden sm:table-cell">İşlem</th>
+              <tr className="bg-slate-900 text-white text-xs font-heading font-bold uppercase tracking-wider">
+                <th className="py-4 px-5">Sistem / Kaplama Türü</th>
+                <th className="py-4 px-5 hidden md:table-cell">Kullanım Alanı</th>
+                <th className="py-4 px-5 hidden lg:table-cell">Katman Kalınlığı</th>
+                <th className="py-4 px-5 text-right sm:text-left">m² Başlangıç</th>
+                <th className="py-4 px-5 text-right hidden sm:table-cell">İşlem</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-200 text-xs">
+            <tbody className="divide-y divide-slate-100 text-xs">
               {SPEC_PRICE_MATRIX.map((item, idx) => (
-                <tr key={idx} className="hover:bg-gray-50 transition-colors">
-                  <td className="py-4 px-4 align-middle">
-                    <div className="flex items-center gap-2">
-                      <span className="font-mono text-[10px] bg-gray-200 text-gray-700 px-1.5 py-0.5 rounded font-bold">
+                <tr key={idx} className="hover:bg-slate-50/80 transition-colors">
+                  <td className="py-4 px-5 align-middle">
+                    <div className="flex items-center gap-3">
+                      <span className="font-mono text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded-md font-bold shrink-0">
                         {item.code}
                       </span>
                       <div>
-                        <div className="font-extrabold text-[#1A1C20] text-sm">
+                        <div className="font-heading font-extrabold text-slate-900 text-xs sm:text-sm">
                           {item.title}
                         </div>
-                        <div className="text-gray-500 text-[11px] mt-0.5 md:hidden">
+                        <div className="text-slate-500 text-[11px] mt-0.5 md:hidden">
                           {item.category} • {item.thickness}
                         </div>
                       </div>
                     </div>
                   </td>
-                  <td className="py-4 px-4 text-gray-700 font-medium hidden md:table-cell align-middle">
+                  <td className="py-4 px-5 text-slate-600 font-medium hidden md:table-cell align-middle">
                     {item.category}
                   </td>
-                  <td className="py-4 px-4 text-gray-600 font-mono text-[11px] hidden lg:table-cell align-middle">
+                  <td className="py-4 px-5 text-slate-500 font-mono text-[11px] hidden lg:table-cell align-middle">
                     {item.thickness}
                   </td>
-                  <td className="py-4 px-4 align-middle text-right sm:text-left">
-                    <span className="font-mono text-base font-black text-[#1A1C20] block">
+                  <td className="py-4 px-5 align-middle text-right sm:text-left">
+                    <span className="font-mono text-sm sm:text-base font-extrabold text-slate-900 block">
                       {item.startingPrice}
                     </span>
-                    <span className="text-[10px] text-gray-400 font-mono block">
+                    <span className="text-[10px] text-slate-400 font-mono block">
                       {item.unit} + KDV
                     </span>
                   </td>
-                  <td className="py-4 px-4 text-right align-middle hidden sm:table-cell">
+                  <td className="py-4 px-5 text-right align-middle hidden sm:table-cell">
                     <button
                       onClick={handleScrollToForm}
-                      className="inline-flex items-center justify-center px-3.5 py-2 rounded bg-[#1A1C20] hover:bg-[#F4B400] text-white hover:text-[#1A1C20] font-bold text-xs transition-colors cursor-pointer whitespace-nowrap"
+                      className="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white font-heading font-extrabold text-xs transition-all cursor-pointer whitespace-nowrap"
                     >
                       Keşif İste ↗
                     </button>
@@ -140,23 +140,23 @@ export default function FiyatStratejisi2026() {
         </div>
       </div>
 
-      {/* B2B Engineering Callout */}
-      <div className="bg-[#1A1C20] text-white rounded p-5 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4 border-l-4 border-[#F4B400]">
-        <div>
-          <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
-            500 m² ve Üzeri Endüstriyel Saha Projeleri İçin Yerinde Numune Keşfi
+      {/* Corporate Callout Box */}
+      <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md border border-slate-800">
+        <div className="space-y-1">
+          <h3 className="text-base sm:text-lg font-heading font-extrabold text-white">
+            500 m² ve Üzeri Endüstriyel Projeler İçin Yerinde Numune & Test
           </h3>
-          <p className="text-xs text-gray-300 mt-1">
-            Antalya OSB ve çevre ilçelerdeki fabrika zeminleriniz için lazerli nem ölçümü ve mukavemet testi ücretsiz yapılır.
+          <p className="text-xs sm:text-sm text-slate-300 font-normal">
+            Antalya OSB ve sanayi tesisleriniz için yerinde lazerli nem ölçümü ve mukavemet analizi tamamen ücretsizdir.
           </p>
         </div>
         <a
           href="https://wa.me/905070871789?text=Merhaba,%20Antalya%20OSB%20fabrika%20epoksi%20zemin%20keşfi%20talep%20ediyorum."
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-[#F4B400] hover:bg-[#DDA200] text-[#1A1C20] font-black px-6 py-3 rounded text-xs whitespace-nowrap transition-all shadow-md flex items-center gap-2 flex-shrink-0"
+          className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-heading font-black px-6 py-3.5 rounded-2xl text-xs sm:text-sm whitespace-nowrap transition-all shadow-md shrink-0 flex items-center gap-2"
         >
-          <span>Mühendis ile WhatsApp'tan Görüş</span>
+          <span>Mühendis ile Görüş</span>
         </a>
       </div>
     </div>
