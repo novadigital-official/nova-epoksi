@@ -39,30 +39,30 @@ export default function TeklifHesaplayici() {
     e.preventDefault();
     const waText = encodeURIComponent(
       `*ANTALYA EPOKSİ ZEMİN KEŞİF TALEBİ*\n` +
-      `• *Yetkili:* ${name || 'Belirtilmedi'}\n` +
-      `• *Telefon:* ${phone || 'Belirtilmedi'}\n` +
-      `• *Konum:* ${location}\n` +
-      `• *Tesis:* ${selectedFacility.name}\n` +
-      `• *Metrekare:* ${squareMeters} m²\n` +
-      `• *Zemin Durumu:* ${selectedCondition.name}\n` +
-      `• *Tahmini Bütçe:* ${formatTL(minBudget)} TL - ${formatTL(maxBudget)} TL\n\n` +
-      `Adresimde ücretsiz yerinde lazerli keşif talep ediyorum.`
+      `• Yetkili: ${name || 'Belirtilmedi'}\n` +
+      `• Telefon: ${phone || 'Belirtilmedi'}\n` +
+      `• Konum: ${location}\n` +
+      `• Tesis Tipi: ${selectedFacility.name}\n` +
+      `• Metrekare: ${squareMeters} m²\n` +
+      `• Zemin Durumu: ${selectedCondition.name}\n` +
+      `• Tahmini Bütçe: ${formatTL(minBudget)} TL - ${formatTL(maxBudget)} TL\n\n` +
+      `Yerinde ücretsiz keşif randevusu talep ediyorum.`
     );
     window.open(`https://wa.me/905070871789?text=${waText}`, '_blank');
   };
 
   return (
-    <div className="w-full bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-10 shadow-xs text-slate-900">
+    <div className="w-full bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-10 shadow-2xs text-slate-900">
       
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto space-y-2 mb-8 sm:mb-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-heading font-extrabold bg-amber-50 text-amber-900 border border-amber-200 uppercase tracking-wider">
-          <span>⚡ Anında Metraj Hesaplama</span>
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-heading font-semibold bg-slate-100 text-slate-700 uppercase tracking-wider">
+          <span>Ön Maliyet Hesaplama</span>
         </div>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-extrabold text-slate-900 tracking-tight">
           İnteraktif Zemin Maliyet Hesaplayıcı
         </h2>
-        <p className="text-xs sm:text-sm text-slate-500 max-w-2xl mx-auto">
+        <p className="text-xs sm:text-sm text-slate-500 max-w-2xl mx-auto font-normal">
           Tesis tipini, yaklaşık metrekareyi ve mevcut zemin durumunu belirleyerek anında tahmini keşif bütçenizi hesaplayın.
         </p>
       </div>
@@ -73,7 +73,7 @@ export default function TeklifHesaplayici() {
         <div className="lg:col-span-7 space-y-6">
           {/* 1. Tesis Tipi */}
           <div>
-            <label className="block text-xs font-heading font-extrabold uppercase tracking-wider text-slate-700 mb-2.5">
+            <label className="block text-xs font-heading font-bold uppercase tracking-wider text-slate-700 mb-2.5">
               1. Tesis Faaliyet Alanı
             </label>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
@@ -85,11 +85,11 @@ export default function TeklifHesaplayici() {
                   className={`p-3 rounded-2xl text-left transition-all border text-xs cursor-pointer ${
                     selectedFacility.id === fac.id
                       ? 'bg-slate-900 text-white border-slate-900 shadow-sm font-bold'
-                      : 'bg-slate-50 text-slate-700 border-slate-200 hover:border-slate-400 font-semibold'
+                      : 'bg-slate-50 text-slate-700 border-slate-200 hover:border-slate-400 font-medium'
                   }`}
                 >
                   <div className="truncate">{fac.name}</div>
-                  <div className={`text-[10px] font-mono mt-1 ${selectedFacility.id === fac.id ? 'text-amber-400' : 'text-slate-400'}`}>
+                  <div className={`text-[10px] font-mono mt-1 ${selectedFacility.id === fac.id ? 'text-amber-400 font-semibold' : 'text-slate-400'}`}>
                     ~{fac.basePrice} TL/m²
                   </div>
                 </button>
@@ -99,7 +99,7 @@ export default function TeklifHesaplayici() {
 
           {/* 2. Zemin Durumu */}
           <div>
-            <label className="block text-xs font-heading font-extrabold uppercase tracking-wider text-slate-700 mb-2.5">
+            <label className="block text-xs font-heading font-bold uppercase tracking-wider text-slate-700 mb-2.5">
               2. Mevcut Zemin Durumu
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
@@ -111,7 +111,7 @@ export default function TeklifHesaplayici() {
                   className={`p-3 rounded-2xl text-left transition-all border text-xs cursor-pointer ${
                     selectedCondition.id === cond.id
                       ? 'bg-slate-900 text-amber-400 border-slate-900 shadow-sm font-bold'
-                      : 'bg-slate-50 text-slate-700 border-slate-200 hover:border-slate-400 font-semibold'
+                      : 'bg-slate-50 text-slate-700 border-slate-200 hover:border-slate-400 font-medium'
                   }`}
                 >
                   <div>{cond.name.split('(')[0]}</div>
@@ -126,10 +126,10 @@ export default function TeklifHesaplayici() {
           {/* 3. Metrekare Slider */}
           <div>
             <div className="flex items-center justify-between mb-2">
-              <label className="text-xs font-heading font-extrabold uppercase tracking-wider text-slate-700">
+              <label className="text-xs font-heading font-bold uppercase tracking-wider text-slate-700">
                 3. Alan Büyüklüğü (m²)
               </label>
-              <span className="font-mono text-sm font-black text-slate-900 bg-amber-50 border border-amber-200/80 px-3 py-1 rounded-xl">
+              <span className="font-mono text-sm font-bold text-slate-900 bg-slate-100 px-3 py-1 rounded-xl">
                 {squareMeters} m²
               </span>
             </div>
@@ -153,9 +153,9 @@ export default function TeklifHesaplayici() {
         </div>
 
         {/* Sağ Kolon: Tahmini Bütçe ve Hızlı Form */}
-        <div className="lg:col-span-5 bg-slate-900 text-white p-6 sm:p-7 rounded-3xl space-y-5 border border-slate-800 shadow-lg">
+        <div className="lg:col-span-5 bg-slate-900 text-white p-6 sm:p-7 rounded-3xl space-y-5 border border-slate-800 shadow-md">
           <div>
-            <span className="text-[11px] font-mono font-bold text-amber-400 uppercase tracking-widest block mb-1">
+            <span className="text-[11px] font-mono font-medium text-amber-400 uppercase tracking-widest block mb-1">
               TAHMİNİ BAŞLANGIÇ BÜTÇESİ
             </span>
             <div className="font-mono text-2xl sm:text-3xl font-extrabold text-white">
@@ -173,7 +173,7 @@ export default function TeklifHesaplayici() {
                 placeholder="Firma Yetkilisi Adı *"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full h-11 rounded-xl bg-slate-800/90 border border-slate-700 px-3.5 text-xs text-white placeholder:text-slate-400 outline-none focus:border-amber-400"
+                className="w-full h-11 rounded-xl bg-slate-800 border border-slate-700 px-3.5 text-xs text-white placeholder:text-slate-400 outline-none focus:border-amber-400"
                 required
               />
             </div>
@@ -183,7 +183,7 @@ export default function TeklifHesaplayici() {
                 placeholder="Telefon Numarası *"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full h-11 rounded-xl bg-slate-800/90 border border-slate-700 px-3.5 text-xs text-white placeholder:text-slate-400 outline-none focus:border-amber-400"
+                className="w-full h-11 rounded-xl bg-slate-800 border border-slate-700 px-3.5 text-xs text-white placeholder:text-slate-400 outline-none focus:border-amber-400"
                 required
               />
             </div>
@@ -193,13 +193,13 @@ export default function TeklifHesaplayici() {
                 placeholder="İlçe / Tesis Konumu (Örn: Döşemealtı OSB)"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                className="w-full h-11 rounded-xl bg-slate-800/90 border border-slate-700 px-3.5 text-xs text-white placeholder:text-slate-400 outline-none focus:border-amber-400"
+                className="w-full h-11 rounded-xl bg-slate-800 border border-slate-700 px-3.5 text-xs text-white placeholder:text-slate-400 outline-none focus:border-amber-400"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-heading font-black h-12 rounded-2xl text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-98"
+              className="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-heading font-black h-12 rounded-2xl text-xs uppercase tracking-wider transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer active:scale-98"
             >
               <span>Ücretsiz Keşif Raporu İste →</span>
             </button>
