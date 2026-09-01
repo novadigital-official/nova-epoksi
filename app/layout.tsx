@@ -30,6 +30,17 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     title: 'Antalya Epoksi Zemin Kaplama | Nova Epoksi',
     description: 'Fabrika, depo ve otoparklar için yüksek mukavemetli endüstriyel epoksi zemin çözümleri.',
