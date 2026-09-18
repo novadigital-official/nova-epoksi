@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://antalyaepoksizemin.com.tr/sitemap.xml

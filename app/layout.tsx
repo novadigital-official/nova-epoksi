@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   title: 'Antalya Epoksi Zemin Kaplama | Fabrika & Endüstriyel Zemin Sistemleri',
   description: 'Antalya OSB ve tüm ilçelerde fabrika, otopark, depo ve oteller için garantili epoksi zemin kaplama, self-leveling ve elmas silim zemin hazırlığı. Ücretsiz yerinde lazerli keşif.',
   alternates: {
-    canonical: '/',
+    canonical: 'https://antalyaepoksizemin.com.tr',
   },
   robots: {
     index: true,
@@ -92,12 +92,35 @@ const jsonLd = {
         'addressCountry': 'TR'
       },
       'areaServed': ['Antalya', 'Döşemealtı OSB', 'Kepez', 'Muratpaşa', 'Konyaaltı', 'Manavgat', 'Alanya'],
-      'aggregateRating': {
-        '@type': 'AggregateRating',
-        'ratingValue': '4.9',
-        'reviewCount': '480',
-        'bestRating': '5'
+      'parentOrganization': {
+        '@type': 'Organization',
+        'name': 'NOVA GLOBAL',
+        'legalName': 'NOVA GLOBAL BİLİŞİM TURİZM ORGANİZASYON DANIŞMANLIK VE LİMİTED ŞİRKETİ'
       }
+    },
+    {
+      '@type': 'Service',
+      'name': 'Fabrika Epoksi Zemin Kaplama Antalya',
+      'description': 'Antalya OSB ve organize sanayi bölgelerindeki fabrikalar için yüksek dayanıklılıklı endüstriyel epoksi zemin kaplama. Lazerli keşif ve sabit fiyat garantisi.',
+      'provider': { '@id': 'https://antalyaepoksizemin.com.tr/#business' },
+      'areaServed': 'Antalya Organize Sanayi Bölgesi ve tüm ilçeler',
+      'serviceType': 'Endüstriyel Zemin Kaplama'
+    },
+    {
+      '@type': 'Service',
+      'name': 'Otopark Epoksi Zemin Kaplama',
+      'description': 'Kapalı otopark, AVM ve site otoparkları için dayanıklı, şerit çizgili epoksi zemin sistemleri.',
+      'provider': { '@id': 'https://antalyaepoksizemin.com.tr/#business' },
+      'areaServed': 'Antalya',
+      'serviceType': 'Otopark Zemin Kaplama'
+    },
+    {
+      '@type': 'Service',
+      'name': 'Otel ve Depo Epoksi Zemin',
+      'description': 'Antalya bölgesindeki oteller ve lojistik depolar için özelleştirilmiş epoksi zemin çözümleri.',
+      'provider': { '@id': 'https://antalyaepoksizemin.com.tr/#business' },
+      'areaServed': 'Antalya',
+      'serviceType': 'Otel ve Depo Zemin Kaplama'
     }
   ]
 };
