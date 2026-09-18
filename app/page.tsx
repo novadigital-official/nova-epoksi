@@ -362,7 +362,7 @@ export default function AntalyaEpoksiMasterSalesPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 font-mono gap-3 pt-4 border-t border-slate-900">
-            <span>© 2026 Antalya Nova Epoksi Zemin Çözümleri. Tüm Hakları Saklıdır. | Nova Digital İştiraki</span>
+            <span>© 2026 Nova Epoksi Zemin Çözümleri. NOVA GLOBAL bünyesinde. NOVA GLOBAL BİLİŞİM TURİZM ORGANİZASYON DANIŞMANLIK VE LTD. ŞTİ.</span>
             <div className="flex gap-4">
               <span>Gizlilik Politikası</span>
               <span>KVKK Aydınlatma Metni</span>
