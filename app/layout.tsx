@@ -25,8 +25,8 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://antalyaepoksizemin.com.tr'),
-  title: 'Antalya Epoksi Zemin Kaplama | Fabrika & Endüstriyel Zemin Sistemleri',
-  description: 'Antalya OSB ve tüm ilçelerde fabrika, otopark, depo ve oteller için garantili epoksi zemin kaplama, self-leveling ve elmas silim zemin hazırlığı. Ücretsiz yerinde lazerli keşif.',
+  title: 'Antalya Epoksi & Zemin Sistemleri | Beton Silim, Poliüretan, Otopark Kaplama — Nova Zemin',
+  description: 'Antalya OSB ve tüm ilçelerde fabrika, otopark, depo ve oteller için garantili epoksi zemin kaplama, beton silim ve parlatma, poliüretan hijyenik zemin sistemleri. Ücretsiz yerinde lazerli keşif.',
   alternates: {
     canonical: 'https://antalyaepoksizemin.com.tr',
   },
@@ -121,6 +121,22 @@ const jsonLd = {
       'provider': { '@id': 'https://antalyaepoksizemin.com.tr/#business' },
       'areaServed': 'Antalya',
       'serviceType': 'Otel ve Depo Zemin Kaplama'
+    },
+    {
+      '@type': 'Service',
+      'name': 'Antalya Beton Silim ve Parlatma',
+      'description': 'Fabrika, depo ve antrepolar için elmas diskli beton silim, tozumaz lityum silikat sıvı yüzey sertleştirici uygulaması.',
+      'provider': { '@id': 'https://antalyaepoksizemin.com.tr/#business' },
+      'areaServed': 'Antalya',
+      'serviceType': 'Beton Silim ve Parlatma'
+    },
+    {
+      '@type': 'Service',
+      'name': 'Antalya Poliüretan Zemin Kaplama',
+      'description': 'Otel mutfakları, restoranlar ve açık alanlar için HACCP uyumlu, çatlamayan, UV dayanımlı esnek poliüretan zemin kaplama.',
+      'provider': { '@id': 'https://antalyaepoksizemin.com.tr/#business' },
+      'areaServed': 'Antalya',
+      'serviceType': 'Poliüretan Zemin Kaplama'
     }
   ]
 };

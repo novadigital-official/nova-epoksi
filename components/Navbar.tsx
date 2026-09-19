@@ -24,33 +24,33 @@ export default function Navbar() {
           </div>
           <div>
             <span className="font-heading font-extrabold text-base sm:text-lg text-white block leading-none tracking-tight">
-              ANTALYA<span className="text-amber-400">EPOKSİ</span>
+              NOVA<span className="text-amber-400">ZEMİN</span>
             </span>
             <span className="text-[9px] text-slate-400 font-mono font-medium uppercase tracking-widest block mt-0.5">
-              Endüstriyel Zemin Sistemleri
+              Epoksi & Yüzey Sistemleri
             </span>
           </div>
         </a>
 
         {/* DESKTOP NAV LINKS */}
-        <div className="hidden lg:flex items-center gap-7 text-xs font-semibold text-slate-300">
+        <div className="hidden lg:flex items-center gap-6 text-xs font-semibold text-slate-300">
           <a href="/" className="hover:text-amber-400 transition-colors">
             Ana Sayfa
           </a>
-          <a href="#fiyatlar" className="hover:text-amber-400 transition-colors">
-            Fiyat Şartnamesi
+          <a href="/antalya-beton-silim" className="hover:text-amber-400 transition-colors">
+            Beton Silim
           </a>
-          <a href="#isler" className="hover:text-amber-400 transition-colors">
-            Saha Referansları
+          <a href="/antalya-poliuretan-zemin" className="hover:text-amber-400 transition-colors">
+            Poliüretan
           </a>
-          <a href="#hizmetler" className="hover:text-amber-400 transition-colors">
-            Uygulama Süreci
+          <a href="/antalya-otopark-zemini" className="hover:text-amber-400 transition-colors">
+            Otopark Zemin
           </a>
-          <a href="#hesaplayici" className="hover:text-amber-400 transition-colors">
+          <a href="/#fiyatlar" className="hover:text-amber-400 transition-colors">
+            Fiyatlar
+          </a>
+          <a href="/#hesaplayici" className="hover:text-amber-400 transition-colors">
             m² Hesaplayıcı
-          </a>
-          <a href="#faq" className="hover:text-amber-400 transition-colors">
-            Teknik SSS
           </a>
         </div>
 
@@ -100,20 +100,20 @@ export default function Navbar() {
           <a href="/" onClick={() => setMobileMenuOpen(false)} className="block py-2 hover:text-amber-400 border-b border-slate-800/80">
             Ana Sayfa
           </a>
-          <a href="#fiyatlar" onClick={() => setMobileMenuOpen(false)} className="block py-2 hover:text-amber-400 border-b border-slate-800/80">
+          <a href="/antalya-beton-silim" onClick={() => setMobileMenuOpen(false)} className="block py-2 hover:text-amber-400 border-b border-slate-800/80">
+            Beton Silim & Parlatma
+          </a>
+          <a href="/antalya-poliuretan-zemin" onClick={() => setMobileMenuOpen(false)} className="block py-2 hover:text-amber-400 border-b border-slate-800/80">
+            Poliüretan Zemin
+          </a>
+          <a href="/antalya-otopark-zemini" onClick={() => setMobileMenuOpen(false)} className="block py-2 hover:text-amber-400 border-b border-slate-800/80">
+            Otopark & Rampa Kaplama
+          </a>
+          <a href="/#fiyatlar" onClick={() => setMobileMenuOpen(false)} className="block py-2 hover:text-amber-400 border-b border-slate-800/80">
             Fiyat Şartnamesi
           </a>
-          <a href="#isler" onClick={() => setMobileMenuOpen(false)} className="block py-2 hover:text-amber-400 border-b border-slate-800/80">
-            Saha Referansları
-          </a>
-          <a href="#hizmetler" onClick={() => setMobileMenuOpen(false)} className="block py-2 hover:text-amber-400 border-b border-slate-800/80">
-            Uygulama Süreci
-          </a>
-          <a href="#hesaplayici" onClick={() => setMobileMenuOpen(false)} className="block py-2 hover:text-amber-400 border-b border-slate-800/80">
+          <a href="/#hesaplayici" onClick={() => setMobileMenuOpen(false)} className="block py-2 hover:text-amber-400 border-b border-slate-800/80">
             m² Hesaplayıcı
-          </a>
-          <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="block py-2 hover:text-amber-400 border-b border-slate-800/80">
-            Teknik SSS
           </a>
 
           <div className="pt-2 grid grid-cols-2 gap-2">
