@@ -14,6 +14,6 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: 'ClaudeBot', allow: '/' },
       { userAgent: 'anthropic-ai', allow: '/' },
     ],
-    sitemap: 'https://antalyaepoksizemin.com.tr/sitemap.xml',
+    sitemap: 'https://www.antalyaepoksizemin.com.tr/sitemap.xml',
   };
 }

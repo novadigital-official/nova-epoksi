@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     'organize sanayi beton silimi'
   ],
   alternates: {
-    canonical: 'https://antalyaepoksizemin.com.tr/antalya-beton-silim'
+    canonical: 'https://www.antalyaepoksizemin.com.tr/antalya-beton-silim'
   }
 };
 
@@ -24,7 +24,7 @@ const jsonLd = {
   'name': 'Antalya Beton Silim ve Parlatma Hizmeti',
   'provider': {
     '@type': 'HomeAndConstructionBusiness',
-    '@id': 'https://antalyaepoksizemin.com.tr/#business',
+    '@id': 'https://www.antalyaepoksizemin.com.tr/#business',
     'name': 'Nova Zemin & Epoksi Sistemleri',
     'telephone': '+905070871789'
   },

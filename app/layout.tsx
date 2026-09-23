@@ -24,11 +24,11 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://antalyaepoksizemin.com.tr'),
+  metadataBase: new URL('https://www.antalyaepoksizemin.com.tr'),
   title: 'Antalya Epoksi & Zemin Sistemleri | Beton Silim, Poliüretan, Otopark Kaplama — Nova Zemin',
   description: 'Antalya OSB ve tüm ilçelerde fabrika, otopark, depo ve oteller için garantili epoksi zemin kaplama, beton silim ve parlatma, poliüretan hijyenik zemin sistemleri. Ücretsiz yerinde lazerli keşif.',
   alternates: {
-    canonical: 'https://antalyaepoksizemin.com.tr',
+    canonical: 'https://www.antalyaepoksizemin.com.tr',
   },
   robots: {
     index: true,
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Antalya Epoksi Zemin Kaplama | Nova Epoksi',
     description: 'Fabrika, depo ve otoparklar için yüksek mukavemetli endüstriyel epoksi zemin çözümleri.',
-    url: 'https://antalyaepoksizemin.com.tr',
+    url: 'https://www.antalyaepoksizemin.com.tr',
     siteName: 'Nova Epoksi Antalya',
     locale: 'tr_TR',
     type: 'website',
@@ -79,12 +79,12 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'HomeAndConstructionBusiness',
-      '@id': 'https://antalyaepoksizemin.com.tr/#business',
+      '@id': 'https://www.antalyaepoksizemin.com.tr/#business',
       'name': 'Nova Epoksi Antalya Zemin Çözümleri',
-      'url': 'https://antalyaepoksizemin.com.tr/',
+      'url': 'https://www.antalyaepoksizemin.com.tr/',
       'telephone': '+905070871789',
       'priceRange': '₺₺',
-      'image': 'https://antalyaepoksizemin.com.tr/images/real-factory.jpg',
+      'image': 'https://www.antalyaepoksizemin.com.tr/images/real-factory.jpg',
       'address': {
         '@type': 'PostalAddress',
         'addressLocality': 'Kepez',
@@ -102,7 +102,7 @@ const jsonLd = {
       '@type': 'Service',
       'name': 'Fabrika Epoksi Zemin Kaplama Antalya',
       'description': 'Antalya OSB ve organize sanayi bölgelerindeki fabrikalar için yüksek dayanıklılıklı endüstriyel epoksi zemin kaplama. Lazerli keşif ve sabit fiyat garantisi.',
-      'provider': { '@id': 'https://antalyaepoksizemin.com.tr/#business' },
+      'provider': { '@id': 'https://www.antalyaepoksizemin.com.tr/#business' },
       'areaServed': 'Antalya Organize Sanayi Bölgesi ve tüm ilçeler',
       'serviceType': 'Endüstriyel Zemin Kaplama'
     },
@@ -110,7 +110,7 @@ const jsonLd = {
       '@type': 'Service',
       'name': 'Otopark Epoksi Zemin Kaplama',
       'description': 'Kapalı otopark, AVM ve site otoparkları için dayanıklı, şerit çizgili epoksi zemin sistemleri.',
-      'provider': { '@id': 'https://antalyaepoksizemin.com.tr/#business' },
+      'provider': { '@id': 'https://www.antalyaepoksizemin.com.tr/#business' },
       'areaServed': 'Antalya',
       'serviceType': 'Otopark Zemin Kaplama'
     },
@@ -118,7 +118,7 @@ const jsonLd = {
       '@type': 'Service',
       'name': 'Otel ve Depo Epoksi Zemin',
       'description': 'Antalya bölgesindeki oteller ve lojistik depolar için özelleştirilmiş epoksi zemin çözümleri.',
-      'provider': { '@id': 'https://antalyaepoksizemin.com.tr/#business' },
+      'provider': { '@id': 'https://www.antalyaepoksizemin.com.tr/#business' },
       'areaServed': 'Antalya',
       'serviceType': 'Otel ve Depo Zemin Kaplama'
     },
@@ -126,7 +126,7 @@ const jsonLd = {
       '@type': 'Service',
       'name': 'Antalya Beton Silim ve Parlatma',
       'description': 'Fabrika, depo ve antrepolar için elmas diskli beton silim, tozumaz lityum silikat sıvı yüzey sertleştirici uygulaması.',
-      'provider': { '@id': 'https://antalyaepoksizemin.com.tr/#business' },
+      'provider': { '@id': 'https://www.antalyaepoksizemin.com.tr/#business' },
       'areaServed': 'Antalya',
       'serviceType': 'Beton Silim ve Parlatma'
     },
@@ -134,7 +134,7 @@ const jsonLd = {
       '@type': 'Service',
       'name': 'Antalya Poliüretan Zemin Kaplama',
       'description': 'Otel mutfakları, restoranlar ve açık alanlar için HACCP uyumlu, çatlamayan, UV dayanımlı esnek poliüretan zemin kaplama.',
-      'provider': { '@id': 'https://antalyaepoksizemin.com.tr/#business' },
+      'provider': { '@id': 'https://www.antalyaepoksizemin.com.tr/#business' },
       'areaServed': 'Antalya',
       'serviceType': 'Poliüretan Zemin Kaplama'
     }

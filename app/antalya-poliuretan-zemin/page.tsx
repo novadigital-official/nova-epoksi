@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     'antibakteriyel zemin kaplama'
   ],
   alternates: {
-    canonical: 'https://antalyaepoksizemin.com.tr/antalya-poliuretan-zemin'
+    canonical: 'https://www.antalyaepoksizemin.com.tr/antalya-poliuretan-zemin'
   }
 };
 
@@ -24,7 +24,7 @@ const jsonLd = {
   'name': 'Antalya Poliüretan Zemin Kaplama',
   'provider': {
     '@type': 'HomeAndConstructionBusiness',
-    '@id': 'https://antalyaepoksizemin.com.tr/#business',
+    '@id': 'https://www.antalyaepoksizemin.com.tr/#business',
     'name': 'Nova Zemin & Epoksi Sistemleri',
     'telephone': '+905070871789'
   },

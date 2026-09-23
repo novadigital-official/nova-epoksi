@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     'avm otopark zemin sistemleri'
   ],
   alternates: {
-    canonical: 'https://antalyaepoksizemin.com.tr/antalya-otopark-zemini'
+    canonical: 'https://www.antalyaepoksizemin.com.tr/antalya-otopark-zemini'
   }
 };
 
@@ -24,7 +24,7 @@ const jsonLd = {
   'name': 'Antalya Otopark ve Rampa Zemin Kaplama',
   'provider': {
     '@type': 'HomeAndConstructionBusiness',
-    '@id': 'https://antalyaepoksizemin.com.tr/#business',
+    '@id': 'https://www.antalyaepoksizemin.com.tr/#business',
     'name': 'Nova Zemin & Epoksi Sistemleri',
     'telephone': '+905070871789'
   },
